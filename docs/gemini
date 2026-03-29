@@ -1,0 +1,84 @@
+Navržený Pipeline (Optimalizovaný pro Stereo Separaci)
+1. Předzpracování: Čištění a "Odsazení"
+Dříve než pustíš modely, musíš signál připravit. Wienerovy filtry jsou fajn, ale moderní přístupy se spoléhají na maskování v časově-frekvenční doméně.
+
+Normalizace hlasitosti: Sjednoť úrovně (LUFS), aby model nebyl zmaten příliš tichým mluvčím.
+
+Stereo analýza (MS Processing): Převod na Mid/Side (součet a rozdíl kanálů) může pomoci identifikovat, co je "uprostřed" (přeslechy) a co na stranách.
+
+Nástroje: pydub (pro normalizaci), librosa (analýza).
+
+
+
+
+2. Separace hlasů (Jádro věci)
+Tady se láme chleba. Pokud chceš "v jednom kanálu jen jednoho", existují tři hlavní cesty:
+
+A. Deep Learning Separace (Doporučeno)
+Místo obecných modelů hledej ty, které podporují "Speech Separation" (často vytrénované na datasetu WSJ0-2mix).
+
+Conv-TasNet / SepFormer: Tyto modely dokáží vzít stereo/mono vstup a vyprodukovat dvě izolované audio stopy.
+
+Shadow-node: Speciální architektury, které umí pracovat se stereo informací pro lepší prostorové odlišení.
+
+Python: Knihovna asteroid je naprostý standard. Obsahuje pre-trained modely, které jen "nakrmíš" svým souborem.
+
+B. Beamforming a Spatial Clustering (Fyzikální cesta)
+Protože máš stereo, můžeš simulovat "virtuální směrový mikrofon".
+
+Pokud mluvčí A mluví více zleva, algoritmus potlačí vše, co má fázový posun odpovídající pravé straně.
+
+Nástroje: pyroomacoustics – ideální pro výpočet masky na základě intenzity a fáze mezi kanály.
+
+C. REMIX / ADR (Source Separation)
+
+Můžeš zkusit modely jako Demucs (od Meta), které jsou sice primárně na hudbu (zpěv vs. nástroje), ale verze pro separaci řeči jsou extrémně robustní proti šumu.
+
+
+
+
+
+3. Diarizace a Post-processing
+Pokud separace neklapne na 100 % (zůstane tam "duch" druhého mluvčího), nastupuje diarizace.
+
+Pyannote.audio: Identifikuje "kdo mluvil kdy".
+
+Cross-channel Gating: Můžeš použít časové značky z diarizace k tomu, abys v kanálu A udělal "ticho" ve chvíli, kdy prokazatelně mluví jen mluvčí B.
+
+
+
+
+
+4. ASR (Transkripce)
+Až když máš dva čisté soubory, posíláš je do Whisperu.
+
+Tip: Použij Whisper-large-v3 přes knihovnu faster-whisper pro rychlost na lokálním stroji.
+
+Jak to lidé řeší v praxi (bez hlubokého kódu)?
+Většina profesionálů dnes volí cestu "End-to-End Separation":
+
+Vezmou stereo nahrávku a proženou ji modelem SepFormer (přes asteroid). Ten vyplivne dvě mono stopy.
+
+Protože model občas neví, který mluvčí je který (může je v polovině nahrávky prohodit – tzv. Permutation Problem), použijí Diarizaci (Pyannote), aby zjistili identitu mluvčích napříč celou stopou.
+
+Pokud je v nahrávce silný dozvuk (hala), jako první krok se dává WPE (Weighted Prediction Error), protože echo je pro separační modely nepřítel číslo jedna.
+
+Co dál?
+Pro lokální testování na Pythonu doporučuji začít s knihovnou Asteroid. Je to v podstatě "švýcarský nůž" na separaci mluvčích.
+
+Chceš, abych ti pomohl sestavit konkrétní startovací skript pro asteroid, který by načetl tvůj stereo soubor a zkusil ho rozdělit pomocí pre-trained modelu?
+
+
+
+
+Zadání BP:
+
+Název tématu*	Využití stereo signálu pro zlepšení automatického rozpoznávání řeči
+Název tématu anglicky	Exploiting Stereo Signals to Enhance Automatic Speech Recognition
+
+Zásady pro vypracování*	
+Seznamte se s nejmodernějšími metodami automatického rozpoznávání řeči.
+Analyzujte možnosti využití stereo nebo vícero kanálů v systémech rozpoznávání řeči.
+Vyberte vhodné postupy zpracování stereo signálu pro dialogové nahrávky.
+Implementujte vybrané metody.
+Vyhodnoťte výsledky rozpoznávání pro zvolené přístupy a diskutujte jejich přínosy a možná vylepšení.

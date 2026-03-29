@@ -1,0 +1,44 @@
+WER Diagnostics (ROBUST)
+================================================================================
+Source JSON: .\results\mono_results_range_fastwhisper.json
+--------------------------------------------------------------------------------
+WER: 16.79 %
+HITS: 228 | SUB: 27 | INS: 5 | DEL: 13
+
+Top substitutions:
+2x | kterej => který
+1x | ádler => adler
+1x | spravoval => zpravoval
+1x | švýcarský => švýcarských
+1x | byla => vodkávat
+1x | modrooká blondýna z => modroka blondína speleřimová
+1x | pelhřimově => pražimově
+1x | ledererová => lederová
+1x | ella => ela
+1x | pelhřimově => pelřimově
+1x | napros => naprosto
+1x | neovládali => neobládali
+1x | jediný => jediné
+1x | švýcar => švýca
+1x | velkej => velký
+1x | mojí => moji
+1x | z vesničky => s vesničkým
+1x | starej => starý
+1x | židovskej => židovský
+1x | neni => není
+
+Top deletions:
+1x | tak
+1x | ano
+1x | to úplná samota
+1x | pelhřimova
+1x | paní
+1x | to
+1x | hm
+1x | maminka
+1x | z
+1x | nebo v
+
+Top insertions:
+1x | šumavy jmenoval se edmund
+1x | do

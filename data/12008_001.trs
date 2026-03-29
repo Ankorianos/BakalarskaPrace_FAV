@@ -1,0 +1,2014 @@
+<?xml version="1.0" encoding="CP1250"?>
+<!DOCTYPE Trans SYSTEM "trans-13.dtd">
+<Trans scribe="Kadar" audio_filename="12008_01" version="1" version_date="090101">
+<Speakers>
+<Speaker id="spk1" name="interviewer" check="no" dialect="native" accent="" scope="local"/>
+<Speaker id="spk2" name="spk3" check="no" dialect="native" accent="" scope="local"/>
+<Speaker id="spk3" name="interviewee" check="no" dialect="native" accent="" scope="local"/>
+</Speakers>
+<Episode program="" air_date="">
+<Section type="report" startTime="0" endTime="1768.200">
+<Turn startTime="0" endTime="34.812">
+<Sync time="0"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="32.566"/>
+
+<Event desc="noise" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" startTime="34.812" endTime="75.441">
+<Sync time="34.812"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ jmenuji se Jana René Fryesová, jé á en á, er é en é, ef er ý é es o vé á 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="49.483"/>
+březen třináctého 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, devatenácet devadesát šest 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="56.639"/>
+natáčíme rozhovor s panem inženýrem Janem Orlíkem,
+<Sync time="62.627"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="64.064"/>
+praha, česká republika.
+<Sync time="67.148"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="70.172"/>
+
+<Event desc="mic" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1 spk2" startTime="75.441" endTime="79.483">
+<Sync time="75.441"/>
+<Who nb="1"/>
+
+<Event desc="noise" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Who nb="2"/>
+eště doleva si sedni kousek 
+<Event desc="noise" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk2" startTime="79.483" endTime="84.034">
+<Sync time="79.483"/>
+
+<Event desc="noise" type="noise" extent="begin"/>
+ i s židlí, i s židlí.
+<Event desc="noise" type="noise" extent="end"/>
+
+<Sync time="81.639"/>
+
+<Event desc="noise" type="noise" extent="begin"/>
+ano v pořádku 
+<Event desc="noise" type="noise" extent="end"/>
+.
+</Turn>
+<Turn speaker="spk1" startTime="84.034" endTime="90.831">
+<Sync time="84.034"/>
+
+<Event desc="noise" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a kdybys byl tak 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ laskav a 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ řekl své jméno a hláskoval ho.
+</Turn>
+<Turn speaker="spk3" startTime="90.831" endTime="102.508">
+<Sync time="90.831"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ jmenuju se 
+<Event desc="noise" type="noise" extent="instantaneous"/>
+ Jan Orlík 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, jé á n 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ó er el í ká.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="102.508" endTime="104.454">
+<Sync time="102.508"/>
+<Who nb="1"/>
+a kdy jsi se narodil.
+<Who nb="2"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" startTime="104.454" endTime="111.61">
+<Sync time="104.454"/>
+narodil jsem se dvanáctého září devatenácet devatenáct v praze.
+</Turn>
+<Turn speaker="spk1" startTime="111.61" endTime="114.754">
+<Sync time="111.61"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a měl jsi nějaké jiné jméno.
+</Turn>
+<Turn speaker="spk3" startTime="114.754" endTime="127.718">
+<Sync time="114.754"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ ano 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, do roku čtyřicet šest jsem se po tátovi 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ jmenoval Ádler, to se hláskuje á dé el é er.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="127.718" endTime="129.125">
+<Sync time="127.718"/>
+<Who nb="1"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="129.125" endTime="134.425">
+<Sync time="129.125"/>
+a potom ve snaze to počeštit 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ jsem to změnil na překlad.
+</Turn>
+<Turn speaker="spk1" startTime="134.425" endTime="147.838">
+<Sync time="134.425"/>
+ano.
+<Sync time="135.473"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ kdybys teď se trošku zamyslel nad tim, jak to bylo u vás doma.
+<Sync time="143.227"/>
+i v tvém dětství 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, jaká jste byli rodina.
+</Turn>
+<Turn speaker="spk3" startTime="147.838" endTime="149.782">
+<Sync time="147.838"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="148.407"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1 spk3" startTime="149.782" endTime="152.269">
+<Sync time="149.782"/>
+<Who nb="1"/>
+tím bychom mohli začít, kde jste žili.
+<Who nb="2"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" startTime="152.269" endTime="221.905">
+<Sync time="152.269"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ já jsem se narodil v bytě svých prarodičů z máminy strany 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, v italské ulici na královských vinohradech 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="164.855"/>
+a brzo po narození jsem byl převezen 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ do místa působení mého 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ otce 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, ten pochází od německých hranic ze šumavy, 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ jmenoval se Edmond Ádler 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, po celý život to byl můj vzor, to byl prostě ten člověk, kterej nejvíc ovlivnil můj život 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="193.13"/>
+a on v té době spravoval velkostatek, který se jmenoval 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="200.002"/>
+starý brunst 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, což je velkostatek, který leží na hlavní silnici vedoucí z klatov do bavor,
+<Sync time="210.765"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="212.234"/>
+byl to vzorný statek, kterej dneska tak jako mnoho jiných objektů na šumavě 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ prostě zmizel.
+<Sync time="220.827"/>
+neexistuje.
+</Turn>
+<Turn speaker="spk1" startTime="221.905" endTime="222.324">
+<Sync time="221.905"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="222.324" endTime="241.097">
+<Sync time="222.324"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="223.971"/>
+tam táta prováděl meliorizace, 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ modernizoval to, dovezl švýcarský chov.
+<Sync time="232.025"/>
+no prostě byl to 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ překrásně prosperující statek a tam jsem vyrůstal 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ do šesti let.
+<Sync time="239.45"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1 spk3" startTime="241.097" endTime="242.863">
+<Sync time="241.097"/>
+<Who nb="1"/>
+můžu se,
+<Who nb="2"/>
+byla to úplná samota.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="242.863" endTime="246.935">
+<Sync time="242.863"/>
+<Who nb="1"/>
+mluvili jste doma česky nebo německy 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+, jaký byl tvůj rodný jazyk 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+.
+<Who nb="2"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" startTime="246.935" endTime="255.977">
+<Sync time="246.935"/>
+to bylo velmi zajímavý, moje maminka je modrooká blondýna 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ z pelhřimova 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk1 spk3" startTime="255.977" endTime="258.133">
+<Sync time="255.977"/>
+<Who nb="1"/>
+židovka.
+<Who nb="2"/>
+židovka,
+</Turn>
+<Turn speaker="spk3" startTime="258.133" endTime="290.245">
+<Sync time="258.133"/>
+její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v pelhřimově 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="266.007"/>
+babička je z rokycan 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ paní 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+, jmenovala se původně Ledererová,
+<Sync time="272.834"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="275.529"/>
+a jim se narodila ta dcera Ella, Elinka 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a ta chodila do školy v pelhřimově a byla to napros- -to česky orientovaná rodina, která neuměla pořádně německy, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="290.245" endTime="291.077">
+<Sync time="290.245"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+hm.
+</Turn>
+<Turn speaker="spk3" startTime="291.077" endTime="379.217">
+<Sync time="291.077"/>
+dědeček a babička rozuměli německy, ale neovládali to, maminka 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="297.664"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+
+<Sync time="299.212"/>
+když se jim dařilo dobře, byla jako jediný dítě vyslána do švýcar do penzionátu a tam se naučila 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ dobře francouzsky a dobře německy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, což mělo velkej vliv na mojí výchovu 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a,
+<Sync time="314.633"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="316.429"/>
+zcela jinak to bylo z otcovo strany 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, otec pochází z vesničky jménem zhůří na šumavě 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, to je nedaleko toho velkostatku 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, v blízkosti hartmanic, což je starej soudní okres na šumavě, kde byl židovskej hřbitov mimochodem 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+<Sync time="338.944"/>
+řečeno, kerej němci úplně vyvrátili, tam neni nic.
+<Sync time="343.144"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="344.862"/>
+ta rodina Ádlerová žila tím, že měli malinkej krámeček a v okolních vesnicích 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ byli jenom němci a pracovali ve sklářských hutích 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ nebo v lese.
+<Sync time="360.983"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="363.608"/>
+dědeček byl, jmenoval se Salomon Ádler, byl to krásnej, statnej pán 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a jeho manželka se jmenovala Róza Kornfiererová
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a ty neuměli česky ani slovo.
+</Turn>
+<Turn speaker="spk1" startTime="379.217" endTime="380.025">
+<Sync time="379.217"/>
+mhm.
+</Turn>
+<Turn speaker="spk3" startTime="380.025" endTime="395.385">
+<Sync time="380.025"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ táta sice měl českou maturitu, ale ta čeština byla taková typicky sudetská, to znamená prakticky 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, že místo p se řiká b 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, místo d se řiká t,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="395.385" endTime="395.834">
+<Sync time="395.385"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+mhm.
+</Turn>
+<Turn speaker="spk3" startTime="395.834" endTime="400.565">
+<Sync time="395.834"/>
+takže von třeba řikal bejzek anebo anektóde místo anekdóte,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="400.565" endTime="401.553">
+<Sync time="400.565"/>
+<Who nb="1"/>
+a tak dál 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="401.553" endTime="405.236">
+<Sync time="401.553"/>
+to je zvláštnost toho německýho nářečí tam.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="405.236" endTime="406.423">
+<Sync time="405.236"/>
+<Who nb="1"/>
+ano.
+<Who nb="2"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk3" startTime="406.423" endTime="413.32">
+<Sync time="406.423"/>
+u stolu u nás v-, po celé mé dětství jsem mluvil výhradně česky 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="413.32" endTime="420.446">
+<Sync time="413.32"/>
+<Who nb="1"/>
+na má- na maminku a na Evu, svojí sestru 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a výhradně německy na tatínka.
+<Who nb="2"/>
+ano.
+<Sync time="420.027"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="420.446" endTime="445.626">
+<Sync time="420.446"/>
+takže to se neustále střídalo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a mně to nedělalo vůbec žádné potíže 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="426.464"/>
+ovšem jednou po válce jsem byl pozván na,
+<Sync time="429.997"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="431.584"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+ takovou překladatelskou přípravku, kde jsem měl fungovat na nějaký konferenci 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ jako překladatel 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+, protože bylo o mně známo, že mluvim plynně oběma jazyky,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="445.626" endTime="447.632">
+<Sync time="445.626"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="447.632" endTime="459.608">
+<Sync time="447.632"/>
+a tam mě podrobili zkoušce a řekli, tak jak se řekne německy předradlička, což jsem nevěděl a jak se řekne záhumenek, což jsem taky nevěděl 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="459.608" endTime="461.614">
+<Sync time="459.608"/>
+<Who nb="1"/>
+tak se se mnou hned rozloučili 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+
+<Event desc="unintelligible" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="461.614" endTime="465.207">
+<Sync time="461.614"/>
+<Who nb="1"/>
+že ta moje němčina dokonalá není.
+<Who nb="2"/>
+ano, 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3" startTime="465.207" endTime="503.044">
+<Sync time="465.207"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ když mně bylo šest let, tak jsem šel v železné rudě, kam jsme se přestěhovali,
+<Sync time="471.674"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="473.081"/>
+do české školy.
+<Sync time="475.117"/>
+celá železná ruda, kde měl dědeček 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ vilu a továrnu na štětce a všecko možný jo, patřil k takový tý 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ velmi bohatý nebo zbohatlický poválečný 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ generaci 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ měšťanský,
+<Sync time="494.308"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="495.685"/>
+von to byl čech bez jakéhokoliv formálního vzdělání, ale velice 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ příjemnej, sčetlej, inteligentní, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="503.044" endTime="503.942">
+<Sync time="503.044"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="503.942" endTime="510.266">
+<Sync time="503.942"/>
+a měl tu zvláštní vlastnost, že v čemkoliv podnikal 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="510.266" endTime="513.021">
+<Sync time="510.266"/>
+<Who nb="1"/>
+se mu to fantasticky dařilo. 
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="513.021" endTime="535.656">
+<Sync time="513.021"/>
+zemřel asi v roce 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ třicet devět v chudobinci židovském tady v praze, protože vo všechno přišli 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ale to né 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ zásluhou Hitlera, to také, ale především tím 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, že ta rodina nežila v souladu ale, 
+<Sync time="532.542"/>
+to je úplně jiná kapitola, já se vrátím k tomu 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ dětství.
+</Turn>
+<Turn speaker="spk1" startTime="535.656" endTime="536.045">
+<Sync time="535.656"/>
+ano.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="536.045" endTime="545.327">
+<Sync time="536.045"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Who nb="2"/>
+já bych se ještě ptala, tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu, abys chodil do židovské školy.
+</Turn>
+<Turn speaker="spk3" startTime="545.327" endTime="578.521">
+<Sync time="545.327"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ nejbližší židovská komunita byla v nýrsku 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, což je městečko asi 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ dvacet kilometrů vzdálené od hranic od železné rudy, tam byl rabín pan Klaubr 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="561.195"/>
+já jsem se s nim setkal pouze jednou nebo dvakrát 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ při marných pokusech 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ vychovávat 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ ty děti těch židovských rodin v železný rudě, bylo jich strašně málo, snad 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ čtyři nebo tři,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="578.521" endTime="580.39">
+<Sync time="578.521"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="580.39" endTime="587.633">
+<Sync time="580.39"/>
+a tak pan rabín Klaubr několikrát přijel z nýrska, aby nás uvedl do,
+<Sync time="586.258"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3 spk1" startTime="587.633" endTime="591.558">
+<Sync time="587.633"/>
+<Who nb="1"/>
+věrouky nebo jak se to řiká 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ale,
+<Who nb="2"/>
+do židovského náboženství.
+</Turn>
+<Turn speaker="spk3" startTime="591.558" endTime="603.904">
+<Sync time="591.558"/>
+
+<Event desc="er" type="noise" extent="instantaneous"/>
+ do židovského náboženství 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ale 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ tento pokus ztroskotal, takže jsem,
+<Sync time="598.804"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="600.132"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+ se učil buďto hebrejsky číst 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="603.904" endTime="611.12">
+<Sync time="603.904"/>
+<Who nb="1"/>
+asi dvě hodiny nebo tři hodiny 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ za život a samozřejmě že jsem se to nenaučil 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Who nb="2"/>
+mhm.
+</Turn>
+<Turn speaker="spk3" startTime="611.12" endTime="632.007">
+<Sync time="611.12"/>
+rodina sama byla,
+<Sync time="613.485"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="614.767"/>
+teda rodiče 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, byla naprosto neortodoxní, vůbec jako se žádný svátky ani zvyky 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ nedodržovaly 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, avšak 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ to vědomí židovské tam bylo naprosto jasné,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="632.007" endTime="638.264">
+<Sync time="632.007"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ to byla zvláštní směsice 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ skutečně těch tří kultur,
+<Who nb="2"/>
+mhm, mhm.
+</Turn>
+<Turn speaker="spk3" startTime="638.264" endTime="670.959">
+<Sync time="638.264"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ té české, která byla z matčiny strany a která byla teda 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, smím-li to tak říct, šmrncnutá její francouzskou výchovou ve švýcarech,
+<Sync time="649.761"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="651.558"/>
+to byl ten největší kulturní vliv na mojí myšlení 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ od hudby až po výtvarné umění a literaturu, jí chodily francouzský knihy a tak dál 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ona byla člověk velice muzický a každý měsíc jela na několik dnů do prahy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="670.959" endTime="674.402">
+<Sync time="670.959"/>
+<Who nb="1"/>
+aby tady nasávala kulturu 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="674.402" endTime="690.265">
+<Sync time="674.402"/>
+řekl bych dnešníma očima až nekulturně 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, že chodila na mat- 
+<Event desc="cough" type="noise" extent="instantaneous"/>
+ pardon 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, na [matiné] i na večerní představení 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, jenom aby kompenzovala tu pustinu kulturní tech šumavských lesů,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="690.265" endTime="693.019">
+<Sync time="690.265"/>
+<Who nb="1"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ kde nebylo nic 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, později rádio.
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="693.019" endTime="708.313">
+<Sync time="693.019"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="694.277"/>
+takže ona jezdila k mamince a k tatínkovi do tých prahy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a tady nabírala a kupovala knihy a potom se vrátila 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a vypravovala mi o koncertech, o přednáškách, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="708.313" endTime="710.259">
+<Sync time="708.313"/>
+<Who nb="1"/>
+o divadle 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+<Who nb="2"/>
+mhm.
+</Turn>
+<Turn speaker="spk3" startTime="710.259" endTime="715.702">
+<Sync time="710.259"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+ později taky Evě, mojí sestře, která se narodila v roce dvacet jedna, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="715.702" endTime="718.379">
+<Sync time="715.702"/>
+<Who nb="1"/>
+to znamená o dva roky později než já.
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="718.379" endTime="775.52">
+<Sync time="718.379"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ tento vliv byl velice silný 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="721.822"/>
+druhý, velmi silný vliv 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ byla, byl ten pocit toho obklopení němci,
+<Sync time="731.164"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="732.811"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+
+<Sync time="733.748"/>
+to bylo velmi komplikované, protože na jedné straně 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ bylo to otcovo rodiště 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, bylo to místo, kde táta 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ nejdřív si najal 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ malou pilu 
+<Event desc="click" type="noise" extent="instantaneous"/>
+, později ji vlastnil 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a nás děti 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ od začátku, ačkoliv sám neměl *českví* pozadí nebo český 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="760.93"/>
+-kou minulost 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, tak bylo bez jakýchkoliv otázek, že my budem chodit 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ do velmi, velmi chudičké české jednotřídky 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, kde bylo pět oddělení, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="775.52" endTime="776.658">
+<Sync time="775.52"/>
+<Who nb="1"/>
+tam byly děti 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="776.658" endTime="817.452">
+<Sync time="776.658"/>
+od šesti do třinácti 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ let,
+<Sync time="778.984"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="780.511"/>
+ti učitelé, to byli virtuosové pedagogičtí, to, to je něco neuvěřitelnýho 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, protože do těch,
+<Sync time="789.667"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="790.76"/>
+českých menšinových škol v pohraničí 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ chodily děti i německé 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ z rodin 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne všecky do německé 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ta německá byla 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ bohatá a výstavná 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+,
+<Sync time="811.943"/>
+a to proto, aby když byl třeba otec trafikant 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, tak aby symbolicky,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="817.452" endTime="821.254">
+<Sync time="817.452"/>
+<Who nb="1"/>
+alespoň jedno dítě chodilo do české školy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, nebo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="821.254" endTime="830.895">
+<Sync time="821.254"/>
+byly to děti 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ dřevorubců, němců, ale jelikož pracovali v českých státních lesích,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="830.895" endTime="834.099">
+<Sync time="830.895"/>
+<Who nb="1"/>
+a jelikož 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ česká matice školská 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+mhm, mhm.
+</Turn>
+<Turn speaker="spk3" startTime="834.099" endTime="857.452">
+<Sync time="834.099"/>
+rozdávala na vánoce boty 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, tak ti němečtí dřevaři jedno ze svých osumnácti dětí 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ poslali do český školy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ale tyto děti nechodily pravidelně 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, takže většinou v techto jednotřídkách 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ byly děti z pošty 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, od finančních úředníků, od četníků,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="857.452" endTime="867.142">
+<Sync time="857.452"/>
+<Who nb="1"/>
+a my 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a jinak to bylo.
+<Who nb="2"/>
+ano, 
+<Event desc="unintelligible" type="noise" extent="instantaneous"/>
+, takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás.
+<Sync time="863.22"/>
+<Who nb="1"/>
+ne se mnou ve třídě ne- 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ne tam byl j-,
+<Who nb="2"/>
+nebo ty sám.
+</Turn>
+<Turn speaker="spk3" startTime="867.142" endTime="872.052">
+<Sync time="867.142"/>
+jeden nebo dva lékaři němci, jeden lékař židovský 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="872.052" endTime="880.945">
+<Sync time="872.052"/>
+<Who nb="1"/>
+jeho, celý tý, jo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ale to byla židovská rodina, jmenovali se Hartmannovi 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+vůbec jako v celý 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, v celým tom, tý rudě 
+<Event desc="unintelligible" type="noise" extent="instantaneous"/>
+, hm.
+</Turn>
+<Turn speaker="spk3" startTime="880.945" endTime="884.688">
+<Sync time="880.945"/>
+jenom jejich dcera se zachránila, je myslim v americe, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="884.688" endTime="890.616">
+<Sync time="884.688"/>
+<Who nb="1"/>
+ty byli německy orientovaní, ty neměli s náma absolutně nic společnýho 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano, takže chodili do tý třídy 
+<Event desc="unintelligible" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3" startTime="890.616" endTime="947.102">
+<Sync time="890.616"/>
+to rozdělení bylo naprosto jednoznačné, to 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, prostě některé rodiny židovské 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ byly orientovaný vzhledem k své minulosti na ten německý žive-, na tu německou kulturní oblast 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="906.963"/>
+a druzí, tak jako moje maminka a tím i my, naprosto jednoznačně, takže 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, když jsem vychodil tu obecnou školu,
+<Sync time="917.132"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="silence" type="noise" extent="instantaneous"/>
+,
+<Sync time="919.557"/>
+tak nejbližší gymnázium bylo čtyrycet kilometrů daleko v klatovech.
+<Sync time="924.018"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="925.246"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ já jsem tam měl nastoupit do prímy, udělal jsem zkoušku,
+<Sync time="929.617"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="932.102"/>
+a když jsem měl odject, tak tatínek s maminkou přišli ke mně 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ do p- k postýlce, k posteli 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a řekli, my bychom nechtěli, aby jsi šel z domova už ve dvanácti letech,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="947.102" endTime="948.18">
+<Sync time="947.102"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="948.18" endTime="966.876">
+<Sync time="948.18"/>
+co by jsi tomu řikal 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, kdybychom si n- najali nebo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ obstarali 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ vychovatelku, která by tě připravovala 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ na zkoušky a ty by jsi do gymnázia 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ chodil jenom skládat zkoušky.
+<Sync time="965.657"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3 spk1" startTime="966.876" endTime="973.142">
+<Sync time="966.876"/>
+<Who nb="1"/>
+no já jsem nevěděl, jestli to je dobře 
+<Event desc="laugh" type="noise" extent="instantaneous"/>
+ nebo špatně, prostě se to takhle udělalo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+jo.
+</Turn>
+<Turn speaker="spk3" startTime="973.142" endTime="1042.72">
+<Sync time="973.142"/>
+takže 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ primu a sekundu mě učila paní Pavla Moravcová,
+<Sync time="981.168"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="982.387"/>
+dobrej pedagog,
+<Sync time="983.982"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="985.732"/>
+která takhle už připravila nějaký děti *předem mnou*, bydlela u nás 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ a každých půl roku jsme jeli společně s tou slečnou Moravcovou do klatov 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, bydleli jsme v hotelu 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, vona na mě byla mimořádně laskavá, abych jo dobře skládal zkoušku 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+,
+<Sync time="1007.785"/>
+a tam jsme všechny předměty, musel složit zkoušku 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a to bylo prima, sekunda 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1017.635"/>
+skládal jsem je dobře, klatovský gymnázium bylo nejpřísnější gymnázium jezuitský 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ v republice 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a byl jsem tam, když vyhodili ze stejného systému 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ hrabata Schoenborny
+<Event desc="mic" type="noise" extent="instantaneous"/>
+, kteří měli zámek v kdyni 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="1036.403"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ a kde prostě protekce nebyla, voni byli hrdý na to, jaký jsou výběrový.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1042.72" endTime="1050.146">
+<Sync time="1042.72"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ vůbec ne, všecko, ne, ne, ne, vůbec ne.
+<Who nb="2"/>
+a že by se k tobě chovali nějak, protožes byl židovskej kluk 
+<Event desc="unintelligible" type="noise" extent="instantaneous"/>
+, vůbec ne, všecko.
+</Turn>
+<Turn speaker="spk3" startTime="1050.146" endTime="1077.601">
+<Sync time="1050.146"/>
+navopak 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, pan profesor Chládek na biologii, jeden z nejlepších profesorů, kerý jsem znal 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, si tam zval jiný profesory, aby si poslechli 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, jak vypadá- -jí odpovědi dítěte, kerý nechodilo do školy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ale který se muselo připravovat samo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1071.074"/>
+takže ty zkoušky jsem skládal výborně a potom jsem 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ přišel k dědečkovi a k babičce do,
+<Sync time="1076.403"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1077.601" endTime="1083.031">
+<Sync time="1077.601"/>
+<Who nb="1"/>
+prahy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a chodil jsem do tercie na jiřího náměstí.
+<Who nb="2"/>
+mhm, mhm.
+</Turn>
+<Turn speaker="spk3" startTime="1083.031" endTime="1109.259">
+<Sync time="1083.031"/>
+to byla katastrofa, protože já jsem byl zvyklý 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ se učit tak, abych věcem rozuměl, kdežto gymnázium v, na jiřího náměstí 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, stejně jako všechny jiný školy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, chtějí, abych správně odpovídal, ne abych rozuměl 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1102.852"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ takže jsem začal v-, tady rupat v jednom předmětu za druhým.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1109.259" endTime="1110.876">
+<Sync time="1109.259"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Who nb="2"/>
+no.
+</Turn>
+<Turn speaker="spk3" startTime="1110.876" endTime="1120.517">
+<Sync time="1110.876"/>
+z latiny a tak dále, protože všichni jako 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ odmítali můj přístup jako, jak to teda vlastně je, nýbrž voni chtěli 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1120.517" endTime="1128.152">
+<Sync time="1120.517"/>
+<Who nb="1"/>
+jednoznačnou papouškovanou odpověď, 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Who nb="2"/>
+já bych z toho hlediska historie, to, to je který rok, kdys přišel do tý prahy 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="er" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1128.152" endTime="1138.511">
+<Sync time="1128.152"/>
+<Who nb="1"/>
+co už se mění v ten starý že jo, to o kterou nám jde, třicet dva, třicet tři, takže to už je to období, kdy 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+ to je třicet dva, třicet tři, ano 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1138.511" endTime="1144.918">
+<Sync time="1138.511"/>
+<Who nb="1"/>
+v německu se dá tušiti fašismus a tak dále, jo, proto se na to taky ptám, že.
+<Who nb="2"/>
+ano, ano, to 
+<Event desc="um" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk3" startTime="1144.918" endTime="1148.901">
+<Sync time="1144.918"/>
+to už začínal ten fašis- 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="cough" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1148.901" endTime="1154.829">
+<Sync time="1148.901"/>
+<Who nb="1"/>
+nakonec i v pohraničních oblastech.
+<Who nb="2"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ ale v pohraničních oblastech se to vyvíjelo velice 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3" startTime="1154.829" endTime="1179.799">
+<Sync time="1154.829"/>
+zvolna, teda na tom železnorudsku 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, v železný rudě byla silná sociální demokracie, táta byl taky sociální demokrat,
+<Sync time="1163.452"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1164.827"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ a jak řikám, on tam chodil do školy s těmi německými obyvateli, von tam ze začátku 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ to soužití bylo,
+<Sync time="1175.248"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1176.529"/>
+mně se to aspoň tak jevilo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, bezproblémové.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1179.799" endTime="1180.698">
+<Sync time="1179.799"/>
+<Who nb="1"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="1180.698" endTime="1198.004">
+<Sync time="1180.698"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ od toho roku třicet tři to prudce stoupal ten německý 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ nacionalismus a agrese,
+<Sync time="1188.872"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="1190.728"/>
+takže já jsem se s tim setkal poprvé tak někdy v roce, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1198.004" endTime="1202.735">
+<Sync time="1198.004"/>
+<Who nb="1"/>
+třicet čtyři, třicet pět 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, když jsem se vracel,
+<Who nb="2"/>
+když ses vracel na prázdniny, ano.
+</Turn>
+<Turn speaker="spk3" startTime="1202.735" endTime="1231.538">
+<Sync time="1202.735"/>
+a pamatuju se přesně, jak to bylo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1205.28"/>
+kupříkladu, ne jak to bylo 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, taková epizoda 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1208.933"/>
+vokolo potoka vedla taková úplně úzká pěšina a já na tom, na tý pěšině jel na kole 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+.
+<Sync time="1216.418"/>
+najednou proti mně vystoupili dva nebo tři němečtí kluci 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, chytli mě za řidítka, tak jak jsem na nich seděl 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, dali mi pár facek a strčili do mě 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+, abych 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ zase musel ject.
+</Turn>
+<Turn speaker="spk1" startTime="1231.538" endTime="1232.227">
+<Sync time="1231.538"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="1232.227" endTime="1239.443">
+<Sync time="1232.227"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ a já přijel domů 
+<Event desc="laugh" type="noise" extent="instantaneous"/>
+ a strašně jsem 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ se litoval, řval vzteky,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1239.443" endTime="1240.91">
+<Sync time="1239.443"/>
+<Who nb="1"/>
+
+<Event desc="noise" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="1240.91" endTime="1262.886">
+<Sync time="1240.91"/>
+a řek jsem, táto, todle se mi stalo 
+<Event desc="um" type="noise" extent="instantaneous"/>
+.
+<Sync time="1244.593"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ a táta, kterej byl pro mě vždycky ideálem statečného muže 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="1251.419"/>
+mně prostě dal pár facek, až se z-, až se mi hlava zatřepala a *řekla* 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, nechoď si stěžovat 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1259.383"/>
+když ti někdo natlouk, natluč mu 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1262.886" endTime="1265.012">
+<Sync time="1262.886"/>
+<Who nb="1"/>
+ale nechoď si stěžovat.
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="1265.012" endTime="1282.22">
+<Sync time="1265.012"/>
+a vyhodil mě 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1267.168"/>
+a já jsem v tom vzteku vyběh 
+<Event desc="laugh" type="noise" extent="instantaneous"/>
+ ven 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a na můstku přes ten potok řezná 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, jsem jednoho z těch kluků nachytal 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, vrhnul jsem se na něho tak, že jsme spadli do toho potoka 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1282.22" endTime="1296.053">
+<Sync time="1282.22"/>
+<Who nb="1"/>
+ano.
+<Who nb="2"/>
+no a od tý doby mám tu filozofii 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, že prostě 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ je nesprávné uhybat, jo, že musí člověk 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="1293.927"/>
+<Who nb="1"/>
+čelit, hm.
+<Who nb="2"/>
+čelit 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3" startTime="1296.053" endTime="1301.143">
+<Sync time="1296.053"/>
+tak ale takovýdle situacích byla řada a ale 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ toto mně zůstalo 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1301.143" endTime="1307.341">
+<Sync time="1301.143"/>
+<Who nb="1"/>
+toto byla tátova výchova 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Who nb="2"/>
+a jak sis to klukovsky teda vlastně tehdy vysvětloval 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1307.341" endTime="1319.034">
+<Sync time="1307.341"/>
+<Who nb="1"/>
+tu změnu, že jo 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, tomus rozuměl nebo 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ táta ti to vysvětlil 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, on to sám pochopil nebo,
+<Who nb="2"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ ne, ne, ne, to, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk3" startTime="1319.034" endTime="1335.89">
+<Sync time="1319.034"/>
+já jsem nečetl ani mayovky ani indiánky 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, já jsem četl Medka, Koptu, Jiráska, Vrbu, Baara
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, takže já jsem se cítil opravdu až nacionálně český.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1335.89" endTime="1337.238">
+<Sync time="1335.89"/>
+<Who nb="1"/>
+ano.
+<Who nb="2"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" startTime="1337.238" endTime="1398.365">
+<Sync time="1337.238"/>
+ty legionáři pro mě něco znamenali, ta tradice a tak dále 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a z toho 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ to a, ta protiněmecká, protirakouská,
+<Sync time="1347.627"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1349.484"/>
+zaměřenost byla jednoznačná 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1353.706"/>
+já vim, že jeden z nejnešťastnějších okamžiků mýho mládí bylo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, když jsem zaslechl svého tátu řikat 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ jednomu známému,
+<Sync time="1363.347"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1364.323"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ vlastně to bylo škoda rozbít to rakousko uhersko 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, to se nemělo stát 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1370.64"/>
+to byla pro mě taková rána, jak někdo může 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ chválit 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ to rakousko uhersko, který tři sta let 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ ničilo českej národ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1383.485"/>
+jak někdo může popírat 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ správnost legionářskýho nebo masarykovskýho 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ snažení o vybudování českého st- státu 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, to mně trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1398.365" endTime="1399.832">
+<Sync time="1398.365"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1399.832" endTime="1412.856">
+<Sync time="1399.832"/>
+<Who nb="1"/>
+
+<Event desc="er" type="noise" extent="instantaneous"/>
+ a když ten táta byl teda tvůj ideál 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, ještě jsem se chtěla optat 
+<Event desc="er" type="noise" extent="instantaneous"/>
+, pod které vlastnosti nebo co myslíš, že právě do tebe potom přešlo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+
+<Event desc="um" type="noise" extent="instantaneous"/>
+.
+<Sync time="1408.125"/>
+<Who nb="1"/>
+které lidské vlastnosti to byly.
+<Who nb="2"/>
+táta 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, táta byl zcela přirozený pedagog 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk3" startTime="1412.856" endTime="1435.072">
+<Sync time="1412.856"/>
+von chápal všechny 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ klukovský sny 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, takže vod malička jsem měl psa, vod malička jsem pracoval s koňma 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, táta 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ prostě trval na práci, já jsem jako malý dítě musel už pracovat na pile 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="1432.377"/>
+i když jsem jenom srovnával prkýnka,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1435.072" endTime="1437.078">
+<Sync time="1435.072"/>
+<Who nb="1"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ tak m- musel.
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="1437.078" endTime="1534.045">
+<Sync time="1437.078"/>
+ale ne nutil 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, já jsem od malička 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ miloval koně, táta mě opravdu naučil s těmi koňmi zacházet 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, já jsem v šestnácti letech v klatovech 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ se stal jízdním, jsem vstoupil do jízdního sokola 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Sync time="1455.94"/>
+klatovy byla bašta 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ agreárnická, tam bydlel,
+<Sync time="1460.791"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1462.26"/>
+ministr Machník, ministr za agreární stranu, ministr vojenství a měl stejně starýho kluka Honzu 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+.
+<Sync time="1472.078"/>
+on 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ byl v selské jízdě, což byla pravičácká agreární organizace 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, kdežto já jsem byl v s- jízdním sokole 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, kterej byl mírně liberálnější organizací 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+, ale jezdili jsme společně na vojenských koních.
+<Sync time="1492.137"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1494.442"/>
+
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ já jsem po tátovi zdědil tu lásku ke koním, táta byl dragoun 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, za války sloužil u dragounů i pozděj,
+<Sync time="1505.46"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="1507.107"/>
+a takže jsem chodil jezdit do klatovských kasáren 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, které měly bohatou jezdeckou tradici.
+<Sync time="1515.46"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1517.96"/>
+no a jednou byly celostátní závody, mimořádně obtížný 
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a,
+<Sync time="1525.063"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1527.009"/>
+eště ten den mimo to pršelo, kdy se měly teda na zítřek konat ty závody,
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1534.045" endTime="1539.225">
+<Sync time="1534.045"/>
+<Who nb="1"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a to je rok asi tak třicet šest 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+a to je který rok, to už ti 
+<Event desc="unintelligible" type="noise" extent="instantaneous"/>
+, třicet šest.
+</Turn>
+<Turn speaker="spk3" startTime="1539.225" endTime="1607.19">
+<Sync time="1539.225"/>
+kdy já jsem přišel domů a řikal jsem 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, zejtra se jedou ty závody 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ táto,
+<Sync time="1545.722"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1547.339"/>
+mně přidělil pan plukovník osumnáctiletýho koně Edisona, já ho tady mám na fotografii 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a Honzovi Machníkovi přidělil čtyrletýho polohřebce, nádhernýho 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, já proti němu nemám šanci 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ a táta řek a kolik, co to je za závod, 
+<Sync time="1569.195"/>
+a já jsem řikal na rychlost a na body 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1571.86"/>
+šestnáct skoků poslušnostních, velmi náročných.
+<Sync time="1576.68"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="click" type="noise" extent="instantaneous"/>
+
+<Sync time="1579.315"/>
+víš táto, to je taková nespravedlnost, že já zítra nenastoupim.
+<Sync time="1586.022"/>
+a táta řek, samozřejmě Honzíčku 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, nenastup.
+<Sync time="1589.944"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1591.412"/>
+ale ty přeci závodíš proto, abys vyhrál, ne z lásky ke sportu, že jo, ne z lásky ke koním 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, nýbrž vyhrát, to je tvoje heslo.
+<Sync time="1603.088"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ tak víš co, jestli zejtra nenastoupíš, už nemusíš chodit domů.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1607.19" endTime="1610.184">
+<Sync time="1607.19"/>
+<Who nb="1"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ tim to končilo 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+.
+<Who nb="2"/>
+mhm.
+</Turn>
+<Turn speaker="spk3" startTime="1610.184" endTime="1655.514">
+<Sync time="1610.184"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ ale to všechno ve velmi přátelskym tónu,
+<Sync time="1614.226"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1615.693"/>
+tomu předcházely různé jiné pedagogické zá- -sahy, jako když mi byly tři roky, 
+<Sync time="1621.501"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1622.939"/>
+tak jsem u stolu prohlásil, já špenát nejim.
+<Sync time="1626.472"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1627.61"/>
+a tatínek řikal, to je správný 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, Honzo nikdy si nenech vnucovat věci, kerý nechceš 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1634.676"/>
+lidi nemaj právo deformovat 
+<Event desc="laugh" type="noise" extent="instantaneous"/>
+ tvojí 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ osobnost 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ a vzal takhle tu mísu s tim špenátem, překlopil mi jí na hlavu 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, takže mi ten špenát tek na ramena a řiká, ale nesmíš se divit 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, když svět bude reagovat takhle 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1655.514" endTime="1659.496">
+<Sync time="1655.514"/>
+<Who nb="1"/>
+todle 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ jsou samý věci, kerý jsou hluboko ve mně 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano.
+</Turn>
+<Turn speaker="spk3" startTime="1659.496" endTime="1664.58">
+<Sync time="1659.496"/>
+takhle táta postupoval vždycky, ale nikdy to neby-,
+<Sync time="1663.33"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3 spk1" startTime="1664.58" endTime="1674.342">
+<Sync time="1664.58"/>
+<Who nb="1"/>
+zlé nebo ponižující 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ vrátila, 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+<Who nb="2"/>
+ano, 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ já bych trošku, já bych trošku se sunula k tomu, co souvisí s tím 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ židovstvím 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ a 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ změnami, které v 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk1" startTime="1674.342" endTime="1703.204">
+<Sync time="1674.342"/>
+se děly společensky 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ to jest 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ tvůj 
+<Event desc="er" type="noise" extent="instantaneous"/>
+ otec a rodina 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ začli jistě nějakým způsobem, pak už je rok třicet sedum, třicet osum, třicet devět, pociťovat tlak 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ 
+<Event desc="um" type="noise" extent="instantaneous"/>
+, který v pohraničí nastává a možná třeba i víc a dřív než v praze židé 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+.
+<Sync time="1697.605"/>
+
+<Event desc="er" type="noise" extent="instantaneous"/>
+ jak se to projevilo, třeba na otci anebo co se, co se dálo 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, 
+</Turn>
+<Turn speaker="spk1 spk3" startTime="1703.204" endTime="1707.755">
+<Sync time="1703.204"/>
+<Who nb="1"/>
+ještě předtím, on pak šel do, do transportu nebo nešel nebo co bylo předtím.
+<Who nb="2"/>
+
+<Event desc="click" type="noise" extent="instantaneous"/>
+ 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+,
+</Turn>
+<Turn speaker="spk3" startTime="1707.755" endTime="1768.200">
+<Sync time="1707.755"/>
+dálo se to, že to napětí v pohraničí neustále 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ stoupalo,
+<Sync time="1713.264"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1714.791"/>
+táta měl české přátele, kupříkladu,
+<Sync time="1718.474"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1720.211"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1721.743"/>
+a syn pana vrchního rady Pechana onemocněl obrnou a táta 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ zjistil, že v mnichově existuje nějaký vynikající německý lékař 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+, tak tam toho kluka 
+<Event desc="noise" type="noise" extent="instantaneous"/>
+ s jeho rodiči,
+<Sync time="1736.229"/>
+
+<Event desc="mic" type="noise" extent="instantaneous"/>
+ 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+
+<Sync time="1738.235"/>
+vezl 
+<Event desc="mic" type="noise" extent="instantaneous"/>
+, 
+<Sync time="1739.398"/>
+
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+
+<Sync time="1740.492"/>
+a,
+<Sync time="1741.254"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+<Sync time="1744.457"/>
+měli jsme zaměstnance, jmenoval se 
+<Event desc="inhale" type="noise" extent="instantaneous"/>
+ Hartmann a ten 
+<Event desc="um" type="noise" extent="instantaneous"/>
+ byl nacista.
+<Sync time="1753.08"/>
+
+<Event desc="mic" type="noise" extent="instantaneous"/>
+
+<Sync time="1755.296"/>
+
+<Event desc="silence" type="noise" extent="instantaneous"/>
+
+</Turn>
+</Section>
+</Episode>
+</Trans>
