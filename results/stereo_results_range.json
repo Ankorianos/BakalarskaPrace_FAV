@@ -1,0 +1,390 @@
+{
+  "metadata": {
+    "mode": "STEREO_SPLIT",
+    "start_seconds": 180,
+    "end_seconds": 360,
+    "has_custom_range": true,
+    "model": "turbo",
+    "dedup_time_tolerance": 1.0,
+    "chunk_seconds": 25,
+    "chunk_overlap_seconds": 2.0,
+    "adjacent_merge_gap_seconds": 1.2
+  },
+  "segments": [
+    {
+      "id": "asr_00001",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 180.0,
+      "end": 187.24,
+      "text": "Šumavy. Jmenoval se Edmund Adler. Po celý život to byl můj vzor",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00002",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 180.0,
+      "end": 184.0,
+      "text": "Jmenuval se Edmund Adler",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00003",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 184.001,
+      "end": 187.0,
+      "text": "Po celý život to byl můj vzor",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00004",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 187.001,
+      "end": 192.0,
+      "text": "To byl prostě ten člověk, který nejvíc ovlivnil můj život",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00005",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 192.001,
+      "end": 211.0,
+      "text": "A on v té době zpravoval velkostatek který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00006",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 193.26,
+      "end": 201.44,
+      "text": "A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00007",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 201.441,
+      "end": 211.0,
+      "text": "Což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00008",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 212.0,
+      "end": 223.0,
+      "text": "Byl to vzorný statek, který dneska, jako mnoho jiných objektů na Šumavě, prostě zmizel Neexistuje",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00009",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 212.0,
+      "end": 221.0,
+      "text": "Byl to vzorný statek, který dneska, jako mnoho jiných objektů na Šumavě, prostě zmizel",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00010",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 222.0,
+      "end": 232.0,
+      "text": "Tam táta prováděl meliorizace modernizoval to, dovezl do Švýcarských chov",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00011",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 224.0,
+      "end": 232.1,
+      "text": "Tam táta prováděl meliorizace modernizoval to, dovezl do švýcarských chov",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00012",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 232.001,
+      "end": 240.0,
+      "text": "No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00013",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 240.001,
+      "end": 247.0,
+      "text": "Můžu se veptat, mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk?",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00014",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 241.34,
+      "end": 242.76,
+      "text": "Byla to úplná samota",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00015",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 242.761,
+      "end": 246.9,
+      "text": "Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk?",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00016",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 246.901,
+      "end": 251.0,
+      "text": "To bylo velmi zajímavé. Moje maminka je",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00017",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 251.001,
+      "end": 255.0,
+      "text": "Ježenka je modrooká blondína z Pelařimová",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00018",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 251.001,
+      "end": 255.0,
+      "text": "Komenka je modrooká blondína z Pelařimová",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00019",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 256.0,
+      "end": 266.0,
+      "text": "Židovka? Její tatínek byl Mořic Klein a měl obchod koloniálem v Pražimově",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00020",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 256.0,
+      "end": 266.0,
+      "text": "Židovka? její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniální v Pelařimově",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00021",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 266.001,
+      "end": 290.2,
+      "text": "Babička je z Rokycan, jmenovala se původně Ledererová a jim se narodila ta dcera Ela, Elinka, a ta chodila do školy v Pelřimově a byla to naprosto česky orientovaná rodina, která neuměla pořádně německy",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00022",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 266.001,
+      "end": 281.0,
+      "text": "Babička je z Rokycan, jmenovala se původně Lederová a jim se narodila ta dcera Ela, Elinka",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00023",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 281.001,
+      "end": 290.0,
+      "text": "A ta chodila do školy v Perlřimově a byla to naprosto česky orientovaná rodina která neuměla podle německy",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00024",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 290.001,
+      "end": 295.0,
+      "text": "Dědeček a babička rozuměli německy, ale neobládali to",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00025",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 291.2,
+      "end": 295.0,
+      "text": "Dědeček a babička rozuměli německy, ale neovládali to",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00026",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 295.001,
+      "end": 312.68,
+      "text": "Vládali to maminka, když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca, do penzionátu a tam se naučila dobře francouzsky a dobře německy, což mělo velký vliv na moji výchovu",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00027",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 295.001,
+      "end": 305.0,
+      "text": "Maminka, když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca, do penzionátu",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00028",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 305.001,
+      "end": 313.0,
+      "text": "Tam se naučila dobře francouzsky a dobře německy, což mělo velký vliv na moji výchovu",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00029",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 313.001,
+      "end": 337.6,
+      "text": "A zcela jinak to bylo odcoho strany Otec pochází s vesničkým jménem Zůří na Šumavě to je nedaleko toho velkostatku, v blízkosti Hartmanic což je starý soudní okres na Šumavě, kde byl židovský hřbitov",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00030",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 314.02,
+      "end": 319.2,
+      "text": "A zcela jinak to bylo odcovo strany",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00031",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 319.201,
+      "end": 337.5,
+      "text": "Otcovo strany. Otec pochází s vesničkým jménem Zhůří na Šumavě to je nedaleko toho velkostatku, v blízkosti Hartmanic což je starý soudní okres na Šumavě, kde byl židovský hřbitov",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00032",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 337.501,
+      "end": 343.0,
+      "text": "mimochodem řečeno, který Němci úplně vyvrátili, tam není nic",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00033",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 345.0,
+      "end": 359.0,
+      "text": "Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hůtích",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00034",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 345.0,
+      "end": 359.0,
+      "text": "Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských útích",
+      "is_overlap": false
+    }
+  ],
+  "full_transcription": "Šumavy. Jmenoval se Edmund Adler. Po celý život to byl můj vzor Jmenuval se Edmund Adler Po celý život to byl můj vzor To byl prostě ten člověk, který nejvíc ovlivnil můj život A on v té době zpravoval velkostatek který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst Což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor Byl to vzorný statek, který dneska, jako mnoho jiných objektů na Šumavě, prostě zmizel Neexistuje Byl to vzorný statek, který dneska, jako mnoho jiných objektů na Šumavě, prostě zmizel Tam táta prováděl meliorizace modernizoval to, dovezl do Švýcarských chov Tam táta prováděl meliorizace modernizoval to, dovezl do švýcarských chov No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let Můžu se veptat, mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk? Byla to úplná samota Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk? To bylo velmi zajímavé. Moje maminka je Ježenka je modrooká blondína z Pelařimová Komenka je modrooká blondína z Pelařimová Židovka? Její tatínek byl Mořic Klein a měl obchod koloniálem v Pražimově Židovka? její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniální v Pelařimově Babička je z Rokycan, jmenovala se původně Ledererová a jim se narodila ta dcera Ela, Elinka, a ta chodila do školy v Pelřimově a byla to naprosto česky orientovaná rodina, která neuměla pořádně německy Babička je z Rokycan, jmenovala se původně Lederová a jim se narodila ta dcera Ela, Elinka A ta chodila do školy v Perlřimově a byla to naprosto česky orientovaná rodina která neuměla podle německy Dědeček a babička rozuměli německy, ale neobládali to Dědeček a babička rozuměli německy, ale neovládali to Vládali to maminka, když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca, do penzionátu a tam se naučila dobře francouzsky a dobře německy, což mělo velký vliv na moji výchovu Maminka, když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca, do penzionátu Tam se naučila dobře francouzsky a dobře německy, což mělo velký vliv na moji výchovu A zcela jinak to bylo odcoho strany Otec pochází s vesničkým jménem Zůří na Šumavě to je nedaleko toho velkostatku, v blízkosti Hartmanic což je starý soudní okres na Šumavě, kde byl židovský hřbitov A zcela jinak to bylo odcovo strany Otcovo strany. Otec pochází s vesničkým jménem Zhůří na Šumavě to je nedaleko toho velkostatku, v blízkosti Hartmanic což je starý soudní okres na Šumavě, kde byl židovský hřbitov mimochodem řečeno, který Němci úplně vyvrátili, tam není nic Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hůtích Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských útích"
+}

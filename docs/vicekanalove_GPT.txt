@@ -1,0 +1,97 @@
+Pipeline pro rozpoznávání vícekanálové řeči
+==========================================
+
+1) Pipeline: Signálová úprava → separace → ASR - TOHLE DĚLÁME
+-----------------------------------------------
+Cíl: zlepšit rozpoznávání tím, že nejprve oddělíme jednotlivé zdroje.
+
+Kroky:
+1. Předzpracování signálu
+   - Šumová redukce: Wiener filter, spectral subtraction
+   - Dereverberace: WPE
+   - Python: librosa, nussl
+
+2. Separace hlasů
+   - Moderní deep learning modely: Conv-TasNet, SepFormer, DPRNN
+   - Alternativa: Beamforming (lineární mikrofonní pole)
+   - Python: asteroid, nussl, pyroomacoustics
+
+3. Rozpoznání řeči (ASR)
+   - Každý separovaný signál → ASR model
+   - Modely: Whisper, Wav2Vec2, SpeechBrain
+   - Python: transformers, torchaudio, openai/whisper
+
+4. Diarizace / přiřazení mluvčích
+   - Pyannote.audio, SpeechBrain diarization, Kaldi
+   - Pokud separace provedla dobře, stačí přiřadit kanál → mluvčí
+
+Výhody:
+- Robustní při překryvu hlasů
+- Flexibilní pro různé počty kanálů
+
+Reference / odkazy:
+- https://asteroid-team.github.io/
+- https://nussl.github.io/
+- https://github.com/pyannote/pyannote-audio
+
+
+2) Pipeline: Multichannel end-to-end ASR - MOŽNÁ KDYBY ZBYL ČAS
+-----------------------------------------
+Cíl: model přijímá vícekanálový vstup přímo a učí se extrahovat řeč bez explicitní separace.
+
+Kroky:
+1. Vícekanálový vstup
+   - Přímé zpracování stereo/multichannel audia
+   - Model se učí prostorové vlastnosti mikrofonů
+
+2. End-to-end rozpoznávání
+   - Používá RNN, Conformer, Transformer architektury s attention mechanismy pro vícekánálové signály
+
+3. Postprocessing / diarizace
+   - Model může rovnou produkovat text, ale stále se doporučuje diarizace pro více mluvčích
+
+Python / nástroje:
+- ESPnet – multichannel ASR podporuje různé architektury
+- SpeechBrain – multichannel a speaker-aware ASR
+
+Výhody:
+- Menší počet kroků než pipeline s separací
+- Model se učí přímo na multi-speaker scénářích
+
+Reference / odkazy:
+- https://github.com/espnet/espnet
+- https://speechbrain.github.io/
+
+
+3) Pipeline: Klasický ASR + postprocessing / diarization - NĚDĚLÁME
+---------------------------------------------------------
+Cíl: jednoduchá implementace, vhodné pokud není kritická přesnost separace.
+
+Kroky:
+1. Vícekanálové audio → mix / výběr kanálu
+   - Např. vybrat kanál s nejsilnějším hlasem
+   - Alternativně kombinace kanálů do jednoho signálu
+
+2. ASR
+   - Standardní modely: Whisper, Wav2Vec2, DeepSpeech
+   - Produkují text pro celý mix
+
+3. Speaker diarization / postprocessing
+   - Segmentace podle mluvčích: pyannote.audio, kaldi diarization
+   - Korekce textu, normalizace, časové zarovnání
+
+Výhody:
+- Snadná implementace, rychlý start
+- Funguje i na starších / méně výkonných systémech
+
+Reference / odkazy:
+- https://github.com/pyannote/pyannote-audio
+- https://github.com/openai/whisper
+- http://kaldi-asr.org/
+
+
+Shrnutí doporučení
+------------------
+- Pro nejlepší výsledky při více mluvčích a překryvu: Pipeline 1 (separace → ASR → diarizace).
+- Pro moderní research a end-to-end přístup: Pipeline 2 (multichannel ASR).
+- Pro rychlý prototyp nebo jednodušší data: Pipeline 3 (klasický ASR + diarizace).
