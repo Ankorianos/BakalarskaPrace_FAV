@@ -82,3 +82,15 @@ Analyzujte možnosti využití stereo nebo vícero kanálů v systémech rozpozn
 Vyberte vhodné postupy zpracování stereo signálu pro dialogové nahrávky.
 Implementujte vybrané metody.
 Vyhodnoťte výsledky rozpoznávání pro zvolené přístupy a diskutujte jejich přínosy a možná vylepšení.
+
+
+
+
+
+Typická sekvence:
+
+git add .
+git commit -m "mono diarization + speaker-level eval"
+git push -u origin feature/mono_dia_speakerlevel
+merge do main
+volitelně smazat feature branch
