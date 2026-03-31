@@ -1,4 +1,4 @@
-# MONO větev: co dál bez rozbití baseline
+# MONO větev (srovnávací): co dál bez rozbití baseline
 
 ## 1) Krátká odpověď na otázku
 
@@ -11,6 +11,11 @@ Takže:
 - **NE**: není to nejlepší hlavní směr, pokud je primární cíl stereo separace.
 
 Prakticky je nejlepší mít mono diarizaci jako „vedlejší analytickou větev“, ne jako náhradu hlavního cíle.
+
+### Ukotvení vůči zadání BP
+
+Hlavní směr BP je využití stereo/multikanálové informace pro zlepšení ASR.
+MONO diarizace je zde pouze kontrolní a srovnávací experiment, aby bylo možné férově porovnat přínos stereo větve.
 
 ---
 
@@ -71,6 +76,11 @@ Ve výsledcích to popsat jako:
 - stereo+separace speaker-aware WER (hlavní směr).
 
 Tím je práce logicky čistá.
+
+Praktické pravidlo rozsahu:
+
+- mono větev držet „minimal viable“ (pilot + vyhodnocení),
+- nerozšiřovat ji na úkor stereo separační větve.
 
 ---
 
@@ -180,18 +190,19 @@ Tohle je čistý, obhajitelný a praktický postup.
 
 ## 9) Návrh minimálního plánu na příští sprint
 
-- [ ] vytvořit kostru `scripts/mono_diarization.py`
+- [x] vytvořit kostru `scripts/mono_diarization.py`
 - [ ] vytvořit kostru `scripts/evaluate_speaker_wer.py`
 - [ ] definovat jednotný speaker mapping (`interviewer`, `interviewee`, `unknown`)
 - [ ] spustit pilotní mono diarization experiment
 - [ ] vyhodnotit per-speaker WER
-- [ ] sepsat krátké shrnutí do dokumentace
+- [x] sepsat krátké shrnutí do dokumentace
+- [ ] po pilotu MONO větev uzavřít jako srovnávací baseline a vrátit fokus na STEREO
 
 ---
 
 ## 10) Shrnutí jednou větou
 
-Mono diarizace smysl má, ale jako doplňková experimentální větev; hlavní cíl zůstává stereo separace, kde bude speaker-level evaluace nejpřesvědčivější.
+Mono diarizace smysl má, ale jen jako doplňková srovnávací větev; hlavní cíl práce zůstává stereo separace, kde má být hlavní implementační i evaluační důraz.
 
 ---
 
@@ -204,12 +215,10 @@ Mono větev je referenční základ a kontrolní experiment.
 
 ### 11.2 TODO – MONO větev
 
-- [ ] Zamknout finální MONO baseline konfiguraci (`asr_mono_whisper.py`) pro porovnání.
-- [ ] Zamknout finální MONO fast variaci (`asr_mono_fastwhisper.py`) pro porovnání backendu/modelu.
-- [ ] Vygenerovat finální MONO výstupy na stejném časovém rozsahu jako STEREO (pro férovost).
-- [ ] Uložit WER strict/robust pro obě MONO varianty do jedné tabulky.
-- [ ] Uložit i runtime a explicitně uvést, že Faster-Whisper je rychlejší při podobné WER.
-- [ ] Přidat krátké kvalitativní ukázky typických MONO chyb (2–3 příklady).
+- [x] Vygenerovat finální MONO výstup na stejném časovém rozsahu jako STEREO (pro férovost).
+- [x] Uložit WER strict/robust pro referenční MONO variantu do tabulky.
+- [x] Uložit i runtime pro referenční MONO variantu.
+- [x] Přidat krátké kvalitativní ukázky typických MONO chyb (2–3 příklady).
 
 ### 11.3 TODO – MONO speaker-level (experiment)
 
@@ -218,10 +227,20 @@ Mono větev je referenční základ a kontrolní experiment.
 - [ ] Definovat mapování labelů (`interviewer`, `interviewee`, `unknown`) a držet ho konzistentně.
 - [ ] Spočítat pilotní speaker-level WER pro MONO (aspoň 1 rozsah).
 - [ ] Zapsat limity MONO diarizace (překryv, záměna mluvčího, fragmentace).
+- [ ] Uložit per-speaker metriky minimálně: WER, počet slov, počet segmentů, hlavní chyby (sub/ins/del).
 
 ### 11.4 TODO – Připrava pro finální srovnání
 
-- [ ] Připravit jednotný CSV/Markdown souhrn výsledků (mono baseline, mono fast, stereo baseline, stereo separace).
+- [ ] Připravit jednotný CSV/Markdown souhrn výsledků pro 3 hlavní varianty: mono reference, stereo baseline (bez separace), stereo + separace.
 - [ ] U každé varianty evidovat: model, backend, rozsah, runtime, WER strict, WER robust.
-- [ ] Doplnit sloupec speaker-level metriky (kde dostupné).
+- [ ] U speaker-aware variant doplnit: WER per speaker + agregovaný speaker-aware WER.
+- [ ] U stereo + separace evidovat navíc metadata separace (metoda/model, klíčové parametry, verze skriptu).
+- [ ] Přidat error breakdown (top sub/ins/del) pro stereo baseline vs stereo + separace.
 - [ ] Připravit krátkou textovou interpretaci „co zlepšil model“ vs „co zlepšila prostorová informace“.
+
+### 11.5 TODO – Eval protokol a kritérium úspěchu (speaker-aware)
+
+- [ ] Zamknout eval protokol pro všechny varianty: stejné GT, stejné časové okno, stejné normalizace textu, stejný evaluator.
+- [ ] Definovat hlavní cíl vyhodnocení: speaker-aware zlepšení stereo + separace proti stereo baseline.
+- [ ] Definovat sekundární cíl: stereo + separace má být minimálně srovnatelné nebo lepší než MONO reference ve speaker-aware metrice.
+- [ ] Definovat „done“ kritérium do BP: kompletní tabulka + interpretace + 2–3 ukázky typických chyb před/po separaci.

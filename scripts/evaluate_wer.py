@@ -51,6 +51,9 @@ NUMBER_SUFFIXES_ASCII = (
 )
 
 MAX_WINDOW_OVERFLOW_SECONDS = 0.6
+OFFSET_MAX_TRIM_WORDS = 6
+OFFSET_MIN_IMPROVEMENT = 0.01
+OFFSET_PREFIX_WINDOW = 12
 
 COLLOQUIAL_TOKEN_MAP = {
     "jmenuju": "jmenuji",
@@ -181,6 +184,79 @@ def normalize_text_robust(text):
     return " ".join(tokens).strip()
 
 
+def prefix_match_count(left_tokens, right_tokens, window=OFFSET_PREFIX_WINDOW):
+    compare_len = min(window, len(left_tokens), len(right_tokens))
+    if compare_len <= 0:
+        return 0
+    return sum(1 for idx in range(compare_len) if left_tokens[idx] == right_tokens[idx])
+
+
+def apply_prefix_trim(text, trim_count):
+    tokens = (text or "").split()
+    if trim_count <= 0:
+        return " ".join(tokens).strip()
+    return " ".join(tokens[trim_count:]).strip()
+
+
+def find_best_offset_compensation(norm_ref_robust, norm_hyp_robust):
+    ref_tokens = norm_ref_robust.split()
+    hyp_tokens = norm_hyp_robust.split()
+
+    baseline = build_error_diagnostics(norm_ref_robust, norm_hyp_robust)
+    base_wer = baseline["wer"]
+    base_prefix_match = prefix_match_count(ref_tokens, hyp_tokens)
+
+    best = {
+        "ref_trim": 0,
+        "hyp_trim": 0,
+        "wer": base_wer,
+        "prefix_match": base_prefix_match,
+    }
+
+    for trim in range(1, OFFSET_MAX_TRIM_WORDS + 1):
+        candidates = [(trim, 0), (0, trim)]
+
+        for ref_trim, hyp_trim in candidates:
+            candidate_ref = apply_prefix_trim(norm_ref_robust, ref_trim)
+            candidate_hyp = apply_prefix_trim(norm_hyp_robust, hyp_trim)
+
+            if not candidate_ref or not candidate_hyp:
+                continue
+
+            candidate_diag = build_error_diagnostics(candidate_ref, candidate_hyp)
+            candidate_wer = candidate_diag["wer"]
+            candidate_prefix_match = prefix_match_count(candidate_ref.split(), candidate_hyp.split())
+
+            better_wer = candidate_wer < best["wer"]
+            same_wer_better_prefix = abs(candidate_wer - best["wer"]) < 1e-12 and candidate_prefix_match > best["prefix_match"]
+
+            if better_wer or same_wer_better_prefix:
+                best = {
+                    "ref_trim": ref_trim,
+                    "hyp_trim": hyp_trim,
+                    "wer": candidate_wer,
+                    "prefix_match": candidate_prefix_match,
+                }
+
+    improvement = base_wer - best["wer"]
+    use_compensation = (
+        (best["ref_trim"] > 0 or best["hyp_trim"] > 0)
+        and improvement >= OFFSET_MIN_IMPROVEMENT
+        and best["prefix_match"] >= base_prefix_match
+    )
+
+    return {
+        "use": use_compensation,
+        "base_wer": base_wer,
+        "comp_wer": best["wer"],
+        "ref_trim": best["ref_trim"],
+        "hyp_trim": best["hyp_trim"],
+        "improvement": improvement,
+        "base_prefix_match": base_prefix_match,
+        "comp_prefix_match": best["prefix_match"],
+    }
+
+
 def build_error_diagnostics(reference_text, hypothesis_text):
     output = process_words(reference_text, hypothesis_text)
     ref_words = reference_text.split()
@@ -217,18 +293,125 @@ def build_error_diagnostics(reference_text, hypothesis_text):
     }
 
 
-def write_diagnostics_report(path, diagnostics, source_json=None):
+def build_qualitative_examples(diagnostics, max_examples=3):
+    examples = []
+
+    for (left, right), count in diagnostics.get("top_substitutions", []):
+        if left and right:
+            examples.append(f"SUB ({count}x): '{left}' -> '{right}'")
+        if len(examples) >= max_examples:
+            return examples
+
+    for token, count in diagnostics.get("top_deletions", []):
+        if token:
+            examples.append(f"DEL ({count}x): '{token}'")
+        if len(examples) >= max_examples:
+            return examples
+
+    for token, count in diagnostics.get("top_insertions", []):
+        if token:
+            examples.append(f"INS ({count}x): '{token}'")
+        if len(examples) >= max_examples:
+            return examples
+
+    return examples
+
+
+def write_diagnostics_report(
+    path,
+    diagnostics,
+    source_json=None,
+    metadata=None,
+    strict_wer=None,
+    robust_wer=None,
+    reference_word_count=None,
+    hypothesis_word_count=None,
+    warnings=None,
+    reference_head=None,
+    hypothesis_head=None,
+    reference_tail=None,
+    hypothesis_tail=None,
+    strict_comp_wer=None,
+    robust_comp_wer=None,
+    offset_info=None,
+):
     lines = []
-    lines.append("WER Diagnostics (ROBUST)")
+    lines.append("ASR Evaluation Report")
     lines.append("=" * 80)
+
     if source_json:
         lines.append(f"Source JSON: {source_json}")
-    if source_json:
-        lines.append("-" * 80)
-    lines.append(f"WER: {diagnostics['wer'] * 100:.2f} %")
+    if isinstance(metadata, dict) and metadata:
+        lines.append("Mode: {mode} | Model: {model} | Backend: {backend}".format(
+            mode=metadata.get("mode", "unknown"),
+            model=metadata.get("model", "unknown"),
+            backend=metadata.get("backend", "unknown"),
+        ))
+        lines.append("Range: start={start} | end={end} | chunk={chunk}s | overlap={overlap}s".format(
+            start=metadata.get("start_seconds", "None"),
+            end=metadata.get("end_seconds", "None"),
+            chunk=metadata.get("chunk_seconds", "None"),
+            overlap=metadata.get("chunk_overlap_seconds", "None"),
+        ))
+        lines.append("Runtime: {runtime}s | Run started: {started} | Run finished: {finished}".format(
+            runtime=metadata.get("runtime_seconds", "n/a"),
+            started=metadata.get("run_started_utc", "n/a"),
+            finished=metadata.get("run_finished_utc", "n/a"),
+        ))
+
+    lines.append("-" * 80)
+
+    if strict_wer is not None:
+        lines.append(f"WER (STRICT): {strict_wer * 100:.2f} %")
+    if robust_wer is not None:
+        lines.append(f"WER (ROBUST): {robust_wer * 100:.2f} %")
+    if strict_comp_wer is not None:
+        lines.append(f"WER (STRICT, OFFSET-COMP): {strict_comp_wer * 100:.2f} %")
+    if robust_comp_wer is not None:
+        lines.append(f"WER (ROBUST, OFFSET-COMP): {robust_comp_wer * 100:.2f} %")
+
+    if isinstance(offset_info, dict):
+        lines.append(
+            "Offset compensation: use={use} | ref_trim={ref_trim} | hyp_trim={hyp_trim} | improvement={impr:.2f} p.b.".format(
+                use=offset_info.get("use"),
+                ref_trim=offset_info.get("ref_trim"),
+                hyp_trim=offset_info.get("hyp_trim"),
+                impr=offset_info.get("improvement", 0.0) * 100,
+            )
+        )
+
+    if reference_word_count is not None and hypothesis_word_count is not None:
+        lines.append(f"Word counts: REF={reference_word_count} | HYP={hypothesis_word_count}")
+
     lines.append(
         f"HITS: {diagnostics['hits']} | SUB: {diagnostics['substitutions']} | INS: {diagnostics['insertions']} | DEL: {diagnostics['deletions']}"
     )
+
+    if warnings:
+        lines.append("")
+        lines.append("Warnings:")
+        for warning in warnings:
+            lines.append(f"- {warning}")
+
+    lines.append("")
+    lines.append("Kvalitativní ukázky (2-3):")
+    examples = build_qualitative_examples(diagnostics, max_examples=3)
+    if examples:
+        for idx, item in enumerate(examples, start=1):
+            lines.append(f"{idx}. {item}")
+    else:
+        lines.append("(Nenalezeny žádné ukázky)")
+
+    lines.append("")
+    lines.append("Začátek srovnání:")
+    lines.append(f"REF: {reference_head or ''}")
+    lines.append(f"HYP: {hypothesis_head or ''}")
+
+    lines.append("")
+    lines.append("Konec srovnání:")
+    lines.append(f"REF: {reference_tail or ''}")
+    lines.append(f"HYP: {hypothesis_tail or ''}")
+
     lines.append("")
     lines.append("Top substitutions:")
     for (left, right), count in diagnostics["top_substitutions"]:
@@ -249,7 +432,7 @@ def write_diagnostics_report(path, diagnostics, source_json=None):
 def diagnostics_output_path(hyp_file):
     stem = Path(hyp_file).stem
     safe_stem = re.sub(r"[^\w.-]+", "_", stem).strip("._") or "hypothesis"
-    return f"results/wer_diagnostics_{safe_stem}.txt"
+    return f"results/eval_report_{safe_stem}.txt"
 
 
 def resolve_eval_window(metadata):
@@ -466,31 +649,18 @@ def evaluate(hyp_file):
     
     print(f"INFO: Počet slov v Reference: {len(ref_words)}")
     print(f"INFO: Počet slov v Hypotéze: {len(hyp_words)}")
-    
-    if len(hyp_words) > len(ref_words) * 1.5:
-        print("!!! VAROVÁNÍ: Hypotéza má výrazně více slov! (Možná duplicity ze sterea?)")
-    elif len(hyp_words) < len(ref_words) * 0.5:
-        print("!!! VAROVÁNÍ: Hypotéza má výrazně méně slov! (Možná Whisper vynechal části?)")
 
-    # 5. Uložení vyčištěných textů pro manuální kontrolu
-    with open("results/ref_clean.txt", "w", encoding="utf-8") as file_handle:
-        file_handle.write(norm_ref_robust)
-    with open("results/hyp_clean.txt", "w", encoding="utf-8") as file_handle:
-        file_handle.write(norm_hyp_robust)
-    with open("results/ref_clean_strict.txt", "w", encoding="utf-8") as file_handle:
-        file_handle.write(norm_ref_strict)
-    with open("results/hyp_clean_strict.txt", "w", encoding="utf-8") as file_handle:
-        file_handle.write(norm_hyp_strict)
-    print("DEBUG: Vyčištěné texty uloženy do results/*clean*.txt")
+    warnings = []
+    if len(hyp_words) > len(ref_words) * 1.5:
+        warning = "Hypotéza má výrazně více slov! (Možná duplicity ze sterea?)"
+        warnings.append(warning)
+        print(f"!!! VAROVÁNÍ: {warning}")
+    elif len(hyp_words) < len(ref_words) * 0.5:
+        warning = "Hypotéza má výrazně méně slov! (Možná Whisper vynechal části?)"
+        warnings.append(warning)
+        print(f"!!! VAROVÁNÍ: {warning}")
 
     diagnostics = build_error_diagnostics(norm_ref_robust, norm_hyp_robust)
-    diagnostics_path = diagnostics_output_path(hyp_file)
-    write_diagnostics_report(
-        diagnostics_path,
-        diagnostics,
-        source_json=hyp_file,
-    )
-    print(f"DEBUG: Diagnostický report uložen do {diagnostics_path}")
 
     # 6. Výpočet WER
     if not norm_ref_strict:
@@ -500,10 +670,52 @@ def evaluate(hyp_file):
     error_rate_strict = wer(norm_ref_strict, norm_hyp_strict)
     error_rate_robust = diagnostics["wer"]
 
+    offset_info = find_best_offset_compensation(norm_ref_robust, norm_hyp_robust)
+    strict_comp = None
+    robust_comp = None
+    if offset_info["use"]:
+        ref_trim = offset_info["ref_trim"]
+        hyp_trim = offset_info["hyp_trim"]
+
+        norm_ref_strict_comp = apply_prefix_trim(norm_ref_strict, ref_trim)
+        norm_hyp_strict_comp = apply_prefix_trim(norm_hyp_strict, hyp_trim)
+        norm_ref_robust_comp = apply_prefix_trim(norm_ref_robust, ref_trim)
+        norm_hyp_robust_comp = apply_prefix_trim(norm_hyp_robust, hyp_trim)
+
+        if norm_ref_strict_comp and norm_hyp_strict_comp:
+            strict_comp = wer(norm_ref_strict_comp, norm_hyp_strict_comp)
+        if norm_ref_robust_comp and norm_hyp_robust_comp:
+            robust_comp = build_error_diagnostics(norm_ref_robust_comp, norm_hyp_robust_comp)["wer"]
+
     print("-" * 80)
     print(f"WER (STRICT): {error_rate_strict * 100:.2f} %")
     print(f"WER (ROBUST): {error_rate_robust * 100:.2f} %")
+    if strict_comp is not None:
+        print(f"WER (STRICT, OFFSET-COMP): {strict_comp * 100:.2f} %")
+    if robust_comp is not None:
+        print(f"WER (ROBUST, OFFSET-COMP): {robust_comp * 100:.2f} %")
     print("-" * 80)
+
+    diagnostics_path = diagnostics_output_path(hyp_file)
+    write_diagnostics_report(
+        diagnostics_path,
+        diagnostics,
+        source_json=hyp_file,
+        metadata=metadata,
+        strict_wer=error_rate_strict,
+        robust_wer=error_rate_robust,
+        reference_word_count=len(ref_words),
+        hypothesis_word_count=len(hyp_words),
+        warnings=warnings,
+        reference_head=" ".join(ref_words[:15]) + "...",
+        hypothesis_head=" ".join(hyp_words[:15]) + "...",
+        reference_tail="..." + " ".join(ref_words[-15:]),
+        hypothesis_tail="..." + " ".join(hyp_words[-15:]),
+        strict_comp_wer=strict_comp,
+        robust_comp_wer=robust_comp,
+        offset_info=offset_info,
+    )
+    print(f"DEBUG: Kompletní report uložen do {diagnostics_path}")
 
     # Ukázka srovnání začátku a konce
     print("\nZAČÁTEK SROVNÁNÍ:")

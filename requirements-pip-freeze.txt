@@ -12,6 +12,7 @@ faster-whisper==1.2.1
 filelock==3.25.2
 flatbuffers==25.12.19
 fsspec==2026.2.0
+future @ file:///home/conda/feedstock_root/build_artifacts/future_1738926421307/work
 h11==0.16.0
 hf-xet==1.4.2
 httpcore==1.0.9
@@ -36,6 +37,7 @@ packaging==26.0
 pandas @ file:///D:/bld/pandas_1764614482805/work
 protobuf==7.34.1
 Pygments==2.19.2
+pyloudnorm @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pyloudnorm_1771621759/work
 pyreadline3==3.5.4
 python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
 pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1742920838005/work
@@ -44,7 +46,7 @@ RapidFuzz==3.14.3
 regex==2026.2.28
 requests==2.32.5
 rich==14.3.3
-scipy==1.15.3
+scipy @ file:///C:/bld/scipy-split_1739790833536/work/dist/scipy-1.15.2-cp310-cp310-win_amd64.whl#sha256=4748853a0c723cda1fa2bdead847ba7c2443bde9cec3436e3e7243cfa54b55ff
 shellingham==1.5.4
 six @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_six_1753199211/work
 sympy==1.14.0

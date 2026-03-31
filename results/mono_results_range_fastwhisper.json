@@ -1,207 +1,193 @@
 {
   "metadata": {
     "mode": "MONO_FASTWHISPER",
-    "start_seconds": 180,
-    "end_seconds": 360,
+    "start_seconds": 360,
+    "end_seconds": 540,
     "has_custom_range": true,
     "model": "turbo",
     "backend": "faster-whisper",
     "device": "cpu",
     "compute_type": "int8",
     "beam_size": 1,
-    "chunk_seconds": 90,
+    "chunk_seconds": 25,
     "chunk_overlap_seconds": 2.0,
     "language": "cs",
-    "language_probability": 1
+    "language_probability": 1,
+    "runtime_seconds": 77.76,
+    "run_started_utc": "2026-03-30T21:44:33.469760+00:00",
+    "run_finished_utc": "2026-03-30T21:45:51.233887+00:00"
   },
   "segments": [
     {
       "id": "asr_00001",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 180.0,
-      "end": 187.24,
-      "text": "Šumavy. Jmenoval se Edmund Adler. Po celý život to byl můj vzor",
+      "start": 360.0,
+      "end": 361.0,
+      "text": "Nebo v lese",
       "is_overlap": false
     },
     {
       "id": "asr_00002",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 187.6,
-      "end": 191.82,
-      "text": "To byl prostě ten člověk, který nejvíc ovlivnil můj život",
+      "start": 363.72,
+      "end": 379.0,
+      "text": "Dědeček byl, jmenoval se Salomon Hadler, byl to krásnej statnej pán a jeho manželka se jmenovala Rosa Kornfjerová a ty neuměli česky ani slovo",
       "is_overlap": false
     },
     {
       "id": "asr_00003",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 193.26,
-      "end": 209.74,
-      "text": "A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov",
+      "start": 381.08,
+      "end": 385.0,
+      "text": "Táta sice měl českou maturitu, ale ta česká",
       "is_overlap": false
     },
     {
       "id": "asr_00004",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 210.0,
-      "end": 220.76,
-      "text": "do Bavor. Byl to vzorný statek, který dneska, jako mnoho jiných objektů na Šumavě, prostě zmizel",
+      "start": 385.001,
+      "end": 400.0,
+      "text": "ale ta čeština byla taková typicky sudecká, to znamená prakticky, že místo P se říká B, místo D se říká T, takže on třeba říkal basic, anebo anekdode, místo anekdote",
       "is_overlap": false
     },
     {
       "id": "asr_00005",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 220.761,
-      "end": 232.12,
-      "text": "Neexistuje. Tam táta prováděl meliorizace, modernizoval to, dovezl do švýcarských chov",
+      "start": 400.001,
+      "end": 405.0,
+      "text": "To je zvláštnost toho německého nářečí",
       "is_overlap": false
     },
     {
       "id": "asr_00006",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 232.121,
-      "end": 239.36,
-      "text": "No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let",
+      "start": 405.001,
+      "end": 419.64,
+      "text": "U stolu u nás po celé mé dětství jsem mluvil výhradně česky na maminku a na Evu, svoji sestru a výhradně německy na tatinka",
       "is_overlap": false
     },
     {
       "id": "asr_00007",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 241.12,
-      "end": 246.88,
-      "text": "Můžu se vodkávat? Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk?",
+      "start": 420.08,
+      "end": 425.36,
+      "text": "Takže to se neustále střídalo a mně to nedělalo vůbec žádné potíže",
       "is_overlap": false
     },
     {
       "id": "asr_00008",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 246.881,
-      "end": 254.68,
-      "text": "To bylo velmi zajímavý. Moje maminka je modroka, blondína, speleřimová",
+      "start": 426.6,
+      "end": 446.0,
+      "text": "Ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku kde jsem měl fungovat na nějaké konferenci jako překladatel protože bylo mě známo, že mluvím plíně oběma jazyky",
       "is_overlap": false
     },
     {
       "id": "asr_00009",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 256.04,
-      "end": 261.16,
-      "text": "Židovka? Židovka. Její dědeček, teda její tatínek",
+      "start": 446.001,
+      "end": 459.4,
+      "text": "A tam mě podrobili zkoušce a řekli tak, jak se řekne německy, před radlička vždycky před Radlička, což jsem nevěděl, a jak se řekne Zahumenek, což jsem taky nevěděl",
       "is_overlap": false
     },
     {
       "id": "asr_00010",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 261.161,
-      "end": 273.0,
-      "text": "Byl Mořic Klein a měl obchod koloniálem v Pražimově Babička je z Rokycan jmenovala se původně Lederová",
+      "start": 459.401,
+      "end": 464.0,
+      "text": "tak jsem se mnohol hned rozhodl, že ta moje Němčina dokonalá není",
       "is_overlap": false
     },
     {
       "id": "asr_00011",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 273.001,
-      "end": 281.0,
-      "text": "A jim se narodila ta dcera Ela, Elinka",
+      "start": 466.0,
+      "end": 485.0,
+      "text": "Když mě bylo šest let, tak jsem šel v Železné rudě, kam jsme se přestěhovali do české školy. Celá Železná ruda kde měl dědeček viru a továrnu na štěce a všecko možného",
       "is_overlap": false
     },
     {
       "id": "asr_00012",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 281.001,
-      "end": 284.0,
-      "text": "A ta chodila do školy v Pelřimově",
+      "start": 485.001,
+      "end": 495.0,
+      "text": "patřil takový ty velmi bohatý nebo zbohatlický poválečný generaci měšťanský",
       "is_overlap": false
     },
     {
       "id": "asr_00013",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 284.001,
-      "end": 291.0,
-      "text": "A byla to naprosto česky orientovaná rodina která neuměla pořádně německy",
+      "start": 495.001,
+      "end": 503.12,
+      "text": "To byl člověk bez jakéhokoliv formálního vzdělání, ale velice příjemný sčetlý, inteligentní",
       "is_overlap": false
     },
     {
       "id": "asr_00014",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 291.001,
-      "end": 310.0,
-      "text": "Dědeček a babička rozuměli německy ale neobládali to když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca, do penzionátu a tam se naučila dobře francouzsky a dobře německy",
+      "start": 504.0,
+      "end": 512.44,
+      "text": "A měl tu zvláštní vlastnost protože v čemkoliv podnikání se mu to fantasticky dařilo",
       "is_overlap": false
     },
     {
       "id": "asr_00015",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 310.001,
-      "end": 325.0,
-      "text": "což mělo velký vliv na moji výchovu. A zcela jinak to bylo otcovo strany. Otec pochází s vesničkým jménem Zhůří na Šumavě",
+      "start": 513.0,
+      "end": 532.28,
+      "text": "Zemřel asi v roce 39 v chudobinci židovském tady v Praze protože o všechno přišli ale to ne zásluhou Hitlera, to také, ale především tím, že ta rodina nežila v souladu",
       "is_overlap": false
     },
     {
       "id": "asr_00016",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 325.001,
-      "end": 343.0,
-      "text": "To je nedaleko toho velkostatku, v blízkosti Hartmanic, což je starý soudní okres na Šumavě kde byl židovský hřbitov, mimochodem řečeno, který Němci úplně vyvrátili, tam není nic",
+      "start": 532.281,
+      "end": 535.68,
+      "text": "ale to je úplně jiná kapitola. Já se vrátím k tomu dětství",
       "is_overlap": false
     },
     {
       "id": "asr_00017",
-      "speaker": "unknown",
       "speakers": [
         "unknown"
       ],
-      "start": 343.001,
-      "end": 359.44,
-      "text": "Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hůtích",
+      "start": 535.681,
+      "end": 540.0,
+      "text": "Ano. Já bych se ještě optala, tam byla někde v okolí židovská škola?",
       "is_overlap": false
     }
   ],
-  "full_transcription": "Šumavy. Jmenoval se Edmund Adler. Po celý život to byl můj vzor To byl prostě ten člověk, který nejvíc ovlivnil můj život A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor. Byl to vzorný statek, který dneska, jako mnoho jiných objektů na Šumavě, prostě zmizel Neexistuje. Tam táta prováděl meliorizace, modernizoval to, dovezl do švýcarských chov No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let Můžu se vodkávat? Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk? To bylo velmi zajímavý. Moje maminka je modroka, blondína, speleřimová Židovka? Židovka. Její dědeček, teda její tatínek Byl Mořic Klein a měl obchod koloniálem v Pražimově Babička je z Rokycan jmenovala se původně Lederová A jim se narodila ta dcera Ela, Elinka A ta chodila do školy v Pelřimově A byla to naprosto česky orientovaná rodina která neuměla pořádně německy Dědeček a babička rozuměli německy ale neobládali to když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca, do penzionátu a tam se naučila dobře francouzsky a dobře německy což mělo velký vliv na moji výchovu. A zcela jinak to bylo otcovo strany. Otec pochází s vesničkým jménem Zhůří na Šumavě To je nedaleko toho velkostatku, v blízkosti Hartmanic, což je starý soudní okres na Šumavě kde byl židovský hřbitov, mimochodem řečeno, který Němci úplně vyvrátili, tam není nic Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hůtích"
+  "full_transcription": "Nebo v lese Dědeček byl, jmenoval se Salomon Hadler, byl to krásnej statnej pán a jeho manželka se jmenovala Rosa Kornfjerová a ty neuměli česky ani slovo Táta sice měl českou maturitu, ale ta česká ale ta čeština byla taková typicky sudecká, to znamená prakticky, že místo P se říká B, místo D se říká T, takže on třeba říkal basic, anebo anekdode, místo anekdote To je zvláštnost toho německého nářečí U stolu u nás po celé mé dětství jsem mluvil výhradně česky na maminku a na Evu, svoji sestru a výhradně německy na tatinka Takže to se neustále střídalo a mně to nedělalo vůbec žádné potíže Ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku kde jsem měl fungovat na nějaké konferenci jako překladatel protože bylo mě známo, že mluvím plíně oběma jazyky A tam mě podrobili zkoušce a řekli tak, jak se řekne německy, před radlička vždycky před Radlička, což jsem nevěděl, a jak se řekne Zahumenek, což jsem taky nevěděl tak jsem se mnohol hned rozhodl, že ta moje Němčina dokonalá není Když mě bylo šest let, tak jsem šel v Železné rudě, kam jsme se přestěhovali do české školy. Celá Železná ruda kde měl dědeček viru a továrnu na štěce a všecko možného patřil takový ty velmi bohatý nebo zbohatlický poválečný generaci měšťanský To byl člověk bez jakéhokoliv formálního vzdělání, ale velice příjemný sčetlý, inteligentní A měl tu zvláštní vlastnost protože v čemkoliv podnikání se mu to fantasticky dařilo Zemřel asi v roce 39 v chudobinci židovském tady v Praze protože o všechno přišli ale to ne zásluhou Hitlera, to také, ale především tím, že ta rodina nežila v souladu ale to je úplně jiná kapitola. Já se vrátím k tomu dětství Ano. Já bych se ještě optala, tam byla někde v okolí židovská škola?"
 }

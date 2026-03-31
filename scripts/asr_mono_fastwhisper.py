@@ -1,6 +1,8 @@
 import json
 import os
 import re
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
@@ -13,13 +15,13 @@ try:
 except ImportError:
     WhisperModel = None
 
-START_SECONDS = 180
-END_SECONDS = 360
+START_SECONDS = 360
+END_SECONDS = 540
 MODEL_SIZE = "turbo" # "tiny", "base", "small", "medium", "large-v3", "turbo"
 DEVICE = "cpu"
 COMPUTE_TYPE = "int8"
 BEAM_SIZE = 1
-CHUNK_SECONDS = 90
+CHUNK_SECONDS = 25
 CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
 SHORT_CONTINUATION_WORDS = 4
@@ -273,11 +275,14 @@ def deduplicate_segments(segments, time_tolerance=0.8):
 def enrich_segment_schema(segments):
     enriched = []
     for index, segment in enumerate(segments, start=1):
+        speakers = segment.get("speakers")
+        if not isinstance(speakers, list) or not speakers:
+            speakers = ["unknown"]
+
         enriched.append(
             {
                 "id": f"asr_{index:05d}",
-                "speaker": segment.get("speaker", "unknown"),
-                "speakers": [segment.get("speaker", "unknown")],
+                "speakers": speakers,
                 "start": segment["start"],
                 "end": segment["end"],
                 "text": segment["text"],
@@ -383,7 +388,7 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
             segments.append(
                 {
-                    "speaker": "unknown",
+                    "speakers": ["unknown"],
                     "start": round(absolute_start, 3),
                     "end": round(absolute_end, 3),
                     "text": text,
@@ -401,6 +406,9 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
 
 def run_mono_asr():
+    run_started_utc = datetime.now(timezone.utc)
+    runtime_start = time.perf_counter()
+
     if WhisperModel is None:
         print("Chyba: faster-whisper není nainstalovaný. Nainstaluj: pip install faster-whisper")
         return
@@ -436,6 +444,8 @@ def run_mono_asr():
     asr_segments = enrich_segment_schema(asr_segments)
 
     full_transcription = " ".join(segment["text"] for segment in asr_segments)
+    runtime_seconds = round(time.perf_counter() - runtime_start, 2)
+    run_finished_utc = datetime.now(timezone.utc)
 
     final_output = {
         "metadata": {
@@ -452,6 +462,9 @@ def run_mono_asr():
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
             "language": getattr(info, "language", None) if info is not None else None,
             "language_probability": getattr(info, "language_probability", None) if info is not None else None,
+            "runtime_seconds": runtime_seconds,
+            "run_started_utc": run_started_utc.isoformat(),
+            "run_finished_utc": run_finished_utc.isoformat(),
         },
         "segments": asr_segments,
         "full_transcription": full_transcription,

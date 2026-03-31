@@ -1,14 +1,16 @@
 import json
 import os
 import re
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
 import whisper
 from scipy.io import wavfile
 
-START_SECONDS = 180
-END_SECONDS = 360
+START_SECONDS = 360
+END_SECONDS = 540
 MODEL_SIZE = "turbo"
 CHUNK_SECONDS = 25
 CHUNK_OVERLAP_SECONDS = 2.0
@@ -264,11 +266,14 @@ def deduplicate_segments(segments, time_tolerance=0.8):
 def enrich_segment_schema(segments):
     enriched = []
     for index, segment in enumerate(segments, start=1):
+        speakers = segment.get("speakers")
+        if not isinstance(speakers, list) or not speakers:
+            speakers = ["unknown"]
+
         enriched.append(
             {
                 "id": f"asr_{index:05d}",
-                "speaker": segment.get("speaker", "unknown"),
-                "speakers": [segment.get("speaker", "unknown")],
+                "speakers": speakers,
                 "start": segment["start"],
                 "end": segment["end"],
                 "text": segment["text"],
@@ -370,7 +375,7 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
             segments.append(
                 {
-                    "speaker": "unknown",
+                    "speakers": ["unknown"],
                     "start": round(absolute_start, 3),
                     "end": round(absolute_end, 3),
                     "text": text,
@@ -387,6 +392,9 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
 
 def run_mono_asr():
+    run_started_utc = datetime.now(timezone.utc)
+    runtime_start = time.perf_counter()
+
     audio_path = PROJECT_ROOT / "data" / "12008_001_MONO.wav"
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
@@ -418,6 +426,8 @@ def run_mono_asr():
     asr_segments = enrich_segment_schema(asr_segments)
 
     full_transcription = " ".join(segment["text"] for segment in asr_segments)
+    runtime_seconds = round(time.perf_counter() - runtime_start, 2)
+    run_finished_utc = datetime.now(timezone.utc)
 
     final_output = {
         "metadata": {
@@ -426,8 +436,12 @@ def run_mono_asr():
             "end_seconds": end_sec,
             "has_custom_range": has_range,
             "model": MODEL_SIZE,
+            "backend": "whisper",
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
+            "runtime_seconds": runtime_seconds,
+            "run_started_utc": run_started_utc.isoformat(),
+            "run_finished_utc": run_finished_utc.isoformat(),
         },
         "segments": asr_segments,
         "full_transcription": full_transcription,
