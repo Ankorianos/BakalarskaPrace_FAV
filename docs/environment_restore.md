@@ -6,12 +6,6 @@ Tento projekt má 3 snapshot soubory prostředí v kořeni workspace:
 - `requirements-conda-explicit.txt` – přesný lock export (`conda list --explicit`) z konkrétní platformy.
 - `requirements-pip-freeze.txt` – pip balíčky (`pip freeze`) pro kontrolu/porovnání.
 
-## Doporučená obnova (portable)
-
-```powershell
-conda env create -n bakalarka_restore -f environment.yml
-conda activate bakalarka_restore
-```
 
 ## Přesná obnova (co nejvíc 1:1)
 
@@ -27,14 +21,8 @@ conda activate bakalarka_exact
 Na Linuxu používej primárně `environment.yml`:
 
 ```bash
-conda env create -n bakalarka_restore -f environment.yml
+conda env create -f environment.yml
 conda activate bakalarka_restore
-```
-
-Pokud chceš po obnově zkontrolovat pip stav proti snapshotu:
-
-```bash
-python -m pip list
 ```
 
 ## Pravidelná aktualizace snapshotu

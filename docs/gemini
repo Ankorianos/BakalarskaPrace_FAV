@@ -89,7 +89,7 @@ Vyhodnoťte výsledky rozpoznávání pro zvolené přístupy a diskutujte jejic
 Typická sekvence:
 
 git add .
-git commit -m "mono diarization + speaker-level eval"
+git commit -m "NAME"
 git push -u origin feature/mono_dia_speakerlevel
 merge do main
 volitelně smazat feature branch
