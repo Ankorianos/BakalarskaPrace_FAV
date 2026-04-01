@@ -233,7 +233,7 @@ def save_signal_report(report, source_file):
 
 def process_audio(file_path):
     """
-    Rozdělí stereo WAV na L, R a MONO mix.
+    Rozdělí stereo WAV na L, R a MIX stopu.
     Používá jemné předzpracování, které zachová stereo poměr:
     - odstranění DC offsetu,
     - volitelná LUFS normalizace společným gainem,
@@ -265,7 +265,7 @@ def process_audio(file_path):
     )
     left_channel, right_channel, peak_gain = apply_shared_peak_normalization(left_channel, right_channel)
 
-    # 3. MONO mix jako průměr z již vyčištěných kanálů
+    # 3. MIX stopa jako průměr z již vyčištěných kanálů
     mono_mix = 0.5 * (left_channel + right_channel)
 
     # 4. Návrat do původního dtype
@@ -277,7 +277,7 @@ def process_audio(file_path):
     base_name = os.path.splitext(file_path)[0]
     l_file = f"{base_name}_L.wav"
     r_file = f"{base_name}_R.wav"
-    mono_file = f"{base_name}_MONO.wav"
+    mix_file = f"{base_name}_MIX.wav"
 
     # 5. Uložení
     print(f"Ukládám Levý kanál -> {l_file}")
@@ -286,8 +286,8 @@ def process_audio(file_path):
     print(f"Ukládám Pravý kanál -> {r_file}")
     wavfile.write(r_file, sample_rate, right_out)
     
-    print(f"Ukládám MONO mix -> {mono_file}")
-    wavfile.write(mono_file, sample_rate, mono_out)
+    print(f"Ukládám MIX stopu -> {mix_file}")
+    wavfile.write(mix_file, sample_rate, mono_out)
 
     report = build_signal_report(
         original_left=left_original,

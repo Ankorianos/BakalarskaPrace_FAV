@@ -6,22 +6,13 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
-
 import numpy as np
+import whisper
 from scipy.io import wavfile
-
-try:
-    from faster_whisper import WhisperModel
-except ImportError:
-    WhisperModel = None
 
 START_SECONDS = 360
 END_SECONDS = 540
-MODEL_SIZE = "turbo" # "tiny", "base", "small", "medium", "large-v3", "turbo"
-DEVICE = "cpu"
-COMPUTE_TYPE = "int8"
-BEAM_SIZE = 1
+MODEL_SIZE = "turbo"
 CHUNK_SECONDS = 25
 CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
@@ -340,10 +331,9 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
     step_samples = max(1, chunk_samples - overlap_samples)
 
     if chunk_samples <= 0:
-        return [], None
+        return []
 
     segments = []
-    detected_info = None
     total_chunks = max(1, (total_samples + step_samples - 1) // step_samples)
     chunk_index = 0
 
@@ -363,25 +353,22 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
         keep_from = chunk_offset_sec if is_first_chunk else chunk_offset_sec + (CHUNK_OVERLAP_SECONDS / 2.0)
         keep_to = chunk_end_sec if is_last_chunk else chunk_end_sec - (CHUNK_OVERLAP_SECONDS / 2.0)
 
-        result_segments, info = model.transcribe(
+        result = model.transcribe(
             chunk_audio,
             language="cs",
-            beam_size=BEAM_SIZE,
+            verbose=False,
             condition_on_previous_text=False,
-            vad_filter=False,
+            no_speech_threshold=0.25,
+            temperature=0.0,
         )
-        result_segments = list(result_segments)
 
-        if detected_info is None:
-            detected_info = info
-
-        for segment in result_segments:
-            text = clean_segment_text(getattr(segment, "text", ""))
+        for segment in result.get("segments", []):
+            text = clean_segment_text(segment.get("text", ""))
             if not text:
                 continue
 
-            absolute_start = float(getattr(segment, "start", 0.0)) + chunk_offset_sec
-            absolute_end = float(getattr(segment, "end", 0.0)) + chunk_offset_sec
+            absolute_start = float(segment["start"]) + chunk_offset_sec
+            absolute_end = float(segment["end"]) + chunk_offset_sec
             segment_mid = (absolute_start + absolute_end) / 2.0
 
             if segment_mid < keep_from or segment_mid > keep_to:
@@ -402,27 +389,22 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
     deduped = deduplicate_segments(segments, time_tolerance=1.5)
     merged_overlaps = merge_overlapping_segments(deduped)
     boundary_cleaned = strip_boundary_artifacts(merged_overlaps)
-    final_segments = merge_adjacent_segments(boundary_cleaned)
-    return final_segments, detected_info
+    return merge_adjacent_segments(boundary_cleaned)
 
 
-def run_mono_asr():
+def run_mix_asr():
     run_started_utc = datetime.now(timezone.utc)
     runtime_start = time.perf_counter()
 
-    if WhisperModel is None:
-        print("Chyba: faster-whisper není nainstalovaný. Nainstaluj: pip install faster-whisper")
-        return
-
-    audio_path = PROJECT_ROOT / "data" / "12008_001_MONO.wav"
+    audio_path = PROJECT_ROOT / "data" / "12008_001_MIX.wav"
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
 
     has_range = start_sec is not None or end_sec is not None
     if start_sec is None and end_sec is None:
-        output_name = "mono_results_full_fastwhisper.json"
+        output_name = "mix_results_full_whisper.json"
     else:
-        output_name = "mono_results_range_fastwhisper.json"
+        output_name = "mix_results_range_whisper.json"
 
     output_path = PROJECT_ROOT / "results" / output_name
 
@@ -430,18 +412,18 @@ def run_mono_asr():
         print(f"Chyba: Soubor {audio_path} nebyl nalezen!")
         return
 
-    print(f"Načítám Faster-Whisper model ({MODEL_SIZE}, device={DEVICE}, compute_type={COMPUTE_TYPE})...")
-    model = WhisperModel(MODEL_SIZE, device=DEVICE, compute_type=COMPUTE_TYPE)
+    print(f"Načítám Whisper model ({MODEL_SIZE})...")
+    model = whisper.load_model(MODEL_SIZE)
 
-    print(f"Načítám MONO audio (start={start_sec}, end={end_sec})...")
+    print(f"Načítám MIX audio (start={start_sec}, end={end_sec})...")
     audio_data, sample_rate, base_offset_sec = load_audio_segment(str(audio_path), start_sec, end_sec)
 
     if len(audio_data) == 0:
         print("Chyba: Zvolený časový rozsah neobsahuje žádná data.")
         return
 
-    print("Spouštím MONO rozpoznávání (chunked fastwhisper)...")
-    asr_segments, info = transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=base_offset_sec)
+    print("Spouštím MIX rozpoznávání...")
+    asr_segments = transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=base_offset_sec)
     asr_segments = enrich_segment_schema(asr_segments)
 
     full_transcription = " ".join(segment["text"] for segment in asr_segments)
@@ -450,19 +432,14 @@ def run_mono_asr():
 
     final_output = {
         "metadata": {
-            "mode": "MONO_FASTWHISPER",
+            "mode": "MIX",
             "start_seconds": start_sec,
             "end_seconds": end_sec,
             "has_custom_range": has_range,
             "model": MODEL_SIZE,
-            "backend": "faster-whisper",
-            "device": DEVICE,
-            "compute_type": COMPUTE_TYPE,
-            "beam_size": BEAM_SIZE,
+            "backend": "whisper",
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
-            "language": getattr(info, "language", None) if info is not None else None,
-            "language_probability": getattr(info, "language_probability", None) if info is not None else None,
             "runtime_seconds": runtime_seconds,
             "run_started_utc": run_started_utc.isoformat(),
             "run_finished_utc": run_finished_utc.isoformat(),
@@ -478,4 +455,4 @@ def run_mono_asr():
 
 
 if __name__ == "__main__":
-    run_mono_asr()
+    run_mix_asr()
