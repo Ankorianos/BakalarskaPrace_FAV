@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -429,13 +430,42 @@ def enrich_segment_schema(segments):
     return enriched
 
 
-def run_individual_asr():
+def resolve_individual_audio_paths():
+    if len(sys.argv) >= 2 and sys.argv[1].strip():
+        source = Path(sys.argv[1]).expanduser()
+        if not source.is_absolute():
+            source = PROJECT_ROOT / source
+
+        stem_upper = source.stem.upper()
+        if stem_upper.endswith("_L"):
+            left_audio_path = source
+            right_audio_path = source.with_name(f"{source.stem[:-2]}_R{source.suffix}")
+            base_stem = source.stem[:-2]
+            return left_audio_path, right_audio_path, base_stem
+
+        if stem_upper.endswith("_R"):
+            right_audio_path = source
+            left_audio_path = source.with_name(f"{source.stem[:-2]}_L{source.suffix}")
+            base_stem = source.stem[:-2]
+            return left_audio_path, right_audio_path, base_stem
+
+        left_audio_path = source.with_name(f"{source.stem}_L{source.suffix}")
+        right_audio_path = source.with_name(f"{source.stem}_R{source.suffix}")
+        base_stem = source.stem
+        return left_audio_path, right_audio_path, base_stem
+
     left_audio_path = PROJECT_ROOT / "data" / "12008_001_L.wav"
     right_audio_path = PROJECT_ROOT / "data" / "12008_001_R.wav"
+    return left_audio_path, right_audio_path, "12008_001"
+
+
+def run_individual_asr():
+    left_audio_path, right_audio_path, base_stem = resolve_individual_audio_paths()
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
     has_range = start_sec is not None or end_sec is not None
-    output_name = "individual_results_range.json" if has_range else "individual_results_full.json"
+    output_scope = "full" if start_sec is None and end_sec is None else "range"
+    output_name = f"{base_stem}_{output_scope}_whisper.json"
     output_path = PROJECT_ROOT / "results" / output_name
 
     if not os.path.exists(left_audio_path):

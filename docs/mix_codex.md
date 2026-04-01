@@ -34,6 +34,12 @@ Výstupy:
 
 MIX větev není hlavní místo pro pokročilé experimenty.
 
+### Poznámka ke speaker-level evaluaci
+
+V MIX větvi speaker-level evaluaci bez diarizace nedělat.
+Důvod: smíchaný signál neumožňuje spolehlivé přiřazení textu k jednomu mluvčímu.
+Prakticky tedy držet MIX větev na text-level WER.
+
 ---
 
 ## 4) Co teď nedělat v MIX větvi
@@ -73,6 +79,7 @@ MIX větev není hlavní místo pro pokročilé experimenty.
 - [ ] Držet stejný eval rozsah jako u INDIVIDUAL větve.
 - [ ] Držet stejný evaluator a stejná normalizační pravidla.
 - [ ] Připravit řádek „MIX baseline“ do finální souhrnné tabulky.
+- [ ] U MIX evidovat jen text-level metriky (speaker-level nehodnotit bez diarizace).
 
 ---
 

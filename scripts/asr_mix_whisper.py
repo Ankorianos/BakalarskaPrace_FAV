@@ -2,6 +2,7 @@
 import json
 import os
 import re
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -392,19 +393,26 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
     return merge_adjacent_segments(boundary_cleaned)
 
 
+def resolve_mix_audio_path():
+    if len(sys.argv) >= 2 and sys.argv[1].strip():
+        candidate = Path(sys.argv[1]).expanduser()
+        if not candidate.is_absolute():
+            candidate = PROJECT_ROOT / candidate
+        return candidate
+
+    return PROJECT_ROOT / "data" / "12008_001_MIX.wav"
+
+
 def run_mix_asr():
     run_started_utc = datetime.now(timezone.utc)
     runtime_start = time.perf_counter()
-
-    audio_path = PROJECT_ROOT / "data" / "12008_001_MIX.wav"
+    audio_path = resolve_mix_audio_path()
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
 
     has_range = start_sec is not None or end_sec is not None
-    if start_sec is None and end_sec is None:
-        output_name = "mix_results_full_whisper.json"
-    else:
-        output_name = "mix_results_range_whisper.json"
+    output_scope = "full" if start_sec is None and end_sec is None else "range"
+    output_name = f"{audio_path.stem}_{output_scope}_whisper.json"
 
     output_path = PROJECT_ROOT / "results" / output_name
 

@@ -63,6 +63,14 @@ Pro férové porovnání držet:
 
 ---
 
+## 6.1) Speaker-level evaluace (praktické pravidlo)
+
+- V INDIVIDUAL větvi lze dělat speaker-level evaluaci i bez diarizace, protože po separaci má každá stopa odpovídat jednomu mluvčímu.
+- V MIX větvi speaker-level evaluaci bez spolehlivé diarizace nedělat, protože text není čistě přiřaditelný jednomu mluvčímu.
+- Pro MIX větev proto držet text-level WER; speaker-level až pokud bude validní diarizační krok.
+
+---
+
 ## 7) Co teď není hlavní fokus
 
 - rozšiřování experimentů mimo MIX/INDIVIDUAL osu,

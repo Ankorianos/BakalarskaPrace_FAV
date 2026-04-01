@@ -23,6 +23,15 @@ Cíl je rozdělit vstupní dvoukanálový záznam na dvě čistší individuáln
 - nižší počet chyb z přeslechu,
 - reprodukovatelné výsledky na stejném eval protokolu.
 
+### Speaker-level evaluace v INDIVIDUAL
+
+Po separaci lze dělat speaker-level evaluaci i bez diarizace:
+
+- stopa A = speaker A,
+- stopa B = speaker B.
+
+Podmínka je stabilní mapování stop na referenční labely (např. `interviewer` / `interviewee`) v celém běhu.
+
 ---
 
 ## 4) Co držet stabilní
@@ -61,6 +70,8 @@ Cíl je rozdělit vstupní dvoukanálový záznam na dvě čistší individuáln
 - [ ] Připravit jednotnou tabulku: MIX baseline, INDIVIDUAL baseline, INDIVIDUAL + separace.
 - [ ] U všech variant držet stejný eval rozsah.
 - [ ] U všech variant držet stejné normalizační kroky a stejný evaluator.
+- [ ] U INDIVIDUAL doplnit i speaker-level WER (bez diarizace, podle stopy).
+- [ ] U MIX ponechat pouze text-level WER.
 - [ ] Dopsat krátkou interpretaci: kde separace pomohla a kde ne.
 
 ---
