@@ -59,6 +59,14 @@ def make_raw_segment(start_time, end_time, text_buckets, global_index):
     return segment
 
 
+def extract_recording_id_from_path(file_path):
+    stem = Path(file_path).stem
+    match = re.match(r"^(\d+_\d+)", stem)
+    if not match:
+        match = re.match(r"^(\d+)", stem)
+    return match.group(1) if match else "unknown"
+
+
 def parse_turn(turn, speaker_map, start_index):
     turn_start = float(turn.get("startTime"))
     turn_end = float(turn.get("endTime"))
@@ -148,7 +156,7 @@ def parse_ground_truth_raw(file_path):
     return raw_segments
 
 
-def build_eval_reference(raw_segments):
+def build_eval_reference(raw_segments, recording_id=None):
     eval_segments = []
 
     for raw_segment in raw_segments:
@@ -180,8 +188,14 @@ def build_eval_reference(raw_segments):
             eval_is_overlap = len(eval_speakers) > 1
             text_by_speaker = None
 
+        raw_id = raw_segment.get("id")
+        if recording_id and isinstance(raw_id, str) and raw_id.startswith("seg_"):
+            segment_id = raw_id.replace("seg_", f"seg_{recording_id}_", 1)
+        else:
+            segment_id = raw_id
+
         segment = {
-            "id": raw_segment.get("id"),
+            "id": segment_id,
             "speakers": eval_speakers,
             "start": raw_segment["start"],
             "end": raw_segment["end"],
@@ -217,7 +231,7 @@ def save_json(path, data):
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 
-def build_full_speakers_summary(segments):
+def build_full_speakers_summary(segments, recording_id=None):
     if not segments:
         return []
 
@@ -246,7 +260,7 @@ def build_full_speakers_summary(segments):
 
         summary_segments.append(
             {
-                "id": f"full_{speaker_name}",
+                "id": f"full_{recording_id}_{speaker_name}" if recording_id else f"full_{speaker_name}",
                 "speakers": [speaker_name],
                 "start": round(float(min_start), 3),
                 "end": round(float(max_end), 3),
@@ -266,17 +280,26 @@ if __name__ == "__main__":
     eval_output = project_root / "results" / "ground_truth_eval.json"
     speakers_output = project_root / "results" / "ground_truth_speakers.json"
 
-    raw_segments = parse_ground_truth_raw(str(trs_file))
-    eval_segments = build_eval_reference(raw_segments)
-    full_speakers = build_full_speakers_summary(eval_segments)
+    recording_id = extract_recording_id_from_path(str(trs_file))
 
-    save_json(raw_output, raw_segments)
-    save_json(eval_output, eval_segments)
-    save_json(speakers_output, full_speakers)
+    raw_segments = parse_ground_truth_raw(str(trs_file))
+    eval_segments = build_eval_reference(raw_segments, recording_id=recording_id)
+    full_speakers = build_full_speakers_summary(eval_segments, recording_id=recording_id)
+
+    raw_output_data = {recording_id: raw_segments}
+    eval_output_data = {recording_id: eval_segments}
+    speakers_output_data = {
+        recording_id: {item["speakers"][0]: item for item in full_speakers}
+    }
+
+    save_json(raw_output, raw_output_data)
+    save_json(eval_output, eval_output_data)
+    save_json(speakers_output, speakers_output_data)
 
     print(f"Hotovo! RAW segmentů: {len(raw_segments)}")
     print(f"Hotovo! EVAL segmentů: {len(eval_segments)}")
     print(f"Hotovo! SPEAKERS segmentů: {len(full_speakers)}")
+    print(f"Recording ID: {recording_id}")
     print(f"RAW uložen do: {raw_output}")
     print(f"EVAL uložen do: {eval_output}")
     print(f"SPEAKERS uložen do: {speakers_output}")

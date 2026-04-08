@@ -321,6 +321,8 @@ def write_diagnostics_report(
     path,
     diagnostics,
     source_json=None,
+    gt_file=None,
+    section_title=None,
     metadata=None,
     strict_wer=None,
     robust_wer=None,
@@ -334,13 +336,16 @@ def write_diagnostics_report(
     strict_comp_wer=None,
     robust_comp_wer=None,
     offset_info=None,
+    append=False,
 ):
     lines = []
-    lines.append("ASR Evaluation Report")
+    lines.append(section_title or "ASR Evaluation Report")
     lines.append("=" * 80)
 
     if source_json:
         lines.append(f"Source JSON: {source_json}")
+    if gt_file:
+        lines.append(f"Reference (GT): {gt_file}")
     if isinstance(metadata, dict) and metadata:
         lines.append("Mode: {mode} | Model: {model} | Backend: {backend}".format(
             mode=metadata.get("mode", "unknown"),
@@ -425,7 +430,10 @@ def write_diagnostics_report(
     for token, count in diagnostics["top_insertions"]:
         lines.append(f"{count}x | {token}")
 
-    with open(path, "w", encoding="utf-8") as file_handle:
+    mode = "a" if append else "w"
+    with open(path, mode, encoding="utf-8") as file_handle:
+        if append:
+            file_handle.write("\n" + "=" * 80 + "\n" + "=" * 80 + "\n\n")
         file_handle.write("\n".join(lines) + "\n")
 
 
@@ -433,6 +441,14 @@ def diagnostics_output_path(hyp_file):
     stem = Path(hyp_file).stem
     safe_stem = re.sub(r"[^\w.-]+", "_", stem).strip("._") or "hypothesis"
     return f"results/eval_report_{safe_stem}.txt"
+
+
+def extract_recording_id_from_filename(path_like):
+    stem = Path(path_like).stem
+    match = re.match(r"^(\d+_\d+)", stem)
+    if not match:
+        match = re.match(r"^(\d+)", stem)
+    return match.group(1) if match else None
 
 
 def resolve_eval_window(metadata):
@@ -527,16 +543,91 @@ def load_json(path):
         return json.load(file_handle)
 
 
+def is_segment_like(value):
+    if not isinstance(value, dict):
+        return False
+    if "text" not in value:
+        return False
+    return any(key in value for key in ("id", "start", "end", "speakers", "is_overlap"))
+
+
+def recording_map_to_segments(data):
+    if not isinstance(data, dict):
+        return []
+
+    def is_recording_key(key):
+        return bool(re.match(r"^\d+(?:_\d+)?$", str(key)))
+
+    def recording_sort_key(key):
+        key_str = str(key)
+        match = re.match(r"^(\d+)(?:_(\d+))?$", key_str)
+        if not match:
+            return (10**9, 10**9)
+        major = int(match.group(1))
+        minor = int(match.group(2)) if match.group(2) is not None else -1
+        return (major, minor)
+
+    recording_keys = [key for key in data.keys() if is_recording_key(key)]
+    if not recording_keys:
+        return []
+
+    segments = []
+
+    for recording in sorted(recording_keys, key=recording_sort_key):
+        value = data.get(recording)
+
+        if isinstance(value, list):
+            segments.extend(item for item in value if isinstance(item, dict))
+            continue
+
+        if isinstance(value, dict):
+            if is_segment_like(value):
+                segments.append(value)
+                continue
+
+            for nested_value in value.values():
+                if isinstance(nested_value, list):
+                    segments.extend(item for item in nested_value if isinstance(item, dict))
+                elif isinstance(nested_value, dict) and is_segment_like(nested_value):
+                    segments.append(nested_value)
+
+    return segments
+
+
 def segments_from_data(data):
     if isinstance(data, dict):
         if isinstance(data.get("segments"), list):
             return data.get("segments", [])
         if isinstance(data.get("data"), list):
             return data.get("data", [])
+        mapped_segments = recording_map_to_segments(data)
+        if mapped_segments:
+            return mapped_segments
         return []
     if isinstance(data, list):
         return data
     return []
+
+
+def filter_segments_by_recording_id(segments, recording_id=None):
+    if not recording_id:
+        return list(segments)
+
+    filtered = []
+    prefix = f"seg_{recording_id}_"
+
+    for segment in segments:
+        if not isinstance(segment, dict):
+            continue
+
+        segment_id = str(segment.get("id", ""))
+        if segment_id.startswith(prefix):
+            filtered.append(segment)
+
+    if filtered:
+        return filtered
+
+    return list(segments)
 
 
 def text_from_segments(segments, start_sec=None, end_sec=None):
@@ -590,43 +681,65 @@ def filter_segments_by_window(segments, start_sec=None, end_sec=None):
 
     return filtered
 
-def evaluate(hyp_file):
+def resolve_gt_file(hyp_file):
     gt_eval_file = "results/ground_truth_eval.json"
     gt_raw_file = "results/ground_truth_raw.json"
-    gt_file = gt_eval_file if os.path.exists(gt_eval_file) else gt_raw_file
+    formal_gt_eval_file = "results/formal_ground_truth_eval.json"
 
+    hyp_name = Path(hyp_file).name.lower()
+    if "formal" in hyp_name:
+        candidates = [
+            formal_gt_eval_file,
+            gt_eval_file,
+            gt_raw_file,
+        ]
+    else:
+        candidates = [
+            gt_eval_file,
+            gt_raw_file,
+            formal_gt_eval_file,
+        ]
+
+    for candidate in candidates:
+        if os.path.exists(candidate):
+            return candidate
+
+    return candidates[0]
+
+
+def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, gt_file):
     if not os.path.exists(gt_file):
-        print("Chyba: Referenční soubor nebyl nalezen (čekám results/ground_truth_eval.json nebo results/ground_truth_raw.json)")
-        return
+        print(f"Chyba: Referenční soubor nebyl nalezen: {gt_file}")
+        return None
 
-    if not os.path.exists(hyp_file):
-        print(f"Chyba: Soubor {hyp_file} nebyl nalezen!")
-        return
-    
     gt_data = load_json(gt_file)
-    hyp_data = load_json(hyp_file)
-    
-    metadata = hyp_data.get("metadata", {}) if isinstance(hyp_data, dict) else {}
     start_sec, end_sec = resolve_eval_window(metadata)
 
     hyp_segments = segments_from_data(hyp_data)
-    ref_segments = segments_from_data(gt_data)
+
+    if isinstance(gt_data, dict) and hyp_recording_id and hyp_recording_id in gt_data:
+        gt_selected_data = gt_data[hyp_recording_id]
+    else:
+        gt_selected_data = gt_data
+
+    ref_segments = segments_from_data(gt_selected_data)
+    ref_segments = filter_segments_by_recording_id(ref_segments, recording_id=hyp_recording_id)
     ref_segments_limited = filter_segments_by_window(ref_segments, start_sec=start_sec, end_sec=end_sec)
     hyp_segments_limited = filter_segments_by_window(hyp_segments, start_sec=start_sec, end_sec=end_sec)
 
     print("\n" + "="*80)
     print(f"DEBUG EVALUACE: {hyp_file}")
+    print(f"Reference (GT): {gt_file}")
+    print(f"Recording ID z názvu HYP: {hyp_recording_id}")
     print(f"Mód: {metadata.get('mode', 'unknown')} | Start: {start_sec} | End: {end_sec}")
     print("="*80)
 
-    # 1. Příprava REFERENCE (GT)
     print(f"INFO: Počet segmentů v Reference (GT): {len(ref_segments_limited)}")
     if ref_segments:
         reference_full = text_from_segments(ref_segments_limited, start_sec=start_sec, end_sec=end_sec)
     else:
-        reference_full = extract_text(gt_data, start_sec=start_sec, end_sec=end_sec)
+        reference_full = extract_text(gt_selected_data, start_sec=start_sec, end_sec=end_sec)
 
-    # 2. Příprava HYPOTÉZY (ASR)
     print(f"INFO: Počet segmentů v Hypotéze (ASR): {len(hyp_segments_limited)}")
     if hyp_segments:
         hypothesis_full = text_from_segments(hyp_segments_limited, start_sec=start_sec, end_sec=end_sec)
@@ -635,18 +748,16 @@ def evaluate(hyp_file):
 
     if not reference_full.strip() or not hypothesis_full.strip():
         print("Chyba: Nepodařilo se extrahovat text z GT nebo HYP souboru.")
-        return
+        return None
 
-    # 3. Normalizace
     norm_ref_strict = normalize_text_strict(reference_full)
     norm_hyp_strict = normalize_text_strict(hypothesis_full)
     norm_ref_robust = normalize_text_robust(reference_full)
     norm_hyp_robust = normalize_text_robust(hypothesis_full)
 
-    # 4. Diagnostika slov
     ref_words = norm_ref_robust.split()
     hyp_words = norm_hyp_robust.split()
-    
+
     print(f"INFO: Počet slov v Reference: {len(ref_words)}")
     print(f"INFO: Počet slov v Hypotéze: {len(hyp_words)}")
 
@@ -662,10 +773,9 @@ def evaluate(hyp_file):
 
     diagnostics = build_error_diagnostics(norm_ref_robust, norm_hyp_robust)
 
-    # 6. Výpočet WER
     if not norm_ref_strict:
         print("Chyba: Referenční text je prázdný!")
-        return
+        return None
 
     error_rate_strict = wer(norm_ref_strict, norm_hyp_strict)
     error_rate_robust = diagnostics["wer"]
@@ -696,36 +806,96 @@ def evaluate(hyp_file):
         print(f"WER (ROBUST, OFFSET-COMP): {robust_comp * 100:.2f} %")
     print("-" * 80)
 
-    diagnostics_path = diagnostics_output_path(hyp_file)
-    write_diagnostics_report(
-        diagnostics_path,
-        diagnostics,
-        source_json=hyp_file,
-        metadata=metadata,
-        strict_wer=error_rate_strict,
-        robust_wer=error_rate_robust,
-        reference_word_count=len(ref_words),
-        hypothesis_word_count=len(hyp_words),
-        warnings=warnings,
-        reference_head=" ".join(ref_words[:15]) + "...",
-        hypothesis_head=" ".join(hyp_words[:15]) + "...",
-        reference_tail="..." + " ".join(ref_words[-15:]),
-        hypothesis_tail="..." + " ".join(hyp_words[-15:]),
-        strict_comp_wer=strict_comp,
-        robust_comp_wer=robust_comp,
-        offset_info=offset_info,
-    )
-    print(f"DEBUG: Kompletní report uložen do {diagnostics_path}")
-
-    # Ukázka srovnání začátku a konce
     print("\nZAČÁTEK SROVNÁNÍ:")
     print(f"REF: {' '.join(ref_words[:15])}...")
     print(f"HYP: {' '.join(hyp_words[:15])}...")
-    
+
     print("\nKONEC SROVNÁNÍ:")
     print(f"REF: ...{' '.join(ref_words[-15:])}")
     print(f"HYP: ...{' '.join(hyp_words[-15:])}")
-    print("="*80 + "\n")
+
+    return {
+        "gt_file": gt_file,
+        "diagnostics": diagnostics,
+        "strict_wer": error_rate_strict,
+        "robust_wer": error_rate_robust,
+        "strict_comp": strict_comp,
+        "robust_comp": robust_comp,
+        "offset_info": offset_info,
+        "warnings": warnings,
+        "reference_word_count": len(ref_words),
+        "hypothesis_word_count": len(hyp_words),
+        "reference_head": " ".join(ref_words[:15]) + "...",
+        "hypothesis_head": " ".join(hyp_words[:15]) + "...",
+        "reference_tail": "..." + " ".join(ref_words[-15:]),
+        "hypothesis_tail": "..." + " ".join(hyp_words[-15:]),
+    }
+
+
+def evaluate(hyp_file):
+    hyp_recording_id = extract_recording_id_from_filename(hyp_file)
+
+    if not os.path.exists(hyp_file):
+        print(f"Chyba: Soubor {hyp_file} nebyl nalezen!")
+        return
+
+    hyp_data = load_json(hyp_file)
+
+    metadata = hyp_data.get("metadata", {}) if isinstance(hyp_data, dict) else {}
+    diagnostics_path = diagnostics_output_path(hyp_file)
+
+    gt_files = [
+        "results/ground_truth_eval.json",
+        "results/formal_ground_truth_eval.json",
+    ]
+
+    existing_gt_files = [path for path in gt_files if os.path.exists(path)]
+    if not existing_gt_files:
+        print("Chyba: Nebyl nalezen ani jeden GT eval soubor.")
+        print("Očekáváno: results/ground_truth_eval.json a results/formal_ground_truth_eval.json")
+        return
+
+    first_section = True
+    for gt_file in existing_gt_files:
+        section_result = evaluate_against_single_gt(
+            hyp_file=hyp_file,
+            hyp_data=hyp_data,
+            metadata=metadata,
+            hyp_recording_id=hyp_recording_id,
+            gt_file=gt_file,
+        )
+
+        if section_result is None:
+            continue
+
+        write_diagnostics_report(
+            diagnostics_path,
+            section_result["diagnostics"],
+            source_json=hyp_file,
+            gt_file=gt_file,
+            section_title=f"ASR Evaluation Report | {Path(gt_file).name}",
+            metadata=metadata,
+            strict_wer=section_result["strict_wer"],
+            robust_wer=section_result["robust_wer"],
+            reference_word_count=section_result["reference_word_count"],
+            hypothesis_word_count=section_result["hypothesis_word_count"],
+            warnings=section_result["warnings"],
+            reference_head=section_result["reference_head"],
+            hypothesis_head=section_result["hypothesis_head"],
+            reference_tail=section_result["reference_tail"],
+            hypothesis_tail=section_result["hypothesis_tail"],
+            strict_comp_wer=section_result["strict_comp"],
+            robust_comp_wer=section_result["robust_comp"],
+            offset_info=section_result["offset_info"],
+            append=not first_section,
+        )
+        first_section = False
+
+        print("=" * 80)
+        print("=" * 80)
+
+    if not first_section:
+        print(f"DEBUG: Kompletní report uložen do {diagnostics_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

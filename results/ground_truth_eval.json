@@ -1,2347 +1,2349 @@
-[
-  {
-    "id": "seg_00001",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 34.812,
-    "end": 49.483,
-    "text": "jmenuji se Jana René Fryesová, jé á en á, er é en é, ef er ý é es o vé á .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00002",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 49.483,
-    "end": 56.639,
-    "text": "březen třináctého , devatenácet devadesát šest .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00003",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 56.639,
-    "end": 62.627,
-    "text": "natáčíme rozhovor s panem inženýrem Janem Orlíkem,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00004",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 64.064,
-    "end": 67.148,
-    "text": "praha, česká republika.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00008",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 84.034,
-    "end": 90.831,
-    "text": "a kdybys byl tak laskav a řekl své jméno a hláskoval ho.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00009",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 90.831,
-    "end": 102.508,
-    "text": "jmenuju se Jan Orlík , jé á n , ó er el í ká.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00010",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 102.508,
-    "end": 104.454,
-    "text": "a kdy jsi se narodil.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00011",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 104.454,
-    "end": 111.61,
-    "text": "narodil jsem se dvanáctého září devatenácet devatenáct v praze.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00012",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 111.61,
-    "end": 114.754,
-    "text": "a měl jsi nějaké jiné jméno.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00013",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 114.754,
-    "end": 127.718,
-    "text": "ano , do roku čtyřicet šest jsem se po tátovi jmenoval Ádler, to se hláskuje á dé el é er.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00014",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 127.718,
-    "end": 129.125,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00015",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 129.125,
-    "end": 134.425,
-    "text": "a potom ve snaze to počeštit jsem to změnil na překlad.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00016",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 134.425,
-    "end": 135.473,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00017",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 135.473,
-    "end": 143.227,
-    "text": "a kdybys teď se trošku zamyslel nad tim, jak to bylo u vás doma.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00018",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 143.227,
-    "end": 147.838,
-    "text": "i v tvém dětství , jaká jste byli rodina.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00019",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 149.782,
-    "end": 152.269,
-    "text": "tím bychom mohli začít, kde jste žili.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00020",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 152.269,
-    "end": 164.855,
-    "text": "já jsem se narodil v bytě svých prarodičů z máminy strany , v italské ulici na královských vinohradech ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00021",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 164.855,
-    "end": 193.13,
-    "text": "a brzo po narození jsem byl převezen do místa působení mého otce , ten pochází od německých hranic ze šumavy, jmenoval se Edmond Ádler , po celý život to byl můj vzor, to byl prostě ten člověk, kterej nejvíc ovlivnil můj život .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00022",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 193.13,
-    "end": 200.002,
-    "text": "a on v té době spravoval velkostatek, který se jmenoval ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00023",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 200.002,
-    "end": 210.765,
-    "text": "starý brunst , což je velkostatek, který leží na hlavní silnici vedoucí z klatov do bavor,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00024",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 212.234,
-    "end": 220.827,
-    "text": "byl to vzorný statek, kterej dneska tak jako mnoho jiných objektů na šumavě prostě zmizel.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00025",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 220.827,
-    "end": 221.905,
-    "text": "neexistuje.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00026",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 221.905,
-    "end": 222.324,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00027",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 223.971,
-    "end": 232.025,
-    "text": "tam táta prováděl meliorizace, modernizoval to, dovezl švýcarský chov.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00028",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 232.025,
-    "end": 239.45,
-    "text": "no prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00029",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 241.097,
-    "end": 242.863,
-    "text": "můžu se, byla to úplná samota.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "můžu se,",
-      "interviewee": "byla to úplná samota."
+{
+  "12008_001": [
+    {
+      "id": "seg_12008_001_00001",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 34.812,
+      "end": 49.483,
+      "text": "jmenuji se Jana René Fryesová, jé á en á, er é en é, ef er ý é es o vé á .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00002",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 49.483,
+      "end": 56.639,
+      "text": "březen třináctého , devatenácet devadesát šest .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00003",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 56.639,
+      "end": 62.627,
+      "text": "natáčíme rozhovor s panem inženýrem Janem Orlíkem,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00004",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 64.064,
+      "end": 67.148,
+      "text": "praha, česká republika.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00008",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 84.034,
+      "end": 90.831,
+      "text": "a kdybys byl tak laskav a řekl své jméno a hláskoval ho.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00009",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 90.831,
+      "end": 102.508,
+      "text": "jmenuju se Jan Orlík , jé á n , ó er el í ká.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00010",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 102.508,
+      "end": 104.454,
+      "text": "a kdy jsi se narodil.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00011",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 104.454,
+      "end": 111.61,
+      "text": "narodil jsem se dvanáctého září devatenácet devatenáct v praze.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00012",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 111.61,
+      "end": 114.754,
+      "text": "a měl jsi nějaké jiné jméno.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00013",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 114.754,
+      "end": 127.718,
+      "text": "ano , do roku čtyřicet šest jsem se po tátovi jmenoval Ádler, to se hláskuje á dé el é er.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00014",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 127.718,
+      "end": 129.125,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00015",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 129.125,
+      "end": 134.425,
+      "text": "a potom ve snaze to počeštit jsem to změnil na překlad.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00016",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 134.425,
+      "end": 135.473,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00017",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 135.473,
+      "end": 143.227,
+      "text": "a kdybys teď se trošku zamyslel nad tim, jak to bylo u vás doma.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00018",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 143.227,
+      "end": 147.838,
+      "text": "i v tvém dětství , jaká jste byli rodina.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00019",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 149.782,
+      "end": 152.269,
+      "text": "tím bychom mohli začít, kde jste žili.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00020",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 152.269,
+      "end": 164.855,
+      "text": "já jsem se narodil v bytě svých prarodičů z máminy strany , v italské ulici na královských vinohradech ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00021",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 164.855,
+      "end": 193.13,
+      "text": "a brzo po narození jsem byl převezen do místa působení mého otce , ten pochází od německých hranic ze šumavy, jmenoval se Edmond Ádler , po celý život to byl můj vzor, to byl prostě ten člověk, kterej nejvíc ovlivnil můj život .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00022",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 193.13,
+      "end": 200.002,
+      "text": "a on v té době spravoval velkostatek, který se jmenoval ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00023",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 200.002,
+      "end": 210.765,
+      "text": "starý brunst , což je velkostatek, který leží na hlavní silnici vedoucí z klatov do bavor,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00024",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 212.234,
+      "end": 220.827,
+      "text": "byl to vzorný statek, kterej dneska tak jako mnoho jiných objektů na šumavě prostě zmizel.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00025",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 220.827,
+      "end": 221.905,
+      "text": "neexistuje.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00026",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 221.905,
+      "end": 222.324,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00027",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 223.971,
+      "end": 232.025,
+      "text": "tam táta prováděl meliorizace, modernizoval to, dovezl švýcarský chov.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00028",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 232.025,
+      "end": 239.45,
+      "text": "no prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00029",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 241.097,
+      "end": 242.863,
+      "text": "můžu se, byla to úplná samota.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "můžu se,",
+        "interviewee": "byla to úplná samota."
+      }
+    },
+    {
+      "id": "seg_12008_001_00030",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 242.863,
+      "end": 246.935,
+      "text": "mluvili jste doma česky nebo německy , jaký byl tvůj rodný jazyk .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00031",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 246.935,
+      "end": 255.977,
+      "text": "to bylo velmi zajímavý, moje maminka je modrooká blondýna z pelhřimova ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00032",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 255.977,
+      "end": 258.133,
+      "text": "židovka. židovka,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "židovka.",
+        "interviewee": "židovka,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00033",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 258.133,
+      "end": 266.007,
+      "text": "její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v pelhřimově .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00034",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 266.007,
+      "end": 272.834,
+      "text": "babička je z rokycan paní , jmenovala se původně Ledererová,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00035",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 275.529,
+      "end": 290.245,
+      "text": "a jim se narodila ta dcera Ella, Elinka a ta chodila do školy v pelhřimově a byla to napros- -to česky orientovaná rodina, která neuměla pořádně německy,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00036",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 290.245,
+      "end": 291.077,
+      "text": "hm. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "hm.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00037",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 291.077,
+      "end": 297.664,
+      "text": "dědeček a babička rozuměli německy, ale neovládali to, maminka ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00038",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 299.212,
+      "end": 314.633,
+      "text": "když se jim dařilo dobře, byla jako jediný dítě vyslána do švýcar do penzionátu a tam se naučila dobře francouzsky a dobře německy , což mělo velkej vliv na mojí výchovu a,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00039",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 316.429,
+      "end": 338.944,
+      "text": "zcela jinak to bylo z otcovo strany , otec pochází z vesničky jménem zhůří na šumavě , to je nedaleko toho velkostatku , v blízkosti hartmanic, což je starej soudní okres na šumavě, kde byl židovskej hřbitov mimochodem ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00040",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 338.944,
+      "end": 343.144,
+      "text": "řečeno, kerej němci úplně vyvrátili, tam neni nic.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00041",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 344.862,
+      "end": 360.983,
+      "text": "ta rodina Ádlerová žila tím, že měli malinkej krámeček a v okolních vesnicích byli jenom němci a pracovali ve sklářských hutích nebo v lese.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00042",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 363.608,
+      "end": 379.217,
+      "text": "dědeček byl, jmenoval se Salomon Ádler, byl to krásnej, statnej pán a jeho manželka se jmenovala Róza Kornfiererová a ty neuměli česky ani slovo.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00043",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 379.217,
+      "end": 380.025,
+      "text": "mhm.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00044",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 380.025,
+      "end": 395.385,
+      "text": "táta sice měl českou maturitu, ale ta čeština byla taková typicky sudetská, to znamená prakticky , že místo p se řiká b , místo d se řiká t,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00045",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 395.385,
+      "end": 395.834,
+      "text": "mhm. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "mhm.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00046",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 395.834,
+      "end": 400.565,
+      "text": "takže von třeba řikal bejzek anebo anektóde místo anekdóte,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00047",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 400.565,
+      "end": 401.553,
+      "text": "ano. a tak dál ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "a tak dál ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00048",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 401.553,
+      "end": 405.236,
+      "text": "to je zvláštnost toho německýho nářečí tam.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00049",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 405.236,
+      "end": 406.423,
+      "text": "ano. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00050",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 406.423,
+      "end": 413.32,
+      "text": "u stolu u nás v-, po celé mé dětství jsem mluvil výhradně česky ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00051",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 413.32,
+      "end": 420.027,
+      "text": "ano. na má- na maminku a na Evu, svojí sestru a výhradně německy na tatínka.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "na má- na maminku a na Evu, svojí sestru a výhradně německy na tatínka."
+      }
+    },
+    {
+      "id": "seg_12008_001_00052",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 420.027,
+      "end": 420.446,
+      "text": "ano. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00053",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 420.446,
+      "end": 426.464,
+      "text": "takže to se neustále střídalo a mně to nedělalo vůbec žádné potíže .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00054",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 426.464,
+      "end": 429.997,
+      "text": "ovšem jednou po válce jsem byl pozván na,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00055",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 431.584,
+      "end": 445.626,
+      "text": "takovou překladatelskou přípravku, kde jsem měl fungovat na nějaký konferenci jako překladatel , protože bylo o mně známo, že mluvim plynně oběma jazyky,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00056",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 445.626,
+      "end": 447.632,
+      "text": "ano. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00057",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 447.632,
+      "end": 459.608,
+      "text": "a tam mě podrobili zkoušce a řekli, tak jak se řekne německy předradlička, což jsem nevěděl a jak se řekne záhumenek, což jsem taky nevěděl ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00058",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 459.608,
+      "end": 461.614,
+      "text": ". tak se se mnou hned rozloučili ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": ".",
+        "interviewee": "tak se se mnou hned rozloučili ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00059",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 461.614,
+      "end": 465.207,
+      "text": "ano, . že ta moje němčina dokonalá není.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano, .",
+        "interviewee": "že ta moje němčina dokonalá není."
+      }
+    },
+    {
+      "id": "seg_12008_001_00060",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 465.207,
+      "end": 471.674,
+      "text": "když mně bylo šest let, tak jsem šel v železné rudě, kam jsme se přestěhovali,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00061",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 473.081,
+      "end": 475.117,
+      "text": "do české školy.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00062",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 475.117,
+      "end": 494.308,
+      "text": "celá železná ruda, kde měl dědeček vilu a továrnu na štětce a všecko možný jo, patřil k takový tý velmi bohatý nebo zbohatlický poválečný generaci měšťanský,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00063",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 495.685,
+      "end": 503.044,
+      "text": "von to byl čech bez jakéhokoliv formálního vzdělání, ale velice příjemnej, sčetlej, inteligentní,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00064",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 503.044,
+      "end": 503.942,
+      "text": "ano. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00065",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 503.942,
+      "end": 510.266,
+      "text": "a měl tu zvláštní vlastnost, že v čemkoliv podnikal ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00066",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 510.266,
+      "end": 513.021,
+      "text": "ano. se mu to fantasticky dařilo.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "se mu to fantasticky dařilo."
+      }
+    },
+    {
+      "id": "seg_12008_001_00067",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 513.021,
+      "end": 532.542,
+      "text": "zemřel asi v roce třicet devět v chudobinci židovském tady v praze, protože vo všechno přišli , ale to né zásluhou Hitlera, to také, ale především tím , že ta rodina nežila v souladu ale,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00068",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 532.542,
+      "end": 535.656,
+      "text": "to je úplně jiná kapitola, já se vrátím k tomu dětství.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00069",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 535.656,
+      "end": 536.045,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00070",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 536.045,
+      "end": 545.327,
+      "text": "já bych se ještě ptala, tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu, abys chodil do židovské školy.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00071",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 545.327,
+      "end": 561.195,
+      "text": "nejbližší židovská komunita byla v nýrsku , což je městečko asi dvacet kilometrů vzdálené od hranic od železné rudy, tam byl rabín pan Klaubr .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00072",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 561.195,
+      "end": 578.521,
+      "text": "já jsem se s nim setkal pouze jednou nebo dvakrát při marných pokusech vychovávat ty děti těch židovských rodin v železný rudě, bylo jich strašně málo, snad čtyři nebo tři,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00073",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 578.521,
+      "end": 580.39,
+      "text": "ano. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00074",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 580.39,
+      "end": 586.258,
+      "text": "a tak pan rabín Klaubr několikrát přijel z nýrska, aby nás uvedl do,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00075",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 587.633,
+      "end": 591.558,
+      "text": "do židovského náboženství. věrouky nebo jak se to řiká , ale,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "do židovského náboženství.",
+        "interviewee": "věrouky nebo jak se to řiká , ale,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00076",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 591.558,
+      "end": 598.804,
+      "text": "do židovského náboženství , ale tento pokus ztroskotal, takže jsem,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00077",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 600.132,
+      "end": 603.904,
+      "text": "se učil buďto hebrejsky číst ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00078",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 603.904,
+      "end": 611.12,
+      "text": "mhm. asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "mhm.",
+        "interviewee": "asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil ."
+      }
+    },
+    {
+      "id": "seg_12008_001_00079",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 611.12,
+      "end": 613.485,
+      "text": "rodina sama byla,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00080",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 614.767,
+      "end": 632.007,
+      "text": "teda rodiče , byla naprosto neortodoxní, vůbec jako se žádný svátky ani zvyky nedodržovaly , avšak to vědomí židovské tam bylo naprosto jasné,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00081",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 632.007,
+      "end": 638.264,
+      "text": "mhm, mhm. to byla zvláštní směsice skutečně těch tří kultur,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "mhm, mhm.",
+        "interviewee": "to byla zvláštní směsice skutečně těch tří kultur,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00082",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 638.264,
+      "end": 649.761,
+      "text": "té české, která byla z matčiny strany a která byla teda , smím-li to tak říct, šmrncnutá její francouzskou výchovou ve švýcarech,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00083",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 651.558,
+      "end": 670.959,
+      "text": "to byl ten největší kulturní vliv na mojí myšlení od hudby až po výtvarné umění a literaturu, jí chodily francouzský knihy a tak dál , ona byla člověk velice muzický a každý měsíc jela na několik dnů do prahy ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00084",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 670.959,
+      "end": 674.402,
+      "text": "ano. aby tady nasávala kulturu ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "aby tady nasávala kulturu ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00085",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 674.402,
+      "end": 690.265,
+      "text": "řekl bych dnešníma očima až nekulturně , že chodila na mat- pardon , na i na večerní představení , jenom aby kompenzovala tu pustinu kulturní tech šumavských lesů,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00086",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 690.265,
+      "end": 693.019,
+      "text": "ano. kde nebylo nic , později rádio.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "kde nebylo nic , později rádio."
+      }
+    },
+    {
+      "id": "seg_12008_001_00087",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 694.277,
+      "end": 708.313,
+      "text": "takže ona jezdila k mamince a k tatínkovi do tých prahy a tady nabírala a kupovala knihy a potom se vrátila a vypravovala mi o koncertech, o přednáškách,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00088",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 708.313,
+      "end": 710.259,
+      "text": "mhm. o divadle ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "mhm.",
+        "interviewee": "o divadle ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00089",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 710.259,
+      "end": 715.702,
+      "text": "později taky Evě, mojí sestře, která se narodila v roce dvacet jedna,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00090",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 715.702,
+      "end": 718.379,
+      "text": "ano. to znamená o dva roky později než já.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "to znamená o dva roky později než já."
+      }
+    },
+    {
+      "id": "seg_12008_001_00091",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 718.379,
+      "end": 721.822,
+      "text": "tento vliv byl velice silný .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00092",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 721.822,
+      "end": 731.164,
+      "text": "druhý, velmi silný vliv byla, byl ten pocit toho obklopení němci,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00093",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 733.748,
+      "end": 760.93,
+      "text": "to bylo velmi komplikované, protože na jedné straně bylo to otcovo rodiště , bylo to místo, kde táta nejdřív si najal malou pilu , později ji vlastnil a nás děti od začátku, ačkoliv sám neměl *českví* pozadí nebo český ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00094",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 760.93,
+      "end": 775.52,
+      "text": "-kou minulost , tak bylo bez jakýchkoliv otázek, že my budem chodit do velmi, velmi chudičké české jednotřídky , kde bylo pět oddělení,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00095",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 775.52,
+      "end": 776.658,
+      "text": "ano. tam byly děti ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "tam byly děti ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00096",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 776.658,
+      "end": 778.984,
+      "text": "od šesti do třinácti let,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00097",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 780.511,
+      "end": 789.667,
+      "text": "ti učitelé, to byli virtuosové pedagogičtí, to, to je něco neuvěřitelnýho , protože do těch,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00098",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 790.76,
+      "end": 811.943,
+      "text": "českých menšinových škol v pohraničí chodily děti i německé z rodin , kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne všecky do německé , ta německá byla bohatá a výstavná ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00099",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 811.943,
+      "end": 817.452,
+      "text": "a to proto, aby když byl třeba otec trafikant , tak aby symbolicky,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00100",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 817.452,
+      "end": 821.254,
+      "text": "ano. alespoň jedno dítě chodilo do české školy , nebo ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "alespoň jedno dítě chodilo do české školy , nebo ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00101",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 821.254,
+      "end": 830.895,
+      "text": "byly to děti dřevorubců, němců, ale jelikož pracovali v českých státních lesích,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00102",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 830.895,
+      "end": 834.099,
+      "text": "mhm, mhm. a jelikož česká matice školská ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "mhm, mhm.",
+        "interviewee": "a jelikož česká matice školská ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00103",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 834.099,
+      "end": 857.452,
+      "text": "rozdávala na vánoce boty , tak ti němečtí dřevaři jedno ze svých osumnácti dětí poslali do český školy , ale tyto děti nechodily pravidelně , takže většinou v techto jednotřídkách byly děti z pošty , od finančních úředníků, od četníků,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00104",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 857.452,
+      "end": 863.22,
+      "text": "ano, , takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás. a my a jinak to bylo.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano, , takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás.",
+        "interviewee": "a my a jinak to bylo."
+      }
+    },
+    {
+      "id": "seg_12008_001_00105",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 863.22,
+      "end": 867.142,
+      "text": "nebo ty sám. ne se mnou ve třídě ne- , ne tam byl j-,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "nebo ty sám.",
+        "interviewee": "ne se mnou ve třídě ne- , ne tam byl j-,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00106",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 867.142,
+      "end": 872.052,
+      "text": "jeden nebo dva lékaři němci, jeden lékař židovský .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00107",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 872.052,
+      "end": 880.945,
+      "text": "vůbec jako v celý , v celým tom, tý rudě , hm. jeho, celý tý, jo , ale to byla židovská rodina, jmenovali se Hartmannovi ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "vůbec jako v celý , v celým tom, tý rudě , hm.",
+        "interviewee": "jeho, celý tý, jo , ale to byla židovská rodina, jmenovali se Hartmannovi ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00108",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 880.945,
+      "end": 884.688,
+      "text": "jenom jejich dcera se zachránila, je myslim v americe,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00109",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 884.688,
+      "end": 890.616,
+      "text": "ano, takže chodili do tý třídy . ty byli německy orientovaní, ty neměli s náma absolutně nic společnýho ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano, takže chodili do tý třídy .",
+        "interviewee": "ty byli německy orientovaní, ty neměli s náma absolutně nic společnýho ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00110",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 890.616,
+      "end": 906.963,
+      "text": "to rozdělení bylo naprosto jednoznačné, to , prostě některé rodiny židovské byly orientovaný vzhledem k své minulosti na ten německý žive-, na tu německou kulturní oblast ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00111",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 906.963,
+      "end": 917.132,
+      "text": "a druzí, tak jako moje maminka a tím i my, naprosto jednoznačně, takže , když jsem vychodil tu obecnou školu,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00112",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 917.132,
+      "end": 919.557,
+      "text": ",",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00113",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 919.557,
+      "end": 924.018,
+      "text": "tak nejbližší gymnázium bylo čtyrycet kilometrů daleko v klatovech.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00114",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 925.246,
+      "end": 929.617,
+      "text": "já jsem tam měl nastoupit do prímy, udělal jsem zkoušku,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00115",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 932.102,
+      "end": 947.102,
+      "text": "a když jsem měl odject, tak tatínek s maminkou přišli ke mně do p- k postýlce, k posteli a řekli, my bychom nechtěli, aby jsi šel z domova už ve dvanácti letech,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00116",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 947.102,
+      "end": 948.18,
+      "text": "ano. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00117",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 948.18,
+      "end": 965.657,
+      "text": "co by jsi tomu řikal , kdybychom si n- najali nebo obstarali vychovatelku, která by tě připravovala na zkoušky a ty by jsi do gymnázia chodil jenom skládat zkoušky.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00118",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 966.876,
+      "end": 973.142,
+      "text": "jo. no já jsem nevěděl, jestli to je dobře nebo špatně, prostě se to takhle udělalo ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "jo.",
+        "interviewee": "no já jsem nevěděl, jestli to je dobře nebo špatně, prostě se to takhle udělalo ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00119",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 973.142,
+      "end": 981.168,
+      "text": "takže primu a sekundu mě učila paní Pavla Moravcová,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00120",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 982.387,
+      "end": 983.982,
+      "text": "dobrej pedagog,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00121",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 985.732,
+      "end": 1007.785,
+      "text": "která takhle už připravila nějaký děti *předem mnou*, bydlela u nás a každých půl roku jsme jeli společně s tou slečnou Moravcovou do klatov , bydleli jsme v hotelu , vona na mě byla mimořádně laskavá, abych jo dobře skládal zkoušku ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00122",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1007.785,
+      "end": 1017.635,
+      "text": "a tam jsme všechny předměty, musel složit zkoušku a to bylo prima, sekunda .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00123",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1017.635,
+      "end": 1036.403,
+      "text": "skládal jsem je dobře, klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice a byl jsem tam, když vyhodili ze stejného systému hrabata Schoenborny , kteří měli zámek v kdyni ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00124",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1036.403,
+      "end": 1042.72,
+      "text": "a kde prostě protekce nebyla, voni byli hrdý na to, jaký jsou výběrový.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00125",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1042.72,
+      "end": 1050.146,
+      "text": "vůbec ne, všecko, ne, ne, ne, vůbec ne. a že by se k tobě chovali nějak, protožes byl židovskej kluk , vůbec ne, všecko.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "vůbec ne, všecko, ne, ne, ne, vůbec ne.",
+        "interviewee": "a že by se k tobě chovali nějak, protožes byl židovskej kluk , vůbec ne, všecko."
+      }
+    },
+    {
+      "id": "seg_12008_001_00126",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1050.146,
+      "end": 1071.074,
+      "text": "navopak , pan profesor Chládek na biologii, jeden z nejlepších profesorů, kerý jsem znal , si tam zval jiný profesory, aby si poslechli , jak vypadá- -jí odpovědi dítěte, kerý nechodilo do školy , ale který se muselo připravovat samo .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00127",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1071.074,
+      "end": 1076.403,
+      "text": "takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi a k babičce do,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00128",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1077.601,
+      "end": 1083.031,
+      "text": "prahy a chodil jsem do tercie na jiřího náměstí. mhm, mhm.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "prahy a chodil jsem do tercie na jiřího náměstí.",
+        "interviewee": "mhm, mhm."
+      }
+    },
+    {
+      "id": "seg_12008_001_00129",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1083.031,
+      "end": 1102.852,
+      "text": "to byla katastrofa, protože já jsem byl zvyklý se učit tak, abych věcem rozuměl, kdežto gymnázium v, na jiřího náměstí , stejně jako všechny jiný školy , chtějí, abych správně odpovídal, ne abych rozuměl .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00130",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1102.852,
+      "end": 1109.259,
+      "text": "takže jsem začal v-, tady rupat v jednom předmětu za druhým.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00131",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1109.259,
+      "end": 1110.876,
+      "text": "no.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00132",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1110.876,
+      "end": 1120.517,
+      "text": "z latiny a tak dále, protože všichni jako odmítali můj přístup jako, jak to teda vlastně je, nýbrž voni chtěli ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00133",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1120.517,
+      "end": 1128.152,
+      "text": "já bych z toho hlediska historie, to, to je který rok, kdys přišel do tý prahy , jednoznačnou papouškovanou odpověď, .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "já bych z toho hlediska historie, to, to je který rok, kdys přišel do tý prahy ,",
+        "interviewee": "jednoznačnou papouškovanou odpověď, ."
+      }
+    },
+    {
+      "id": "seg_12008_001_00134",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1128.152,
+      "end": 1138.511,
+      "text": "co už se mění v ten starý že jo, to o kterou nám jde, třicet dva, třicet tři, takže to už je to období, kdy , to je třicet dva, třicet tři, ano .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "co už se mění v ten starý že jo, to o kterou nám jde, třicet dva, třicet tři, takže to už je to období, kdy ,",
+        "interviewee": "to je třicet dva, třicet tři, ano ."
+      }
+    },
+    {
+      "id": "seg_12008_001_00135",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1138.511,
+      "end": 1144.918,
+      "text": "v německu se dá tušiti fašismus a tak dále, jo, proto se na to taky ptám, že. ano, ano, to ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "v německu se dá tušiti fašismus a tak dále, jo, proto se na to taky ptám, že.",
+        "interviewee": "ano, ano, to ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00136",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1144.918,
+      "end": 1148.901,
+      "text": "to už začínal ten fašis- ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00137",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1148.901,
+      "end": 1154.829,
+      "text": "nakonec i v pohraničních oblastech. ale v pohraničních oblastech se to vyvíjelo velice ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "nakonec i v pohraničních oblastech.",
+        "interviewee": "ale v pohraničních oblastech se to vyvíjelo velice ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00138",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1154.829,
+      "end": 1163.452,
+      "text": "zvolna, teda na tom železnorudsku , v železný rudě byla silná sociální demokracie, táta byl taky sociální demokrat,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00139",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1164.827,
+      "end": 1175.248,
+      "text": "a jak řikám, on tam chodil do školy s těmi německými obyvateli, von tam ze začátku to soužití bylo,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00140",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1176.529,
+      "end": 1179.799,
+      "text": "mně se to aspoň tak jevilo , bezproblémové.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00141",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1179.799,
+      "end": 1180.698,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00142",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1180.698,
+      "end": 1188.872,
+      "text": "od toho roku třicet tři to prudce stoupal ten německý nacionalismus a agrese,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00143",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1190.728,
+      "end": 1198.004,
+      "text": "takže já jsem se s tim setkal poprvé tak někdy v roce,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00144",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1198.004,
+      "end": 1202.735,
+      "text": "když ses vracel na prázdniny, ano. třicet čtyři, třicet pět , když jsem se vracel,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "když ses vracel na prázdniny, ano.",
+        "interviewee": "třicet čtyři, třicet pět , když jsem se vracel,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00145",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1202.735,
+      "end": 1205.28,
+      "text": "a pamatuju se přesně, jak to bylo .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00146",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1205.28,
+      "end": 1208.933,
+      "text": "kupříkladu, ne jak to bylo , taková epizoda .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00147",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1208.933,
+      "end": 1216.418,
+      "text": "vokolo potoka vedla taková úplně úzká pěšina a já na tom, na tý pěšině jel na kole .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00148",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1216.418,
+      "end": 1231.538,
+      "text": "najednou proti mně vystoupili dva nebo tři němečtí kluci , chytli mě za řidítka, tak jak jsem na nich seděl , dali mi pár facek a strčili do mě , abych zase musel ject.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00149",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1231.538,
+      "end": 1232.227,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00150",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1232.227,
+      "end": 1239.443,
+      "text": "a já přijel domů a strašně jsem se litoval, řval vzteky,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00151",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1239.443,
+      "end": 1240.91,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00152",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1240.91,
+      "end": 1244.593,
+      "text": "a řek jsem, táto, todle se mi stalo .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00153",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1244.593,
+      "end": 1251.419,
+      "text": "a táta, kterej byl pro mě vždycky ideálem statečného muže ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00154",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1251.419,
+      "end": 1259.383,
+      "text": "mně prostě dal pár facek, až se z-, až se mi hlava zatřepala a *řekla* , nechoď si stěžovat .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00155",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1259.383,
+      "end": 1262.886,
+      "text": "když ti někdo natlouk, natluč mu .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00156",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1262.886,
+      "end": 1265.012,
+      "text": "ano. ale nechoď si stěžovat.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "ale nechoď si stěžovat."
+      }
+    },
+    {
+      "id": "seg_12008_001_00157",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1265.012,
+      "end": 1267.168,
+      "text": "a vyhodil mě .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00158",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1267.168,
+      "end": 1282.22,
+      "text": "a já jsem v tom vzteku vyběh ven a na můstku přes ten potok řezná , jsem jednoho z těch kluků nachytal , vrhnul jsem se na něho tak, že jsme spadli do toho potoka ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00159",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1282.22,
+      "end": 1293.927,
+      "text": "ano. no a od tý doby mám tu filozofii , že prostě je nesprávné uhybat, jo, že musí člověk ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "no a od tý doby mám tu filozofii , že prostě je nesprávné uhybat, jo, že musí člověk ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00160",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1293.927,
+      "end": 1296.053,
+      "text": "čelit, hm. čelit .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "čelit, hm.",
+        "interviewee": "čelit ."
+      }
+    },
+    {
+      "id": "seg_12008_001_00161",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1296.053,
+      "end": 1301.143,
+      "text": "tak ale takovýdle situacích byla řada a ale toto mně zůstalo ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00162",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1301.143,
+      "end": 1307.341,
+      "text": "a jak sis to klukovsky teda vlastně tehdy vysvětloval , toto byla tátova výchova , .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "a jak sis to klukovsky teda vlastně tehdy vysvětloval ,",
+        "interviewee": "toto byla tátova výchova , ."
+      }
+    },
+    {
+      "id": "seg_12008_001_00163",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1307.341,
+      "end": 1319.034,
+      "text": "tu změnu, že jo , tomus rozuměl nebo táta ti to vysvětlil , on to sám pochopil nebo, ne, ne, ne, to, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "tu změnu, že jo , tomus rozuměl nebo táta ti to vysvětlil , on to sám pochopil nebo,",
+        "interviewee": "ne, ne, ne, to, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00164",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1319.034,
+      "end": 1335.89,
+      "text": "já jsem nečetl ani mayovky ani indiánky , já jsem četl Medka, Koptu, Jiráska, Vrbu, Baara , takže já jsem se cítil opravdu až nacionálně český.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00165",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1335.89,
+      "end": 1337.238,
+      "text": "ano.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00166",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1337.238,
+      "end": 1347.627,
+      "text": "ty legionáři pro mě něco znamenali, ta tradice a tak dále a z toho to a, ta protiněmecká, protirakouská,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00167",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1349.484,
+      "end": 1353.706,
+      "text": "zaměřenost byla jednoznačná .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00168",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1353.706,
+      "end": 1363.347,
+      "text": "já vim, že jeden z nejnešťastnějších okamžiků mýho mládí bylo , když jsem zaslechl svého tátu řikat jednomu známému,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00169",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1364.323,
+      "end": 1370.64,
+      "text": "vlastně to bylo škoda rozbít to rakousko uhersko , to se nemělo stát .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00170",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1370.64,
+      "end": 1383.485,
+      "text": "to byla pro mě taková rána, jak někdo může chválit to rakousko uhersko, který tři sta let ničilo českej národ .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00171",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1383.485,
+      "end": 1398.365,
+      "text": "jak někdo může popírat správnost legionářskýho nebo masarykovskýho snažení o vybudování českého st- státu , to mně trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00172",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1398.365,
+      "end": 1399.832,
+      "text": "ano. .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "."
+      }
+    },
+    {
+      "id": "seg_12008_001_00173",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1399.832,
+      "end": 1408.125,
+      "text": "a když ten táta byl teda tvůj ideál , ještě jsem se chtěla optat , pod které vlastnosti nebo co myslíš, že právě do tebe potom přešlo , .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "a když ten táta byl teda tvůj ideál , ještě jsem se chtěla optat , pod které vlastnosti nebo co myslíš, že právě do tebe potom přešlo ,",
+        "interviewee": "."
+      }
+    },
+    {
+      "id": "seg_12008_001_00174",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1408.125,
+      "end": 1412.856,
+      "text": "které lidské vlastnosti to byly. táta , táta byl zcela přirozený pedagog ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "které lidské vlastnosti to byly.",
+        "interviewee": "táta , táta byl zcela přirozený pedagog ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00175",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1412.856,
+      "end": 1432.377,
+      "text": "von chápal všechny klukovský sny , takže vod malička jsem měl psa, vod malička jsem pracoval s koňma , táta prostě trval na práci, já jsem jako malý dítě musel už pracovat na pile ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00176",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1432.377,
+      "end": 1435.072,
+      "text": "i když jsem jenom srovnával prkýnka,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00177",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1435.072,
+      "end": 1437.078,
+      "text": "ano. tak m- musel.",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "tak m- musel."
+      }
+    },
+    {
+      "id": "seg_12008_001_00178",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1437.078,
+      "end": 1455.94,
+      "text": "ale ne nutil , já jsem od malička miloval koně, táta mě opravdu naučil s těmi koňmi zacházet , já jsem v šestnácti letech v klatovech se stal jízdním, jsem vstoupil do jízdního sokola ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00179",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1455.94,
+      "end": 1460.791,
+      "text": "klatovy byla bašta agreárnická, tam bydlel,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00180",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1462.26,
+      "end": 1472.078,
+      "text": "ministr Machník, ministr za agreární stranu, ministr vojenství a měl stejně starýho kluka Honzu .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00181",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1472.078,
+      "end": 1492.137,
+      "text": "on byl v selské jízdě, což byla pravičácká agreární organizace , kdežto já jsem byl v s- jízdním sokole , kterej byl mírně liberálnější organizací , ale jezdili jsme společně na vojenských koních.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00182",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1494.442,
+      "end": 1505.46,
+      "text": "já jsem po tátovi zdědil tu lásku ke koním, táta byl dragoun , za války sloužil u dragounů i pozděj,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00183",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1507.107,
+      "end": 1515.46,
+      "text": "a takže jsem chodil jezdit do klatovských kasáren , které měly bohatou jezdeckou tradici.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00184",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1517.96,
+      "end": 1525.063,
+      "text": "no a jednou byly celostátní závody, mimořádně obtížný a,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00185",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1527.009,
+      "end": 1534.045,
+      "text": "eště ten den mimo to pršelo, kdy se měly teda na zítřek konat ty závody,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00186",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1534.045,
+      "end": 1539.225,
+      "text": "a to je který rok, to už ti , třicet šest. a to je rok asi tak třicet šest ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "a to je který rok, to už ti , třicet šest.",
+        "interviewee": "a to je rok asi tak třicet šest ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00187",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1539.225,
+      "end": 1545.722,
+      "text": "kdy já jsem přišel domů a řikal jsem , zejtra se jedou ty závody táto,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00188",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1547.339,
+      "end": 1569.195,
+      "text": "mně přidělil pan plukovník osumnáctiletýho koně Edisona, já ho tady mám na fotografii a Honzovi Machníkovi přidělil čtyrletýho polohřebce, nádhernýho , já proti němu nemám šanci a táta řek a kolik, co to je za závod,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00189",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1569.195,
+      "end": 1571.86,
+      "text": "a já jsem řikal na rychlost a na body .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00190",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1571.86,
+      "end": 1576.68,
+      "text": "šestnáct skoků poslušnostních, velmi náročných.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00191",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1579.315,
+      "end": 1586.022,
+      "text": "víš táto, to je taková nespravedlnost, že já zítra nenastoupim.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00192",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1586.022,
+      "end": 1589.944,
+      "text": "a táta řek, samozřejmě Honzíčku , nenastup.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00193",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1591.412,
+      "end": 1603.088,
+      "text": "ale ty přeci závodíš proto, abys vyhrál, ne z lásky ke sportu, že jo, ne z lásky ke koním , nýbrž vyhrát, to je tvoje heslo.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00194",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1603.088,
+      "end": 1607.19,
+      "text": "tak víš co, jestli zejtra nenastoupíš, už nemusíš chodit domů.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00195",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1607.19,
+      "end": 1610.184,
+      "text": "mhm. tim to končilo .",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "mhm.",
+        "interviewee": "tim to končilo ."
+      }
+    },
+    {
+      "id": "seg_12008_001_00196",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1610.184,
+      "end": 1614.226,
+      "text": "ale to všechno ve velmi přátelskym tónu,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00197",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1615.693,
+      "end": 1621.501,
+      "text": "tomu předcházely různé jiné pedagogické zá- -sahy, jako když mi byly tři roky,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00198",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1622.939,
+      "end": 1626.472,
+      "text": "tak jsem u stolu prohlásil, já špenát nejim.",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00199",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1627.61,
+      "end": 1634.676,
+      "text": "a tatínek řikal, to je správný , Honzo nikdy si nenech vnucovat věci, kerý nechceš .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00200",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1634.676,
+      "end": 1655.514,
+      "text": "lidi nemaj právo deformovat tvojí osobnost a vzal takhle tu mísu s tim špenátem, překlopil mi jí na hlavu , takže mi ten špenát tek na ramena a řiká, ale nesmíš se divit , když svět bude reagovat takhle .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00201",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1655.514,
+      "end": 1659.496,
+      "text": "ano. todle jsou samý věci, kerý jsou hluboko ve mně ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano.",
+        "interviewee": "todle jsou samý věci, kerý jsou hluboko ve mně ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00202",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1659.496,
+      "end": 1663.33,
+      "text": "takhle táta postupoval vždycky, ale nikdy to neby-,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00203",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1664.58,
+      "end": 1674.342,
+      "text": "ano, já bych trošku, já bych trošku se sunula k tomu, co souvisí s tím židovstvím a změnami, které v , zlé nebo ponižující vrátila, ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ano, já bych trošku, já bych trošku se sunula k tomu, co souvisí s tím židovstvím a změnami, které v ,",
+        "interviewee": "zlé nebo ponižující vrátila, ,"
+      }
+    },
+    {
+      "id": "seg_12008_001_00204",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1674.342,
+      "end": 1697.605,
+      "text": "se děly společensky , to jest tvůj otec a rodina začli jistě nějakým způsobem, pak už je rok třicet sedum, třicet osum, třicet devět, pociťovat tlak , který v pohraničí nastává a možná třeba i víc a dřív než v praze židé .",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00205",
+      "speakers": [
+        "interviewer"
+      ],
+      "start": 1697.605,
+      "end": 1703.204,
+      "text": "jak se to projevilo, třeba na otci anebo co se, co se dálo ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00206",
+      "speakers": [
+        "interviewer",
+        "interviewee"
+      ],
+      "start": 1703.204,
+      "end": 1707.755,
+      "text": "ještě předtím, on pak šel do, do transportu nebo nešel nebo co bylo předtím. ,",
+      "is_overlap": true,
+      "text_by_speaker": {
+        "interviewer": "ještě předtím, on pak šel do, do transportu nebo nešel nebo co bylo předtím.",
+        "interviewee": ","
+      }
+    },
+    {
+      "id": "seg_12008_001_00207",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1707.755,
+      "end": 1713.264,
+      "text": "dálo se to, že to napětí v pohraničí neustále stoupalo,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00208",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1714.791,
+      "end": 1718.474,
+      "text": "táta měl české přátele, kupříkladu,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00209",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1721.743,
+      "end": 1736.229,
+      "text": "a syn pana vrchního rady Pechana onemocněl obrnou a táta zjistil, že v mnichově existuje nějaký vynikající německý lékař , tak tam toho kluka s jeho rodiči,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00210",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1738.235,
+      "end": 1739.398,
+      "text": "vezl ,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00211",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1740.492,
+      "end": 1741.254,
+      "text": "a,",
+      "is_overlap": false
+    },
+    {
+      "id": "seg_12008_001_00212",
+      "speakers": [
+        "interviewee"
+      ],
+      "start": 1744.457,
+      "end": 1753.08,
+      "text": "měli jsme zaměstnance, jmenoval se Hartmann a ten byl nacista.",
+      "is_overlap": false
     }
-  },
-  {
-    "id": "seg_00030",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 242.863,
-    "end": 246.935,
-    "text": "mluvili jste doma česky nebo německy , jaký byl tvůj rodný jazyk .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00031",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 246.935,
-    "end": 255.977,
-    "text": "to bylo velmi zajímavý, moje maminka je modrooká blondýna z pelhřimova ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00032",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 255.977,
-    "end": 258.133,
-    "text": "židovka. židovka,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "židovka.",
-      "interviewee": "židovka,"
-    }
-  },
-  {
-    "id": "seg_00033",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 258.133,
-    "end": 266.007,
-    "text": "její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v pelhřimově .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00034",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 266.007,
-    "end": 272.834,
-    "text": "babička je z rokycan paní , jmenovala se původně Ledererová,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00035",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 275.529,
-    "end": 290.245,
-    "text": "a jim se narodila ta dcera Ella, Elinka a ta chodila do školy v pelhřimově a byla to napros- -to česky orientovaná rodina, která neuměla pořádně německy,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00036",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 290.245,
-    "end": 291.077,
-    "text": "hm. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "hm.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00037",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 291.077,
-    "end": 297.664,
-    "text": "dědeček a babička rozuměli německy, ale neovládali to, maminka ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00038",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 299.212,
-    "end": 314.633,
-    "text": "když se jim dařilo dobře, byla jako jediný dítě vyslána do švýcar do penzionátu a tam se naučila dobře francouzsky a dobře německy , což mělo velkej vliv na mojí výchovu a,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00039",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 316.429,
-    "end": 338.944,
-    "text": "zcela jinak to bylo z otcovo strany , otec pochází z vesničky jménem zhůří na šumavě , to je nedaleko toho velkostatku , v blízkosti hartmanic, což je starej soudní okres na šumavě, kde byl židovskej hřbitov mimochodem ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00040",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 338.944,
-    "end": 343.144,
-    "text": "řečeno, kerej němci úplně vyvrátili, tam neni nic.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00041",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 344.862,
-    "end": 360.983,
-    "text": "ta rodina Ádlerová žila tím, že měli malinkej krámeček a v okolních vesnicích byli jenom němci a pracovali ve sklářských hutích nebo v lese.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00042",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 363.608,
-    "end": 379.217,
-    "text": "dědeček byl, jmenoval se Salomon Ádler, byl to krásnej, statnej pán a jeho manželka se jmenovala Róza Kornfiererová a ty neuměli česky ani slovo.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00043",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 379.217,
-    "end": 380.025,
-    "text": "mhm.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00044",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 380.025,
-    "end": 395.385,
-    "text": "táta sice měl českou maturitu, ale ta čeština byla taková typicky sudetská, to znamená prakticky , že místo p se řiká b , místo d se řiká t,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00045",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 395.385,
-    "end": 395.834,
-    "text": "mhm. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "mhm.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00046",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 395.834,
-    "end": 400.565,
-    "text": "takže von třeba řikal bejzek anebo anektóde místo anekdóte,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00047",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 400.565,
-    "end": 401.553,
-    "text": "ano. a tak dál ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "a tak dál ,"
-    }
-  },
-  {
-    "id": "seg_00048",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 401.553,
-    "end": 405.236,
-    "text": "to je zvláštnost toho německýho nářečí tam.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00049",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 405.236,
-    "end": 406.423,
-    "text": "ano. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00050",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 406.423,
-    "end": 413.32,
-    "text": "u stolu u nás v-, po celé mé dětství jsem mluvil výhradně česky ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00051",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 413.32,
-    "end": 420.027,
-    "text": "ano. na má- na maminku a na Evu, svojí sestru a výhradně německy na tatínka.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "na má- na maminku a na Evu, svojí sestru a výhradně německy na tatínka."
-    }
-  },
-  {
-    "id": "seg_00052",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 420.027,
-    "end": 420.446,
-    "text": "ano. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00053",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 420.446,
-    "end": 426.464,
-    "text": "takže to se neustále střídalo a mně to nedělalo vůbec žádné potíže .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00054",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 426.464,
-    "end": 429.997,
-    "text": "ovšem jednou po válce jsem byl pozván na,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00055",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 431.584,
-    "end": 445.626,
-    "text": "takovou překladatelskou přípravku, kde jsem měl fungovat na nějaký konferenci jako překladatel , protože bylo o mně známo, že mluvim plynně oběma jazyky,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00056",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 445.626,
-    "end": 447.632,
-    "text": "ano. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00057",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 447.632,
-    "end": 459.608,
-    "text": "a tam mě podrobili zkoušce a řekli, tak jak se řekne německy předradlička, což jsem nevěděl a jak se řekne záhumenek, což jsem taky nevěděl ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00058",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 459.608,
-    "end": 461.614,
-    "text": ". tak se se mnou hned rozloučili ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": ".",
-      "interviewee": "tak se se mnou hned rozloučili ,"
-    }
-  },
-  {
-    "id": "seg_00059",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 461.614,
-    "end": 465.207,
-    "text": "ano, . že ta moje němčina dokonalá není.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano, .",
-      "interviewee": "že ta moje němčina dokonalá není."
-    }
-  },
-  {
-    "id": "seg_00060",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 465.207,
-    "end": 471.674,
-    "text": "když mně bylo šest let, tak jsem šel v železné rudě, kam jsme se přestěhovali,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00061",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 473.081,
-    "end": 475.117,
-    "text": "do české školy.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00062",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 475.117,
-    "end": 494.308,
-    "text": "celá železná ruda, kde měl dědeček vilu a továrnu na štětce a všecko možný jo, patřil k takový tý velmi bohatý nebo zbohatlický poválečný generaci měšťanský,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00063",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 495.685,
-    "end": 503.044,
-    "text": "von to byl čech bez jakéhokoliv formálního vzdělání, ale velice příjemnej, sčetlej, inteligentní,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00064",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 503.044,
-    "end": 503.942,
-    "text": "ano. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00065",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 503.942,
-    "end": 510.266,
-    "text": "a měl tu zvláštní vlastnost, že v čemkoliv podnikal ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00066",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 510.266,
-    "end": 513.021,
-    "text": "ano. se mu to fantasticky dařilo.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "se mu to fantasticky dařilo."
-    }
-  },
-  {
-    "id": "seg_00067",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 513.021,
-    "end": 532.542,
-    "text": "zemřel asi v roce třicet devět v chudobinci židovském tady v praze, protože vo všechno přišli , ale to né zásluhou Hitlera, to také, ale především tím , že ta rodina nežila v souladu ale,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00068",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 532.542,
-    "end": 535.656,
-    "text": "to je úplně jiná kapitola, já se vrátím k tomu dětství.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00069",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 535.656,
-    "end": 536.045,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00070",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 536.045,
-    "end": 545.327,
-    "text": "já bych se ještě ptala, tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu, abys chodil do židovské školy.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00071",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 545.327,
-    "end": 561.195,
-    "text": "nejbližší židovská komunita byla v nýrsku , což je městečko asi dvacet kilometrů vzdálené od hranic od železné rudy, tam byl rabín pan Klaubr .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00072",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 561.195,
-    "end": 578.521,
-    "text": "já jsem se s nim setkal pouze jednou nebo dvakrát při marných pokusech vychovávat ty děti těch židovských rodin v železný rudě, bylo jich strašně málo, snad čtyři nebo tři,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00073",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 578.521,
-    "end": 580.39,
-    "text": "ano. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00074",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 580.39,
-    "end": 586.258,
-    "text": "a tak pan rabín Klaubr několikrát přijel z nýrska, aby nás uvedl do,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00075",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 587.633,
-    "end": 591.558,
-    "text": "do židovského náboženství. věrouky nebo jak se to řiká , ale,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "do židovského náboženství.",
-      "interviewee": "věrouky nebo jak se to řiká , ale,"
-    }
-  },
-  {
-    "id": "seg_00076",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 591.558,
-    "end": 598.804,
-    "text": "do židovského náboženství , ale tento pokus ztroskotal, takže jsem,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00077",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 600.132,
-    "end": 603.904,
-    "text": "se učil buďto hebrejsky číst ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00078",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 603.904,
-    "end": 611.12,
-    "text": "mhm. asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "mhm.",
-      "interviewee": "asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil ."
-    }
-  },
-  {
-    "id": "seg_00079",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 611.12,
-    "end": 613.485,
-    "text": "rodina sama byla,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00080",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 614.767,
-    "end": 632.007,
-    "text": "teda rodiče , byla naprosto neortodoxní, vůbec jako se žádný svátky ani zvyky nedodržovaly , avšak to vědomí židovské tam bylo naprosto jasné,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00081",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 632.007,
-    "end": 638.264,
-    "text": "mhm, mhm. to byla zvláštní směsice skutečně těch tří kultur,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "mhm, mhm.",
-      "interviewee": "to byla zvláštní směsice skutečně těch tří kultur,"
-    }
-  },
-  {
-    "id": "seg_00082",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 638.264,
-    "end": 649.761,
-    "text": "té české, která byla z matčiny strany a která byla teda , smím-li to tak říct, šmrncnutá její francouzskou výchovou ve švýcarech,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00083",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 651.558,
-    "end": 670.959,
-    "text": "to byl ten největší kulturní vliv na mojí myšlení od hudby až po výtvarné umění a literaturu, jí chodily francouzský knihy a tak dál , ona byla člověk velice muzický a každý měsíc jela na několik dnů do prahy ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00084",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 670.959,
-    "end": 674.402,
-    "text": "ano. aby tady nasávala kulturu ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "aby tady nasávala kulturu ,"
-    }
-  },
-  {
-    "id": "seg_00085",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 674.402,
-    "end": 690.265,
-    "text": "řekl bych dnešníma očima až nekulturně , že chodila na mat- pardon , na i na večerní představení , jenom aby kompenzovala tu pustinu kulturní tech šumavských lesů,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00086",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 690.265,
-    "end": 693.019,
-    "text": "ano. kde nebylo nic , později rádio.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "kde nebylo nic , později rádio."
-    }
-  },
-  {
-    "id": "seg_00087",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 694.277,
-    "end": 708.313,
-    "text": "takže ona jezdila k mamince a k tatínkovi do tých prahy a tady nabírala a kupovala knihy a potom se vrátila a vypravovala mi o koncertech, o přednáškách,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00088",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 708.313,
-    "end": 710.259,
-    "text": "mhm. o divadle ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "mhm.",
-      "interviewee": "o divadle ,"
-    }
-  },
-  {
-    "id": "seg_00089",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 710.259,
-    "end": 715.702,
-    "text": "později taky Evě, mojí sestře, která se narodila v roce dvacet jedna,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00090",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 715.702,
-    "end": 718.379,
-    "text": "ano. to znamená o dva roky později než já.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "to znamená o dva roky později než já."
-    }
-  },
-  {
-    "id": "seg_00091",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 718.379,
-    "end": 721.822,
-    "text": "tento vliv byl velice silný .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00092",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 721.822,
-    "end": 731.164,
-    "text": "druhý, velmi silný vliv byla, byl ten pocit toho obklopení němci,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00093",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 733.748,
-    "end": 760.93,
-    "text": "to bylo velmi komplikované, protože na jedné straně bylo to otcovo rodiště , bylo to místo, kde táta nejdřív si najal malou pilu , později ji vlastnil a nás děti od začátku, ačkoliv sám neměl *českví* pozadí nebo český ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00094",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 760.93,
-    "end": 775.52,
-    "text": "-kou minulost , tak bylo bez jakýchkoliv otázek, že my budem chodit do velmi, velmi chudičké české jednotřídky , kde bylo pět oddělení,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00095",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 775.52,
-    "end": 776.658,
-    "text": "ano. tam byly děti ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "tam byly děti ,"
-    }
-  },
-  {
-    "id": "seg_00096",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 776.658,
-    "end": 778.984,
-    "text": "od šesti do třinácti let,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00097",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 780.511,
-    "end": 789.667,
-    "text": "ti učitelé, to byli virtuosové pedagogičtí, to, to je něco neuvěřitelnýho , protože do těch,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00098",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 790.76,
-    "end": 811.943,
-    "text": "českých menšinových škol v pohraničí chodily děti i německé z rodin , kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne všecky do německé , ta německá byla bohatá a výstavná ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00099",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 811.943,
-    "end": 817.452,
-    "text": "a to proto, aby když byl třeba otec trafikant , tak aby symbolicky,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00100",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 817.452,
-    "end": 821.254,
-    "text": "ano. alespoň jedno dítě chodilo do české školy , nebo ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "alespoň jedno dítě chodilo do české školy , nebo ,"
-    }
-  },
-  {
-    "id": "seg_00101",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 821.254,
-    "end": 830.895,
-    "text": "byly to děti dřevorubců, němců, ale jelikož pracovali v českých státních lesích,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00102",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 830.895,
-    "end": 834.099,
-    "text": "mhm, mhm. a jelikož česká matice školská ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "mhm, mhm.",
-      "interviewee": "a jelikož česká matice školská ,"
-    }
-  },
-  {
-    "id": "seg_00103",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 834.099,
-    "end": 857.452,
-    "text": "rozdávala na vánoce boty , tak ti němečtí dřevaři jedno ze svých osumnácti dětí poslali do český školy , ale tyto děti nechodily pravidelně , takže většinou v techto jednotřídkách byly děti z pošty , od finančních úředníků, od četníků,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00104",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 857.452,
-    "end": 863.22,
-    "text": "ano, , takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás. a my a jinak to bylo.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano, , takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás.",
-      "interviewee": "a my a jinak to bylo."
-    }
-  },
-  {
-    "id": "seg_00105",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 863.22,
-    "end": 867.142,
-    "text": "nebo ty sám. ne se mnou ve třídě ne- , ne tam byl j-,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "nebo ty sám.",
-      "interviewee": "ne se mnou ve třídě ne- , ne tam byl j-,"
-    }
-  },
-  {
-    "id": "seg_00106",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 867.142,
-    "end": 872.052,
-    "text": "jeden nebo dva lékaři němci, jeden lékař židovský .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00107",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 872.052,
-    "end": 880.945,
-    "text": "vůbec jako v celý , v celým tom, tý rudě , hm. jeho, celý tý, jo , ale to byla židovská rodina, jmenovali se Hartmannovi ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "vůbec jako v celý , v celým tom, tý rudě , hm.",
-      "interviewee": "jeho, celý tý, jo , ale to byla židovská rodina, jmenovali se Hartmannovi ,"
-    }
-  },
-  {
-    "id": "seg_00108",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 880.945,
-    "end": 884.688,
-    "text": "jenom jejich dcera se zachránila, je myslim v americe,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00109",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 884.688,
-    "end": 890.616,
-    "text": "ano, takže chodili do tý třídy . ty byli německy orientovaní, ty neměli s náma absolutně nic společnýho ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano, takže chodili do tý třídy .",
-      "interviewee": "ty byli německy orientovaní, ty neměli s náma absolutně nic společnýho ,"
-    }
-  },
-  {
-    "id": "seg_00110",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 890.616,
-    "end": 906.963,
-    "text": "to rozdělení bylo naprosto jednoznačné, to , prostě některé rodiny židovské byly orientovaný vzhledem k své minulosti na ten německý žive-, na tu německou kulturní oblast ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00111",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 906.963,
-    "end": 917.132,
-    "text": "a druzí, tak jako moje maminka a tím i my, naprosto jednoznačně, takže , když jsem vychodil tu obecnou školu,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00112",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 917.132,
-    "end": 919.557,
-    "text": ",",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00113",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 919.557,
-    "end": 924.018,
-    "text": "tak nejbližší gymnázium bylo čtyrycet kilometrů daleko v klatovech.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00114",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 925.246,
-    "end": 929.617,
-    "text": "já jsem tam měl nastoupit do prímy, udělal jsem zkoušku,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00115",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 932.102,
-    "end": 947.102,
-    "text": "a když jsem měl odject, tak tatínek s maminkou přišli ke mně do p- k postýlce, k posteli a řekli, my bychom nechtěli, aby jsi šel z domova už ve dvanácti letech,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00116",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 947.102,
-    "end": 948.18,
-    "text": "ano. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00117",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 948.18,
-    "end": 965.657,
-    "text": "co by jsi tomu řikal , kdybychom si n- najali nebo obstarali vychovatelku, která by tě připravovala na zkoušky a ty by jsi do gymnázia chodil jenom skládat zkoušky.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00118",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 966.876,
-    "end": 973.142,
-    "text": "jo. no já jsem nevěděl, jestli to je dobře nebo špatně, prostě se to takhle udělalo ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "jo.",
-      "interviewee": "no já jsem nevěděl, jestli to je dobře nebo špatně, prostě se to takhle udělalo ,"
-    }
-  },
-  {
-    "id": "seg_00119",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 973.142,
-    "end": 981.168,
-    "text": "takže primu a sekundu mě učila paní Pavla Moravcová,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00120",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 982.387,
-    "end": 983.982,
-    "text": "dobrej pedagog,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00121",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 985.732,
-    "end": 1007.785,
-    "text": "která takhle už připravila nějaký děti *předem mnou*, bydlela u nás a každých půl roku jsme jeli společně s tou slečnou Moravcovou do klatov , bydleli jsme v hotelu , vona na mě byla mimořádně laskavá, abych jo dobře skládal zkoušku ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00122",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1007.785,
-    "end": 1017.635,
-    "text": "a tam jsme všechny předměty, musel složit zkoušku a to bylo prima, sekunda .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00123",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1017.635,
-    "end": 1036.403,
-    "text": "skládal jsem je dobře, klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice a byl jsem tam, když vyhodili ze stejného systému hrabata Schoenborny , kteří měli zámek v kdyni ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00124",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1036.403,
-    "end": 1042.72,
-    "text": "a kde prostě protekce nebyla, voni byli hrdý na to, jaký jsou výběrový.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00125",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1042.72,
-    "end": 1050.146,
-    "text": "vůbec ne, všecko, ne, ne, ne, vůbec ne. a že by se k tobě chovali nějak, protožes byl židovskej kluk , vůbec ne, všecko.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "vůbec ne, všecko, ne, ne, ne, vůbec ne.",
-      "interviewee": "a že by se k tobě chovali nějak, protožes byl židovskej kluk , vůbec ne, všecko."
-    }
-  },
-  {
-    "id": "seg_00126",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1050.146,
-    "end": 1071.074,
-    "text": "navopak , pan profesor Chládek na biologii, jeden z nejlepších profesorů, kerý jsem znal , si tam zval jiný profesory, aby si poslechli , jak vypadá- -jí odpovědi dítěte, kerý nechodilo do školy , ale který se muselo připravovat samo .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00127",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1071.074,
-    "end": 1076.403,
-    "text": "takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi a k babičce do,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00128",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1077.601,
-    "end": 1083.031,
-    "text": "prahy a chodil jsem do tercie na jiřího náměstí. mhm, mhm.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "prahy a chodil jsem do tercie na jiřího náměstí.",
-      "interviewee": "mhm, mhm."
-    }
-  },
-  {
-    "id": "seg_00129",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1083.031,
-    "end": 1102.852,
-    "text": "to byla katastrofa, protože já jsem byl zvyklý se učit tak, abych věcem rozuměl, kdežto gymnázium v, na jiřího náměstí , stejně jako všechny jiný školy , chtějí, abych správně odpovídal, ne abych rozuměl .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00130",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1102.852,
-    "end": 1109.259,
-    "text": "takže jsem začal v-, tady rupat v jednom předmětu za druhým.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00131",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1109.259,
-    "end": 1110.876,
-    "text": "no.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00132",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1110.876,
-    "end": 1120.517,
-    "text": "z latiny a tak dále, protože všichni jako odmítali můj přístup jako, jak to teda vlastně je, nýbrž voni chtěli ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00133",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1120.517,
-    "end": 1128.152,
-    "text": "já bych z toho hlediska historie, to, to je který rok, kdys přišel do tý prahy , jednoznačnou papouškovanou odpověď, .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "já bych z toho hlediska historie, to, to je který rok, kdys přišel do tý prahy ,",
-      "interviewee": "jednoznačnou papouškovanou odpověď, ."
-    }
-  },
-  {
-    "id": "seg_00134",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1128.152,
-    "end": 1138.511,
-    "text": "co už se mění v ten starý že jo, to o kterou nám jde, třicet dva, třicet tři, takže to už je to období, kdy , to je třicet dva, třicet tři, ano .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "co už se mění v ten starý že jo, to o kterou nám jde, třicet dva, třicet tři, takže to už je to období, kdy ,",
-      "interviewee": "to je třicet dva, třicet tři, ano ."
-    }
-  },
-  {
-    "id": "seg_00135",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1138.511,
-    "end": 1144.918,
-    "text": "v německu se dá tušiti fašismus a tak dále, jo, proto se na to taky ptám, že. ano, ano, to ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "v německu se dá tušiti fašismus a tak dále, jo, proto se na to taky ptám, že.",
-      "interviewee": "ano, ano, to ,"
-    }
-  },
-  {
-    "id": "seg_00136",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1144.918,
-    "end": 1148.901,
-    "text": "to už začínal ten fašis- ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00137",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1148.901,
-    "end": 1154.829,
-    "text": "nakonec i v pohraničních oblastech. ale v pohraničních oblastech se to vyvíjelo velice ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "nakonec i v pohraničních oblastech.",
-      "interviewee": "ale v pohraničních oblastech se to vyvíjelo velice ,"
-    }
-  },
-  {
-    "id": "seg_00138",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1154.829,
-    "end": 1163.452,
-    "text": "zvolna, teda na tom železnorudsku , v železný rudě byla silná sociální demokracie, táta byl taky sociální demokrat,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00139",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1164.827,
-    "end": 1175.248,
-    "text": "a jak řikám, on tam chodil do školy s těmi německými obyvateli, von tam ze začátku to soužití bylo,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00140",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1176.529,
-    "end": 1179.799,
-    "text": "mně se to aspoň tak jevilo , bezproblémové.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00141",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1179.799,
-    "end": 1180.698,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00142",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1180.698,
-    "end": 1188.872,
-    "text": "od toho roku třicet tři to prudce stoupal ten německý nacionalismus a agrese,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00143",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1190.728,
-    "end": 1198.004,
-    "text": "takže já jsem se s tim setkal poprvé tak někdy v roce,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00144",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1198.004,
-    "end": 1202.735,
-    "text": "když ses vracel na prázdniny, ano. třicet čtyři, třicet pět , když jsem se vracel,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "když ses vracel na prázdniny, ano.",
-      "interviewee": "třicet čtyři, třicet pět , když jsem se vracel,"
-    }
-  },
-  {
-    "id": "seg_00145",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1202.735,
-    "end": 1205.28,
-    "text": "a pamatuju se přesně, jak to bylo .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00146",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1205.28,
-    "end": 1208.933,
-    "text": "kupříkladu, ne jak to bylo , taková epizoda .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00147",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1208.933,
-    "end": 1216.418,
-    "text": "vokolo potoka vedla taková úplně úzká pěšina a já na tom, na tý pěšině jel na kole .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00148",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1216.418,
-    "end": 1231.538,
-    "text": "najednou proti mně vystoupili dva nebo tři němečtí kluci , chytli mě za řidítka, tak jak jsem na nich seděl , dali mi pár facek a strčili do mě , abych zase musel ject.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00149",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1231.538,
-    "end": 1232.227,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00150",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1232.227,
-    "end": 1239.443,
-    "text": "a já přijel domů a strašně jsem se litoval, řval vzteky,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00151",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1239.443,
-    "end": 1240.91,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00152",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1240.91,
-    "end": 1244.593,
-    "text": "a řek jsem, táto, todle se mi stalo .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00153",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1244.593,
-    "end": 1251.419,
-    "text": "a táta, kterej byl pro mě vždycky ideálem statečného muže ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00154",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1251.419,
-    "end": 1259.383,
-    "text": "mně prostě dal pár facek, až se z-, až se mi hlava zatřepala a *řekla* , nechoď si stěžovat .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00155",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1259.383,
-    "end": 1262.886,
-    "text": "když ti někdo natlouk, natluč mu .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00156",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1262.886,
-    "end": 1265.012,
-    "text": "ano. ale nechoď si stěžovat.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "ale nechoď si stěžovat."
-    }
-  },
-  {
-    "id": "seg_00157",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1265.012,
-    "end": 1267.168,
-    "text": "a vyhodil mě .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00158",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1267.168,
-    "end": 1282.22,
-    "text": "a já jsem v tom vzteku vyběh ven a na můstku přes ten potok řezná , jsem jednoho z těch kluků nachytal , vrhnul jsem se na něho tak, že jsme spadli do toho potoka ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00159",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1282.22,
-    "end": 1293.927,
-    "text": "ano. no a od tý doby mám tu filozofii , že prostě je nesprávné uhybat, jo, že musí člověk ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "no a od tý doby mám tu filozofii , že prostě je nesprávné uhybat, jo, že musí člověk ,"
-    }
-  },
-  {
-    "id": "seg_00160",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1293.927,
-    "end": 1296.053,
-    "text": "čelit, hm. čelit .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "čelit, hm.",
-      "interviewee": "čelit ."
-    }
-  },
-  {
-    "id": "seg_00161",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1296.053,
-    "end": 1301.143,
-    "text": "tak ale takovýdle situacích byla řada a ale toto mně zůstalo ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00162",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1301.143,
-    "end": 1307.341,
-    "text": "a jak sis to klukovsky teda vlastně tehdy vysvětloval , toto byla tátova výchova , .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "a jak sis to klukovsky teda vlastně tehdy vysvětloval ,",
-      "interviewee": "toto byla tátova výchova , ."
-    }
-  },
-  {
-    "id": "seg_00163",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1307.341,
-    "end": 1319.034,
-    "text": "tu změnu, že jo , tomus rozuměl nebo táta ti to vysvětlil , on to sám pochopil nebo, ne, ne, ne, to, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "tu změnu, že jo , tomus rozuměl nebo táta ti to vysvětlil , on to sám pochopil nebo,",
-      "interviewee": "ne, ne, ne, to, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat ,"
-    }
-  },
-  {
-    "id": "seg_00164",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1319.034,
-    "end": 1335.89,
-    "text": "já jsem nečetl ani mayovky ani indiánky , já jsem četl Medka, Koptu, Jiráska, Vrbu, Baara , takže já jsem se cítil opravdu až nacionálně český.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00165",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1335.89,
-    "end": 1337.238,
-    "text": "ano.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00166",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1337.238,
-    "end": 1347.627,
-    "text": "ty legionáři pro mě něco znamenali, ta tradice a tak dále a z toho to a, ta protiněmecká, protirakouská,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00167",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1349.484,
-    "end": 1353.706,
-    "text": "zaměřenost byla jednoznačná .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00168",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1353.706,
-    "end": 1363.347,
-    "text": "já vim, že jeden z nejnešťastnějších okamžiků mýho mládí bylo , když jsem zaslechl svého tátu řikat jednomu známému,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00169",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1364.323,
-    "end": 1370.64,
-    "text": "vlastně to bylo škoda rozbít to rakousko uhersko , to se nemělo stát .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00170",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1370.64,
-    "end": 1383.485,
-    "text": "to byla pro mě taková rána, jak někdo může chválit to rakousko uhersko, který tři sta let ničilo českej národ .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00171",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1383.485,
-    "end": 1398.365,
-    "text": "jak někdo může popírat správnost legionářskýho nebo masarykovskýho snažení o vybudování českého st- státu , to mně trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00172",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1398.365,
-    "end": 1399.832,
-    "text": "ano. .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "."
-    }
-  },
-  {
-    "id": "seg_00173",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1399.832,
-    "end": 1408.125,
-    "text": "a když ten táta byl teda tvůj ideál , ještě jsem se chtěla optat , pod které vlastnosti nebo co myslíš, že právě do tebe potom přešlo , .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "a když ten táta byl teda tvůj ideál , ještě jsem se chtěla optat , pod které vlastnosti nebo co myslíš, že právě do tebe potom přešlo ,",
-      "interviewee": "."
-    }
-  },
-  {
-    "id": "seg_00174",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1408.125,
-    "end": 1412.856,
-    "text": "které lidské vlastnosti to byly. táta , táta byl zcela přirozený pedagog ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "které lidské vlastnosti to byly.",
-      "interviewee": "táta , táta byl zcela přirozený pedagog ,"
-    }
-  },
-  {
-    "id": "seg_00175",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1412.856,
-    "end": 1432.377,
-    "text": "von chápal všechny klukovský sny , takže vod malička jsem měl psa, vod malička jsem pracoval s koňma , táta prostě trval na práci, já jsem jako malý dítě musel už pracovat na pile ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00176",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1432.377,
-    "end": 1435.072,
-    "text": "i když jsem jenom srovnával prkýnka,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00177",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1435.072,
-    "end": 1437.078,
-    "text": "ano. tak m- musel.",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "tak m- musel."
-    }
-  },
-  {
-    "id": "seg_00178",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1437.078,
-    "end": 1455.94,
-    "text": "ale ne nutil , já jsem od malička miloval koně, táta mě opravdu naučil s těmi koňmi zacházet , já jsem v šestnácti letech v klatovech se stal jízdním, jsem vstoupil do jízdního sokola ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00179",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1455.94,
-    "end": 1460.791,
-    "text": "klatovy byla bašta agreárnická, tam bydlel,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00180",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1462.26,
-    "end": 1472.078,
-    "text": "ministr Machník, ministr za agreární stranu, ministr vojenství a měl stejně starýho kluka Honzu .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00181",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1472.078,
-    "end": 1492.137,
-    "text": "on byl v selské jízdě, což byla pravičácká agreární organizace , kdežto já jsem byl v s- jízdním sokole , kterej byl mírně liberálnější organizací , ale jezdili jsme společně na vojenských koních.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00182",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1494.442,
-    "end": 1505.46,
-    "text": "já jsem po tátovi zdědil tu lásku ke koním, táta byl dragoun , za války sloužil u dragounů i pozděj,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00183",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1507.107,
-    "end": 1515.46,
-    "text": "a takže jsem chodil jezdit do klatovských kasáren , které měly bohatou jezdeckou tradici.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00184",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1517.96,
-    "end": 1525.063,
-    "text": "no a jednou byly celostátní závody, mimořádně obtížný a,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00185",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1527.009,
-    "end": 1534.045,
-    "text": "eště ten den mimo to pršelo, kdy se měly teda na zítřek konat ty závody,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00186",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1534.045,
-    "end": 1539.225,
-    "text": "a to je který rok, to už ti , třicet šest. a to je rok asi tak třicet šest ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "a to je který rok, to už ti , třicet šest.",
-      "interviewee": "a to je rok asi tak třicet šest ,"
-    }
-  },
-  {
-    "id": "seg_00187",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1539.225,
-    "end": 1545.722,
-    "text": "kdy já jsem přišel domů a řikal jsem , zejtra se jedou ty závody táto,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00188",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1547.339,
-    "end": 1569.195,
-    "text": "mně přidělil pan plukovník osumnáctiletýho koně Edisona, já ho tady mám na fotografii a Honzovi Machníkovi přidělil čtyrletýho polohřebce, nádhernýho , já proti němu nemám šanci a táta řek a kolik, co to je za závod,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00189",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1569.195,
-    "end": 1571.86,
-    "text": "a já jsem řikal na rychlost a na body .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00190",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1571.86,
-    "end": 1576.68,
-    "text": "šestnáct skoků poslušnostních, velmi náročných.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00191",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1579.315,
-    "end": 1586.022,
-    "text": "víš táto, to je taková nespravedlnost, že já zítra nenastoupim.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00192",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1586.022,
-    "end": 1589.944,
-    "text": "a táta řek, samozřejmě Honzíčku , nenastup.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00193",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1591.412,
-    "end": 1603.088,
-    "text": "ale ty přeci závodíš proto, abys vyhrál, ne z lásky ke sportu, že jo, ne z lásky ke koním , nýbrž vyhrát, to je tvoje heslo.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00194",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1603.088,
-    "end": 1607.19,
-    "text": "tak víš co, jestli zejtra nenastoupíš, už nemusíš chodit domů.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00195",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1607.19,
-    "end": 1610.184,
-    "text": "mhm. tim to končilo .",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "mhm.",
-      "interviewee": "tim to končilo ."
-    }
-  },
-  {
-    "id": "seg_00196",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1610.184,
-    "end": 1614.226,
-    "text": "ale to všechno ve velmi přátelskym tónu,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00197",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1615.693,
-    "end": 1621.501,
-    "text": "tomu předcházely různé jiné pedagogické zá- -sahy, jako když mi byly tři roky,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00198",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1622.939,
-    "end": 1626.472,
-    "text": "tak jsem u stolu prohlásil, já špenát nejim.",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00199",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1627.61,
-    "end": 1634.676,
-    "text": "a tatínek řikal, to je správný , Honzo nikdy si nenech vnucovat věci, kerý nechceš .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00200",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1634.676,
-    "end": 1655.514,
-    "text": "lidi nemaj právo deformovat tvojí osobnost a vzal takhle tu mísu s tim špenátem, překlopil mi jí na hlavu , takže mi ten špenát tek na ramena a řiká, ale nesmíš se divit , když svět bude reagovat takhle .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00201",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1655.514,
-    "end": 1659.496,
-    "text": "ano. todle jsou samý věci, kerý jsou hluboko ve mně ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano.",
-      "interviewee": "todle jsou samý věci, kerý jsou hluboko ve mně ,"
-    }
-  },
-  {
-    "id": "seg_00202",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1659.496,
-    "end": 1663.33,
-    "text": "takhle táta postupoval vždycky, ale nikdy to neby-,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00203",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1664.58,
-    "end": 1674.342,
-    "text": "ano, já bych trošku, já bych trošku se sunula k tomu, co souvisí s tím židovstvím a změnami, které v , zlé nebo ponižující vrátila, ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ano, já bych trošku, já bych trošku se sunula k tomu, co souvisí s tím židovstvím a změnami, které v ,",
-      "interviewee": "zlé nebo ponižující vrátila, ,"
-    }
-  },
-  {
-    "id": "seg_00204",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1674.342,
-    "end": 1697.605,
-    "text": "se děly společensky , to jest tvůj otec a rodina začli jistě nějakým způsobem, pak už je rok třicet sedum, třicet osum, třicet devět, pociťovat tlak , který v pohraničí nastává a možná třeba i víc a dřív než v praze židé .",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00205",
-    "speakers": [
-      "interviewer"
-    ],
-    "start": 1697.605,
-    "end": 1703.204,
-    "text": "jak se to projevilo, třeba na otci anebo co se, co se dálo ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00206",
-    "speakers": [
-      "interviewer",
-      "interviewee"
-    ],
-    "start": 1703.204,
-    "end": 1707.755,
-    "text": "ještě předtím, on pak šel do, do transportu nebo nešel nebo co bylo předtím. ,",
-    "is_overlap": true,
-    "text_by_speaker": {
-      "interviewer": "ještě předtím, on pak šel do, do transportu nebo nešel nebo co bylo předtím.",
-      "interviewee": ","
-    }
-  },
-  {
-    "id": "seg_00207",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1707.755,
-    "end": 1713.264,
-    "text": "dálo se to, že to napětí v pohraničí neustále stoupalo,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00208",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1714.791,
-    "end": 1718.474,
-    "text": "táta měl české přátele, kupříkladu,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00209",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1721.743,
-    "end": 1736.229,
-    "text": "a syn pana vrchního rady Pechana onemocněl obrnou a táta zjistil, že v mnichově existuje nějaký vynikající německý lékař , tak tam toho kluka s jeho rodiči,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00210",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1738.235,
-    "end": 1739.398,
-    "text": "vezl ,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00211",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1740.492,
-    "end": 1741.254,
-    "text": "a,",
-    "is_overlap": false
-  },
-  {
-    "id": "seg_00212",
-    "speakers": [
-      "interviewee"
-    ],
-    "start": 1744.457,
-    "end": 1753.08,
-    "text": "měli jsme zaměstnance, jmenoval se Hartmann a ten byl nacista.",
-    "is_overlap": false
-  }
-]
+  ]
+}
