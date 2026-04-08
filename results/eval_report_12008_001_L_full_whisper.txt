@@ -1,0 +1,91 @@
+ASR Evaluation Report
+================================================================================
+Source JSON: results/12008_001_L_full_whisper.json
+Mode: MIX | Model: large | Backend: whisper
+Range: start=None | end=None | chunk=300s | overlap=2.0s
+Runtime: 162.27s | Run started: 2026-04-01T17:45:05.185226+00:00 | Run finished: 2026-04-01T17:47:47.452202+00:00
+--------------------------------------------------------------------------------
+WER (STRICT): 22.05 %
+WER (ROBUST): 19.79 %
+Offset compensation: use=False | ref_trim=6 | hyp_trim=0 | improvement=0.17 p.b.
+Word counts: REF=2824 | HYP=2659
+HITS: 2320 | SUB: 284 | INS: 55 | DEL: 220
+
+Kvalitativní ukázky (2-3):
+1. SUB (4x): 'kterej' -> 'který'
+2. SUB (4x): 'mně' -> 'mě'
+3. SUB (3x): 'tim' -> 'tím'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: www hradeckralove org děkuji janem orlíkem praha česká republika a kdybys byl tak laskav a...
+
+Konec srovnání:
+REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...kluka z jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+
+Top substitutions:
+4x | kterej => který
+4x | mně => mě
+3x | tim => tím
+3x | řiká => říká
+3x | jsi => si
+3x | ministr => minister
+2x | ádler => adler
+2x | židovskej => židovský
+2x | tý => ty
+2x | chodily => chodili
+2x | zkoušku => koušku
+2x | jiřího => jiřionáměstí
+2x | kdežto => to
+2x | řek => řekl
+2x | vod => od
+2x | agreární => agrární
+2x | zejtra => zítra
+2x | který => které
+1x | jmenuji se jana rené => www hradeckralove org děkuji
+1x | nějaké jiné => nějaký jiný
+
+Top deletions:
+23x | ano
+8x | to
+7x | a
+4x | mhm
+4x | v
+3x | jo
+2x | byla
+2x | jako
+1x | fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem
+1x | narodil
+1x | ano a
+1x | můžu se
+1x | židovka
+1x | hm
+1x | otcovo
+1x | mimochodem řečeno
+1x | byl
+1x | prakticky
+1x | ano a tak dál
+1x | tam ano
+
+Top insertions:
+4x | <num>
+2x | a
+2x | z
+2x | když
+2x | jsi
+2x | že
+1x | do
+1x | vzala do školy když se
+1x | v
+1x | i
+1x | jeho
+1x | společného
+1x | byly věci ne
+1x | židovské
+1x | živel to
+1x | hrabat
+1x | protože
+1x | všechno ne ne ne vůbec
+1x | jednoznačnou papoučkovanou odpověď
+1x | kdy

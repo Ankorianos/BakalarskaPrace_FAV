@@ -1,0 +1,91 @@
+ASR Evaluation Report
+================================================================================
+Source JSON: results/12008_001_MIX_full_whisper.json
+Mode: MIX | Model: large | Backend: whisper
+Range: start=None | end=None | chunk=300s | overlap=2.0s
+Runtime: 166.01s | Run started: 2026-04-01T17:39:59.218291+00:00 | Run finished: 2026-04-01T17:42:45.232093+00:00
+--------------------------------------------------------------------------------
+WER (STRICT): 21.46 %
+WER (ROBUST): 19.33 %
+Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
+Word counts: REF=2824 | HYP=2681
+HITS: 2338 | SUB: 283 | INS: 60 | DEL: 203
+
+Kvalitativní ukázky (2-3):
+1. SUB (4x): 'kterej' -> 'který'
+2. SUB (4x): 'mně' -> 'mě'
+3. SUB (3x): 'tim' -> 'tím'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...kluka z jeho rodiči vezl měli jsme zaměstnance jmenová se hartmann a ten byl nacista
+
+Top substitutions:
+4x | kterej => který
+4x | mně => mě
+3x | tim => tím
+3x | řiká => říká
+3x | jsi => si
+3x | ministr => minister
+2x | ádler => adler
+2x | pelhřimově => pelřimově
+2x | židovskej => židovský
+2x | chodily => chodili
+2x | zkoušku => koušku
+2x | vod => od
+2x | agreární => agrární
+2x | zejtra => zítra
+2x | táta řek => tato řekl
+2x | který => které
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | adler => adleera
+1x | kdybys => se
+1x | byli => byla
+
+Top deletions:
+20x | ano
+5x | to
+4x | mhm
+4x | a
+3x | v
+3x | jo
+3x | jako
+2x | on
+1x | ano a
+1x | se
+1x | můžu se
+1x | židovka
+1x | paní
+1x | hm
+1x | otcovo
+1x | mimochodem řečeno
+1x | byl
+1x | prakticky
+1x | ano a tak dál
+1x | tam ano
+
+Top insertions:
+2x | v
+2x | a
+2x | z
+2x | jsi
+2x | že
+1x | kdybyste
+1x | ticho
+1x | si když
+1x | né no
+1x | i
+1x | společného takže nechodili do t třídy
+1x | židovské
+1x | harabat
+1x | protože
+1x | všechno ne ne ne vůbec
+1x | když
+1x | jednoznačnou papoučkovanou odpověď
+1x | kdy
+1x | to je
+1x | tušit
