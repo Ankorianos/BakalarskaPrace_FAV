@@ -397,10 +397,12 @@ def resolve_mix_audio_path():
     if len(sys.argv) >= 2 and sys.argv[1].strip():
         candidate = Path(sys.argv[1]).expanduser()
         if not candidate.is_absolute():
+            if candidate.parts and candidate.parts[0].lower() == PROJECT_ROOT.name.lower():
+                candidate = Path(*candidate.parts[1:])
             candidate = PROJECT_ROOT / candidate
-        return candidate
+        return candidate.resolve()
 
-    return PROJECT_ROOT / "data" / "12008_001_MIX.wav"
+    return (PROJECT_ROOT / "data" / "12008_001_MIX.wav").resolve()
 
 
 def run_mix_asr():
