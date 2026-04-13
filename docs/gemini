@@ -23,12 +23,16 @@ Shadow-node: Speciální architektury, které umí pracovat se stereo informací
 
 Python: Knihovna asteroid je naprostý standard. Obsahuje pre-trained modely, které jen "nakrmíš" svým souborem.
 
+
+
 B. Beamforming a Spatial Clustering (Fyzikální cesta)
 Protože máš stereo, můžeš simulovat "virtuální směrový mikrofon".
 
 Pokud mluvčí A mluví více zleva, algoritmus potlačí vše, co má fázový posun odpovídající pravé straně.
 
 Nástroje: pyroomacoustics – ideální pro výpočet masky na základě intenzity a fáze mezi kanály.
+
+
 
 C. REMIX / ADR (Source Separation)
 
