@@ -1,81 +1,43 @@
-# INDIVIDUAL codex: hlavní větev se separací
+# INDIVIDUAL dokumentace
 
-## 1) Role INDIVIDUAL větve
+## 1) Skript
 
-INDIVIDUAL je hlavní implementační větev práce.
-Cíl je rozdělit vstupní dvoukanálový záznam na dvě čistší individuální stopy a zlepšit ASR proti MIX baseline.
+Aktuální baseline skript je:
 
----
-
-## 2) Cílová pipeline (INDIVIDUAL)
-
-1. Vstup: dvoukanálový záznam.
-2. Separace: potlačit přeslech mezi mluvčími.
-3. ASR: přepis každé individuální stopy.
-4. Sloučení: jednotné JSON schema.
-5. Vyhodnocení: `scripts/evaluate_wer.py` na stejném rozsahu jako MIX.
+- `scripts/asr_individual_whisper.py`
 
 ---
 
-## 3) Co je hlavní metrika úspěchu
+## 2) Spuštění přes sys.argv
 
-- zlepšení WER proti MIX baseline,
-- nižší počet chyb z přeslechu,
-- reprodukovatelné výsledky na stejném eval protokolu.
+Skript bere vstup z `sys.argv[1]` (volitelné). Podporované varianty:
 
-### Speaker-level evaluace v INDIVIDUAL
+- recording ID: `12008_001`
+- cesta na `_L.wav`: `data/12008_001_L.wav`
+- cesta na `_R.wav`: `data/12008_001_R.wav`
+- cesta bez suffixu: `data/12008_001.wav` (skript dopočítá `_L` + `_R`)
 
-Po separaci lze dělat speaker-level evaluaci i bez diarizace:
+Pokud argument nezadáš, použije se default `data/12008_001_L.wav` + `data/12008_001_R.wav`.
 
-- stopa A = speaker A,
-- stopa B = speaker B.
-
-Podmínka je stabilní mapování stop na referenční labely (např. `interviewer` / `interviewee`) v celém běhu.
+Skript navíc řeší i relativní cestu začínající názvem root složky (např. `Main_Workspace/data/...`) bez zdvojení cesty.
 
 ---
 
-## 4) Co držet stabilní
+## 3) Výstup JSON
 
-- neměnit MIX baseline během separačních experimentů,
-- neměnit evaluator mezi běhy,
-- neměnit eval rozsah mezi variantami.
+Ve výstupu jsou klíče:
 
----
+- `segments`
+- `Speaker_L_full_transcription`
+- `speaker_R_full_transcription`
+- `full_transcription`
 
-## 5) Doporučená struktura skriptů
-
-- `scripts/asr_individual.py` -> baseline bez separace (L/R zpracování jednotlivě)
-- `scripts/asr_individual_separation.py` -> hlavní separační experiment
-- `scripts/evaluate_wer.py` -> jednotné vyhodnocení všech variant
+`full_transcription` je sloučený text po deduplikaci mezi kanály.
 
 ---
 
-## 6) TODO list (INDIVIDUAL)
+## 4) Doporučený eval tok
 
-### 6.1 Baseline pro porovnání
-
-- [ ] Vygenerovat `results/individual_results_range.json` přes `scripts/asr_individual.py`.
-- [ ] Vyhodnotit `individual_results_range.json` přes `scripts/evaluate_wer.py`.
-- [ ] Zapsat baseline metriky (runtime, WER strict, WER robust).
-
-### 6.2 Separační větev
-
-- [ ] Vytvořit `scripts/asr_individual_separation.py` bez zásahu do baseline skriptů.
-- [ ] Zvolit první reprodukovatelnou separační konfiguraci.
-- [ ] Uložit výstup ve stejném JSON stylu jako baseline.
-- [ ] Uložit metadata separace (metoda/model/parametry/verze).
-
-### 6.3 Srovnání MIX vs INDIVIDUAL
-
-- [ ] Připravit jednotnou tabulku: MIX baseline, INDIVIDUAL baseline, INDIVIDUAL + separace.
-- [ ] U všech variant držet stejný eval rozsah.
-- [ ] U všech variant držet stejné normalizační kroky a stejný evaluator.
-- [ ] U INDIVIDUAL doplnit i speaker-level WER (bez diarizace, podle stopy).
-- [ ] U MIX ponechat pouze text-level WER.
-- [ ] Dopsat krátkou interpretaci: kde separace pomohla a kde ne.
-
----
-
-## 7) Shrnutí jednou větou
-
-INDIVIDUAL větev je hlavní směr práce: cílem je přes separaci dosáhnout lepšího přepisu než MIX baseline při stejném eval protokolu.
+1. Vygenerovat `results/*_range_whisper.json` přes `scripts/asr_individual_whisper.py`.
+2. Vyhodnotit přes `scripts/evaluate_wer.py` na stejném časovém rozsahu jako MIX.
+3. Porovnat strict/robust WER proti MIX baseline.

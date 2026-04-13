@@ -15,7 +15,7 @@ Cíl je obhajitelně ukázat, že INDIVIDUAL větev po separaci zlepší přepis
 
 - `scripts/audio_processor.py` -> příprava L/R + MIX audia
 - `scripts/asr_mix_whisper.py` -> ASR pro MIX větev
-- `scripts/asr_individual.py` -> ASR pro INDIVIDUAL baseline (bez separace)
+- `scripts/asr_individual_whisper.py` -> ASR pro INDIVIDUAL baseline (bez separace)
 - `scripts/evaluate_wer.py` -> jednotné text-level vyhodnocení
 
 Poznámka: větev fastwhisper byla odstraněna; aktivně se drží klasický OpenAI Whisper.
@@ -27,8 +27,13 @@ Poznámka: větev fastwhisper byla odstraněna; aktivně se drží klasický Ope
 Typické výstupy:
 
 - `results/mix_results_range_whisper.json`
-- `results/individual_results_range.json`
+- `results/12008_001_range_whisper.json` (resp. `<recording>_range_whisper.json`)
 - `results/eval_report_*.txt`
+
+INDIVIDUAL výstup obsahuje navíc:
+
+- `Speaker_L_full_transcription`
+- `speaker_R_full_transcription`
 
 Všechny varianty mají být vyhodnocovány stejným evaluátorem a stejným eval rozsahem.
 

@@ -1,34 +1,36 @@
-# -*- coding: utf-8 -*-
 import json
 import os
 import re
 import sys
-import time
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
 import whisper
 from scipy.io import wavfile
 
-START_SECONDS = 360
-END_SECONDS = 540
+# --- NASTAVENÍ BASELINE ---
+START_SECONDS = 180
+END_SECONDS = 360
 MODEL_SIZE = "turbo"
+DEDUP_TIME_TOLERANCE = 1.0
 CHUNK_SECONDS = 25
 CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
 SHORT_CONTINUATION_WORDS = 4
 MAX_ADJACENT_MERGED_WORDS = 36
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# --------------------------
 
 HALLUCINATION_PATTERNS = [
-    r"\btitulky vytvořil\b",
-    r"\bděkuji za sledování\b",
-    r"\bthanks for watching\b",
-    r"\bwatch next\b",
-    r"\bjohnyx\b",
+    r"titulky vytvořil.*",
+    r"děkuji za sledování.*",
+    r"odběratelé.*",
+    r"přeložil.*",
+    r"watch next.*",
+    r"thanks for watching.*",
+    r"titulky.*",
 ]
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def clean_segment_text(text):
@@ -44,9 +46,16 @@ def clean_segment_text(text):
 
 
 def normalize_for_dedup(text):
-    normalized = (text or "").lower()
-    normalized = re.sub(r"[^\w\s]", " ", normalized)
-    return " ".join(normalized.split()).strip()
+    text = (text or "").lower()
+    text = re.sub(r"[^\w\s]", " ", text)
+    return " ".join(text.split()).strip()
+
+
+def is_hallucination(text):
+    cleaned = (text or "").strip().lower()
+    if not cleaned:
+        return True
+    return any(re.search(pattern, cleaned, flags=re.IGNORECASE) for pattern in HALLUCINATION_PATTERNS)
 
 
 def normalize_word_for_match(word):
@@ -265,26 +274,6 @@ def deduplicate_segments(segments, time_tolerance=0.8):
     return deduped
 
 
-def enrich_segment_schema(segments):
-    enriched = []
-    for index, segment in enumerate(segments, start=1):
-        speakers = segment.get("speakers")
-        if not isinstance(speakers, list) or not speakers:
-            speakers = ["unknown"]
-
-        enriched.append(
-            {
-                "id": f"asr_{index:05d}",
-                "speakers": speakers,
-                "start": segment["start"],
-                "end": segment["end"],
-                "text": segment["text"],
-                "is_overlap": False,
-            }
-        )
-    return enriched
-
-
 def resolve_time_window(start_sec=None, end_sec=None):
     if start_sec is not None and start_sec < 0:
         raise ValueError("START_SECONDS musí být >= 0 nebo None")
@@ -296,7 +285,7 @@ def resolve_time_window(start_sec=None, end_sec=None):
     return start_sec, end_sec
 
 
-def load_audio_segment(file_path, start_sec=None, end_sec=None):
+def load_audio_scipy(file_path, start_sec=None, end_sec=None):
     sample_rate, data = wavfile.read(file_path)
 
     if len(data.shape) > 1:
@@ -325,7 +314,7 @@ def load_audio_segment(file_path, start_sec=None, end_sec=None):
     return data, sample_rate, (start_sample / sample_rate)
 
 
-def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
+def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_sec=0.0):
     total_samples = len(audio_data)
     chunk_samples = int(CHUNK_SECONDS * sample_rate)
     overlap_samples = int(CHUNK_OVERLAP_SECONDS * sample_rate)
@@ -335,11 +324,8 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
         return []
 
     segments = []
-    total_chunks = max(1, (total_samples + step_samples - 1) // step_samples)
-    chunk_index = 0
 
     for chunk_start in range(0, total_samples, step_samples):
-        chunk_index += 1
         chunk_end = min(chunk_start + chunk_samples, total_samples)
         chunk_audio = audio_data[chunk_start:chunk_end]
 
@@ -348,7 +334,6 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
         chunk_offset_sec = base_offset_sec + (chunk_start / sample_rate)
         chunk_end_sec = base_offset_sec + (chunk_end / sample_rate)
-        print(f"Chunk {chunk_index}/{total_chunks} | {chunk_offset_sec:.2f}s -> {chunk_end_sec:.2f}s")
         is_first_chunk = chunk_start == 0
         is_last_chunk = chunk_end >= total_samples
         keep_from = chunk_offset_sec if is_first_chunk else chunk_offset_sec + (CHUNK_OVERLAP_SECONDS / 2.0)
@@ -365,7 +350,7 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
         for segment in result.get("segments", []):
             text = clean_segment_text(segment.get("text", ""))
-            if not text:
+            if is_hallucination(text):
                 continue
 
             absolute_start = float(segment["start"]) + chunk_offset_sec
@@ -377,7 +362,7 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
             segments.append(
                 {
-                    "speakers": ["unknown"],
+                    "speaker": speaker_tag,
                     "start": round(absolute_start, 3),
                     "end": round(absolute_end, 3),
                     "text": text,
@@ -390,75 +375,153 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
     deduped = deduplicate_segments(segments, time_tolerance=1.5)
     merged_overlaps = merge_overlapping_segments(deduped)
     boundary_cleaned = strip_boundary_artifacts(merged_overlaps)
-    return merge_adjacent_segments(boundary_cleaned)
+    merged_adjacent = merge_adjacent_segments(boundary_cleaned)
+
+    for segment in merged_adjacent:
+        segment["_norm"] = normalize_for_dedup(segment.get("text", ""))
+
+    return merged_adjacent
 
 
-def resolve_mix_audio_path():
-    if len(sys.argv) != 2 or not sys.argv[1].strip():
-        print("Použití: python scripts/asr_mix_whisper.py <cesta_k_mix_wav>")
+def merge_and_deduplicate(left_segments, right_segments):
+    all_segments = sorted(left_segments + right_segments, key=lambda item: (item["start"], item["speaker"]))
+    merged = []
+
+    for segment in all_segments:
+        if not segment["_norm"]:
+            continue
+
+        is_duplicate = False
+        for kept in reversed(merged):
+            if segment["start"] - kept["start"] > DEDUP_TIME_TOLERANCE:
+                break
+
+            same_text = segment["_norm"] == kept["_norm"]
+            overlap = not (segment["end"] < kept["start"] or segment["start"] > kept["end"])
+
+            if same_text and overlap and segment["speaker"] != kept["speaker"]:
+                is_duplicate = True
+                break
+
+        if not is_duplicate:
+            merged.append(segment)
+
+    for segment in merged:
+        segment.pop("_norm", None)
+
+    return merged
+
+
+def enrich_segment_schema(segments):
+    enriched = []
+    for index, segment in enumerate(segments, start=1):
+        speaker_value = segment.get("speaker", "unknown")
+        enriched.append(
+            {
+                "id": f"asr_{index:05d}",
+                "speaker": speaker_value,
+                "speakers": [speaker_value],
+                "start": segment["start"],
+                "end": segment["end"],
+                "text": segment["text"],
+                "is_overlap": False,
+            }
+        )
+    return enriched
+
+
+def resolve_individual_audio_paths():
+    if len(sys.argv) != 3 or not sys.argv[1].strip() or not sys.argv[2].strip():
+        print("Použití: python scripts/asr_individual_whisper.py <cesta_k_pravy_wav> <cesta_k_levy_wav>")
         sys.exit(1)
 
-    return Path(sys.argv[1].strip()).expanduser().resolve()
+    right_audio_path = Path(sys.argv[1].strip()).expanduser().resolve()
+    left_audio_path = Path(sys.argv[2].strip()).expanduser().resolve()
+
+    left_stem = left_audio_path.stem
+    right_stem = right_audio_path.stem
+    left_base = left_stem[:-2] if left_stem.upper().endswith("_L") else left_stem
+    right_base = right_stem[:-2] if right_stem.upper().endswith("_R") else right_stem
+    base_stem = left_base if left_base == right_base else f"{left_base}_{right_base}"
+
+    return left_audio_path, right_audio_path, base_stem
 
 
-def run_mix_asr():
-    run_started_utc = datetime.now(timezone.utc)
-    runtime_start = time.perf_counter()
-    audio_path = resolve_mix_audio_path()
+def run_individual_asr():
+    left_audio_path, right_audio_path, base_stem = resolve_individual_audio_paths()
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
-
     has_range = start_sec is not None or end_sec is not None
     output_scope = "full" if start_sec is None and end_sec is None else "range"
-    output_name = f"{audio_path.stem}_{output_scope}_whisper.json"
-
+    output_name = f"{base_stem}_{output_scope}_whisper.json"
     output_path = PROJECT_ROOT / "results" / output_name
 
-    if not os.path.exists(audio_path):
-        print(f"Chyba: Soubor {audio_path} nebyl nalezen!")
+    if not os.path.exists(left_audio_path):
+        print(f"Chyba: Soubor {left_audio_path} nebyl nalezen!")
+        return
+    if not os.path.exists(right_audio_path):
+        print(f"Chyba: Soubor {right_audio_path} nebyl nalezen!")
         return
 
     print(f"Načítám Whisper model ({MODEL_SIZE})...")
     model = whisper.load_model(MODEL_SIZE)
 
-    print(f"Načítám MIX audio (start={start_sec}, end={end_sec})...")
-    audio_data, sample_rate, base_offset_sec = load_audio_segment(str(audio_path), start_sec, end_sec)
-
-    if len(audio_data) == 0:
-        print("Chyba: Zvolený časový rozsah neobsahuje žádná data.")
+    print("Zpracovávám LEVÝ kanál (Speaker_L)...")
+    left_audio, left_sample_rate, left_offset_sec = load_audio_scipy(str(left_audio_path), start_sec, end_sec)
+    if len(left_audio) == 0:
+        print("Chyba: Zvolený časový rozsah neobsahuje žádná data v levém kanálu.")
         return
+    left_segments = transcribe_channel(
+        model,
+        left_audio,
+        left_sample_rate,
+        "Speaker_L",
+        base_offset_sec=left_offset_sec,
+    )
 
-    print("Spouštím MIX rozpoznávání...")
-    asr_segments = transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=base_offset_sec)
-    asr_segments = enrich_segment_schema(asr_segments)
+    print("Zpracovávám PRAVÝ kanál (Speaker_R)...")
+    right_audio, right_sample_rate, right_offset_sec = load_audio_scipy(str(right_audio_path), start_sec, end_sec)
+    if len(right_audio) == 0:
+        print("Chyba: Zvolený časový rozsah neobsahuje žádná data v pravém kanálu.")
+        return
+    right_segments = transcribe_channel(
+        model,
+        right_audio,
+        right_sample_rate,
+        "Speaker_R",
+        base_offset_sec=right_offset_sec,
+    )
 
-    full_transcription = " ".join(segment["text"] for segment in asr_segments)
-    runtime_seconds = round(time.perf_counter() - runtime_start, 2)
-    run_finished_utc = datetime.now(timezone.utc)
+    print("Slučuji segmenty a odstraňuji duplicity mezi kanály...")
+    all_segments = merge_and_deduplicate(left_segments, right_segments)
+    all_segments = enrich_segment_schema(all_segments)
+    speaker_l_full_transcription = " ".join(segment["text"] for segment in left_segments)
+    speaker_r_full_transcription = " ".join(segment["text"] for segment in right_segments)
+    full_transcription = " ".join(segment["text"] for segment in all_segments)
 
     final_output = {
         "metadata": {
-            "mode": "MIX",
+            "mode": "INDIVIDUAL_SPLIT",
             "start_seconds": start_sec,
             "end_seconds": end_sec,
             "has_custom_range": has_range,
             "model": MODEL_SIZE,
-            "backend": "whisper",
+            "dedup_time_tolerance": DEDUP_TIME_TOLERANCE,
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
-            "runtime_seconds": runtime_seconds,
-            "run_started_utc": run_started_utc.isoformat(),
-            "run_finished_utc": run_finished_utc.isoformat(),
+            "adjacent_merge_gap_seconds": ADJACENT_MERGE_GAP_SECONDS,
         },
-        "segments": asr_segments,
+        "segments": all_segments,
+        "Speaker_L_full_transcription": speaker_l_full_transcription,
+        "speaker_R_full_transcription": speaker_r_full_transcription,
         "full_transcription": full_transcription,
     }
 
     with open(output_path, "w", encoding="utf-8") as output_file:
         json.dump(final_output, output_file, ensure_ascii=False, indent=2)
 
-    print(f"Hotovo. Segmenty uloženy do: {output_path}")
+    print(f"Transkripce hotova a uložena do: {output_path}")
 
 
 if __name__ == "__main__":
-    run_mix_asr()
+    run_individual_asr()
