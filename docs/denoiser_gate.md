@@ -30,7 +30,7 @@ Příklad:
 ### Výstupy
 - vyčištěný levý kanál: `data/<nazev>_L_gate.wav`
 - vyčištěný pravý kanál: `data/<nazev>_R_gate.wav`
-- report s metrikami: `results/<nazev>_gate_report.json`
+- report s metrikami: `results/<nazev>_gate_report.txt`
 
 ## Hlavní nastavitelné proměnné (v kódu)
 Konfigurace je na začátku souboru `scripts/audio_cleaner_gate.py`:
@@ -60,7 +60,7 @@ Konfigurace je na začátku souboru `scripts/audio_cleaner_gate.py`:
   minimální podíl signálu v nedominantním rámci (0.0 = úplné ticho, vyšší = méně záseků).
 
 ## Interpretace reportu
-Soubor `results/*_gate_report.json` obsahuje:
+Soubor `results/*_gate_report.txt` obsahuje:
 - použité parametry (`params`),
 - statistiky před/po (`stats`), zejména:
   - `left_rms_before_db` / `left_rms_after_db`,

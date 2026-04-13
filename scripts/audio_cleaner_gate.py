@@ -1,4 +1,3 @@
-import json
 import sys
 from pathlib import Path
 
@@ -185,6 +184,37 @@ def build_report(input_path, sample_rate, left, right, left_clean, right_clean, 
     }
 
 
+def format_report_text(report):
+    params = report.get("params", {})
+    stats = report.get("stats", {})
+
+    lines = [
+        "Gate Report",
+        "===========",
+        f"Input: {report.get('input')}",
+        f"Sample rate: {report.get('sample_rate')} Hz",
+        f"Samples: {report.get('samples')}",
+        f"Duration: {report.get('duration_sec'):.3f} s",
+        "",
+        "Params",
+        "------",
+    ]
+
+    for key, value in params.items():
+        lines.append(f"{key}: {value}")
+
+    lines.extend([
+        "",
+        "Stats",
+        "-----",
+    ])
+
+    for key, value in stats.items():
+        lines.append(f"{key}: {value}")
+
+    return "\n".join(lines) + "\n"
+
+
 def process_file(input_wav, output_dir):
     sample_rate, data = wavfile.read(input_wav)
 
@@ -236,7 +266,7 @@ def process_file(input_wav, output_dir):
 
     left_path = output_dir / f"{stem}_L_gate.wav"
     right_path = output_dir / f"{stem}_R_gate.wav"
-    report_path = report_dir / f"{stem}_gate_report.json"
+    report_path = report_dir / f"{stem}_gate_report.txt"
 
     wavfile.write(left_path, sample_rate, from_float32(left_clean, original_dtype))
     wavfile.write(right_path, sample_rate, from_float32(right_clean, original_dtype))
@@ -253,7 +283,7 @@ def process_file(input_wav, output_dir):
     )
 
     with open(report_path, "w", encoding="utf-8") as handle:
-        json.dump(report, handle, ensure_ascii=False, indent=2)
+        handle.write(format_report_text(report))
 
     return left_path, right_path, report_path, report
 
