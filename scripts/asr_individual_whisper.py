@@ -2,6 +2,8 @@ import json
 import os
 import re
 import sys
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -448,6 +450,8 @@ def resolve_individual_audio_paths():
 
 
 def run_individual_asr():
+    run_started_utc = datetime.now(timezone.utc)
+    runtime_start = time.perf_counter()
     left_audio_path, right_audio_path, base_stem = resolve_individual_audio_paths()
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
@@ -498,6 +502,8 @@ def run_individual_asr():
     speaker_l_full_transcription = " ".join(segment["text"] for segment in left_segments)
     speaker_r_full_transcription = " ".join(segment["text"] for segment in right_segments)
     full_transcription = " ".join(segment["text"] for segment in all_segments)
+    runtime_seconds = round(time.perf_counter() - runtime_start, 2)
+    run_finished_utc = datetime.now(timezone.utc)
 
     final_output = {
         "metadata": {
@@ -506,10 +512,14 @@ def run_individual_asr():
             "end_seconds": end_sec,
             "has_custom_range": has_range,
             "model": MODEL_SIZE,
+            "backend": "whisper",
             "dedup_time_tolerance": DEDUP_TIME_TOLERANCE,
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
             "adjacent_merge_gap_seconds": ADJACENT_MERGE_GAP_SECONDS,
+            "runtime_seconds": runtime_seconds,
+            "run_started_utc": run_started_utc.isoformat(),
+            "run_finished_utc": run_finished_utc.isoformat(),
         },
         "segments": all_segments,
         "Speaker_L_full_transcription": speaker_l_full_transcription,
