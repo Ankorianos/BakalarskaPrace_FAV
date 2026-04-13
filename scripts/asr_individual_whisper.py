@@ -442,9 +442,7 @@ def resolve_individual_audio_paths():
 
     left_stem = left_audio_path.stem
     right_stem = right_audio_path.stem
-    left_base = left_stem[:-2] if left_stem.upper().endswith("_L") else left_stem
-    right_base = right_stem[:-2] if right_stem.upper().endswith("_R") else right_stem
-    base_stem = left_base if left_base == right_base else f"{left_base}_{right_base}"
+    base_stem = left_stem if left_stem == right_stem else f"{left_stem}_and_{right_stem}"
 
     return left_audio_path, right_audio_path, base_stem
 
