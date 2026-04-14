@@ -4,13 +4,13 @@ from pathlib import Path
 from pydub import AudioSegment
 from scipy.signal import stft, istft
 
-def suppress_crosstalk_spectral(input_path, output_path, alpha=2, power=2.0, window_size=4096):
+def suppress_crosstalk_spectral(input_path, output_path, alpha=1.5, power=2.0, window_size=2048):
     """
     Odstraní přeslechy pomocí frekvenčního maskování (STFT).
     
-    :param alpha: Síla potlačení. > 1.0 potlačuje přeslech více, ale může znít "plechově".
-    :param power: Ostrost masky. 2.0 je standard, vyšší čísla dělají ostřejší řezy.
-    :param window_size: Velikost STFT okna. 4096 je dobrý kompromis pro řeč.
+    :param alpha: Síla potlačení. Pro zachycení krátkých slov (např. "ano") volíme nižší (1.1).
+    :param power: Nyní se nevyužívá.
+    :param window_size: Velikost STFT okna. Menší okno (2048) lépe chytá krátká slova.
     """
     print(f"Načítám {input_path}...")
     audio = AudioSegment.from_file(input_path)
@@ -35,14 +35,20 @@ def suppress_crosstalk_spectral(input_path, output_path, alpha=2, power=2.0, win
     print("Počítám spektrální masky (širokopásmové binární potlačení pro odstranění plechových zvuků)...")
     
     # Místo odřezávání jednotlivých frekvencí (což vytváří "mimozemské" zvuky - tzv. musical noise),
-    # sečteme energii pro celý časový okamžik (rámec).
+    # sečteme umocněnou energii pro celý časový okamžik (umocnění víc zvýrazní dominantního řečníka).
     energy_L = np.sum(mag_L, axis=0)
     energy_R = np.sum(mag_R, axis=0)
     
     # Buď hraje celý rámec, nebo je úplné ticho.
-    # [np.newaxis, :] zajistí, že se maska 1.0 nebo 0.0 aplikuje plošně na všechny frekvence v daném čase.
-    mask_L = np.where(energy_L > (alpha * energy_R), 1.0, 0.0)[np.newaxis, :]
-    mask_R = np.where(energy_R > (alpha * energy_L), 1.0, 0.0)[np.newaxis, :]
+    raw_mask_L = np.where(energy_L > (alpha * energy_R), 1.0, 0.0)
+    raw_mask_R = np.where(energy_R > (alpha * energy_L), 1.0, 0.0)
+    
+    print("Vyhlazuji masky v čase pro přirozenější náběhy...")
+    # Aplikujeme měkké časové vyhlazení, aby zvuk prudce "neustřihl" začátky a konce slov ("ano")
+    # Přes průměr 5 okének vytvoříme velmi krátký fade (aby v těsných přesazích neprosákl druhý hlas).
+    smooth_window = np.ones(3) / 3.0
+    mask_L = np.convolve(raw_mask_L, smooth_window, mode='same')[np.newaxis, :]
+    mask_R = np.convolve(raw_mask_R, smooth_window, mode='same')[np.newaxis, :]
     
     print("Aplikuji masky a rekonstruuji zvuk (ISTFT)...")
     # Vynásobení původních komplexních čísel naší maskou
@@ -83,9 +89,9 @@ def main():
     suppress_crosstalk_spectral(
         input_path=str(input_path),
         output_path=str(output_path),
-        alpha=1.5,       
+        alpha=1.25,       
         power=2.0,       
-        window_size=4096 
+        window_size=2048 
     )
 
     print(f"Hotovo: {output_path}")
