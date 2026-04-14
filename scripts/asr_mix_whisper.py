@@ -3,22 +3,28 @@ import json
 import os
 import re
 import sys
+import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import auditok
 import numpy as np
 import whisper
 from scipy.io import wavfile
 
-START_SECONDS = 360
-END_SECONDS = 540
+START_SECONDS = None
+END_SECONDS = None
 MODEL_SIZE = "turbo"
 CHUNK_SECONDS = 25
 CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
 SHORT_CONTINUATION_WORDS = 4
 MAX_ADJACENT_MERGED_WORDS = 36
+VAD_MIN_DUR = 0.1
+VAD_MAX_DUR = 30
+VAD_MAX_SILENCE = 3
+VAD_ENERGY_THRESHOLD = 45
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -276,8 +282,8 @@ def enrich_segment_schema(segments):
             {
                 "id": f"asr_{index:05d}",
                 "speakers": speakers,
-                "start": segment["start"],
-                "end": segment["end"],
+                "start": round(float(segment["start"]), 3),
+                "end": round(float(segment["end"]), 3),
                 "text": segment["text"],
                 "is_overlap": False,
             }
@@ -325,34 +331,147 @@ def load_audio_segment(file_path, start_sec=None, end_sec=None):
     return data, sample_rate, (start_sample / sample_rate)
 
 
+def detect_speech_windows_with_auditok(audio_data, sample_rate):
+    if len(audio_data) == 0:
+        return []
+
+    def read_region_times(region):
+        meta = getattr(region, "meta", None)
+
+        start = None
+        end = None
+        duration = None
+
+        if meta is not None:
+            if isinstance(meta, dict):
+                start = meta.get("start")
+                end = meta.get("end")
+                duration = meta.get("duration")
+            else:
+                start = getattr(meta, "start", None)
+                end = getattr(meta, "end", None)
+                duration = getattr(meta, "duration", None)
+
+        if start is None:
+            start = getattr(region, "start", None)
+        if end is None:
+            end = getattr(region, "end", None)
+        if duration is None:
+            duration = getattr(region, "duration", None)
+
+        return start, end, duration
+
+    pcm16 = np.round(np.clip(audio_data, -1.0, 1.0) * 32767.0).astype(np.int16)
+
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
+        temp_path = temp_file.name
+
+    try:
+        wavfile.write(temp_path, sample_rate, pcm16)
+        regions = auditok.split(
+            temp_path,
+            min_dur=VAD_MIN_DUR,
+            max_dur=VAD_MAX_DUR,
+            max_silence=VAD_MAX_SILENCE,
+            energy_threshold=VAD_ENERGY_THRESHOLD,
+        )
+
+        windows = []
+        cursor = 0.0
+        audio_duration = len(audio_data) / float(sample_rate)
+        for region in regions:
+            start, end, duration = read_region_times(region)
+
+            if start is None and end is None:
+                if duration is None:
+                    continue
+                start = cursor
+                end = cursor + float(duration)
+            elif start is None and end is not None:
+                if duration is None:
+                    start = cursor
+                else:
+                    start = float(end) - float(duration)
+            elif end is None and start is not None:
+                if duration is None:
+                    continue
+                end = float(start) + float(duration)
+
+            start = float(start)
+            end = float(end)
+            start = max(0.0, start)
+            end = min(audio_duration, end)
+            if end > start:
+                windows.append((start, end))
+                cursor = max(cursor, end)
+
+        return windows
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+def build_vad_chunks(speech_windows, audio_duration, chunk_seconds):
+    if not speech_windows:
+        speech_windows = [(0.0, audio_duration)]
+
+    chunks = []
+    current_start = None
+    current_end = None
+
+    for raw_start, raw_end in sorted(speech_windows, key=lambda item: item[0]):
+        start = max(0.0, float(raw_start))
+        end = min(audio_duration, float(raw_end))
+        if end <= start:
+            continue
+
+        if current_start is None:
+            current_start = start
+            current_end = end
+        else:
+            proposed_end = end
+            if proposed_end - current_start <= chunk_seconds:
+                current_end = max(current_end, end)
+            else:
+                chunks.append((current_start, current_end))
+                current_start = start
+                current_end = end
+
+        while current_end - current_start > chunk_seconds:
+            split_end = current_start + chunk_seconds
+            chunks.append((current_start, split_end))
+            current_start = split_end
+
+    if current_start is not None and current_end is not None and current_end > current_start:
+        chunks.append((current_start, current_end))
+
+    return chunks
+
+
 def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
-    total_samples = len(audio_data)
     chunk_samples = int(CHUNK_SECONDS * sample_rate)
-    overlap_samples = int(CHUNK_OVERLAP_SECONDS * sample_rate)
-    step_samples = max(1, chunk_samples - overlap_samples)
 
     if chunk_samples <= 0:
         return []
 
     segments = []
-    total_chunks = max(1, (total_samples + step_samples - 1) // step_samples)
-    chunk_index = 0
+    audio_duration = len(audio_data) / float(sample_rate)
 
-    for chunk_start in range(0, total_samples, step_samples):
-        chunk_index += 1
-        chunk_end = min(chunk_start + chunk_samples, total_samples)
+    speech_windows = detect_speech_windows_with_auditok(audio_data, sample_rate)
+    vad_chunks = build_vad_chunks(speech_windows, audio_duration, CHUNK_SECONDS)
+    total_chunks = len(vad_chunks)
+
+    for chunk_index, (chunk_start_sec, chunk_end_sec) in enumerate(vad_chunks, start=1):
+        chunk_start = int(chunk_start_sec * sample_rate)
+        chunk_end = int(chunk_end_sec * sample_rate)
         chunk_audio = audio_data[chunk_start:chunk_end]
 
         if len(chunk_audio) == 0:
             continue
 
-        chunk_offset_sec = base_offset_sec + (chunk_start / sample_rate)
-        chunk_end_sec = base_offset_sec + (chunk_end / sample_rate)
+        chunk_offset_sec = base_offset_sec + chunk_start_sec
+        chunk_end_sec_absolute = base_offset_sec + chunk_end_sec
         print(f"Chunk {chunk_index}/{total_chunks} | {chunk_offset_sec:.2f}s -> {chunk_end_sec:.2f}s")
-        is_first_chunk = chunk_start == 0
-        is_last_chunk = chunk_end >= total_samples
-        keep_from = chunk_offset_sec if is_first_chunk else chunk_offset_sec + (CHUNK_OVERLAP_SECONDS / 2.0)
-        keep_to = chunk_end_sec if is_last_chunk else chunk_end_sec - (CHUNK_OVERLAP_SECONDS / 2.0)
 
         result = model.transcribe(
             chunk_audio,
@@ -370,22 +489,20 @@ def transcribe_in_chunks(model, audio_data, sample_rate, base_offset_sec=0.0):
 
             absolute_start = float(segment["start"]) + chunk_offset_sec
             absolute_end = float(segment["end"]) + chunk_offset_sec
-            segment_mid = (absolute_start + absolute_end) / 2.0
 
-            if segment_mid < keep_from or segment_mid > keep_to:
+            absolute_start = max(absolute_start, chunk_offset_sec)
+            absolute_end = min(absolute_end, chunk_end_sec_absolute)
+            if absolute_end <= absolute_start:
                 continue
 
             segments.append(
                 {
                     "speakers": ["unknown"],
-                    "start": round(absolute_start, 3),
-                    "end": round(absolute_end, 3),
+                    "start": absolute_start,
+                    "end": absolute_end,
                     "text": text,
                 }
             )
-
-        if chunk_end >= total_samples:
-            break
 
     deduped = deduplicate_segments(segments, time_tolerance=1.5)
     merged_overlaps = merge_overlapping_segments(deduped)
@@ -446,6 +563,10 @@ def run_mix_asr():
             "backend": "whisper",
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
+            "vad_min_dur": VAD_MIN_DUR,
+            "vad_max_dur": VAD_MAX_DUR,
+            "vad_max_silence": VAD_MAX_SILENCE,
+            "vad_energy_threshold": VAD_ENERGY_THRESHOLD,
             "runtime_seconds": runtime_seconds,
             "run_started_utc": run_started_utc.isoformat(),
             "run_finished_utc": run_finished_utc.isoformat(),
