@@ -2,10 +2,12 @@ import json
 import os
 import re
 import sys
+import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import auditok
 import numpy as np
 import whisper
 from scipy.io import wavfile
@@ -20,6 +22,9 @@ CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
 SHORT_CONTINUATION_WORDS = 4
 MAX_ADJACENT_MERGED_WORDS = 36
+VAD_MIN_DUR = 0.5
+VAD_MAX_SILENCE = 1.0
+VAD_ENERGY_THRESHOLD = 45
 # --------------------------
 
 HALLUCINATION_PATTERNS = [
@@ -320,8 +325,41 @@ def load_stereo_audio_scipy(file_path, start_sec=None, end_sec=None):
     return left, right, sample_rate, (start_sample / sample_rate)
 
 
+def detect_speech_windows_with_auditok(audio_data, sample_rate):
+    if len(audio_data) == 0:
+        return []
+
+    pcm16 = np.round(np.clip(audio_data, -1.0, 1.0) * 32767.0).astype(np.int16)
+
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
+        temp_path = temp_file.name
+
+    try:
+        wavfile.write(temp_path, sample_rate, pcm16)
+        regions = auditok.split(
+            temp_path,
+            min_dur=VAD_MIN_DUR,
+            max_silence=VAD_MAX_SILENCE,
+            energy_threshold=VAD_ENERGY_THRESHOLD,
+        )
+
+        windows = []
+        audio_duration = len(audio_data) / float(sample_rate)
+        for region in regions:
+            start = float(getattr(region.meta, "start", 0.0))
+            end = float(getattr(region.meta, "end", 0.0))
+            start = max(0.0, start)
+            end = min(audio_duration, end)
+            if end > start:
+                windows.append((start, end))
+
+        return windows
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
 def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_sec=0.0):
-    total_samples = len(audio_data)
     chunk_samples = int(CHUNK_SECONDS * sample_rate)
     overlap_samples = int(CHUNK_OVERLAP_SECONDS * sample_rate)
     step_samples = max(1, chunk_samples - overlap_samples)
@@ -331,52 +369,66 @@ def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_
 
     segments = []
 
-    for chunk_start in range(0, total_samples, step_samples):
-        chunk_end = min(chunk_start + chunk_samples, total_samples)
-        chunk_audio = audio_data[chunk_start:chunk_end]
+    speech_windows = detect_speech_windows_with_auditok(audio_data, sample_rate)
+    if not speech_windows:
+        speech_windows = [(0.0, len(audio_data) / float(sample_rate))]
 
-        if len(chunk_audio) == 0:
+    for window_start_sec, window_end_sec in speech_windows:
+        window_start_sample = int(window_start_sec * sample_rate)
+        window_end_sample = int(window_end_sec * sample_rate)
+
+        if window_end_sample <= window_start_sample:
             continue
 
-        chunk_offset_sec = base_offset_sec + (chunk_start / sample_rate)
-        chunk_end_sec = base_offset_sec + (chunk_end / sample_rate)
-        is_first_chunk = chunk_start == 0
-        is_last_chunk = chunk_end >= total_samples
-        keep_from = chunk_offset_sec if is_first_chunk else chunk_offset_sec + (CHUNK_OVERLAP_SECONDS / 2.0)
-        keep_to = chunk_end_sec if is_last_chunk else chunk_end_sec - (CHUNK_OVERLAP_SECONDS / 2.0)
+        window_audio = audio_data[window_start_sample:window_end_sample]
+        window_total_samples = len(window_audio)
 
-        result = model.transcribe(
-            chunk_audio,
-            language="cs",
-            verbose=False,
-            condition_on_previous_text=False,
-            no_speech_threshold=0.25,
-            temperature=0.0,
-        )
+        for chunk_start in range(0, window_total_samples, step_samples):
+            chunk_end = min(chunk_start + chunk_samples, window_total_samples)
+            chunk_audio = window_audio[chunk_start:chunk_end]
 
-        for segment in result.get("segments", []):
-            text = clean_segment_text(segment.get("text", ""))
-            if is_hallucination(text):
+            if len(chunk_audio) == 0:
                 continue
 
-            absolute_start = float(segment["start"]) + chunk_offset_sec
-            absolute_end = float(segment["end"]) + chunk_offset_sec
-            segment_mid = (absolute_start + absolute_end) / 2.0
+            chunk_offset_sec = base_offset_sec + window_start_sec + (chunk_start / sample_rate)
+            chunk_end_sec = base_offset_sec + window_start_sec + (chunk_end / sample_rate)
+            is_first_chunk = chunk_start == 0
+            is_last_chunk = chunk_end >= window_total_samples
+            keep_from = chunk_offset_sec if is_first_chunk else chunk_offset_sec + (CHUNK_OVERLAP_SECONDS / 2.0)
+            keep_to = chunk_end_sec if is_last_chunk else chunk_end_sec - (CHUNK_OVERLAP_SECONDS / 2.0)
 
-            if segment_mid < keep_from or segment_mid > keep_to:
-                continue
-
-            segments.append(
-                {
-                    "speaker": speaker_tag,
-                    "start": round(absolute_start, 3),
-                    "end": round(absolute_end, 3),
-                    "text": text,
-                }
+            result = model.transcribe(
+                chunk_audio,
+                language="cs",
+                verbose=False,
+                condition_on_previous_text=False,
+                no_speech_threshold=0.25,
+                temperature=0.0,
             )
 
-        if chunk_end >= total_samples:
-            break
+            for segment in result.get("segments", []):
+                text = clean_segment_text(segment.get("text", ""))
+                if is_hallucination(text):
+                    continue
+
+                absolute_start = float(segment["start"]) + chunk_offset_sec
+                absolute_end = float(segment["end"]) + chunk_offset_sec
+                segment_mid = (absolute_start + absolute_end) / 2.0
+
+                if segment_mid < keep_from or segment_mid > keep_to:
+                    continue
+
+                segments.append(
+                    {
+                        "speaker": speaker_tag,
+                        "start": round(absolute_start, 3),
+                        "end": round(absolute_end, 3),
+                        "text": text,
+                    }
+                )
+
+            if chunk_end >= window_total_samples:
+                break
 
     deduped = deduplicate_segments(segments, time_tolerance=1.5)
     merged_overlaps = merge_overlapping_segments(deduped)
@@ -518,6 +570,9 @@ def run_individual_asr():
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
             "adjacent_merge_gap_seconds": ADJACENT_MERGE_GAP_SECONDS,
+            "vad_min_dur": VAD_MIN_DUR,
+            "vad_max_silence": VAD_MAX_SILENCE,
+            "vad_energy_threshold": VAD_ENERGY_THRESHOLD,
             "runtime_seconds": runtime_seconds,
             "run_started_utc": run_started_utc.isoformat(),
             "run_finished_utc": run_finished_utc.isoformat(),
