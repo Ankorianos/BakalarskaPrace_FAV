@@ -46,7 +46,7 @@ def suppress_crosstalk_spectral(input_path, output_path, alpha=1.5, power=2.0, w
     print("Vyhlazuji masky v čase pro přirozenější náběhy...")
     # Aplikujeme měkké časové vyhlazení, aby zvuk prudce "neustřihl" začátky a konce slov ("ano")
     # Přes průměr 5 okének vytvoříme velmi krátký fade (aby v těsných přesazích neprosákl druhý hlas).
-    smooth_window = np.ones(3) / 3.0
+    smooth_window = np.ones(5) / 5.0
     mask_L = np.convolve(raw_mask_L, smooth_window, mode='same')[np.newaxis, :]
     mask_R = np.convolve(raw_mask_R, smooth_window, mode='same')[np.newaxis, :]
     
@@ -89,7 +89,7 @@ def main():
     suppress_crosstalk_spectral(
         input_path=str(input_path),
         output_path=str(output_path),
-        alpha=1.25,       
+        alpha=1.75,       
         power=2.0,       
         window_size=2048 
     )

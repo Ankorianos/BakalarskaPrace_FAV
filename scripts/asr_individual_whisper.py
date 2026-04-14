@@ -287,11 +287,21 @@ def resolve_time_window(start_sec=None, end_sec=None):
     return start_sec, end_sec
 
 
-def load_audio_scipy(file_path, start_sec=None, end_sec=None):
+def normalize_audio_data(data):
+    if data.dtype == np.int16:
+        return data.astype(np.float32) / 32768.0
+    if data.dtype == np.int32:
+        return data.astype(np.float32) / 2147483648.0
+    if data.dtype == np.uint8:
+        return (data.astype(np.float32) - 128.0) / 128.0
+    return data.astype(np.float32)
+
+
+def load_stereo_audio_scipy(file_path, start_sec=None, end_sec=None):
     sample_rate, data = wavfile.read(file_path)
 
-    if len(data.shape) > 1:
-        data = data[:, 0]
+    if len(data.shape) == 1 or data.shape[1] < 2:
+        raise ValueError("Vstupní soubor musí být stereo (2 kanály).")
 
     start_sec, end_sec = resolve_time_window(start_sec, end_sec)
 
@@ -300,20 +310,14 @@ def load_audio_scipy(file_path, start_sec=None, end_sec=None):
     end_sample = min(end_sample, len(data))
 
     if start_sample >= len(data):
-        data = np.array([], dtype=np.float32)
+        left = np.array([], dtype=np.float32)
+        right = np.array([], dtype=np.float32)
     else:
         data = data[start_sample:end_sample]
+        left = normalize_audio_data(data[:, 0])
+        right = normalize_audio_data(data[:, 1])
 
-    if data.dtype == np.int16:
-        data = data.astype(np.float32) / 32768.0
-    elif data.dtype == np.int32:
-        data = data.astype(np.float32) / 2147483648.0
-    elif data.dtype == np.uint8:
-        data = (data.astype(np.float32) - 128.0) / 128.0
-    else:
-        data = data.astype(np.float32)
-
-    return data, sample_rate, (start_sample / sample_rate)
+    return left, right, sample_rate, (start_sample / sample_rate)
 
 
 def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_sec=0.0):
@@ -432,66 +436,65 @@ def enrich_segment_schema(segments):
     return enriched
 
 
-def resolve_individual_audio_paths():
-    if len(sys.argv) != 3 or not sys.argv[1].strip() or not sys.argv[2].strip():
-        print("Použití: python scripts/asr_individual_whisper.py <cesta_k_pravy_wav> <cesta_k_levy_wav>")
+def resolve_individual_audio_path():
+    if len(sys.argv) != 2 or not sys.argv[1].strip():
+        print("Použití: python scripts/asr_individual_whisper.py <cesta_k_stereo_wav>")
         sys.exit(1)
 
-    right_audio_path = Path(sys.argv[1].strip()).expanduser().resolve()
-    left_audio_path = Path(sys.argv[2].strip()).expanduser().resolve()
-
-    left_stem = left_audio_path.stem
-    right_stem = right_audio_path.stem
-    base_stem = left_stem if left_stem == right_stem else f"{left_stem}_and_{right_stem}"
-
-    return left_audio_path, right_audio_path, base_stem
+    return Path(sys.argv[1].strip()).expanduser().resolve()
 
 
 def run_individual_asr():
     run_started_utc = datetime.now(timezone.utc)
     runtime_start = time.perf_counter()
-    left_audio_path, right_audio_path, base_stem = resolve_individual_audio_paths()
+    stereo_audio_path = resolve_individual_audio_path()
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
     has_range = start_sec is not None or end_sec is not None
     output_scope = "full" if start_sec is None and end_sec is None else "range"
-    output_name = f"{base_stem}_{output_scope}_whisper.json"
+    output_name = f"{stereo_audio_path.stem}_{output_scope}_whisper.json"
     output_path = PROJECT_ROOT / "results" / output_name
 
-    if not os.path.exists(left_audio_path):
-        print(f"Chyba: Soubor {left_audio_path} nebyl nalezen!")
-        return
-    if not os.path.exists(right_audio_path):
-        print(f"Chyba: Soubor {right_audio_path} nebyl nalezen!")
+    if not os.path.exists(stereo_audio_path):
+        print(f"Chyba: Soubor {stereo_audio_path} nebyl nalezen!")
         return
 
     print(f"Načítám Whisper model ({MODEL_SIZE})...")
     model = whisper.load_model(MODEL_SIZE)
 
+    print("Načítám stereo audio a rozděluji kanály (L/R)...")
+    try:
+        left_audio, right_audio, sample_rate, base_offset_sec = load_stereo_audio_scipy(
+            str(stereo_audio_path),
+            start_sec,
+            end_sec,
+        )
+    except ValueError as error:
+        print(f"Chyba: {error}")
+        return
+
     print("Zpracovávám LEVÝ kanál (Speaker_L)...")
-    left_audio, left_sample_rate, left_offset_sec = load_audio_scipy(str(left_audio_path), start_sec, end_sec)
     if len(left_audio) == 0:
         print("Chyba: Zvolený časový rozsah neobsahuje žádná data v levém kanálu.")
         return
     left_segments = transcribe_channel(
         model,
         left_audio,
-        left_sample_rate,
+        sample_rate,
         "Speaker_L",
-        base_offset_sec=left_offset_sec,
+        base_offset_sec=base_offset_sec,
     )
 
     print("Zpracovávám PRAVÝ kanál (Speaker_R)...")
-    right_audio, right_sample_rate, right_offset_sec = load_audio_scipy(str(right_audio_path), start_sec, end_sec)
     if len(right_audio) == 0:
         print("Chyba: Zvolený časový rozsah neobsahuje žádná data v pravém kanálu.")
         return
     right_segments = transcribe_channel(
         model,
         right_audio,
-        right_sample_rate,
+        sample_rate,
         "Speaker_R",
-        base_offset_sec=right_offset_sec,
+        base_offset_sec=base_offset_sec,
     )
 
     print("Slučuji segmenty a odstraňuji duplicity mezi kanály...")
