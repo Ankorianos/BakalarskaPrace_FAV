@@ -6,11 +6,15 @@
     "has_custom_range": false,
     "model": "large",
     "backend": "whisper",
-    "chunk_seconds": 300,
+    "chunk_seconds": 360,
     "chunk_overlap_seconds": 2.0,
-    "runtime_seconds": 166.01,
-    "run_started_utc": "2026-04-01T17:39:59.218291+00:00",
-    "run_finished_utc": "2026-04-01T17:42:45.232093+00:00"
+    "vad_min_dur": 0.25,
+    "vad_max_dur": 30,
+    "vad_max_silence": 3,
+    "vad_energy_threshold": 45,
+    "runtime_seconds": 149.52,
+    "run_started_utc": "2026-04-15T09:07:24.312217+00:00",
+    "run_finished_utc": "2026-04-15T09:09:53.837189+00:00"
   },
   "segments": [
     {
@@ -18,8 +22,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 30.0,
-      "end": 55.0,
+      "start": 35.35,
+      "end": 55.01,
       "text": "Jmenuji se Jana René Frýzová, J-A-N-A-R-E-N-E-E-F-R-I-E-S-O-V-A Březen 13.1996",
       "is_overlap": false
     },
@@ -28,8 +32,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 55.001,
-      "end": 66.96,
+      "start": 55.011,
+      "end": 66.97,
       "text": "Natáčíme rozhovor s panem inženýrem Janem Orlíkem, Praha, Česká republika",
       "is_overlap": false
     },
@@ -38,8 +42,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 85.0,
-      "end": 101.58,
+      "start": 85.01,
+      "end": 101.59,
       "text": "A kdybys byl tak laskav a řekl své jméno a hláskoval ho? Jmenuji se Jan Orlík J-A-N-O-R-L-I-K",
       "is_overlap": false
     },
@@ -48,8 +52,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 101.581,
-      "end": 104.02,
+      "start": 101.591,
+      "end": 104.01,
       "text": "A kdy jsi se narodil?",
       "is_overlap": false
     },
@@ -58,8 +62,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 104.58,
-      "end": 111.28,
+      "start": 104.57,
+      "end": 111.27,
       "text": "Narodil jsem se 12. září 1919 v Praze",
       "is_overlap": false
     },
@@ -68,8 +72,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 112.28,
-      "end": 114.24,
+      "start": 111.271,
+      "end": 114.27,
       "text": "A měl jsi nějaké jiné jméno?",
       "is_overlap": false
     },
@@ -78,9 +82,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 115.0,
-      "end": 128.34,
-      "text": "Ano, do roku 1946 jsem se po tátovi jmenoval Adler, to se hláskuje A-D-L-E-E-R",
+      "start": 115.01,
+      "end": 128.33,
+      "text": "Ano. Do roku 1946 jsem se po tátovi jmenoval Adler To se hláskuje A-D-L-E-E-R",
       "is_overlap": false
     },
     {
@@ -88,8 +92,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 129.32,
-      "end": 135.46,
+      "start": 129.31,
+      "end": 135.47,
       "text": "A potom ve snaze to počeštit jsem to změnil na překlad Ano",
       "is_overlap": false
     },
@@ -98,9 +102,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 135.461,
-      "end": 143.46,
-      "text": "A kdybyste se teď trošku zamyslel nad tím, jak to bylo u vás doma",
+      "start": 136.17,
+      "end": 143.01,
+      "text": "A kdybys teď se trošku zamyslel nad tím, jak to bylo u vás doma",
       "is_overlap": false
     },
     {
@@ -108,8 +112,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 143.461,
-      "end": 152.46,
+      "start": 143.011,
+      "end": 151.85,
       "text": "I v tvém dětství, jaká jste byla rodina? Tím bychom mohli začít. Kde jste žili?",
       "is_overlap": false
     },
@@ -118,8 +122,8 @@
       "speakers": [
         "unknown"
       ],
-      "start": 152.461,
-      "end": 163.46,
+      "start": 152.81,
+      "end": 163.71,
       "text": "Já jsem se narodil v bytě svých prarodičů z máminy strany, v italské ulici na Královských Vinohradech",
       "is_overlap": false
     },
@@ -128,9 +132,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 163.461,
-      "end": 183.46,
-      "text": "A brzo po narození jsem byl převezen do místa působení mého otce, ten pochází od německých hranic ze Šumavy, jmenoval se Edmund Adler",
+      "start": 163.71,
+      "end": 174.17,
+      "text": "A brzo po narození jsem byl převezen do místa působení mého otce",
       "is_overlap": false
     },
     {
@@ -138,9 +142,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 183.461,
-      "end": 191.46,
-      "text": "po celý život to byl můj vzor. To byl prostě ten člověk, který nejvíc ovlivnil můj život",
+      "start": 175.27,
+      "end": 180.57,
+      "text": "Ten pochází od německých hranic ze Šumavy",
       "is_overlap": false
     },
     {
@@ -148,9 +152,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 191.461,
-      "end": 210.46,
-      "text": "A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor",
+      "start": 181.95,
+      "end": 183.65,
+      "text": "Jmenoval se Edmund Adler",
       "is_overlap": false
     },
     {
@@ -158,9 +162,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 210.461,
-      "end": 221.46,
-      "text": "Byl to vzorný statek, který dneska, tak jako mnoho jiných objektů na Šumavě, prostě zmizel. Neexistuje",
+      "start": 184.73,
+      "end": 187.25,
+      "text": "Po celý život to byl můj vzor",
       "is_overlap": false
     },
     {
@@ -168,9 +172,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 221.461,
-      "end": 231.46,
-      "text": "Tam táta prováděl meliorizace, modernizoval to, dovezl švýcarský chov",
+      "start": 187.251,
+      "end": 191.81,
+      "text": "To byl prostě ten člověk, který nejvíc ovlivnil můj život",
       "is_overlap": false
     },
     {
@@ -178,9 +182,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 231.461,
-      "end": 239.46,
-      "text": "Ticho. No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let",
+      "start": 191.811,
+      "end": 210.81,
+      "text": "A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor",
       "is_overlap": false
     },
     {
@@ -188,9 +192,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 241.46,
-      "end": 242.46,
-      "text": "Byla to úplná samota",
+      "start": 210.811,
+      "end": 222.81,
+      "text": "Byl to vzorný statek, který dneska, tak jako mnoho jiných objektů na Šumavě, prostě zmizel Neexistuje",
       "is_overlap": false
     },
     {
@@ -198,9 +202,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 242.461,
-      "end": 246.46,
-      "text": "Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk?",
+      "start": 224.01,
+      "end": 232.01,
+      "text": "Tam táta prováděl meliorizace, modernizoval to, dovezl do švýcarských chov",
       "is_overlap": false
     },
     {
@@ -208,9 +212,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 246.461,
-      "end": 256.46,
-      "text": "To bylo velmi zajímavý. Moje maminka je modroka, blondýna, z Peleřimova Židovka?",
+      "start": 232.011,
+      "end": 239.41,
+      "text": "No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let",
       "is_overlap": false
     },
     {
@@ -218,9 +222,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 256.461,
-      "end": 265.46,
-      "text": "Její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v Pelřimově",
+      "start": 241.11,
+      "end": 243.11,
+      "text": "Byla to úplná samota",
       "is_overlap": false
     },
     {
@@ -228,9 +232,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 265.461,
-      "end": 272.46,
-      "text": "Babička je z Rokycan, jmenovala se původně Léderová",
+      "start": 243.111,
+      "end": 246.91,
+      "text": "Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk?",
       "is_overlap": false
     },
     {
@@ -238,9 +242,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 272.461,
-      "end": 280.46,
-      "text": "A jim se narodila ta dcera Ela, Elinka",
+      "start": 246.911,
+      "end": 254.91,
+      "text": "To bylo velmi zajímavé. Moje maminka je modroká blondína z Peleřimova",
       "is_overlap": false
     },
     {
@@ -248,9 +252,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 280.461,
-      "end": 290.46,
-      "text": "A ta chodila do školy v Pelřimově a byla to naprosto česky orientovaná rodina, která neuměla pořádně německy",
+      "start": 254.911,
+      "end": 265.91,
+      "text": "Židovka Její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v Peleřimově",
       "is_overlap": false
     },
     {
@@ -258,9 +262,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 290.461,
-      "end": 300.46,
-      "text": "Dědeček a babička rozuměli německy, ale neovládali to. Maminka, když si",
+      "start": 265.911,
+      "end": 272.91,
+      "text": "Babička je z Rokycan. Pani jmenovala se původně Léderová",
       "is_overlap": false
     },
     {
@@ -268,9 +272,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 300.461,
-      "end": 313.0,
-      "text": "Když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca do penzionátu a tam se naučila dobře francouzsky a dobře německy což mělo velký vliv na moji výchovu",
+      "start": 272.911,
+      "end": 280.91,
+      "text": "A jim se narodila ta dcera Ela, Elinka",
       "is_overlap": false
     },
     {
@@ -278,9 +282,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 313.001,
-      "end": 320.0,
-      "text": "A zcela jinak to bylo odcovo strany",
+      "start": 280.911,
+      "end": 290.91,
+      "text": "A ta chodila do školy v Pelřimově a byla to naprosto česky orientovaná rodina, která neuměla pořádně německy",
       "is_overlap": false
     },
     {
@@ -288,9 +292,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 320.001,
-      "end": 342.8,
-      "text": "Otec pochází z vesničky jménem Zhůří na Šumavě, to je nedaleko toho velkostatku, v blízkosti Hartmanic, což je starý soudní okres na Šumavě, kde byl židovský hřbitov, který Němci úplně vyvrátili, tam není nic",
+      "start": 290.911,
+      "end": 295.91,
+      "text": "Dědeček a babička rozuměli německy, ale neovládali to",
       "is_overlap": false
     },
     {
@@ -298,9 +302,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 342.801,
-      "end": 360.8,
-      "text": "Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hutích nebo v lese",
+      "start": 295.911,
+      "end": 312.91,
+      "text": "Maminka, když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca do penzionátu a tam se naučila dobře francouzsky a dobře německy, což mělo velký vliv na moji výchovu",
       "is_overlap": false
     },
     {
@@ -308,9 +312,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 360.801,
-      "end": 370.8,
-      "text": "Dědeček jmenoval se Salomon Adler, byl to krásný, statný pán",
+      "start": 312.911,
+      "end": 319.91,
+      "text": "A zcela jinak to bylo odcovo strany",
       "is_overlap": false
     },
     {
@@ -318,9 +322,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 370.801,
-      "end": 376.8,
-      "text": "A jeho manželka se jmenovala Rosa Kornfiererová",
+      "start": 319.911,
+      "end": 342.79,
+      "text": "Otec pochází z vesničky jménem Zhůří na Šumavě, to je nedaleko toho velkostatku, v blízkosti Hartmanic, což je starý soudní okres na Šumavě, kde byl židovský hřbitov, který Němci úplně vyvrátili, tam není nic",
       "is_overlap": false
     },
     {
@@ -328,9 +332,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 376.801,
-      "end": 380.8,
-      "text": "A ty neuměly česky ani slovo",
+      "start": 342.791,
+      "end": 360.79,
+      "text": "Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hutích nebo v lese",
       "is_overlap": false
     },
     {
@@ -338,9 +342,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 380.801,
-      "end": 387.8,
-      "text": "Táta sice měl českou maturitu, ale ta čeština byla taková typicky sudecká",
+      "start": 360.791,
+      "end": 370.79,
+      "text": "Dědeček jmenoval se Salomon Adler, byl to krásný, statný pán",
       "is_overlap": false
     },
     {
@@ -348,9 +352,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 387.801,
-      "end": 400.8,
-      "text": "To znamená, že místo P se říká B, místo D se říká T, takže on třeba říkal bejzek, anebo anekdóde místo anekdóde",
+      "start": 370.791,
+      "end": 374.75,
+      "text": "A jeho manželka se jmenovala Roza",
       "is_overlap": false
     },
     {
@@ -358,9 +362,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 400.801,
-      "end": 405.8,
-      "text": "To je zvláštnost toho německého nářečí",
+      "start": 374.751,
+      "end": 380.75,
+      "text": "Kornfiererová, a ty neuměly česky ani slovo",
       "is_overlap": false
     },
     {
@@ -368,9 +372,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 405.801,
-      "end": 416.8,
-      "text": "U stolu u nás, po celé mé dětství, jsem mluvil výhradně česky na maminku a na Evu, svoji sestru",
+      "start": 380.751,
+      "end": 401.75,
+      "text": "Táta sice měl českou maturitu, ale ta čeština byla taková typicky sudecká to znamená prakticky, že místo p se říká b, místo d se říká t takže on třeba říkal bejzek, anebo anekdóde místo anekdóde, atd",
       "is_overlap": false
     },
     {
@@ -378,9 +382,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 416.801,
-      "end": 425.36,
-      "text": "A výhradně německy na Tatínger. Takže to se neustále střídalo a mě to nedělalo vůbec žádné potíže",
+      "start": 401.751,
+      "end": 405.75,
+      "text": "To je zvláštnost toho německého nářečí",
       "is_overlap": false
     },
     {
@@ -388,9 +392,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 426.58,
-      "end": 440.82,
-      "text": "Ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku kde jsem měl fungovat na nějaký konferenci jako překladatel",
+      "start": 405.751,
+      "end": 419.75,
+      "text": "U stolu u nás, po celé mé dětství, jsem mluvil výhradně česky na maminku a na Evu, svoji sestru a výhradně německy na tatinka",
       "is_overlap": false
     },
     {
@@ -398,9 +402,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 442.24,
-      "end": 445.48,
-      "text": "protože bylo o mně známo, že mluvím plně oběma jazyky",
+      "start": 419.751,
+      "end": 425.75,
+      "text": "Takže to se neustále střídalo a mě to nedělalo vůbec žádné potíže",
       "is_overlap": false
     },
     {
@@ -408,9 +412,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 446.8,
-      "end": 463.78,
-      "text": "A tam mě podrobili zkoušce a řekli tak, jak se řekne německy předradlička, což jsem nevěděl, a jak se řekne záhumenek, což jsem taky nevěděl, tak se se mnou hned rozhodli učit, že ta moje Němčina dokonalá není",
+      "start": 425.751,
+      "end": 446.75,
+      "text": "Ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku, kde jsem měl fungovat na nějaký konferenci jako překladatel protože bylo o mně známo, že mluvím plně oběma jazyky",
       "is_overlap": false
     },
     {
@@ -418,9 +422,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 463.781,
-      "end": 465.78,
-      "text": "Né no",
+      "start": 446.751,
+      "end": 463.77,
+      "text": "A tam mě podrobili zkoušce a řekli tak, jak se řekne německy předradlička, což jsem nevěděl, a jak se řekne záhumenek, což jsem taky nevěděl, tak se se mnou hned rozdanočili, že ta moje Němčina dokonalá není",
       "is_overlap": false
     },
     {
@@ -428,9 +432,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 465.781,
-      "end": 474.78,
-      "text": "Když mě bylo šest let, tak jsem šel v Železné rudě, kam jsme se přestěhovali, do české školy",
+      "start": 463.771,
+      "end": 465.77,
+      "text": "Né no",
       "is_overlap": false
     },
     {
@@ -438,9 +442,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 474.781,
-      "end": 494.78,
-      "text": "Celá Železná ruda, kde měl dědeček viru a továrnu na štěce a všecko možného patřil k takový ty velmi bohatlické poválečné generaci měšťanské",
+      "start": 465.771,
+      "end": 474.77,
+      "text": "Když mě bylo šest let, tak jsem šel v Železné rudě, kam jsme se přestěhovali, do české školy",
       "is_overlap": false
     },
     {
@@ -448,9 +452,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 494.781,
-      "end": 503.78,
-      "text": "To byl člověk bez jakéhokoliv formálního vzdělání, ale velice příjemný, sčetlý, inteligentní",
+      "start": 474.771,
+      "end": 494.77,
+      "text": "Celá Železná ruda, kde měl dědeček viru a továrnu na štěce a všechno možného patřil k takový ty velmi bohatlické poválečné generaci měšťanské",
       "is_overlap": false
     },
     {
@@ -458,9 +462,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 503.781,
-      "end": 512.78,
-      "text": "A měl tu zvláštní vlastnost, že v čemkoliv podnikal, se mu to fantasticky dařilo",
+      "start": 494.771,
+      "end": 503.77,
+      "text": "To byl člověk bez jakéhokoliv formálního vzdělání, ale velice příjemný, sčetlý, inteligentní",
       "is_overlap": false
     },
     {
@@ -468,9 +472,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 512.781,
-      "end": 522.18,
-      "text": "Zemřel asi v roce 39 v chudobinci židovském tady v Praze, protože o všechno přišli",
+      "start": 503.771,
+      "end": 512.77,
+      "text": "A měl tu zvláštní vlastnost, že v čemkoliv podnikal, se mu to fantasticky dařilo",
       "is_overlap": false
     },
     {
@@ -478,9 +482,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 522.86,
-      "end": 532.28,
-      "text": "Ale to ne zásluhou Hitlera, to také, ale především tím, že ta rodina nežila v souladu",
+      "start": 512.771,
+      "end": 522.17,
+      "text": "Zemřel asi v roce 39 v chudobinci židovském tady v Praze, protože o všechno přišli",
       "is_overlap": false
     },
     {
@@ -488,9 +492,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 532.38,
-      "end": 535.56,
-      "text": "Ale to je úplně jiná kapitola. Já se vrátím k tomu dětství",
+      "start": 522.87,
+      "end": 532.29,
+      "text": "Ale to ne zásluhou Hitlera, to také, ale především tím, že ta rodina nežila v souladu",
       "is_overlap": false
     },
     {
@@ -498,9 +502,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 535.561,
-      "end": 544.96,
-      "text": "Ano. Já bych se ještě optala, tam byla někde v okolí židovská škola, nebo by to ani nenapadlo, tu tvoji rodinu, aby schodil do židovské školy?",
+      "start": 532.37,
+      "end": 535.57,
+      "text": "Ale to je úplně jiná kapitola. Já se vrátím k tomu dětství",
       "is_overlap": false
     },
     {
@@ -508,9 +512,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 546.64,
-      "end": 557.74,
-      "text": "Nejbližší židovská komunita byla v Nířsku, což je městečko asi 20 kilometrů vzdálené od hranic od železné rudy",
+      "start": 535.571,
+      "end": 544.97,
+      "text": "Ano. Já bych se ještě optala, tam byla někde v okolí židovská škola, nebo by to ani nenapadlo, tu tvoji rodinu, aby shodil do židovské školy?",
       "is_overlap": false
     },
     {
@@ -518,9 +522,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 557.741,
-      "end": 560.24,
-      "text": "Tam byl rabín, pan Klaubr",
+      "start": 546.65,
+      "end": 557.75,
+      "text": "Nejbližší židovská komunita byla v Nířsku, což je městečko asi 20 kilometrů vzdálené od hranic od železné rudy",
       "is_overlap": false
     },
     {
@@ -528,9 +532,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 561.04,
-      "end": 565.24,
-      "text": "Já jsem se s ním setkal pouze jednou nebo dvakrát",
+      "start": 557.751,
+      "end": 559.91,
+      "text": "Tam byl rabín, pan Klaubr",
       "is_overlap": false
     },
     {
@@ -538,9 +542,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 565.84,
-      "end": 578.74,
-      "text": "Při marných pokusech vychovávat ty děti těch židovských rodin v Železný Rudě bylo jich strašně málo, snad čtyři nebo tři",
+      "start": 561.27,
+      "end": 565.17,
+      "text": "Já jsem se s ním setkal pouze jednou nebo dvakrát",
       "is_overlap": false
     },
     {
@@ -548,9 +552,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 580.24,
-      "end": 596.74,
-      "text": "A tak pan rabín Klaubr několikrát přijel z Dnirska aby nás uvedl do věrouky, nebo jak se to říká? Do židovského náboženství Ale tento pokus troskotal",
+      "start": 566.11,
+      "end": 578.41,
+      "text": "Při marných pokusech vychovávat ty děti těch židovských rodin v Železní Rudě, bylo jich strašně málo snad čtyři nebo tři",
       "is_overlap": false
     },
     {
@@ -558,9 +562,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 596.741,
-      "end": 610.0,
-      "text": "takže jsem se učil kubřehohebrejský číst asi dvě hodiny nebo tři hodiny za život a samozřejmě, že jsem se to nenaučil",
+      "start": 580.41,
+      "end": 596.93,
+      "text": "A tak pan rabín Klaubr několikrát přijel z Dnirska aby nás uvedl do výhrouky, nebo jak se to říká? Do židovského náboženství Ale tento pokus troskotál",
       "is_overlap": false
     },
     {
@@ -568,9 +572,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 610.001,
-      "end": 632.0,
-      "text": "Rodina sama byla, teda rodiče, byla naprosto neortodoxní, vůbec se žádný svátky ani zvyky nedodržovaly avšak to vědomí židovské tam bylo naprosto jasné",
+      "start": 597.11,
+      "end": 607.55,
+      "text": "Takže jsem se učil, když ho hebrejský číst asi dvě hodiny nebo tři hodiny za život",
       "is_overlap": false
     },
     {
@@ -578,9 +582,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 632.001,
-      "end": 638.0,
-      "text": "To byla zvláštní směsice skutečně těch tří kultur",
+      "start": 607.71,
+      "end": 609.85,
+      "text": "A samozřejmě, že jsem se to nenaučil",
       "is_overlap": false
     },
     {
@@ -588,9 +592,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 638.001,
-      "end": 650.0,
-      "text": "Té české, která byla z matčiny strany a která byla, teda smím-li to tak říct, šmrcnutá jejím francouzskou výchovou ve Švýcárách",
+      "start": 609.851,
+      "end": 626.73,
+      "text": "Rodina sama byla, teda rodiče, byla naprosto neortodoxní, vůbec se žádný svátky ani zvyky nedodržovaly",
       "is_overlap": false
     },
     {
@@ -598,9 +602,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 650.001,
-      "end": 655.0,
-      "text": "To byl ten největší kulturní vliv na moje myšlení",
+      "start": 626.731,
+      "end": 631.73,
+      "text": "Avšak to vědomí židovské tam bylo naprosto jasné",
       "is_overlap": false
     },
     {
@@ -608,9 +612,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 655.001,
-      "end": 662.0,
-      "text": "Od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy atd",
+      "start": 631.731,
+      "end": 637.73,
+      "text": "To byla zvláštní směsice skutečně těch tří kultů",
       "is_overlap": false
     },
     {
@@ -618,9 +622,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 662.001,
-      "end": 674.0,
-      "text": "Ona byla člověk velice muzický a každý měsíc jela na několik dnů do Prahy, aby tady nasávala kulturu",
+      "start": 637.731,
+      "end": 649.73,
+      "text": "Té české, která byla z matčiny strany a která byla teda smím-li to tak říct, šmrcnutá jejím francouzskou výchovou ve Švýcarii",
       "is_overlap": false
     },
     {
@@ -628,9 +632,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 674.001,
-      "end": 693.6,
-      "text": "Řekl bych dnešníma očima až nekulturně, že chodila na matiné i na večerní představení jenom aby kompenzovala tu pustinu kulturní v těch Šumavských lesů, kde nebylo nic Později rádio",
+      "start": 649.731,
+      "end": 662.23,
+      "text": "To byl ten největší kulturní vliv na moje myšlení. Od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy a tak dále",
       "is_overlap": false
     },
     {
@@ -638,9 +642,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 693.601,
-      "end": 709.6,
-      "text": "Takže ona jezdila k mamince a k tatínkovi do té Prahy a tady nabírala, kupovala knihy a potom se vrátila a vypravovala mi o koncertech, o přednáškách, o divadle",
+      "start": 662.231,
+      "end": 683.73,
+      "text": "Ona byla člověk velice muzický a každý měsíc jela na několik dnů do Prahy, aby tady nasávala kulturu řekl bych dnešníma očima až nekulturně, že chodila na matiné i na večerní představení",
       "is_overlap": false
     },
     {
@@ -648,9 +652,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 709.601,
-      "end": 718.6,
-      "text": "Později také Evie, mojí sestře, která se narodila v roce 21, to znamená o dva roky později než já",
+      "start": 683.731,
+      "end": 691.73,
+      "text": "jenom aby kompenzovala tu pustinu kulturní v těch šumavských lesů, kde nebylo nic",
       "is_overlap": false
     },
     {
@@ -658,9 +662,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 718.601,
-      "end": 721.6,
-      "text": "Tento vliv byl velice silný",
+      "start": 691.731,
+      "end": 709.73,
+      "text": "Později rádio. Takže ona jezdila k mamince a k tatínkovi do Prahy a tady nabírala, kupovala knihy a potom se vrátila a vypravovala mi o koncertech, o přednáškách, o divadle",
       "is_overlap": false
     },
     {
@@ -668,9 +672,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 721.601,
-      "end": 731.6,
-      "text": "Druhý velmi silný vliv byl ten pocit toho obklopení Němci",
+      "start": 709.731,
+      "end": 717.73,
+      "text": "Později také Evie, mojí sestře, která se narodila v roce 21, to znamená o dva roky později",
       "is_overlap": false
     },
     {
@@ -678,9 +682,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 731.601,
-      "end": 749.16,
-      "text": "To bylo velmi komplikované, protože na jedné straně bylo to otcovorodiště, bylo to místo, kde táta nejdřív si najal malou pyru",
+      "start": 717.731,
+      "end": 721.73,
+      "text": "Tento vliv byl velice silný",
       "is_overlap": false
     },
     {
@@ -688,9 +692,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 749.161,
-      "end": 772.3,
-      "text": "Později ji vlastnil. A nás děti od začátku, ačkoliv sám neměl český pozadí nebo český minulost tak bylo bez jakýchkoliv otázek, že my budeme chodit do velmi, velmi chudičké české jednotřídky",
+      "start": 721.731,
+      "end": 730.73,
+      "text": "Druhý velmi silný vliv byl ten pocit toho obklopení Němci",
       "is_overlap": false
     },
     {
@@ -698,9 +702,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 773.44,
-      "end": 778.86,
-      "text": "kde bylo pět oddělení. Tam byly děti od 6 do 13 let",
+      "start": 730.731,
+      "end": 748.41,
+      "text": "Kto by nám bval mít? komplikované, protože na jedné straně bylo to otcovorodiště. Bylo to místo, kde táta nejdřív si najal malou",
       "is_overlap": false
     },
     {
@@ -708,9 +712,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 779.16,
-      "end": 800.16,
-      "text": "Ti učitelé to byly virtuózové, pedagogečtí, to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé z rodin",
+      "start": 748.411,
+      "end": 770.93,
+      "text": "pyrů, později vlastně. A nás děti od začátku, ačkoliv sám neměl český pozadí, nebo český kominulost, tak bylo bez jakýchkoliv otázek, že my budeme chodit do velmi, velmi chudičké české",
       "is_overlap": false
     },
     {
@@ -718,9 +722,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 800.161,
-      "end": 811.16,
-      "text": "kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne vždycky do německé ale německá byla bohatá a výstavná",
+      "start": 770.931,
+      "end": 778.93,
+      "text": "jednotřídky, kde bylo pět oddělení, tam byly děti od šesti do třinácti let",
       "is_overlap": false
     },
     {
@@ -728,9 +732,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 811.161,
-      "end": 820.16,
-      "text": "A to proto, aby když byl třeba otec trafikant tak aby symbolicky alespoň jedno dítě chodil do České školy",
+      "start": 778.931,
+      "end": 797.93,
+      "text": "Ti učitelé to byly virtuózové, pedagovičtí, to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé",
       "is_overlap": false
     },
     {
@@ -738,9 +742,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 820.161,
-      "end": 837.16,
-      "text": "Nebo byli to děti dřevorubců, Němců ale i když pracovali v českých státních lesích a i když česká matice školská rozdávala na Vánoce boty",
+      "start": 797.931,
+      "end": 807.93,
+      "text": "z rodin, kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne vždycky do německé",
       "is_overlap": false
     },
     {
@@ -748,9 +752,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 837.161,
-      "end": 847.16,
-      "text": "tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do české školy, ale tyto děti nechodily pravidelně",
+      "start": 807.931,
+      "end": 824.35,
+      "text": "Ta německá byla bohatá a výstavná. A to proto, aby když byl třeba otec trafikant, tak aby symbolicky alespoň jedno dítě chodil do České školy Nebo byly to děti dřevorubců",
       "is_overlap": false
     },
     {
@@ -758,9 +762,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 847.161,
-      "end": 859.16,
-      "text": "Takže většinou v těchto jednotřítkách byli děti z pošty, od finančních úředníků, od četníků a my",
+      "start": 825.57,
+      "end": 826.13,
+      "text": "Němců",
       "is_overlap": false
     },
     {
@@ -768,9 +772,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 859.161,
-      "end": 865.16,
-      "text": "Takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás? Nebo ty sám?",
+      "start": 827.39,
+      "end": 836.59,
+      "text": "ale i kdykož pracovali v českých státních lesích a i kdykož česká matice školská rozdávala na Vánoce boty",
       "is_overlap": false
     },
     {
@@ -778,9 +782,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 865.161,
-      "end": 871.44,
-      "text": "Ne, tam byli jeden nebo dva lékaři Němci, jeden lékař židovský",
+      "start": 837.95,
+      "end": 847.73,
+      "text": "tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do České školy ale tyto děti nechodili pravidelně. Takže",
       "is_overlap": false
     },
     {
@@ -788,9 +792,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 872.24,
-      "end": 875.72,
-      "text": "Vůbec jako v celé té rudě?",
+      "start": 847.731,
+      "end": 858.73,
+      "text": "Většinou byli děti z pošty, finančních úředníků, odčetníků a my",
       "is_overlap": false
     },
     {
@@ -798,9 +802,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 875.8,
-      "end": 879.68,
-      "text": "Ale to byla židovská rodina, jmenovaly se Hartmanovi",
+      "start": 858.731,
+      "end": 862.73,
+      "text": "Takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás?",
       "is_overlap": false
     },
     {
@@ -808,9 +812,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 881.08,
-      "end": 884.52,
-      "text": "Jenom jejich dcera se zachránila, je myslím v Americe",
+      "start": 862.731,
+      "end": 871.73,
+      "text": "Ne, tam byly jeden nebo dva lékaři Němci, jeden lékař židovský",
       "is_overlap": false
     },
     {
@@ -818,9 +822,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 884.88,
-      "end": 888.16,
-      "text": "Ty byly německy orientovaní, ty neměly s námi absolutně nic společného",
+      "start": 871.731,
+      "end": 875.73,
+      "text": "Vůbec jako v celé Rudě?",
       "is_overlap": false
     },
     {
@@ -828,9 +832,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 888.24,
-      "end": 890.24,
-      "text": "Takže nechodili do té třídy ani",
+      "start": 875.731,
+      "end": 879.97,
+      "text": "Ale to byla židovská rodina, jmenovaly se Hartmanovi",
       "is_overlap": false
     },
     {
@@ -838,9 +842,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 890.68,
-      "end": 906.0,
-      "text": "To rozdělení bylo naprosto jednoznačné to prostě některé židovské rodiny byly orientované vzhledem k své minulosti na ten německý živel, na tu německou kulturní oblast",
+      "start": 879.971,
+      "end": 884.69,
+      "text": "Jenom jejich dcera se zachránila, je myslím v Americe",
       "is_overlap": false
     },
     {
@@ -848,9 +852,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 906.001,
-      "end": 913.0,
-      "text": "A druzí, tak jako moje maminka a tím jimi, naprosto jednoznačně",
+      "start": 884.691,
+      "end": 888.69,
+      "text": "Ty byly německy orientovaní, ty neměly s námi absolutně nic společného",
       "is_overlap": false
     },
     {
@@ -858,9 +862,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 913.001,
-      "end": 924.0,
-      "text": "Takže, když jsem vychodil tu obecnou školu, tak nejbližší gymnázium bylo 40 km daleko v Klatové",
+      "start": 888.691,
+      "end": 890.69,
+      "text": "Takže nechodili do té třídy ani",
       "is_overlap": false
     },
     {
@@ -868,9 +872,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 926.0,
-      "end": 930.0,
-      "text": "Já jsem tam měl nastoupit do prýmy, udělal jsem zkoušku",
+      "start": 890.691,
+      "end": 893.69,
+      "text": "To rozdělení bylo naprosto jednoznačné",
       "is_overlap": false
     },
     {
@@ -878,9 +882,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 930.001,
-      "end": 947.0,
-      "text": "A když jsem měl odjet, tak tatínek s maminkou přišli ke mně k posteli a řekli, my bychom nechtěli, aby si šel z domova už ve dvanácti letech",
+      "start": 893.691,
+      "end": 905.69,
+      "text": "To prostě některé rodiny židovské byly orientovaný vzhledem k své minulosti na ten německý živel, na tu německou kulturní oblast",
       "is_overlap": false
     },
     {
@@ -888,9 +892,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 947.001,
-      "end": 966.0,
-      "text": "Co by si tomu říkal, kdybychom si obstarali vychovatelku, která by tě připravovala na zkoušky a ty by si do gymnázie chodil jenom skládat zkoušky?",
+      "start": 905.691,
+      "end": 912.69,
+      "text": "A druzí, tak jako moje maminka a ti mimi, naprosto jednoznačně",
       "is_overlap": false
     },
     {
@@ -898,9 +902,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 966.001,
-      "end": 972.18,
-      "text": "No já jsem nevěděl, jestli to je dobře nebo špatně, prostě co takhle udělal",
+      "start": 912.691,
+      "end": 923.69,
+      "text": "Takže když jsem vychodil tu obecnou školu tak nejbližší gymnázium bylo 40 kilometrů daleko v Klatově",
       "is_overlap": false
     },
     {
@@ -908,9 +912,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 973.3,
-      "end": 980.88,
-      "text": "Takže prýmu a sekundu mě učila paní Pavla Moravcová",
+      "start": 923.691,
+      "end": 929.69,
+      "text": "Já jsem tam měl nastoupit do prýmy, udělal jsem zkoušku",
       "is_overlap": false
     },
     {
@@ -918,9 +922,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 982.56,
-      "end": 999.68,
-      "text": "dobrý pedagog, která takhle už připravila nějaké děti předem bydlela u nás a každých půl roku jsme jeli společně s tou srčnou Moravcovou do Klatov, bydleli jsme v hotelu",
+      "start": 929.691,
+      "end": 947.69,
+      "text": "A když jsem měl odjet, tak tatinek s maminkou přišli ke mně k posteli a řekli, my bychom nechtěli, aby jsi šel z domova už ve dvanácti letech",
       "is_overlap": false
     },
     {
@@ -928,9 +932,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 999.681,
-      "end": 1013.68,
-      "text": "Ona na mě byla mimořádně laskavá, abych jo dobře skládal z koušku. A tam jsme všechny předměty musel složit z koušku",
+      "start": 947.691,
+      "end": 965.61,
+      "text": "Co by si tomu říkal, kdybychom si najali nebo obstarali vychovatelku, která by tě připravovala na zkoušky a ty by si do gymnázie chodil jenom skládat zkoušky",
       "is_overlap": false
     },
     {
@@ -938,9 +942,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1013.681,
-      "end": 1019.68,
-      "text": "A to byla první sekunda Skládal jsem je dobře",
+      "start": 967.01,
+      "end": 972.19,
+      "text": "No, já jsem nevěděl, jestli to je dobře nebo špatně, prostě co takhle udělal",
       "is_overlap": false
     },
     {
@@ -948,9 +952,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1019.681,
-      "end": 1027.68,
-      "text": "Klatovský gymnázium bylo nejpřísnější gymnázium jezuický v republice",
+      "start": 972.191,
+      "end": 998.39,
+      "text": "Takže prýmu a sekundu mě učila paní Pavla Moravcová dobrý pedagog, která takhle už připravila nějaké děti předem bydlela u nás a každých půl roku jsme jeli společně s tou slušnou Moravcovou do Klatov",
       "is_overlap": false
     },
     {
@@ -958,9 +962,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1027.681,
-      "end": 1038.68,
-      "text": "A byl jsem tam, když vyhodili ze stejného systému Harabat a Schönborny kteří měli zámek v Gdyni, a kde prostě protekce nebyla",
+      "start": 998.391,
+      "end": 1006.39,
+      "text": "Vydali jsme v hotelu, ona na mě byla mimořádně laskavá, abych jo dobře skládal z koušku",
       "is_overlap": false
     },
     {
@@ -968,9 +972,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1038.681,
-      "end": 1042.68,
-      "text": "Oni byli hrdí na to, jaký jsou výběrový",
+      "start": 1006.391,
+      "end": 1016.39,
+      "text": "A tam jsme všechny předměty musel složit z koušku a to byla první sekunda",
       "is_overlap": false
     },
     {
@@ -978,9 +982,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1042.681,
-      "end": 1047.88,
-      "text": "A že by se k tobě chovali nějak, protože jsi byl židovský kluk? Vůbec ne, všechno",
+      "start": 1016.391,
+      "end": 1027.39,
+      "text": "Skládal jsem je dobře, klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice",
       "is_overlap": false
     },
     {
@@ -988,9 +992,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1048.06,
-      "end": 1049.92,
-      "text": "Ne, ne, ne. Vůbec ne",
+      "start": 1027.391,
+      "end": 1042.89,
+      "text": "Byl jsem tam, když vyhodili ze stejného systému Hrabat a Schönborny, kteří měli zámek v Gdyni a kde nebyla protekce. Byli hrdí na to, jaké jsou výběrové",
       "is_overlap": false
     },
     {
@@ -998,9 +1002,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1050.42,
-      "end": 1070.34,
-      "text": "Navopak, pan profesor Chládek na biologii jeden z nejlepších profesorů, který jsem znal si tam zval jiný profesory, aby si poslechli jak vypadá jí odpověď děte, který nechodilo do školy ale který se muselo připravovat samotně",
+      "start": 1042.891,
+      "end": 1047.89,
+      "text": "A že by se k tobě chovali nějak, protože jsi byl židovský kluk? Vůbec ne. Všechno",
       "is_overlap": false
     },
     {
@@ -1008,9 +1012,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1070.341,
-      "end": 1082.34,
-      "text": "Takže ty zkoušky jsem skládal výborně a potom jsem přišel dědečkou jak babičce do Prahy a chodil jsem do Tercie na Jiřionáměstí",
+      "start": 1047.891,
+      "end": 1049.89,
+      "text": "Ne, ne, ne. Vůbec ne",
       "is_overlap": false
     },
     {
@@ -1018,9 +1022,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1082.341,
-      "end": 1102.34,
-      "text": "To byla katastrofa, protože já jsem byl zvyklý se učit tak, abych věcem rozuměl když to gymnázium na Jiřího náměstí, stejně jako všechny jiné školy, chtějí, abych správně odpovídal, ne abych rozuměl",
+      "start": 1049.891,
+      "end": 1069.89,
+      "text": "Naopak, pan profesor Chládek na biologii, jeden z nejlepších profesorů, který jsem znal si tam zval jiný profesory, aby si poslechli, jak vypadá jí odpověď děte, který nechodilo do školy ale který se muselo připravovat samo",
       "is_overlap": false
     },
     {
@@ -1028,9 +1032,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1102.341,
-      "end": 1117.34,
-      "text": "Takže jsem začal tady rupat z jednoho předmětu za druhým. Z latiny a tak dále, protože všichni odmítali můj přístup",
+      "start": 1069.891,
+      "end": 1081.89,
+      "text": "Takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi jak babičce do Prahy a chodil jsem do tercie na Jiřionáměstí",
       "is_overlap": false
     },
     {
@@ -1038,9 +1042,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1117.341,
-      "end": 1123.34,
-      "text": "Jak to teda vlastně je, protože oni chtěli jednoznačnou papoučkovanou odpověď",
+      "start": 1081.891,
+      "end": 1101.75,
+      "text": "To byla katastrofa, protože já jsem byl zvyklý se učit tak abych věcem rozuměl, když to gymnazium na Jiřionáměstí stejně jako všechny jiné školy, chtějí, abych správně odpovídal, ne abych rozuměl",
       "is_overlap": false
     },
     {
@@ -1048,9 +1052,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1123.341,
-      "end": 1127.34,
-      "text": "Já bych z toho hlediska historie, to je který rok, kdy jsi přišel do Prahy?",
+      "start": 1101.751,
+      "end": 1108.75,
+      "text": "Takže jsem začal tady rupat už z jednoho předmětu za druhým",
       "is_overlap": false
     },
     {
@@ -1058,9 +1062,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1127.341,
-      "end": 1131.34,
-      "text": "Co už se mění v té historii, že? O kterou nám jde",
+      "start": 1108.751,
+      "end": 1122.75,
+      "text": "Z latiny a tak dále, protože všichni odmítali můj přístup jak to teda vlastně je, protože oni chtěli jednoznačnou papoučkovanou odpověď",
       "is_overlap": false
     },
     {
@@ -1068,9 +1072,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1131.341,
-      "end": 1143.34,
-      "text": "To je 32-33 to už je to období, kdy v Německu se dá tušit ti fašismus a tak dále, jo? Ano, ano",
+      "start": 1122.751,
+      "end": 1127.75,
+      "text": "Z toho hlediska historie, to je který rok, kdy jsi přišel do Prahy?",
       "is_overlap": false
     },
     {
@@ -1078,9 +1082,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1143.341,
-      "end": 1147.34,
-      "text": "Proto se na to taky ptám, že? už začínal ten fašismus",
+      "start": 1127.751,
+      "end": 1134.75,
+      "text": "Co už se mění v té historii, o kterou nám jde? To je 32-33",
       "is_overlap": false
     },
     {
@@ -1088,9 +1092,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1147.341,
-      "end": 1151.34,
-      "text": "Nakonec i v pohraničních oblastech?",
+      "start": 1134.751,
+      "end": 1142.75,
+      "text": "Takže to už je to období, kdy v Německu se dá tušit i fašismus a tak dále Ano",
       "is_overlap": false
     },
     {
@@ -1098,9 +1102,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1151.341,
-      "end": 1157.34,
-      "text": "Ale v pohraničních oblastech se to vyvíjelo velice zvolna teda na tom Železnorudsku",
+      "start": 1142.751,
+      "end": 1144.75,
+      "text": "Proto se na to taky ptám",
       "is_overlap": false
     },
     {
@@ -1108,9 +1112,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1157.341,
-      "end": 1163.34,
-      "text": "V Železné Rudě byla silná sociální demokracie táta byl taky sociální demokrat",
+      "start": 1144.751,
+      "end": 1148.75,
+      "text": "To už začínal ten fašismus",
       "is_overlap": false
     },
     {
@@ -1118,9 +1122,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1163.341,
-      "end": 1180.34,
-      "text": "A jak říkám, on tam chodil do školy s těmi německými obyvateli tam ze začátku, to soužití bylo, mně se to alespoň tak jevilo, bezproblémové",
+      "start": 1148.751,
+      "end": 1150.75,
+      "text": "Nakonec i v pohraničních oblastech?",
       "is_overlap": false
     },
     {
@@ -1128,9 +1132,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1180.341,
-      "end": 1194.34,
-      "text": "Od toho roku 1933 to pruce stoupal ten německý nacionalismus a agrese takže já jsem se s tím setkal poprvé",
+      "start": 1150.751,
+      "end": 1157.75,
+      "text": "Ale v pohrančních oblastech se to vyvíjelo velice zvolna, teda na tom železnorudsku",
       "is_overlap": false
     },
     {
@@ -1138,9 +1142,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1194.341,
-      "end": 1200.0,
-      "text": "Když jsem setkal poprvé, tak někdy v roce 1934-35",
+      "start": 1157.751,
+      "end": 1163.75,
+      "text": "V železnej rudě byla silná sociální demokracie, táta byl taky sociální demokrat",
       "is_overlap": false
     },
     {
@@ -1148,9 +1152,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1200.001,
-      "end": 1202.0,
-      "text": "Když jsi se zvracel na prázdný domů",
+      "start": 1163.751,
+      "end": 1172.75,
+      "text": "A jak říkám, on tam chodil do školy s těmi německými obyvateli, on tam ze začátku",
       "is_overlap": false
     },
     {
@@ -1158,9 +1162,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1202.001,
-      "end": 1205.0,
-      "text": "Když jsem se zvracel a pamatuju se přesně, jak to bylo",
+      "start": 1172.751,
+      "end": 1179.99,
+      "text": "To soužití bylo, mně se to alespoň tak jevilo, bezproblémové",
       "is_overlap": false
     },
     {
@@ -1168,9 +1172,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1205.001,
-      "end": 1209.0,
-      "text": "Ku příkladu, ne, jak to bylo. Taková epizoda",
+      "start": 1179.991,
+      "end": 1188.99,
+      "text": "Od toho roku 1933 to pruce stoupal ten německý nacionalismus a agrese",
       "is_overlap": false
     },
     {
@@ -1178,9 +1182,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1209.001,
-      "end": 1216.0,
-      "text": "Vokolo potoka vedla taková úplně úzká pěšina a já na té pěšině jel na kole",
+      "start": 1188.991,
+      "end": 1201.99,
+      "text": "Takže já jsem se s tím setkal poprvé tak někdy v roce 1934-1935 když ses vracel na prázdný domů",
       "is_overlap": false
     },
     {
@@ -1188,9 +1192,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1216.001,
-      "end": 1221.0,
-      "text": "Najednou proti mně vystoupili dva nebo tři němičtí kluci",
+      "start": 1201.991,
+      "end": 1204.99,
+      "text": "Když jsem se vracel a pamatuju se přesně, jak to bylo",
       "is_overlap": false
     },
     {
@@ -1198,9 +1202,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1221.001,
-      "end": 1231.34,
-      "text": "Chytli mě ze řidítka, tak jak jsem na nich seděl, dali mi pár facek a strčili do mě, abych zase musel jet",
+      "start": 1204.991,
+      "end": 1208.99,
+      "text": "Ku příkladu ne, jak to bylo. Taková epizoda",
       "is_overlap": false
     },
     {
@@ -1208,9 +1212,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1231.74,
-      "end": 1249.9,
-      "text": "A já přijel domů a strašně jsem se litoval, hřbal steky a řekl jsem, táto, tohle se mi stalo a táta, který byl pro mě vždycky ideálném statečného muže",
+      "start": 1208.991,
+      "end": 1215.99,
+      "text": "Vokolo potoka vedla taková úplně úzká pěšina a já na té pěšině jel na kole",
       "is_overlap": false
     },
     {
@@ -1218,9 +1222,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1251.52,
-      "end": 1258.86,
-      "text": "mě prostě dal pár facek až se mi hlava zatřepala a řekla nechoď si stěžovat",
+      "start": 1215.991,
+      "end": 1220.99,
+      "text": "Najednou proti mě vystoupili dva nebo tři němičtí kluci",
       "is_overlap": false
     },
     {
@@ -1228,9 +1232,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1259.52,
-      "end": 1262.24,
-      "text": "Když ti někdo natlouk, natluč mu",
+      "start": 1220.991,
+      "end": 1231.99,
+      "text": "Chytli mě ze řidítka, tak jak jsem na nich seděl, dali mi pár facek a strčili do mě, abych zase musel jet",
       "is_overlap": false
     },
     {
@@ -1238,9 +1242,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1262.88,
-      "end": 1265.92,
-      "text": "Ale nechoď si stěžovat a vyhodil mě",
+      "start": 1231.991,
+      "end": 1243.99,
+      "text": "A já přijel domů a strašně jsem se litoval, hřeval steky a řekl jsem, táto, to nezemistilo",
       "is_overlap": false
     },
     {
@@ -1248,9 +1252,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1267.12,
-      "end": 1272.76,
-      "text": "A já jsem v tom vzteku běhl ven a na můstku přes ten potok řezná",
+      "start": 1243.991,
+      "end": 1258.85,
+      "text": "A táta, který byl pro mě vždycky ideálem statečného muže mě prostě dal pár facek, až se mi hlava zatřepala a řekla, nechoď si stěžovat",
       "is_overlap": false
     },
     {
@@ -1258,9 +1262,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1272.761,
-      "end": 1281.76,
-      "text": "Jsem jednoho z těch kluků nachytal, vrhnul jsem se na něho tak, že jsme spadli do toho potoka",
+      "start": 1259.51,
+      "end": 1265.91,
+      "text": "Když ti někdo natlouk, natluč mu. Ale nechoď si stěžovat a vyhodil mě",
       "is_overlap": false
     },
     {
@@ -1268,9 +1272,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1281.761,
-      "end": 1294.76,
-      "text": "No a od té doby mám tu filozofii, že prostě je nesprávné uhybat Že musí člověk čelit",
+      "start": 1266.47,
+      "end": 1272.75,
+      "text": "A já jsem v tom vzteku běhl ven a na můstku přes ten potok řezná",
       "is_overlap": false
     },
     {
@@ -1278,9 +1282,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1294.761,
-      "end": 1302.76,
-      "text": "Tak ale takovýhle situací byla řada, ale toto mně zůstalo, toto byla tátová výchova",
+      "start": 1272.751,
+      "end": 1281.75,
+      "text": "Jsem jednoho z těch kluků nachytal, vrhnul jsem se na něho tak, že jsme spadli do toho potoka",
       "is_overlap": false
     },
     {
@@ -1288,9 +1292,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1302.761,
-      "end": 1307.76,
-      "text": "A jak jsi se to Kulkowsky vlastně tehdy vysvětloval, tu změnu?",
+      "start": 1281.751,
+      "end": 1294.75,
+      "text": "No a od té doby mám tu filozofii, že prostě je nesprávné uhybat Že musí člověk čelit",
       "is_overlap": false
     },
     {
@@ -1298,9 +1302,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1307.761,
-      "end": 1313.76,
-      "text": "Tomu srozuměl, nebo táta ti to vysvětlil? On to sám pochopil?",
+      "start": 1294.751,
+      "end": 1302.75,
+      "text": "Tak ale takovýhle situaci byla řada, ale toto mně zůstalo, toto byla tátová výchova",
       "is_overlap": false
     },
     {
@@ -1308,9 +1312,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1313.761,
-      "end": 1318.76,
-      "text": "Ne, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat",
+      "start": 1302.751,
+      "end": 1307.75,
+      "text": "A jak jsi to Kulkowski vlastně tehdy vysvětloval, tu změnu?",
       "is_overlap": false
     },
     {
@@ -1318,9 +1322,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1318.761,
-      "end": 1329.76,
-      "text": "Já jsem nešetl ani májovky, ani indianky, já jsem četl metka, koptu, dyrázka, vrbu, bára",
+      "start": 1307.751,
+      "end": 1313.75,
+      "text": "Tomu srozuměl, nebo táta ti to vysvětlil? On to sám pochopil?",
       "is_overlap": false
     },
     {
@@ -1328,9 +1332,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1329.761,
-      "end": 1341.76,
-      "text": "Takže já jsem se cítil opravdu až nacionálně český. Ty legionáři pro mě něco znamenaly, ta tradice a tak dále",
+      "start": 1313.751,
+      "end": 1318.75,
+      "text": "Ne, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat",
       "is_overlap": false
     },
     {
@@ -1338,9 +1342,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1341.761,
-      "end": 1352.68,
-      "text": "A z toho ta protiněmecká, protirakouská zaměřenost byla jednoznačná",
+      "start": 1318.751,
+      "end": 1329.91,
+      "text": "Já jsem nešetl ani májovky, ani indianky, já jsem četl metka, koptu, dyrázka, vrbu, bára",
       "is_overlap": false
     },
     {
@@ -1348,9 +1352,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1353.68,
-      "end": 1363.22,
-      "text": "Já vím, že jeden z nejnešťastnějších okamžiků mýho mládí bylo když jsem zaslechl svého tátu říkat jednomu známému",
+      "start": 1329.911,
+      "end": 1335.91,
+      "text": "Takže já jsem se cítil opravdu až nacionálně český",
       "is_overlap": false
     },
     {
@@ -1358,9 +1362,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1364.8,
-      "end": 1367.76,
-      "text": "a vlastně to bylo škoda, rozbíto Rakouskou hersko",
+      "start": 1335.911,
+      "end": 1341.91,
+      "text": "Ty legionáři pro mě něco znamenaly ta tradice a tak dále",
       "is_overlap": false
     },
     {
@@ -1368,9 +1372,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1367.761,
-      "end": 1392.76,
-      "text": "To se nemělo stát. To byla pro mě taková rána, jak někdo může chválit to Rakousko-Uhersko, které třista let ničilo český národ jak někdo může popírat správnost regionářského nebo masarykovského snažení o vybudování českého státu",
+      "start": 1341.911,
+      "end": 1352.91,
+      "text": "A z toho ta protiněmecká, protirakouská zaměřenost byla jednoznačná",
       "is_overlap": false
     },
     {
@@ -1378,9 +1382,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1392.761,
-      "end": 1398.76,
-      "text": "To mě trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí",
+      "start": 1352.911,
+      "end": 1367.91,
+      "text": "Já vím, že jeden z nejnešťastnějších okamžiků mého mládí bylo když jsem zaslechl svého tátu říkat jednomu známému a vlastně to bylo škoda, rozbíj to rakouskou hersko",
       "is_overlap": false
     },
     {
@@ -1388,9 +1392,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1398.761,
-      "end": 1407.76,
-      "text": "Ano. A i když ten táta byl teda tvůj ideál, ještě jsem se chtěla ptat, pro které vlastnosti, nebo co myslíš, že právě do tebe potom přešlo?",
+      "start": 1367.91,
+      "end": 1382.81,
+      "text": "To se nemělo stát. To byla pro mě taková rána, jak někdo může chválit to Rakousko-Uhersko, které třista let ničilo Český národ",
       "is_overlap": false
     },
     {
@@ -1398,9 +1402,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1407.761,
-      "end": 1421.76,
-      "text": "No táta byl zcela přirozený pedagog. On chápal všechny klukovský sny. Takže od malička jsem měl psa, od malička jsem pracoval s koňma",
+      "start": 1383.55,
+      "end": 1393.31,
+      "text": "Jak někdo může popírat správnost regionářského nebo masarykovského snažení o vybudování Českého státu",
       "is_overlap": false
     },
     {
@@ -1408,9 +1412,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1421.761,
-      "end": 1436.76,
-      "text": "Táta prostě trval na práci. Já jsem jako malý dítě musel už pracovat na pile, i když jsem jenom srovnával prkinka, tak musel",
+      "start": 1393.311,
+      "end": 1398.31,
+      "text": "To mě trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí",
       "is_overlap": false
     },
     {
@@ -1418,9 +1422,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1436.761,
-      "end": 1446.76,
-      "text": "Ale nenutil. Já jsem od malička miloval koně. Táta mě opravdu naučil s těmi koními zacházet",
+      "start": 1398.311,
+      "end": 1407.31,
+      "text": "Ano. A i když ten táta byl teda tvůj ideal, ještě jsem se chtěla optat, pro které vlastnosti, nebo co myslíš, že právě do tebe potom přešlo?",
       "is_overlap": false
     },
     {
@@ -1428,9 +1432,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1446.761,
-      "end": 1455.3,
-      "text": "Já jsem v 16 letech v Klatově se stál, jsem vstoupil do jízdního Sokola",
+      "start": 1407.311,
+      "end": 1421.31,
+      "text": "No táta byl zcela přirozený pedagog. On chápal všechny klukovský sny. Takže od malička jsem měl psa, od malička jsem pracoval s koňma",
       "is_overlap": false
     },
     {
@@ -1438,9 +1442,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1455.96,
-      "end": 1463.78,
-      "text": "V Klatově byla bašta agrárnícká, tam bydlel minister Machník",
+      "start": 1421.311,
+      "end": 1432.31,
+      "text": "Tata prostě trval na práci. Já jsem jako malý dítě musel už pracovat na pile",
       "is_overlap": false
     },
     {
@@ -1448,9 +1452,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1465.38,
-      "end": 1470.62,
-      "text": "minister za agrární stranu, minister vojenství a měl stejně starýho kluka Honzu",
+      "start": 1432.311,
+      "end": 1439.31,
+      "text": "I když jsem jenom srovnával prkinka, tak musel. Ale nenutil",
       "is_overlap": false
     },
     {
@@ -1458,9 +1462,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1470.621,
-      "end": 1488.62,
-      "text": "On byl v Selské jízdě, což byla pravičácká agrární organizace kdyžto já jsem byl v jízdním Sokole, který byl mírně liberálnější organizací",
+      "start": 1439.311,
+      "end": 1447.31,
+      "text": "Já jsem od malička miloval koně. Tata mě opravdu naučil s těmi koními zacházet",
       "is_overlap": false
     },
     {
@@ -1468,9 +1472,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1488.621,
-      "end": 1491.62,
-      "text": "Ale jezdili jsme společně na vojenských koních",
+      "start": 1447.311,
+      "end": 1454.75,
+      "text": "Já jsem v šestnácti letech v Klatovéch se stál žízním, jsem vstoupil do žízního",
       "is_overlap": false
     },
     {
@@ -1478,9 +1482,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1491.621,
-      "end": 1493.0,
-      "text": "Jeli jsme společně na vojenských koních",
+      "start": 1454.751,
+      "end": 1470.75,
+      "text": "Sokola. K Latovi byla bašta agrárnická, tam bydlel minister Machník, minister za agrární stranu, minister vojenství a měl stejně starého kluka Honzu",
       "is_overlap": false
     },
     {
@@ -1488,9 +1492,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1495.0,
-      "end": 1506.0,
-      "text": "Já jsem po tátovi zdědil tu lásku ke koním, táta byl dragón za války sloužil u dragónů i později",
+      "start": 1470.751,
+      "end": 1488.75,
+      "text": "On byl v Selské jízdě, což byla pravičácká agrární organizace kdyžto já jsem byl s jízdním Sokole, který byl mírně liberálnější organizací",
       "is_overlap": false
     },
     {
@@ -1498,9 +1502,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1507.0,
-      "end": 1516.0,
-      "text": "A takže jsem chodil jezdit do klatovských kasáren které měly bohatou jezdeckou tradici",
+      "start": 1488.751,
+      "end": 1492.75,
+      "text": "Ale jezdili jsme společně na vojenských koních",
       "is_overlap": false
     },
     {
@@ -1508,9 +1512,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1516.001,
-      "end": 1523.0,
-      "text": "No a jednou byly celostátní závody, mimořádně obtížný",
+      "start": 1492.751,
+      "end": 1505.75,
+      "text": "Já jsem po tátovi zdědil lásku ke koním, táta byl dragón, za války sloužil u dragónů i později",
       "is_overlap": false
     },
     {
@@ -1518,9 +1522,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1523.001,
-      "end": 1534.0,
-      "text": "A ještě ten den mimo to pršelo, kdy se měly tedy na zítřek konat ty závody",
+      "start": 1505.751,
+      "end": 1515.75,
+      "text": "A takže jsem chodil jezdit do klatovských kasáren, které měly bohatou jezdeckou tradici",
       "is_overlap": false
     },
     {
@@ -1528,9 +1532,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1534.001,
-      "end": 1536.0,
-      "text": "A to je který rok? To už tím tedy?",
+      "start": 1515.751,
+      "end": 1522.75,
+      "text": "No a jednou byly celostátní závody, mimořádně obtížný",
       "is_overlap": false
     },
     {
@@ -1538,9 +1542,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1536.001,
-      "end": 1539.0,
-      "text": "A to je rok asi tak třicet šest",
+      "start": 1522.751,
+      "end": 1533.75,
+      "text": "A ještě ten den mimo to pršelo, kdy se měly teda na zítře konat ty závody",
       "is_overlap": false
     },
     {
@@ -1548,9 +1552,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1539.001,
-      "end": 1555.02,
-      "text": "Když jsem přišel domů a říkal jsem, že zítra se jedou ty závody mě přidělil pan plukovník osmnáctiletého koně Edisona já ho tady mám na fotografii",
+      "start": 1533.751,
+      "end": 1535.75,
+      "text": "A to je který rok? To už tím tedy?",
       "is_overlap": false
     },
     {
@@ -1558,9 +1562,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1556.52,
-      "end": 1562.04,
-      "text": "a Honzovi Machníkovi přidělil čtyrletého polohřebce, nádherný",
+      "start": 1535.751,
+      "end": 1538.75,
+      "text": "A to je rok asi tak třicet šest",
       "is_overlap": false
     },
     {
@@ -1568,9 +1572,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1562.54,
-      "end": 1571.52,
-      "text": "Já proti němu nemám šanci a tato řekl, co to je za závod a já jsem říkal, na rychlost a na body",
+      "start": 1538.751,
+      "end": 1555.01,
+      "text": "Když jsem přišel domů a říkal jsem, že zítra se jedou ty závody mě přidělil pan plukovník 18-letýho koně Edisona já ho tady mám na fotografii",
       "is_overlap": false
     },
     {
@@ -1578,9 +1582,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1572.0,
-      "end": 1576.62,
-      "text": "16 skoků poslušnostních, velmi náročných",
+      "start": 1556.53,
+      "end": 1562.05,
+      "text": "a Honzovi Machníkovi přidělil 4-letýho polohřebce, nádherný",
       "is_overlap": false
     },
     {
@@ -1588,9 +1592,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1579.46,
-      "end": 1585.5,
-      "text": "Víš, tato, to je taková nespravedlnost, že já zítra nenastoupím",
+      "start": 1562.53,
+      "end": 1571.53,
+      "text": "Já proti němu nemám šanci a tato řekl, co to je za závod a já jsem říkal, na rychlost a na body",
       "is_overlap": false
     },
     {
@@ -1598,9 +1602,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1585.501,
-      "end": 1589.64,
-      "text": "A tato řekl, samozřejmě, Honzičku, nenastoup",
+      "start": 1572.01,
+      "end": 1576.63,
+      "text": "16 skoků poslušnostních, velmi náročných",
       "is_overlap": false
     },
     {
@@ -1608,9 +1612,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1589.641,
-      "end": 1597.04,
-      "text": "Ale ty přeci závodíš pro to, abys vyhrál. Ne z lásky ke sportu, že jo?",
+      "start": 1579.45,
+      "end": 1585.47,
+      "text": "Víš, tato, to je taková nespravedlnost, že já zítra nenastoupím",
       "is_overlap": false
     },
     {
@@ -1618,9 +1622,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1597.041,
-      "end": 1599.24,
-      "text": "Ne z lásky ke koním",
+      "start": 1585.471,
+      "end": 1589.97,
+      "text": "A tato řekl, samozřejmě, Honzičku, nenastoupím",
       "is_overlap": false
     },
     {
@@ -1628,9 +1632,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1599.241,
-      "end": 1602.44,
-      "text": "Nebo že vyhrát. To je tvoje heslo",
+      "start": 1589.971,
+      "end": 1596.97,
+      "text": "Ale ty přeci závodíš pro to, abys vyhrál. Ne z lásky ke sportu, že jo?",
       "is_overlap": false
     },
     {
@@ -1638,9 +1642,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1602.441,
-      "end": 1609.04,
-      "text": "Tak víš co, jestli zítra nenastoupíš, už nemusíš chodit domů Takhle",
+      "start": 1596.971,
+      "end": 1602.97,
+      "text": "Ne z lásky ke koním. Nebo že vyhrát. To je tvoje heslo",
       "is_overlap": false
     },
     {
@@ -1648,9 +1652,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1609.041,
-      "end": 1614.24,
-      "text": "Ale to všechno ve velmi přátelském tónu",
+      "start": 1602.971,
+      "end": 1609.97,
+      "text": "Tak víš co, jestli zítra nenastoupíš, už nemusíš chodit domů Takhle A to končilo",
       "is_overlap": false
     },
     {
@@ -1658,9 +1662,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1614.241,
-      "end": 1619.64,
-      "text": "Tomu předcházely různé jiné pedagogické zásahy",
+      "start": 1609.971,
+      "end": 1614.17,
+      "text": "Ale to všechno ve velmi přátelském tónu",
       "is_overlap": false
     },
     {
@@ -1668,9 +1672,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1619.641,
-      "end": 1626.44,
-      "text": "Jako když jsme byli tři roky, tak jsem u stolu prohlásil, že špenát nejím",
+      "start": 1614.171,
+      "end": 1619.67,
+      "text": "Tomu předcházely různé jiné pedagogické zasahy",
       "is_overlap": false
     },
     {
@@ -1678,9 +1682,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1626.441,
-      "end": 1629.64,
-      "text": "A tatínek říkal, že to je správný",
+      "start": 1619.671,
+      "end": 1626.47,
+      "text": "Jako když jsme byli tři roky, tak jsem u stolu prohlásil, že špenát nejím",
       "is_overlap": false
     },
     {
@@ -1688,9 +1692,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1629.641,
-      "end": 1634.14,
-      "text": "Honzo, nikdy si nenech vnucovat věci, které nechceš",
+      "start": 1626.471,
+      "end": 1629.57,
+      "text": "A tatínek říkal, že to je správný",
       "is_overlap": false
     },
     {
@@ -1698,9 +1702,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1634.141,
-      "end": 1640.04,
-      "text": "Lidi nemají právo deformovat tvůj osobnost",
+      "start": 1629.571,
+      "end": 1634.17,
+      "text": "Honzo, nikdy si nenech vnucovat věci, které nechceš",
       "is_overlap": false
     },
     {
@@ -1708,9 +1712,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1640.041,
-      "end": 1654.38,
-      "text": "A vzal takhle tu místu s tím špenátem, překlopil mi ji na hlavu, takže mi ten špenát tak naramil a říkal a nesmíš se divit, když svět bude reagovat takhle",
+      "start": 1634.171,
+      "end": 1640.17,
+      "text": "Lidi nemají právo deformovat tvůj osobnost",
       "is_overlap": false
     },
     {
@@ -1718,9 +1722,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1655.62,
-      "end": 1659.02,
-      "text": "Tohle jsou samé věci, které jsou hluboko ve mně",
+      "start": 1640.171,
+      "end": 1654.17,
+      "text": "A vzal takhle tu mísu s tím špenátem, překlopil mi ji na hlavu takže mi ten špenát tak naramil a říkal a nesmíš se divit, když svět bude reagovat takhle",
       "is_overlap": false
     },
     {
@@ -1728,9 +1732,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1659.56,
-      "end": 1666.96,
-      "text": "Takhle táta postupoval vždycky, ale nikdy to nebylo zlé nebo ponižové",
+      "start": 1654.171,
+      "end": 1659.17,
+      "text": "Tohle jsou samé věci, které jsou hluboko ve mně",
       "is_overlap": false
     },
     {
@@ -1738,9 +1742,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1666.961,
-      "end": 1676.04,
-      "text": "Já bych trošku se sunula k tomu, co souvisí s tím židovstvím a změnami které se děly společensky",
+      "start": 1659.171,
+      "end": 1666.95,
+      "text": "Takhle táta postupoval vždycky, ale nikdy to nebylo zlé nebo ponižující",
       "is_overlap": false
     },
     {
@@ -1748,9 +1752,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1677.18,
-      "end": 1696.94,
-      "text": "To je tvůj otec a rodina začaly jistě nějakým způsobem pak už je rok 1937, 1938, 1939, pocitěvat tlak který v pohraničí nastává a možná třeba i víc a dřív než v Praze židé",
+      "start": 1666.97,
+      "end": 1676.05,
+      "text": "Já bych trošku se sunula k tomu, co souvisí s tím židostvím a změnami, které se děly společensky",
       "is_overlap": false
     },
     {
@@ -1758,9 +1762,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1697.72,
-      "end": 1700.3,
-      "text": "Jak se to projevilo třeba na otci?",
+      "start": 1676.051,
+      "end": 1696.95,
+      "text": "To je tvůj otec a rodina začaly jistě nějakým způsobem, pak už je rok 1937, 1938, 1939 pocitovat tlak, který v pohraničí nastává a možná třeba i víc a dřív než v Praze židé",
       "is_overlap": false
     },
     {
@@ -1768,9 +1772,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1700.48,
-      "end": 1703.96,
-      "text": "Nebo co se dálo ještě předtím?",
+      "start": 1697.73,
+      "end": 1701.97,
+      "text": "Jak se to projevilo třeba na otci, nebo co se dálo?",
       "is_overlap": false
     },
     {
@@ -1778,9 +1782,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1704.02,
-      "end": 1707.56,
-      "text": "On pak šel do transportu nebo nešel? Nebo co bylo předtím?",
+      "start": 1701.971,
+      "end": 1707.97,
+      "text": "Ještě předtím on pak šel do transportu nebo nešel, nebo co bylo předtím?",
       "is_overlap": false
     },
     {
@@ -1788,9 +1792,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1707.561,
-      "end": 1713.06,
-      "text": "Dálo se to, že to napětí v pohraničí neustále stoupalo",
+      "start": 1707.971,
+      "end": 1712.97,
+      "text": "Dále se to, že to napětí v pohraničí neustále stoupalo",
       "is_overlap": false
     },
     {
@@ -1798,9 +1802,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1714.82,
-      "end": 1726.42,
-      "text": "Táta měl české přátelé, ku příkladu a syn pana vrchního rady Pechana onemocněl obrnou",
+      "start": 1712.971,
+      "end": 1717.97,
+      "text": "Táta měl české přátelé ku příkladu",
       "is_overlap": false
     },
     {
@@ -1808,9 +1812,9 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1726.421,
-      "end": 1732.42,
-      "text": "Táta zjistil, že v Míchově existuje nějaký vynikající německý lékař",
+      "start": 1717.971,
+      "end": 1738.97,
+      "text": "A syn pana vrchního rady Pechana onemocněl obrnou a táta zjistil, že v Michově existuje nějaký vynikající německý lékař tak tam toho kluka z jeho rodiči vezl",
       "is_overlap": false
     },
     {
@@ -1818,21 +1822,11 @@
       "speakers": [
         "unknown"
       ],
-      "start": 1732.421,
-      "end": 1739.42,
-      "text": "Tak tam toho kluka z jeho rodiči vezl",
-      "is_overlap": false
-    },
-    {
-      "id": "asr_00182",
-      "speakers": [
-        "unknown"
-      ],
-      "start": 1739.421,
-      "end": 1753.42,
-      "text": "Měli jsme zaměstnance, jmenová se Hartmann, a ten byl nacista",
+      "start": 1738.971,
+      "end": 1752.97,
+      "text": "A měli jsme zaměstnance, jmenová se Hartmann, a ten byl nacista",
       "is_overlap": false
     }
   ],
-  "full_transcription": "Jmenuji se Jana René Frýzová, J-A-N-A-R-E-N-E-E-F-R-I-E-S-O-V-A Březen 13.1996 Natáčíme rozhovor s panem inženýrem Janem Orlíkem, Praha, Česká republika A kdybys byl tak laskav a řekl své jméno a hláskoval ho? Jmenuji se Jan Orlík J-A-N-O-R-L-I-K A kdy jsi se narodil? Narodil jsem se 12. září 1919 v Praze A měl jsi nějaké jiné jméno? Ano, do roku 1946 jsem se po tátovi jmenoval Adler, to se hláskuje A-D-L-E-E-R A potom ve snaze to počeštit jsem to změnil na překlad Ano A kdybyste se teď trošku zamyslel nad tím, jak to bylo u vás doma I v tvém dětství, jaká jste byla rodina? Tím bychom mohli začít. Kde jste žili? Já jsem se narodil v bytě svých prarodičů z máminy strany, v italské ulici na Královských Vinohradech A brzo po narození jsem byl převezen do místa působení mého otce, ten pochází od německých hranic ze Šumavy, jmenoval se Edmund Adler po celý život to byl můj vzor. To byl prostě ten člověk, který nejvíc ovlivnil můj život A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor Byl to vzorný statek, který dneska, tak jako mnoho jiných objektů na Šumavě, prostě zmizel. Neexistuje Tam táta prováděl meliorizace, modernizoval to, dovezl švýcarský chov Ticho. No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let Byla to úplná samota Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk? To bylo velmi zajímavý. Moje maminka je modroka, blondýna, z Peleřimova Židovka? Její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v Pelřimově Babička je z Rokycan, jmenovala se původně Léderová A jim se narodila ta dcera Ela, Elinka A ta chodila do školy v Pelřimově a byla to naprosto česky orientovaná rodina, která neuměla pořádně německy Dědeček a babička rozuměli německy, ale neovládali to. Maminka, když si Když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca do penzionátu a tam se naučila dobře francouzsky a dobře německy což mělo velký vliv na moji výchovu A zcela jinak to bylo odcovo strany Otec pochází z vesničky jménem Zhůří na Šumavě, to je nedaleko toho velkostatku, v blízkosti Hartmanic, což je starý soudní okres na Šumavě, kde byl židovský hřbitov, který Němci úplně vyvrátili, tam není nic Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hutích nebo v lese Dědeček jmenoval se Salomon Adler, byl to krásný, statný pán A jeho manželka se jmenovala Rosa Kornfiererová A ty neuměly česky ani slovo Táta sice měl českou maturitu, ale ta čeština byla taková typicky sudecká To znamená, že místo P se říká B, místo D se říká T, takže on třeba říkal bejzek, anebo anekdóde místo anekdóde To je zvláštnost toho německého nářečí U stolu u nás, po celé mé dětství, jsem mluvil výhradně česky na maminku a na Evu, svoji sestru A výhradně německy na Tatínger. Takže to se neustále střídalo a mě to nedělalo vůbec žádné potíže Ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku kde jsem měl fungovat na nějaký konferenci jako překladatel protože bylo o mně známo, že mluvím plně oběma jazyky A tam mě podrobili zkoušce a řekli tak, jak se řekne německy předradlička, což jsem nevěděl, a jak se řekne záhumenek, což jsem taky nevěděl, tak se se mnou hned rozhodli učit, že ta moje Němčina dokonalá není Né no Když mě bylo šest let, tak jsem šel v Železné rudě, kam jsme se přestěhovali, do české školy Celá Železná ruda, kde měl dědeček viru a továrnu na štěce a všecko možného patřil k takový ty velmi bohatlické poválečné generaci měšťanské To byl člověk bez jakéhokoliv formálního vzdělání, ale velice příjemný, sčetlý, inteligentní A měl tu zvláštní vlastnost, že v čemkoliv podnikal, se mu to fantasticky dařilo Zemřel asi v roce 39 v chudobinci židovském tady v Praze, protože o všechno přišli Ale to ne zásluhou Hitlera, to také, ale především tím, že ta rodina nežila v souladu Ale to je úplně jiná kapitola. Já se vrátím k tomu dětství Ano. Já bych se ještě optala, tam byla někde v okolí židovská škola, nebo by to ani nenapadlo, tu tvoji rodinu, aby schodil do židovské školy? Nejbližší židovská komunita byla v Nířsku, což je městečko asi 20 kilometrů vzdálené od hranic od železné rudy Tam byl rabín, pan Klaubr Já jsem se s ním setkal pouze jednou nebo dvakrát Při marných pokusech vychovávat ty děti těch židovských rodin v Železný Rudě bylo jich strašně málo, snad čtyři nebo tři A tak pan rabín Klaubr několikrát přijel z Dnirska aby nás uvedl do věrouky, nebo jak se to říká? Do židovského náboženství Ale tento pokus troskotal takže jsem se učil kubřehohebrejský číst asi dvě hodiny nebo tři hodiny za život a samozřejmě, že jsem se to nenaučil Rodina sama byla, teda rodiče, byla naprosto neortodoxní, vůbec se žádný svátky ani zvyky nedodržovaly avšak to vědomí židovské tam bylo naprosto jasné To byla zvláštní směsice skutečně těch tří kultur Té české, která byla z matčiny strany a která byla, teda smím-li to tak říct, šmrcnutá jejím francouzskou výchovou ve Švýcárách To byl ten největší kulturní vliv na moje myšlení Od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy atd Ona byla člověk velice muzický a každý měsíc jela na několik dnů do Prahy, aby tady nasávala kulturu Řekl bych dnešníma očima až nekulturně, že chodila na matiné i na večerní představení jenom aby kompenzovala tu pustinu kulturní v těch Šumavských lesů, kde nebylo nic Později rádio Takže ona jezdila k mamince a k tatínkovi do té Prahy a tady nabírala, kupovala knihy a potom se vrátila a vypravovala mi o koncertech, o přednáškách, o divadle Později také Evie, mojí sestře, která se narodila v roce 21, to znamená o dva roky později než já Tento vliv byl velice silný Druhý velmi silný vliv byl ten pocit toho obklopení Němci To bylo velmi komplikované, protože na jedné straně bylo to otcovorodiště, bylo to místo, kde táta nejdřív si najal malou pyru Později ji vlastnil. A nás děti od začátku, ačkoliv sám neměl český pozadí nebo český minulost tak bylo bez jakýchkoliv otázek, že my budeme chodit do velmi, velmi chudičké české jednotřídky kde bylo pět oddělení. Tam byly děti od 6 do 13 let Ti učitelé to byly virtuózové, pedagogečtí, to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé z rodin kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne vždycky do německé ale německá byla bohatá a výstavná A to proto, aby když byl třeba otec trafikant tak aby symbolicky alespoň jedno dítě chodil do České školy Nebo byli to děti dřevorubců, Němců ale i když pracovali v českých státních lesích a i když česká matice školská rozdávala na Vánoce boty tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do české školy, ale tyto děti nechodily pravidelně Takže většinou v těchto jednotřítkách byli děti z pošty, od finančních úředníků, od četníků a my Takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás? Nebo ty sám? Ne, tam byli jeden nebo dva lékaři Němci, jeden lékař židovský Vůbec jako v celé té rudě? Ale to byla židovská rodina, jmenovaly se Hartmanovi Jenom jejich dcera se zachránila, je myslím v Americe Ty byly německy orientovaní, ty neměly s námi absolutně nic společného Takže nechodili do té třídy ani To rozdělení bylo naprosto jednoznačné to prostě některé židovské rodiny byly orientované vzhledem k své minulosti na ten německý živel, na tu německou kulturní oblast A druzí, tak jako moje maminka a tím jimi, naprosto jednoznačně Takže, když jsem vychodil tu obecnou školu, tak nejbližší gymnázium bylo 40 km daleko v Klatové Já jsem tam měl nastoupit do prýmy, udělal jsem zkoušku A když jsem měl odjet, tak tatínek s maminkou přišli ke mně k posteli a řekli, my bychom nechtěli, aby si šel z domova už ve dvanácti letech Co by si tomu říkal, kdybychom si obstarali vychovatelku, která by tě připravovala na zkoušky a ty by si do gymnázie chodil jenom skládat zkoušky? No já jsem nevěděl, jestli to je dobře nebo špatně, prostě co takhle udělal Takže prýmu a sekundu mě učila paní Pavla Moravcová dobrý pedagog, která takhle už připravila nějaké děti předem bydlela u nás a každých půl roku jsme jeli společně s tou srčnou Moravcovou do Klatov, bydleli jsme v hotelu Ona na mě byla mimořádně laskavá, abych jo dobře skládal z koušku. A tam jsme všechny předměty musel složit z koušku A to byla první sekunda Skládal jsem je dobře Klatovský gymnázium bylo nejpřísnější gymnázium jezuický v republice A byl jsem tam, když vyhodili ze stejného systému Harabat a Schönborny kteří měli zámek v Gdyni, a kde prostě protekce nebyla Oni byli hrdí na to, jaký jsou výběrový A že by se k tobě chovali nějak, protože jsi byl židovský kluk? Vůbec ne, všechno Ne, ne, ne. Vůbec ne Navopak, pan profesor Chládek na biologii jeden z nejlepších profesorů, který jsem znal si tam zval jiný profesory, aby si poslechli jak vypadá jí odpověď děte, který nechodilo do školy ale který se muselo připravovat samotně Takže ty zkoušky jsem skládal výborně a potom jsem přišel dědečkou jak babičce do Prahy a chodil jsem do Tercie na Jiřionáměstí To byla katastrofa, protože já jsem byl zvyklý se učit tak, abych věcem rozuměl když to gymnázium na Jiřího náměstí, stejně jako všechny jiné školy, chtějí, abych správně odpovídal, ne abych rozuměl Takže jsem začal tady rupat z jednoho předmětu za druhým. Z latiny a tak dále, protože všichni odmítali můj přístup Jak to teda vlastně je, protože oni chtěli jednoznačnou papoučkovanou odpověď Já bych z toho hlediska historie, to je který rok, kdy jsi přišel do Prahy? Co už se mění v té historii, že? O kterou nám jde To je 32-33 to už je to období, kdy v Německu se dá tušit ti fašismus a tak dále, jo? Ano, ano Proto se na to taky ptám, že? už začínal ten fašismus Nakonec i v pohraničních oblastech? Ale v pohraničních oblastech se to vyvíjelo velice zvolna teda na tom Železnorudsku V Železné Rudě byla silná sociální demokracie táta byl taky sociální demokrat A jak říkám, on tam chodil do školy s těmi německými obyvateli tam ze začátku, to soužití bylo, mně se to alespoň tak jevilo, bezproblémové Od toho roku 1933 to pruce stoupal ten německý nacionalismus a agrese takže já jsem se s tím setkal poprvé Když jsem setkal poprvé, tak někdy v roce 1934-35 Když jsi se zvracel na prázdný domů Když jsem se zvracel a pamatuju se přesně, jak to bylo Ku příkladu, ne, jak to bylo. Taková epizoda Vokolo potoka vedla taková úplně úzká pěšina a já na té pěšině jel na kole Najednou proti mně vystoupili dva nebo tři němičtí kluci Chytli mě ze řidítka, tak jak jsem na nich seděl, dali mi pár facek a strčili do mě, abych zase musel jet A já přijel domů a strašně jsem se litoval, hřbal steky a řekl jsem, táto, tohle se mi stalo a táta, který byl pro mě vždycky ideálném statečného muže mě prostě dal pár facek až se mi hlava zatřepala a řekla nechoď si stěžovat Když ti někdo natlouk, natluč mu Ale nechoď si stěžovat a vyhodil mě A já jsem v tom vzteku běhl ven a na můstku přes ten potok řezná Jsem jednoho z těch kluků nachytal, vrhnul jsem se na něho tak, že jsme spadli do toho potoka No a od té doby mám tu filozofii, že prostě je nesprávné uhybat Že musí člověk čelit Tak ale takovýhle situací byla řada, ale toto mně zůstalo, toto byla tátová výchova A jak jsi se to Kulkowsky vlastně tehdy vysvětloval, tu změnu? Tomu srozuměl, nebo táta ti to vysvětlil? On to sám pochopil? Ne, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat Já jsem nešetl ani májovky, ani indianky, já jsem četl metka, koptu, dyrázka, vrbu, bára Takže já jsem se cítil opravdu až nacionálně český. Ty legionáři pro mě něco znamenaly, ta tradice a tak dále A z toho ta protiněmecká, protirakouská zaměřenost byla jednoznačná Já vím, že jeden z nejnešťastnějších okamžiků mýho mládí bylo když jsem zaslechl svého tátu říkat jednomu známému a vlastně to bylo škoda, rozbíto Rakouskou hersko To se nemělo stát. To byla pro mě taková rána, jak někdo může chválit to Rakousko-Uhersko, které třista let ničilo český národ jak někdo může popírat správnost regionářského nebo masarykovského snažení o vybudování českého státu To mě trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí Ano. A i když ten táta byl teda tvůj ideál, ještě jsem se chtěla ptat, pro které vlastnosti, nebo co myslíš, že právě do tebe potom přešlo? No táta byl zcela přirozený pedagog. On chápal všechny klukovský sny. Takže od malička jsem měl psa, od malička jsem pracoval s koňma Táta prostě trval na práci. Já jsem jako malý dítě musel už pracovat na pile, i když jsem jenom srovnával prkinka, tak musel Ale nenutil. Já jsem od malička miloval koně. Táta mě opravdu naučil s těmi koními zacházet Já jsem v 16 letech v Klatově se stál, jsem vstoupil do jízdního Sokola V Klatově byla bašta agrárnícká, tam bydlel minister Machník minister za agrární stranu, minister vojenství a měl stejně starýho kluka Honzu On byl v Selské jízdě, což byla pravičácká agrární organizace kdyžto já jsem byl v jízdním Sokole, který byl mírně liberálnější organizací Ale jezdili jsme společně na vojenských koních Jeli jsme společně na vojenských koních Já jsem po tátovi zdědil tu lásku ke koním, táta byl dragón za války sloužil u dragónů i později A takže jsem chodil jezdit do klatovských kasáren které měly bohatou jezdeckou tradici No a jednou byly celostátní závody, mimořádně obtížný A ještě ten den mimo to pršelo, kdy se měly tedy na zítřek konat ty závody A to je který rok? To už tím tedy? A to je rok asi tak třicet šest Když jsem přišel domů a říkal jsem, že zítra se jedou ty závody mě přidělil pan plukovník osmnáctiletého koně Edisona já ho tady mám na fotografii a Honzovi Machníkovi přidělil čtyrletého polohřebce, nádherný Já proti němu nemám šanci a tato řekl, co to je za závod a já jsem říkal, na rychlost a na body 16 skoků poslušnostních, velmi náročných Víš, tato, to je taková nespravedlnost, že já zítra nenastoupím A tato řekl, samozřejmě, Honzičku, nenastoup Ale ty přeci závodíš pro to, abys vyhrál. Ne z lásky ke sportu, že jo? Ne z lásky ke koním Nebo že vyhrát. To je tvoje heslo Tak víš co, jestli zítra nenastoupíš, už nemusíš chodit domů Takhle Ale to všechno ve velmi přátelském tónu Tomu předcházely různé jiné pedagogické zásahy Jako když jsme byli tři roky, tak jsem u stolu prohlásil, že špenát nejím A tatínek říkal, že to je správný Honzo, nikdy si nenech vnucovat věci, které nechceš Lidi nemají právo deformovat tvůj osobnost A vzal takhle tu místu s tím špenátem, překlopil mi ji na hlavu, takže mi ten špenát tak naramil a říkal a nesmíš se divit, když svět bude reagovat takhle Tohle jsou samé věci, které jsou hluboko ve mně Takhle táta postupoval vždycky, ale nikdy to nebylo zlé nebo ponižové Já bych trošku se sunula k tomu, co souvisí s tím židovstvím a změnami které se děly společensky To je tvůj otec a rodina začaly jistě nějakým způsobem pak už je rok 1937, 1938, 1939, pocitěvat tlak který v pohraničí nastává a možná třeba i víc a dřív než v Praze židé Jak se to projevilo třeba na otci? Nebo co se dálo ještě předtím? On pak šel do transportu nebo nešel? Nebo co bylo předtím? Dálo se to, že to napětí v pohraničí neustále stoupalo Táta měl české přátelé, ku příkladu a syn pana vrchního rady Pechana onemocněl obrnou Táta zjistil, že v Míchově existuje nějaký vynikající německý lékař Tak tam toho kluka z jeho rodiči vezl Měli jsme zaměstnance, jmenová se Hartmann, a ten byl nacista"
+  "full_transcription": "Jmenuji se Jana René Frýzová, J-A-N-A-R-E-N-E-E-F-R-I-E-S-O-V-A Březen 13.1996 Natáčíme rozhovor s panem inženýrem Janem Orlíkem, Praha, Česká republika A kdybys byl tak laskav a řekl své jméno a hláskoval ho? Jmenuji se Jan Orlík J-A-N-O-R-L-I-K A kdy jsi se narodil? Narodil jsem se 12. září 1919 v Praze A měl jsi nějaké jiné jméno? Ano. Do roku 1946 jsem se po tátovi jmenoval Adler To se hláskuje A-D-L-E-E-R A potom ve snaze to počeštit jsem to změnil na překlad Ano A kdybys teď se trošku zamyslel nad tím, jak to bylo u vás doma I v tvém dětství, jaká jste byla rodina? Tím bychom mohli začít. Kde jste žili? Já jsem se narodil v bytě svých prarodičů z máminy strany, v italské ulici na Královských Vinohradech A brzo po narození jsem byl převezen do místa působení mého otce Ten pochází od německých hranic ze Šumavy Jmenoval se Edmund Adler Po celý život to byl můj vzor To byl prostě ten člověk, který nejvíc ovlivnil můj život A on v té době zpravoval velkostatek, který se jmenoval Starý Brunst což je velkostatek, který leží na hlavní silnici vedoucí z Klatov do Bavor Byl to vzorný statek, který dneska, tak jako mnoho jiných objektů na Šumavě, prostě zmizel Neexistuje Tam táta prováděl meliorizace, modernizoval to, dovezl do švýcarských chov No prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let Byla to úplná samota Mluvili jste doma česky nebo německy? Jaký byl tvůj rodný jazyk? To bylo velmi zajímavé. Moje maminka je modroká blondína z Peleřimova Židovka Její dědeček, teda její tatínek byl Mořic Klein a měl obchod koloniálem v Peleřimově Babička je z Rokycan. Pani jmenovala se původně Léderová A jim se narodila ta dcera Ela, Elinka A ta chodila do školy v Pelřimově a byla to naprosto česky orientovaná rodina, která neuměla pořádně německy Dědeček a babička rozuměli německy, ale neovládali to Maminka, když se jim dařilo dobře, byla jako jediné dítě vyslána do Švýca do penzionátu a tam se naučila dobře francouzsky a dobře německy, což mělo velký vliv na moji výchovu A zcela jinak to bylo odcovo strany Otec pochází z vesničky jménem Zhůří na Šumavě, to je nedaleko toho velkostatku, v blízkosti Hartmanic, což je starý soudní okres na Šumavě, kde byl židovský hřbitov, který Němci úplně vyvrátili, tam není nic Ta rodina Adlerová žila tím, že měli malinký krámeček a v okolních vesnicích byli jenom Němci a pracovali ve sklářských hutích nebo v lese Dědeček jmenoval se Salomon Adler, byl to krásný, statný pán A jeho manželka se jmenovala Roza Kornfiererová, a ty neuměly česky ani slovo Táta sice měl českou maturitu, ale ta čeština byla taková typicky sudecká to znamená prakticky, že místo p se říká b, místo d se říká t takže on třeba říkal bejzek, anebo anekdóde místo anekdóde, atd To je zvláštnost toho německého nářečí U stolu u nás, po celé mé dětství, jsem mluvil výhradně česky na maminku a na Evu, svoji sestru a výhradně německy na tatinka Takže to se neustále střídalo a mě to nedělalo vůbec žádné potíže Ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku, kde jsem měl fungovat na nějaký konferenci jako překladatel protože bylo o mně známo, že mluvím plně oběma jazyky A tam mě podrobili zkoušce a řekli tak, jak se řekne německy předradlička, což jsem nevěděl, a jak se řekne záhumenek, což jsem taky nevěděl, tak se se mnou hned rozdanočili, že ta moje Němčina dokonalá není Né no Když mě bylo šest let, tak jsem šel v Železné rudě, kam jsme se přestěhovali, do české školy Celá Železná ruda, kde měl dědeček viru a továrnu na štěce a všechno možného patřil k takový ty velmi bohatlické poválečné generaci měšťanské To byl člověk bez jakéhokoliv formálního vzdělání, ale velice příjemný, sčetlý, inteligentní A měl tu zvláštní vlastnost, že v čemkoliv podnikal, se mu to fantasticky dařilo Zemřel asi v roce 39 v chudobinci židovském tady v Praze, protože o všechno přišli Ale to ne zásluhou Hitlera, to také, ale především tím, že ta rodina nežila v souladu Ale to je úplně jiná kapitola. Já se vrátím k tomu dětství Ano. Já bych se ještě optala, tam byla někde v okolí židovská škola, nebo by to ani nenapadlo, tu tvoji rodinu, aby shodil do židovské školy? Nejbližší židovská komunita byla v Nířsku, což je městečko asi 20 kilometrů vzdálené od hranic od železné rudy Tam byl rabín, pan Klaubr Já jsem se s ním setkal pouze jednou nebo dvakrát Při marných pokusech vychovávat ty děti těch židovských rodin v Železní Rudě, bylo jich strašně málo snad čtyři nebo tři A tak pan rabín Klaubr několikrát přijel z Dnirska aby nás uvedl do výhrouky, nebo jak se to říká? Do židovského náboženství Ale tento pokus troskotál Takže jsem se učil, když ho hebrejský číst asi dvě hodiny nebo tři hodiny za život A samozřejmě, že jsem se to nenaučil Rodina sama byla, teda rodiče, byla naprosto neortodoxní, vůbec se žádný svátky ani zvyky nedodržovaly Avšak to vědomí židovské tam bylo naprosto jasné To byla zvláštní směsice skutečně těch tří kultů Té české, která byla z matčiny strany a která byla teda smím-li to tak říct, šmrcnutá jejím francouzskou výchovou ve Švýcarii To byl ten největší kulturní vliv na moje myšlení. Od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy a tak dále Ona byla člověk velice muzický a každý měsíc jela na několik dnů do Prahy, aby tady nasávala kulturu řekl bych dnešníma očima až nekulturně, že chodila na matiné i na večerní představení jenom aby kompenzovala tu pustinu kulturní v těch šumavských lesů, kde nebylo nic Později rádio. Takže ona jezdila k mamince a k tatínkovi do Prahy a tady nabírala, kupovala knihy a potom se vrátila a vypravovala mi o koncertech, o přednáškách, o divadle Později také Evie, mojí sestře, která se narodila v roce 21, to znamená o dva roky později Tento vliv byl velice silný Druhý velmi silný vliv byl ten pocit toho obklopení Němci Kto by nám bval mít? komplikované, protože na jedné straně bylo to otcovorodiště. Bylo to místo, kde táta nejdřív si najal malou pyrů, později vlastně. A nás děti od začátku, ačkoliv sám neměl český pozadí, nebo český kominulost, tak bylo bez jakýchkoliv otázek, že my budeme chodit do velmi, velmi chudičké české jednotřídky, kde bylo pět oddělení, tam byly děti od šesti do třinácti let Ti učitelé to byly virtuózové, pedagovičtí, to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé z rodin, kde rodiče cítili, že by alespoň některé dítě mělo jít do české školy a ne vždycky do německé Ta německá byla bohatá a výstavná. A to proto, aby když byl třeba otec trafikant, tak aby symbolicky alespoň jedno dítě chodil do České školy Nebo byly to děti dřevorubců Němců ale i kdykož pracovali v českých státních lesích a i kdykož česká matice školská rozdávala na Vánoce boty tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do České školy ale tyto děti nechodili pravidelně. Takže Většinou byli děti z pošty, finančních úředníků, odčetníků a my Takže tam byly i jiné židovské děti, těch málo, co tam bylo u vás? Ne, tam byly jeden nebo dva lékaři Němci, jeden lékař židovský Vůbec jako v celé Rudě? Ale to byla židovská rodina, jmenovaly se Hartmanovi Jenom jejich dcera se zachránila, je myslím v Americe Ty byly německy orientovaní, ty neměly s námi absolutně nic společného Takže nechodili do té třídy ani To rozdělení bylo naprosto jednoznačné To prostě některé rodiny židovské byly orientovaný vzhledem k své minulosti na ten německý živel, na tu německou kulturní oblast A druzí, tak jako moje maminka a ti mimi, naprosto jednoznačně Takže když jsem vychodil tu obecnou školu tak nejbližší gymnázium bylo 40 kilometrů daleko v Klatově Já jsem tam měl nastoupit do prýmy, udělal jsem zkoušku A když jsem měl odjet, tak tatinek s maminkou přišli ke mně k posteli a řekli, my bychom nechtěli, aby jsi šel z domova už ve dvanácti letech Co by si tomu říkal, kdybychom si najali nebo obstarali vychovatelku, která by tě připravovala na zkoušky a ty by si do gymnázie chodil jenom skládat zkoušky No, já jsem nevěděl, jestli to je dobře nebo špatně, prostě co takhle udělal Takže prýmu a sekundu mě učila paní Pavla Moravcová dobrý pedagog, která takhle už připravila nějaké děti předem bydlela u nás a každých půl roku jsme jeli společně s tou slušnou Moravcovou do Klatov Vydali jsme v hotelu, ona na mě byla mimořádně laskavá, abych jo dobře skládal z koušku A tam jsme všechny předměty musel složit z koušku a to byla první sekunda Skládal jsem je dobře, klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice Byl jsem tam, když vyhodili ze stejného systému Hrabat a Schönborny, kteří měli zámek v Gdyni a kde nebyla protekce. Byli hrdí na to, jaké jsou výběrové A že by se k tobě chovali nějak, protože jsi byl židovský kluk? Vůbec ne. Všechno Ne, ne, ne. Vůbec ne Naopak, pan profesor Chládek na biologii, jeden z nejlepších profesorů, který jsem znal si tam zval jiný profesory, aby si poslechli, jak vypadá jí odpověď děte, který nechodilo do školy ale který se muselo připravovat samo Takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi jak babičce do Prahy a chodil jsem do tercie na Jiřionáměstí To byla katastrofa, protože já jsem byl zvyklý se učit tak abych věcem rozuměl, když to gymnazium na Jiřionáměstí stejně jako všechny jiné školy, chtějí, abych správně odpovídal, ne abych rozuměl Takže jsem začal tady rupat už z jednoho předmětu za druhým Z latiny a tak dále, protože všichni odmítali můj přístup jak to teda vlastně je, protože oni chtěli jednoznačnou papoučkovanou odpověď Z toho hlediska historie, to je který rok, kdy jsi přišel do Prahy? Co už se mění v té historii, o kterou nám jde? To je 32-33 Takže to už je to období, kdy v Německu se dá tušit i fašismus a tak dále Ano Proto se na to taky ptám To už začínal ten fašismus Nakonec i v pohraničních oblastech? Ale v pohrančních oblastech se to vyvíjelo velice zvolna, teda na tom železnorudsku V železnej rudě byla silná sociální demokracie, táta byl taky sociální demokrat A jak říkám, on tam chodil do školy s těmi německými obyvateli, on tam ze začátku To soužití bylo, mně se to alespoň tak jevilo, bezproblémové Od toho roku 1933 to pruce stoupal ten německý nacionalismus a agrese Takže já jsem se s tím setkal poprvé tak někdy v roce 1934-1935 když ses vracel na prázdný domů Když jsem se vracel a pamatuju se přesně, jak to bylo Ku příkladu ne, jak to bylo. Taková epizoda Vokolo potoka vedla taková úplně úzká pěšina a já na té pěšině jel na kole Najednou proti mě vystoupili dva nebo tři němičtí kluci Chytli mě ze řidítka, tak jak jsem na nich seděl, dali mi pár facek a strčili do mě, abych zase musel jet A já přijel domů a strašně jsem se litoval, hřeval steky a řekl jsem, táto, to nezemistilo A táta, který byl pro mě vždycky ideálem statečného muže mě prostě dal pár facek, až se mi hlava zatřepala a řekla, nechoď si stěžovat Když ti někdo natlouk, natluč mu. Ale nechoď si stěžovat a vyhodil mě A já jsem v tom vzteku běhl ven a na můstku přes ten potok řezná Jsem jednoho z těch kluků nachytal, vrhnul jsem se na něho tak, že jsme spadli do toho potoka No a od té doby mám tu filozofii, že prostě je nesprávné uhybat Že musí člověk čelit Tak ale takovýhle situaci byla řada, ale toto mně zůstalo, toto byla tátová výchova A jak jsi to Kulkowski vlastně tehdy vysvětloval, tu změnu? Tomu srozuměl, nebo táta ti to vysvětlil? On to sám pochopil? Ne, to byla doba, kdy nikdo nikomu nic nemusel vysvětlovat Já jsem nešetl ani májovky, ani indianky, já jsem četl metka, koptu, dyrázka, vrbu, bára Takže já jsem se cítil opravdu až nacionálně český Ty legionáři pro mě něco znamenaly ta tradice a tak dále A z toho ta protiněmecká, protirakouská zaměřenost byla jednoznačná Já vím, že jeden z nejnešťastnějších okamžiků mého mládí bylo když jsem zaslechl svého tátu říkat jednomu známému a vlastně to bylo škoda, rozbíj to rakouskou hersko To se nemělo stát. To byla pro mě taková rána, jak někdo může chválit to Rakousko-Uhersko, které třista let ničilo Český národ Jak někdo může popírat správnost regionářského nebo masarykovského snažení o vybudování Českého státu To mě trvalo mnoho let, než jsem pochopil, co tím vlastně otec myslí Ano. A i když ten táta byl teda tvůj ideal, ještě jsem se chtěla optat, pro které vlastnosti, nebo co myslíš, že právě do tebe potom přešlo? No táta byl zcela přirozený pedagog. On chápal všechny klukovský sny. Takže od malička jsem měl psa, od malička jsem pracoval s koňma Tata prostě trval na práci. Já jsem jako malý dítě musel už pracovat na pile I když jsem jenom srovnával prkinka, tak musel. Ale nenutil Já jsem od malička miloval koně. Tata mě opravdu naučil s těmi koními zacházet Já jsem v šestnácti letech v Klatovéch se stál žízním, jsem vstoupil do žízního Sokola. K Latovi byla bašta agrárnická, tam bydlel minister Machník, minister za agrární stranu, minister vojenství a měl stejně starého kluka Honzu On byl v Selské jízdě, což byla pravičácká agrární organizace kdyžto já jsem byl s jízdním Sokole, který byl mírně liberálnější organizací Ale jezdili jsme společně na vojenských koních Já jsem po tátovi zdědil lásku ke koním, táta byl dragón, za války sloužil u dragónů i později A takže jsem chodil jezdit do klatovských kasáren, které měly bohatou jezdeckou tradici No a jednou byly celostátní závody, mimořádně obtížný A ještě ten den mimo to pršelo, kdy se měly teda na zítře konat ty závody A to je který rok? To už tím tedy? A to je rok asi tak třicet šest Když jsem přišel domů a říkal jsem, že zítra se jedou ty závody mě přidělil pan plukovník 18-letýho koně Edisona já ho tady mám na fotografii a Honzovi Machníkovi přidělil 4-letýho polohřebce, nádherný Já proti němu nemám šanci a tato řekl, co to je za závod a já jsem říkal, na rychlost a na body 16 skoků poslušnostních, velmi náročných Víš, tato, to je taková nespravedlnost, že já zítra nenastoupím A tato řekl, samozřejmě, Honzičku, nenastoupím Ale ty přeci závodíš pro to, abys vyhrál. Ne z lásky ke sportu, že jo? Ne z lásky ke koním. Nebo že vyhrát. To je tvoje heslo Tak víš co, jestli zítra nenastoupíš, už nemusíš chodit domů Takhle A to končilo Ale to všechno ve velmi přátelském tónu Tomu předcházely různé jiné pedagogické zasahy Jako když jsme byli tři roky, tak jsem u stolu prohlásil, že špenát nejím A tatínek říkal, že to je správný Honzo, nikdy si nenech vnucovat věci, které nechceš Lidi nemají právo deformovat tvůj osobnost A vzal takhle tu mísu s tím špenátem, překlopil mi ji na hlavu takže mi ten špenát tak naramil a říkal a nesmíš se divit, když svět bude reagovat takhle Tohle jsou samé věci, které jsou hluboko ve mně Takhle táta postupoval vždycky, ale nikdy to nebylo zlé nebo ponižující Já bych trošku se sunula k tomu, co souvisí s tím židostvím a změnami, které se děly společensky To je tvůj otec a rodina začaly jistě nějakým způsobem, pak už je rok 1937, 1938, 1939 pocitovat tlak, který v pohraničí nastává a možná třeba i víc a dřív než v Praze židé Jak se to projevilo třeba na otci, nebo co se dálo? Ještě předtím on pak šel do transportu nebo nešel, nebo co bylo předtím? Dále se to, že to napětí v pohraničí neustále stoupalo Táta měl české přátelé ku příkladu A syn pana vrchního rady Pechana onemocněl obrnou a táta zjistil, že v Michově existuje nějaký vynikající německý lékař tak tam toho kluka z jeho rodiči vezl A měli jsme zaměstnance, jmenová se Hartmann, a ten byl nacista"
 }

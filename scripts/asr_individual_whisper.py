@@ -22,9 +22,9 @@ CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
 SHORT_CONTINUATION_WORDS = 4
 MAX_ADJACENT_MERGED_WORDS = 36
-VAD_MIN_DUR = 0.1        # Zkus raději 5s, 20s je moc agresivní (přijdeš o krátké věty)
-VAD_MAX_DUR = 30       # Tohle vyřeší tvůj Error
-VAD_MAX_SILENCE = 3
+VAD_MIN_DUR = 0.25        # Zkus raději 5s, 20s je moc agresivní (přijdeš o krátké věty)
+VAD_MAX_DUR = 20       # Tohle vyřeší tvůj Error
+VAD_MAX_SILENCE = 1
 VAD_ENERGY_THRESHOLD = 45
 # --------------------------
 
@@ -406,41 +406,84 @@ def detect_speech_windows_with_auditok(audio_data, sample_rate):
             os.remove(temp_path)
 
 
-def build_vad_chunks(speech_windows, audio_duration, chunk_seconds):
+def build_vad_parts(speech_windows, audio_duration):
     if not speech_windows:
         speech_windows = [(0.0, audio_duration)]
 
-    chunks = []
-    current_start = None
-    current_end = None
+    parts = []
 
     for raw_start, raw_end in sorted(speech_windows, key=lambda item: item[0]):
         start = max(0.0, float(raw_start))
         end = min(audio_duration, float(raw_end))
         if end <= start:
             continue
+        parts.append((start, end))
 
-        if current_start is None:
-            current_start = start
-            current_end = end
-        else:
-            proposed_end = end
-            if proposed_end - current_start <= chunk_seconds:
-                current_end = max(current_end, end)
-            else:
-                chunks.append((current_start, current_end))
-                current_start = start
-                current_end = end
+    return parts
 
-        while current_end - current_start > chunk_seconds:
-            split_end = current_start + chunk_seconds
-            chunks.append((current_start, split_end))
-            current_start = split_end
 
-    if current_start is not None and current_end is not None and current_end > current_start:
-        chunks.append((current_start, current_end))
+def build_packed_audio_from_parts(audio_data, sample_rate, parts):
+    chunk_arrays = []
+    part_map = []
+    packed_cursor = 0.0
+    gap_samples = int(0.1 * sample_rate)
+    gap_audio = np.zeros(gap_samples, dtype=np.float32) if gap_samples > 0 else None
 
-    return chunks
+    for index, (part_start_sec, part_end_sec) in enumerate(parts):
+        part_start_sample = int(part_start_sec * sample_rate)
+        part_end_sample = int(part_end_sec * sample_rate)
+        if part_end_sample <= part_start_sample:
+            continue
+
+        part_audio = audio_data[part_start_sample:part_end_sample]
+        if len(part_audio) == 0:
+            continue
+
+        part_duration = len(part_audio) / float(sample_rate)
+        part_map.append(
+            {
+                "packed_start": packed_cursor,
+                "packed_end": packed_cursor + part_duration,
+                "original_start": float(part_start_sec),
+                "original_end": float(part_end_sec),
+            }
+        )
+
+        chunk_arrays.append(part_audio)
+        packed_cursor += part_duration
+
+        if gap_audio is not None and index < len(parts) - 1:
+            chunk_arrays.append(gap_audio)
+            packed_cursor += len(gap_audio) / float(sample_rate)
+
+    if not chunk_arrays:
+        return np.array([], dtype=np.float32), []
+
+    return np.concatenate(chunk_arrays), part_map
+
+
+def map_packed_offset_to_original(part_map, packed_offset_sec):
+    if not part_map:
+        return packed_offset_sec
+
+    offset = max(0.0, float(packed_offset_sec))
+    last_original_end = part_map[-1]["original_end"]
+
+    for index, entry in enumerate(part_map):
+        packed_start = entry["packed_start"]
+        packed_end = entry["packed_end"]
+
+        if packed_start <= offset <= packed_end:
+            within_part = offset - packed_start
+            mapped = entry["original_start"] + within_part
+            return min(entry["original_end"], max(entry["original_start"], mapped))
+
+        if offset < packed_start:
+            if index == 0:
+                return entry["original_start"]
+            return part_map[index - 1]["original_end"]
+
+    return last_original_end
 
 
 def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_sec=0.0):
@@ -453,23 +496,25 @@ def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_
     audio_duration = len(audio_data) / float(sample_rate)
 
     speech_windows = detect_speech_windows_with_auditok(audio_data, sample_rate)
-    vad_chunks = build_vad_chunks(speech_windows, audio_duration, CHUNK_SECONDS)
+    vad_parts = build_vad_parts(speech_windows, audio_duration)
+    packed_audio, packed_part_map = build_packed_audio_from_parts(audio_data, sample_rate, vad_parts)
 
-    for chunk_start_sec, chunk_end_sec in vad_chunks:
-        chunk_start_sample = int(chunk_start_sec * sample_rate)
-        chunk_end_sample = int(chunk_end_sec * sample_rate)
+    if len(packed_audio) == 0:
+        return []
 
-        if chunk_end_sample <= chunk_start_sample:
+    packed_total_samples = len(packed_audio)
+
+    for chunk_start_sample in range(0, packed_total_samples, chunk_samples):
+        chunk_end_sample = min(chunk_start_sample + chunk_samples, packed_total_samples)
+        packed_chunk_audio = packed_audio[chunk_start_sample:chunk_end_sample]
+        if len(packed_chunk_audio) == 0:
             continue
 
-        chunk_audio = audio_data[chunk_start_sample:chunk_end_sample]
-        if len(chunk_audio) == 0:
-            continue
-
-        chunk_offset_sec = base_offset_sec + chunk_start_sec
+        packed_chunk_offset_sec = chunk_start_sample / float(sample_rate)
+        packed_chunk_duration_sec = len(packed_chunk_audio) / float(sample_rate)
 
         result = model.transcribe(
-            chunk_audio,
+            packed_chunk_audio,
             language="cs",
             verbose=False,
             condition_on_previous_text=False,
@@ -483,8 +528,20 @@ def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_
             if is_hallucination(text):
                 continue
 
-            absolute_start = float(segment["start"]) + chunk_offset_sec
-            absolute_end = float(segment["end"]) + chunk_offset_sec
+            packed_start_local = max(0.0, min(float(segment["start"]), packed_chunk_duration_sec))
+            packed_end_local = max(0.0, min(float(segment["end"]), packed_chunk_duration_sec))
+
+            packed_start = packed_start_local + packed_chunk_offset_sec
+            packed_end = packed_end_local + packed_chunk_offset_sec
+
+            if packed_end <= packed_start:
+                continue
+
+            original_start = map_packed_offset_to_original(packed_part_map, packed_start)
+            original_end = map_packed_offset_to_original(packed_part_map, packed_end)
+
+            absolute_start = original_start + base_offset_sec
+            absolute_end = original_end + base_offset_sec
 
             segments.append(
                 {

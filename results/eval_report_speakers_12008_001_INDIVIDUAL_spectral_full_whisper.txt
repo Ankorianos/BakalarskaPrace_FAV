@@ -1,0 +1,175 @@
+ASR Speaker Evaluation Report
+================================================================================
+Source JSON: .\results\12008_001_INDIVIDUAL_spectral_full_whisper.json
+Reference (GT): results/ground_truth_speakers.json
+Recording ID: 12008_001
+Mode: INDIVIDUAL_SPLIT | Model: large | Backend: whisper
+Runtime: 224.69s | Run started: 2026-04-15T09:58:32.782311+00:00 | Run finished: 2026-04-15T10:02:17.471230+00:00
+Evaluation source: speaker_full_transcriptions
+Speaker mapping by text length:
+- interviewer <= speaker_r_full_transcription
+- interviewee <= speaker_l_full_transcription
+Mapping confidence (weighted WER): length_based=16.78 % | swapped=160.69 % | winner=length_based | delta=143.91 p.b.
+--------------------------------------------------------------------------------
+WER (interviewer): 29.59 %
+WER (interviewee): 14.55 %
+WER (macro avg): 22.07 %
+WER (weighted by REF words): 16.78 %
+
+================================================================================
+
+Speaker section: interviewer
+--------------------------------------------------------------------------------
+GT role: interviewer | ASR source: speaker_r_full_transcription
+WER: 29.59 %
+Word counts: REF=419 | HYP=348
+WordChanges: enabled=True | entries=13557 | checked_sub_spans=25 | replaced_tokens=1
+WordChanges impact (WER): before=29.83 % | after=29.59 % | delta=-0.24 p.b.
+HITS: 297 | SUB: 49 | INS: 2 | DEL: 73
+
+Kvalitativní ukázky (2-3):
+1. SUB (1x): 'fryesová janarenefryesova' -> 'frýzová janareneefriesova'
+2. DEL (4x): 'ano'
+3. INS (1x): 'kdy'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...dálo ještě předtím on pak šel do do transportu nebo nešel nebo co bylo předtím
+HYP: ...se dálo ještě předtím on pak šel do transportu nebo nešel nebo co bylo předtím
+
+Top substitutions:
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | byli => byly
+1x | ptala => optala
+1x | abys chodil => aby schodil
+1x | celý => celém
+1x | chodili => nechodili
+1x | tý => t
+1x | ano jo vůbec ne všecko ne ne ne vůbec ne prahy a chodil jsem do tercie na jiřího => ani že by se k tobě chovali nějak protože jsi byl židovský kluk to ne vůbec ne všechno
+1x | kdys => jsi
+1x | v ten => vt historii
+1x | tušiti => i
+1x | ses vracel => se zvracel
+1x | prázdniny => prázdný
+1x | sis => jsi
+1x | že jo => tomu srozuměl
+1x | nebo => ai
+1x | optat pod => ptat pro
+1x | byly => bylo
+1x | <num> mhm ano => je tedy čest
+1x | děly => dělí
+
+Top deletions:
+4x | ano
+1x | ano můžu se
+1x | hm mhm mhm ano ano ano ano ano ano ano ano ano
+1x | ano do židovského náboženství mhm mhm mhm ano ano mhm ano ano ano mhm mhm ano
+1x | v celým tom tý
+1x | hm ano
+1x | náměstí no
+1x | to
+1x | tý
+1x | starý že jo to
+1x | jo
+1x | že
+1x | ano ano ano ano čelit hm
+1x | tomus rozuměl
+1x | ano ano a
+1x | já bych trošku
+1x | v
+1x | <num> osum <num> pociťovat
+1x | co se
+1x | do
+
+Top insertions:
+1x | kdy
+1x | tušit
+
+================================================================================
+
+Speaker section: interviewee
+--------------------------------------------------------------------------------
+GT role: interviewee | ASR source: speaker_l_full_transcription
+WER: 14.55 %
+Word counts: REF=2405 | HYP=2331
+WordChanges: enabled=True | entries=13557 | checked_sub_spans=227 | replaced_tokens=43
+WordChanges impact (WER): before=16.34 % | after=14.55 % | delta=-1.79 p.b.
+HITS: 2079 | SUB: 228 | INS: 24 | DEL: 98
+
+Kvalitativní ukázky (2-3):
+1. SUB (3x): 'jsi' -> 'si'
+2. DEL (7x): 'a'
+3. INS (3x): 'a'
+
+Začátek srovnání:
+REF: jmenuju se jan orlík janorlik narodil jsem se <num> září <num> v praze ano do...
+HYP: jmenuju se jan orlík janorlik narodil jsem se <num> září <num> v praze ano do...
+
+Konec srovnání:
+REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...z jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+
+Top substitutions:
+3x | jsi => si
+2x | ádler => adler
+2x | pelhřimově => pelřimově
+2x | chodily => chodili
+2x | kdežto => to
+1x | adlera => adleera
+1x | italské => talické
+1x | hranic => hraníc
+1x | edmond ádler => edmund adler
+1x | spravoval => zpravoval
+1x | švýcarský => švýcarských
+1x | zajímavý => zajímavé
+1x | modrooká blondýna => modroká blondína
+1x | pelhřimova => peleřimova
+1x | mořic => moříc
+1x | rokycan => rokica
+1x | ella => ela
+1x | napros => naprosto
+1x | jediný => jediné
+1x | švýcar => švýca
+
+Top deletions:
+7x | a
+5x | to
+4x | v
+2x | jo
+2x | jako
+1x | no prostě
+1x | paní
+1x | otcovo
+1x | tam
+1x | má na
+1x | poválečný
+1x | měšťanský von
+1x | a měl tu
+1x | snad
+1x | ale
+1x | hebrejsky
+1x | tak dál
+1x | pardon na
+1x | tých
+1x | byla
+
+Top insertions:
+3x | a
+2x | když
+1x | do
+1x | v
+1x | hrabat
+1x | jak
+1x | prahy a chodil jsem do tercie
+1x | už
+1x | ku
+1x | tak
+1x | k
+1x | pro
+1x | že
+1x | říkal
+1x | poněkud
+1x | přátelé
