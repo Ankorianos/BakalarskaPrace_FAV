@@ -13,7 +13,7 @@ def open_file_with_encoding(file_path, encoding):
 if __name__ == "__main__":
     #chci pro kazdej soubor ve slozce directory, zjistit encoding a otevrit ho s tim encodingem, a vypis prvnich 500 znaku pro kontrolu
     import os
-    directory = "data"
+    directory = "../INTERSPEECH2023"
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
