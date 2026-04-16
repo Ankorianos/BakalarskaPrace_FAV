@@ -1,0 +1,188 @@
+ASR Evaluation Report | ground_truth_eval.json
+================================================================================
+Source JSON: .\results\12008_001_R_full_whisper.json
+Reference (GT): results/ground_truth_eval.json
+Mode: MIX | Model: large | Backend: whisper
+Range: start=None | end=None | chunk=300s | overlap=2.0s
+Runtime: 273.79s | Run started: 2026-04-01T18:52:59.516780+00:00 | Run finished: 2026-04-01T18:57:33.310837+00:00
+--------------------------------------------------------------------------------
+WER (STRICT): 23.23 %
+WER (ROBUST): 21.03 %
+Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
+Word counts: REF=2824 | HYP=2678
+HITS: 2290 | SUB: 328 | INS: 60 | DEL: 206
+
+Kvalitativní ukázky (2-3):
+1. SUB (4x): 'kterej' -> 'který'
+2. SUB (3x): 'tim' -> 'tím'
+3. SUB (3x): 'řiká' -> 'říká'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...z jeho rodičí vezl a měli jsme zaměstnance jmenovala se hartmann a ten byl nacista
+
+Top substitutions:
+4x | kterej => který
+3x | tim => tím
+3x | řiká => říká
+3x | mně => mě
+3x | jsi => si
+3x | řek => řekl
+3x | ministr => minister
+2x | židovskej => židovský
+2x | chodily => chodili
+2x | byly => byli
+2x | zkoušku => koušku
+2x | rakousko => rakouskou
+2x | vod => od
+2x | agreární => agrární
+2x | zejtra => zítra
+2x | který => které
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | ádler => adler
+1x | adler => adleela
+1x | počeštit => očištit
+
+Top deletions:
+15x | ano
+7x | to
+4x | mhm
+4x | a
+3x | v
+3x | jako
+2x | mhm mhm
+2x | jo
+2x | teda
+1x | ano a
+1x | se
+1x | to úplná samota
+1x | židovka
+1x | hm
+1x | otcovo
+1x | mimochodem řečeno
+1x | byl
+1x | prakticky
+1x | ano a tak dál
+1x | tam ano
+
+Top insertions:
+3x | a
+3x | že
+2x | z
+2x | <num>
+2x | jsi
+2x | k
+1x | kdybyste
+1x | těla
+1x | ta
+1x | ano
+1x | troskotal
+1x | v
+1x | takže nechodili do t třídy
+1x | protože
+1x | to ne všechno
+1x | všechno ne ne vůbec
+1x | když
+1x | jednoznačnou papoučkovanou odpověď
+1x | kdy
+1x | to je
+
+================================================================================
+================================================================================
+
+ASR Evaluation Report | formal_ground_truth_eval.json
+================================================================================
+Source JSON: .\results\12008_001_R_full_whisper.json
+Reference (GT): results/formal_ground_truth_eval.json
+Mode: MIX | Model: large | Backend: whisper
+Range: start=None | end=None | chunk=300s | overlap=2.0s
+Runtime: 273.79s | Run started: 2026-04-01T18:52:59.516780+00:00 | Run finished: 2026-04-01T18:57:33.310837+00:00
+--------------------------------------------------------------------------------
+WER (STRICT): 37.10 %
+WER (ROBUST): 36.37 %
+Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
+Word counts: REF=2238 | HYP=2678
+HITS: 1922 | SUB: 258 | INS: 498 | DEL: 58
+
+Kvalitativní ukázky (2-3):
+1. SUB (5x): 'tedy' -> 'teda'
+2. SUB (5x): 'mně' -> 'mi'
+3. SUB (3x): 'mně' -> 'mě'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...z jeho rodičí vezl a měli jsme zaměstnance jmenovala se hartmann a ten byl nacista
+
+Top substitutions:
+5x | tedy => teda
+5x | mně => mi
+3x | mně => mě
+3x | také => taky
+3x | jsi => si
+3x | ministr => minister
+2x | mé => mojí
+2x | kilometrů => km
+2x | chodily => chodili
+2x | byly => byli
+2x | takto => takhle
+2x | zkoušku => koušku
+2x | rakousko => rakouskou
+2x | agreární => agrární
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | janorlik => se
+1x | ádler => adler
+1x | adlera => adleela
+1x | počeštit => očištit
+1x | kdybys => se
+
+Top deletions:
+4x | a
+3x | jako
+2x | ano
+2x | to
+1x | se
+1x | otcovo
+1x | mimochodem řečeno
+1x | byl
+1x | prakticky
+1x | tam
+1x | štětce
+1x | t
+1x | nebo zbohatlické
+1x | outout pardon na
+1x | těch
+1x | byla
+1x | rodiště
+1x | vlastnil
+1x | českou
+1x | i německé
+
+Top insertions:
+3x | že
+2x | ano
+2x | z
+2x | k
+2x | a
+1x | janorlika kdy jsi
+1x | narodil
+1x | kdybyste
+1x | tím bychom mohli začít kde jste žili
+1x | můžu se vědět mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk
+1x | peleřimová
+1x | těla
+1x | ta
+1x | na maminku a na evu svoji sestru a výhradně německy na tatinka
+1x | tak se se mnou nedokonaločili že ta moje němčina dokonalá není ano
+1x | se mu to fantasticky dařilo
+1x | já bych se ještě optala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu aby schodil do židovské školy
+1x | výrouky nebo jak se to říká
+1x | troskotal
+1x | kubřehohebrejský číst asi <num> hodiny nebo <num> hodiny za život a samozřejmě že jsem

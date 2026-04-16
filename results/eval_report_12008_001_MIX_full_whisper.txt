@@ -1,0 +1,191 @@
+ASR Evaluation Report | ground_truth_eval.json
+================================================================================
+Source JSON: .\results\12008_001_MIX_full_whisper.json
+Reference (GT): results/ground_truth_eval.json
+Mode: MIX | Model: large | Backend: whisper
+Evaluation source: full_transcript (full_12008_001_transcript)
+Range: start=None | end=None | chunk=360s | overlap=2.0s
+Runtime: 149.52s | Run started: 2026-04-15T09:07:24.312217+00:00 | Run finished: 2026-04-15T09:09:53.837189+00:00
+--------------------------------------------------------------------------------
+WER: 17.63 %
+Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
+Word counts: REF=2824 | HYP=2665
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13878 | checked_sub_spans=270 | replaced_tokens=71
+WordChanges impact (WER): before=20.15 % | after=17.63 % | delta=-2.51 p.b.
+HITS: 2370 | SUB: 251 | INS: 44 | DEL: 203
+
+Kvalitativní ukázky (2-3):
+1. SUB (5x): 'mně' -> 'mě'
+2. DEL (21x): 'ano'
+3. INS (3x): '<num>'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...z jeho rodiči vezl a měli jsme zaměstnance jmenová se hartmann a ten byl nacista
+
+Top substitutions:
+5x | mně => mě
+2x | ádler => adler
+2x | chodily => chodili
+2x | jsi => si
+2x | zkoušku => koušku
+2x | jiřího => jiřionáměstí
+2x | táta => tata
+2x | táta => tato
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | adler => adleera
+1x | byli => byla
+1x | edmond ádler => edmund adler
+1x | spravoval => zpravoval
+1x | švýcarský => švýcarských
+1x | zajímavý => zajímavé
+1x | modrooká blondýna => modroká blondína
+1x | pelhřimova => peleřimova
+1x | pelhřimově => peleřimově
+1x | ledererová => léderová
+1x | ella => ela
+
+Top deletions:
+21x | ano
+6x | to
+4x | mhm
+3x | jo
+3x | jako
+3x | a
+2x | v
+1x | ano a
+1x | můžu se
+1x | židovka
+1x | hm
+1x | otcovo
+1x | řečeno kerej
+1x | byl
+1x | a tak dál
+1x | tam ano
+1x | má na
+1x | zbohatlický poválečný
+1x | von
+1x | židovského náboženství věrouky
+
+Top insertions:
+3x | <num>
+2x | z
+1x | do
+1x | né no
+1x | když
+1x | v
+1x | kto by
+1x | i
+1x | společného takže nechodili do t třídy
+1x | hrabat
+1x | protože
+1x | všechno ne ne ne vůbec
+1x | už
+1x | jednoznačnou
+1x | kdy
+1x | to je
+1x | tušit
+1x | ku
+1x | toto byla tátová výchova
+1x | a
+
+================================================================================
+================================================================================
+
+ASR Evaluation Report | formal_ground_truth_eval.json
+================================================================================
+Source JSON: .\results\12008_001_MIX_full_whisper.json
+Reference (GT): results/formal_ground_truth_eval.json
+Mode: MIX | Model: large | Backend: whisper
+Evaluation source: full_transcript (fallback)
+Range: start=None | end=None | chunk=360s | overlap=2.0s
+Runtime: 149.52s | Run started: 2026-04-15T09:07:24.312217+00:00 | Run finished: 2026-04-15T09:09:53.837189+00:00
+--------------------------------------------------------------------------------
+WER: 34.00 %
+Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
+Word counts: REF=2238 | HYP=2665
+WordChanges: enabled=False | applied_to=none | entries=0 | checked_sub_spans=0 | replaced_tokens=0
+HITS: 1955 | SUB: 232 | INS: 478 | DEL: 51
+
+Kvalitativní ukázky (2-3):
+1. SUB (6x): 'tedy' -> 'teda'
+2. DEL (3x): 'jako'
+3. INS (2x): 'když'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...z jeho rodiči vezl a měli jsme zaměstnance jmenová se hartmann a ten byl nacista
+
+Top substitutions:
+6x | tedy => teda
+5x | mně => mě
+3x | mně => mi
+3x | ministr => minister
+2x | ádler => adler
+2x | také => taky
+2x | chodily => chodili
+2x | jsi => si
+2x | takto => takhle
+2x | zkoušku => koušku
+2x | agreární => agrární
+2x | táta => tato
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | janorlik => se
+1x | adlera => adleera
+1x | byli => byla
+1x | edmond ádler => edmund adler
+1x | spravoval => zpravoval
+1x | švýcarský => švýcarských
+1x | zajímavý => zajímavé
+
+Top deletions:
+3x | jako
+3x | a
+2x | ano
+1x | otcovo
+1x | mimochodem řečeno
+1x | byl
+1x | tam
+1x | jo
+1x | nebo zbohatlické
+1x | on
+1x | outout pardon na
+1x | těch
+1x | byla
+1x | rodiště
+1x | vlastnil
+1x | minulost
+1x | to
+1x | i
+1x | my
+1x | do k postýlce
+
+Top insertions:
+2x | když
+2x | z
+2x | a
+2x | že
+2x | <num>
+1x | janorlika kdy jsi
+1x | narodil
+1x | tím bychom mohli začít kde jste žili
+1x | do
+1x | byla
+1x | úplná samota mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk to
+1x | peleřimova
+1x | anekdóde
+1x | na maminku a na evu svoji sestru a výhradně německy na tatinka
+1x | tak se se mnou hned rozdanočili že ta moje němčina dokonalá není né no
+1x | se mu to fantasticky dařilo
+1x | já bych se ještě optala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu aby shodil do židovské školy
+1x | výhrouky nebo jak se to říká
+1x | asi <num> hodiny nebo <num> hodiny za život a samozřejmě že jsem se to nenaučil
+1x | to byla zvláštní směsice skutečně těch <num> kultů

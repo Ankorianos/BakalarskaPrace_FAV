@@ -1,0 +1,47 @@
+Signal Processing Report
+========================
+Source: C:\Users\kubap\Desktop\JakubUniverzita\BakalarskaPrace\Main_Workspace\data\12008_001.wav
+Sample rate: 16000 Hz
+Duration: 1768.20 s
+
+Gains
+-----
+LUFS shared gain: 1.466824
+Peak shared gain: 0.950000
+Total shared gain: 1.393483
+
+Stereo
+------
+Correlation before: -0.070010
+Correlation after:  -0.070010
+
+Mid/Side
+--------
+Mid RMS before:  -33.53 dBFS
+Mid RMS after:   -30.65 dBFS
+Side RMS before: -32.97 dBFS
+Side RMS after:  -30.09 dBFS
+Side/Mid before: 0.57 dB
+Side/Mid after:  0.57 dB
+
+LUFS
+----
+Stereo before: -26.348807007137925
+Stereo after:  -23.46677186959889
+Mid before:    -32.59178319746589
+Mid after:     -29.70974804417103
+Side before:   -32.135365211102936
+Side after:    -29.253654815390938
+Target LUFS:   -23.0
+
+Interpretace metrik
+-------------------
+LUFS: subjektivně vnímaná hlasitost; cíl sjednocuje celkovou úroveň nahrávek.
+Shared gain: jeden společný zesilovací koeficient pro L i R (zachová stereo poměr).
+Peak dBFS: nejvyšší okamžitá amplituda; blízko 0 dBFS hrozí clipping.
+RMS dBFS: průměrná energetická úroveň signálu (stabilnější než peak).
+Correlation L/R: podobnost kanálů; +1 téměř stejné, 0 nezávislé, -1 opačná fáze.
+Mid = (L+R)/2: společná složka, obvykle 'střed' scény.
+Side = (L-R)/2: rozdílová složka, nese stereo rozdíly mezi kanály.
+Side/Mid dB: relativní šířka sterea; vyšší hodnota znamená výraznější stereo separaci.
+Before/After: porovnání stavu před a po preprocessingu stejného signálu.

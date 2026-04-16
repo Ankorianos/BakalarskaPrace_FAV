@@ -23,12 +23,16 @@ Shadow-node: Speciální architektury, které umí pracovat se stereo informací
 
 Python: Knihovna asteroid je naprostý standard. Obsahuje pre-trained modely, které jen "nakrmíš" svým souborem.
 
+
+
 B. Beamforming a Spatial Clustering (Fyzikální cesta)
 Protože máš stereo, můžeš simulovat "virtuální směrový mikrofon".
 
 Pokud mluvčí A mluví více zleva, algoritmus potlačí vše, co má fázový posun odpovídající pravé straně.
 
 Nástroje: pyroomacoustics – ideální pro výpočet masky na základě intenzity a fáze mezi kanály.
+
+
 
 C. REMIX / ADR (Source Separation)
 
@@ -66,7 +70,6 @@ Pokud je v nahrávce silný dozvuk (hala), jako první krok se dává WPE (Weigh
 Co dál?
 Pro lokální testování na Pythonu doporučuji začít s knihovnou Asteroid. Je to v podstatě "švýcarský nůž" na separaci mluvčích.
 
-Chceš, abych ti pomohl sestavit konkrétní startovací skript pro asteroid, který by načetl tvůj stereo soubor a zkusil ho rozdělit pomocí pre-trained modelu?
 
 
 
@@ -90,7 +93,8 @@ Vyhodnoťte výsledky rozpoznávání pro zvolené přístupy a diskutujte jejic
 Typická sekvence:
 
 git add .
-git commit -m "mono diarization + speaker-level eval"
+git commit -m "NAME"
 git push -u origin feature/mono_dia_speakerlevel
 merge do main
 volitelně smazat feature branch
+

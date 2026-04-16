@@ -1,188 +1,89 @@
-# Hlavní dokumentace ASR projektu (zkrácená verze)
+# Hlavní dokumentace ASR projektu
 
-## 1. O co v projektu jde
+## 1) Aktuální směr
 
-Projekt řeší automatický přepis českých interview nahrávek.
-Aktuální cíl je mít obhajitelnou baseline, porovnat varianty ASR a připravit separační větev.
+Projekt je rozdělen na dvě jasné větve:
 
-Prakticky řešíme:
+- MIX: referenční baseline bez separace,
+- INDIVIDUAL: hlavní experimentální větev se separací.
 
-- MONO baseline (Whisper, Faster-Whisper),
-- STEREO baseline bez separace,
-- jednotné vyhodnocení přes WER,
-- přípravu na separaci a případnou diarizaci po mluvčích.
+Cíl je obhajitelně ukázat, že INDIVIDUAL větev po separaci zlepší přepis proti MIX baseline.
 
 ---
 
-## 2. Co už máme hotové
+## 2) Aktuální skripty (scripts)
 
-### 2.1 Skripty
+- `scripts/audio_processor.py` -> příprava L/R + MIX audia
+- `scripts/asr_mix_whisper.py` -> ASR pro MIX větev
+- `scripts/asr_individual_whisper.py` -> ASR pro INDIVIDUAL baseline (bez separace)
+- `scripts/evaluate_wer.py` -> jednotné text-level vyhodnocení
 
-- scripts/asr_mono_whisper.py
-- scripts/asr_mono_fastwhisper.py
-- scripts/asr_stereo.py
-- scripts/evaluate_wer.py
-
-### 2.2 Evaluace
-
-Vyhodnocení běží přes jednotný evaluator.
-Používá se strict i robust WER, plus diagnostické reporty.
-
-### 2.3 Důležité pozorování
-
-- Faster-Whisper varianta s chunkingem běží rychleji než klasický Whisper.
-- Po sjednocení chunkingu a postprocessingu vychází WER mezi Whisper a Faster-Whisper podobně.
-- Chunking pomáhá stabilitě (hlavně náběh s tichem/šumem) a při overlapu drží kvalitu na podobné úrovni.
-- Stereo bez separace má výrazný přeslech, což je správná baseline před separací.
+Poznámka: větev fastwhisper byla odstraněna; aktivně se drží klasický OpenAI Whisper.
 
 ---
 
-## 3. Aktuální technický směr
+## 3) Výstupní soubory
 
-### 3.1 Baseline neměnit zbytečně
+Typické výstupy:
 
-Baseline má být stabilní a reprodukovatelná.
-Není cílem ji neustále ladit na minimum WER.
-Je cílem mít referenční bod pro další kroky.
+- `results/mix_results_range_whisper.json`
+- `results/12008_001_range_whisper.json` (resp. `<recording>_range_whisper.json`)
+- `results/eval_report_*.txt`
 
-### 3.2 Výstupní schema
+INDIVIDUAL výstup obsahuje navíc:
 
-Všechny hlavní výstupy držíme ve stejném JSON stylu:
+- `Speaker_L_full_transcription`
+- `speaker_R_full_transcription`
 
-- metadata
-- segments
-- full_transcription
-
-Segmenty drží minimálně:
-
-- id
-- speaker
-- speakers
-- start
-- end
-- text
-- is_overlap
-
-To je klíčové pro férové porovnání.
+Všechny varianty mají být vyhodnocovány stejným evaluátorem a stejným eval rozsahem.
 
 ---
 
-## 4. ZIPFORMER – na rozpoznání češtiny: ANO nebo NE?
+## 4) Eval protokol (zamknout)
 
-### Krátká odpověď
+Pro férové porovnání držet:
 
-ANO, ale jako samostatná experimentální větev.
-NE jako náhrada aktuální baseline v této fázi.
-
-### Důvod
-
-- Baseline je potřeba udržet stabilní (Whisper/Faster-Whisper) kvůli porovnatelnosti.
-- Zipformer může být velmi dobré rozšíření pro češtinu.
-- Pokud ho nasadíme teď místo baseline, ztratíme čisté srovnání.
-
-### Doporučení do práce
-
-Zipformer uvést jako „pokročilou větev“ nebo „future/extended experiment“.
-Výsledky porovnat proti stávající baseline stejným evaluátorem.
+- stejné referenční GT,
+- stejné časové okno,
+- stejné normalizační kroky,
+- stejný `scripts/evaluate_wer.py`.
 
 ---
 
-## 5. DIARIZACE – MONO vs STEREO
+## 5) Co je hotové
 
-### Zadání a realita
-
-Aktuálně není cíl dělat plnohodnotnou mono diarizaci jako hlavní větev.
-Hlavní praktický směr je STEREO + separace.
-
-### Co chceme metodicky
-
-Vyhodnocovat nejen „celkový text“, ale i po mluvčích.
-To znamená, že evaluator by měl umět speaker-level režim.
-
-### Doporučený postup bez zásahu do baseline
-
-Nesahat do baseline skriptů.
-Místo toho přidat samostatný skript, například:
-
-- scripts/evaluate_speaker_wer.py
-
-Ten bude:
-
-1. číst standardní JSON výsledky,
-2. číst GT s mluvčími,
-3. párovat segmenty po speaker label,
-4. počítat WER per speaker + celkově.
-
-Tím oddělíme experimentální logiku od baseline pipeline.
+- stabilní MIX baseline,
+- stabilní INDIVIDUAL baseline bez separace,
+- jednotný evaluator,
+- sjednocené názvosloví ve skriptech a výstupech.
 
 ---
 
-## 6. STEREO plán: separace → ASR → evaluate → diarizace
+## 6) Co je další hlavní krok
 
-Toto je hlavní plán další fáze:
-
-1. Vstup: stereo (L/R).
-2. Separace: redukovat přeslech mezi mluvčími.
-3. ASR: přepis každé separované stopy.
-4. Merge: sjednocení do stejného JSON schema.
-5. Evaluate WER: stejný evaluator jako dosud.
-6. Speaker-level evaluate: samostatný skript po mluvčích.
-
-### Proč takto
-
-- zachováme čistou návaznost na baseline,
-- jasně ukážeme přínos separace,
-- budeme mít měření jak celkově, tak po mluvčích.
+1. Přidat separační variantu do INDIVIDUAL větve.
+2. Vygenerovat výsledky na stejném eval rozsahu jako MIX.
+3. Vyhodnotit přes stejný evaluator.
+4. Zapsat tabulkové porovnání MIX vs INDIVIDUAL.
 
 ---
 
-## 7. Co přesně chceme dokázat v BP
+## 6.1) Speaker-level evaluace (praktické pravidlo)
 
-1. Baseline bez separace má jasné limity (zejména ve stereo).
-2. Změna backendu/modelu (Whisper vs Faster-Whisper) v této fázi přináší hlavně runtime zrychlení, zatímco WER zůstává podobné při srovnatelném chunkingu.
-3. Volba strategie zpracování (chunk + overlap) je trade-off stabilita vs rychlost, zatímco WER zůstává podobné.
-4. Separace ve stereo větvi zlepší přeslech a následně i kvalitu přepisu.
-5. Vyhodnocení po mluvčích dá přesnější obraz, kde pipeline funguje a kde ne.
+- V INDIVIDUAL větvi lze dělat speaker-level evaluaci i bez diarizace, protože po separaci má každá stopa odpovídat jednomu mluvčímu.
+- V MIX větvi speaker-level evaluaci bez spolehlivé diarizace nedělat, protože text není čistě přiřaditelný jednomu mluvčímu.
+- Pro MIX větev proto držet text-level WER; speaker-level až pokud bude validní diarizační krok.
 
 ---
 
-## 8. Praktické rozhodnutí pro nejbližší období
+## 7) Co teď není hlavní fokus
 
-### Nechat stabilní
-
-- asr_mono_whisper.py
-- asr_mono_fastwhisper.py
-- asr_stereo.py
-- evaluate_wer.py
-
-### Přidat navíc
-
-- evaluate_speaker_wer.py (nový skript mimo baseline)
-- první separační skript pro stereo větev
-
-### Nespouštět teď
-
-- velký refaktor baseline,
-- míchání více experimentálních zásahů najednou,
-- změny schema, které by rozbily staré výsledky.
+- rozšiřování experimentů mimo MIX/INDIVIDUAL osu,
+- další refaktor baseline bez přímého přínosu k porovnání,
+- komplikování TODO o vedlejší směry.
 
 ---
 
-## 9. Jak to formulovat do textu práce
+## 8) Shrnutí jednou větou
 
-V metodice jasně oddělit tři vrstvy:
-
-1. Baseline (mono/stereo bez separace)
-2. Model/backend experimenty (Whisper vs Faster-Whisper, případně Zipformer)
-3. Pokročilá stereo větev (separace + speaker-level eval)
-
-Takto bude práce přehledná a obhajitelná.
-
----
-
-## 10. Shrnutí jednou větou
-
-Aktuální stav je připravený na další krok: baseline je funkční a měřitelná, teď má smysl přidat separaci a speaker-level evaluaci v samostatných skriptech bez rozbití toho, co už funguje.
-
-
-„Mono větev je kontrolní baseline, hlavní hypotéza a hlavní přínos práce jsou ověřovány ve stereo/multikanálové větvi.“
+MIX je referenční baseline, INDIVIDUAL je hlavní větev se separací, a celý projekt je veden tak, aby šlo čistě a měřitelně porovnat přínos separace na ASR.

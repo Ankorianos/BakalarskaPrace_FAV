@@ -1,22 +1,31 @@
 import json
 import os
 import re
+import sys
+import tempfile
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
+import auditok
 import numpy as np
 import whisper
 from scipy.io import wavfile
 
 # --- NASTAVENÍ BASELINE ---
-START_SECONDS = 180
-END_SECONDS = 360
+START_SECONDS = None
+END_SECONDS = None
 MODEL_SIZE = "turbo"
 DEDUP_TIME_TOLERANCE = 1.0
-CHUNK_SECONDS = 25
+CHUNK_SECONDS = 360
 CHUNK_OVERLAP_SECONDS = 2.0
 ADJACENT_MERGE_GAP_SECONDS = 1.2
 SHORT_CONTINUATION_WORDS = 4
 MAX_ADJACENT_MERGED_WORDS = 36
+VAD_MIN_DUR = 0.25        # Zkus raději 5s, 20s je moc agresivní (přijdeš o krátké věty)
+VAD_MAX_DUR = 20       # Tohle vyřeší tvůj Error
+VAD_MAX_SILENCE = 1
+VAD_ENERGY_THRESHOLD = 45
 # --------------------------
 
 HALLUCINATION_PATTERNS = [
@@ -284,11 +293,21 @@ def resolve_time_window(start_sec=None, end_sec=None):
     return start_sec, end_sec
 
 
-def load_audio_scipy(file_path, start_sec=None, end_sec=None):
+def normalize_audio_data(data):
+    if data.dtype == np.int16:
+        return data.astype(np.float32) / 32768.0
+    if data.dtype == np.int32:
+        return data.astype(np.float32) / 2147483648.0
+    if data.dtype == np.uint8:
+        return (data.astype(np.float32) - 128.0) / 128.0
+    return data.astype(np.float32)
+
+
+def load_stereo_audio_scipy(file_path, start_sec=None, end_sec=None):
     sample_rate, data = wavfile.read(file_path)
 
-    if len(data.shape) > 1:
-        data = data[:, 0]
+    if len(data.shape) == 1 or data.shape[1] < 2:
+        raise ValueError("Vstupní soubor musí být stereo (2 kanály).")
 
     start_sec, end_sec = resolve_time_window(start_sec, end_sec)
 
@@ -297,54 +316,211 @@ def load_audio_scipy(file_path, start_sec=None, end_sec=None):
     end_sample = min(end_sample, len(data))
 
     if start_sample >= len(data):
-        data = np.array([], dtype=np.float32)
+        left = np.array([], dtype=np.float32)
+        right = np.array([], dtype=np.float32)
     else:
         data = data[start_sample:end_sample]
+        left = normalize_audio_data(data[:, 0])
+        right = normalize_audio_data(data[:, 1])
 
-    if data.dtype == np.int16:
-        data = data.astype(np.float32) / 32768.0
-    elif data.dtype == np.int32:
-        data = data.astype(np.float32) / 2147483648.0
-    elif data.dtype == np.uint8:
-        data = (data.astype(np.float32) - 128.0) / 128.0
-    else:
-        data = data.astype(np.float32)
+    return left, right, sample_rate, (start_sample / sample_rate)
 
-    return data, sample_rate, (start_sample / sample_rate)
+
+def detect_speech_windows_with_auditok(audio_data, sample_rate):
+    if len(audio_data) == 0:
+        return []
+
+    def read_region_times(region):
+        meta = getattr(region, "meta", None)
+
+        start = None
+        end = None
+        duration = None
+
+        if meta is not None:
+            if isinstance(meta, dict):
+                start = meta.get("start")
+                end = meta.get("end")
+                duration = meta.get("duration")
+            else:
+                start = getattr(meta, "start", None)
+                end = getattr(meta, "end", None)
+                duration = getattr(meta, "duration", None)
+
+        if start is None:
+            start = getattr(region, "start", None)
+        if end is None:
+            end = getattr(region, "end", None)
+        if duration is None:
+            duration = getattr(region, "duration", None)
+
+        return start, end, duration
+
+    pcm16 = np.round(np.clip(audio_data, -1.0, 1.0) * 32767.0).astype(np.int16)
+
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
+        temp_path = temp_file.name
+
+    try:
+        wavfile.write(temp_path, sample_rate, pcm16)
+        regions = auditok.split(
+            temp_path,
+            min_dur=VAD_MIN_DUR,
+            max_dur=VAD_MAX_DUR,       # Tady je to řešení
+            max_silence=VAD_MAX_SILENCE,
+            energy_threshold=VAD_ENERGY_THRESHOLD,
+        )
+
+        windows = []
+        cursor = 0.0
+        audio_duration = len(audio_data) / float(sample_rate)
+        for region in regions:
+            start, end, duration = read_region_times(region)
+
+            if start is None and end is None:
+                if duration is None:
+                    continue
+                start = cursor
+                end = cursor + float(duration)
+            elif start is None and end is not None:
+                if duration is None:
+                    start = cursor
+                else:
+                    start = float(end) - float(duration)
+            elif end is None and start is not None:
+                if duration is None:
+                    continue
+                end = float(start) + float(duration)
+
+            start = float(start)
+            end = float(end)
+            start = max(0.0, start)
+            end = min(audio_duration, end)
+            if end > start:
+                windows.append((start, end))
+                cursor = max(cursor, end)
+
+        return windows
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+def build_vad_parts(speech_windows, audio_duration):
+    if not speech_windows:
+        speech_windows = [(0.0, audio_duration)]
+
+    parts = []
+
+    for raw_start, raw_end in sorted(speech_windows, key=lambda item: item[0]):
+        start = max(0.0, float(raw_start))
+        end = min(audio_duration, float(raw_end))
+        if end <= start:
+            continue
+        parts.append((start, end))
+
+    return parts
+
+
+def build_packed_audio_from_parts(audio_data, sample_rate, parts):
+    chunk_arrays = []
+    part_map = []
+    packed_cursor = 0.0
+    gap_samples = int(0.1 * sample_rate)
+    gap_audio = np.zeros(gap_samples, dtype=np.float32) if gap_samples > 0 else None
+
+    for index, (part_start_sec, part_end_sec) in enumerate(parts):
+        part_start_sample = int(part_start_sec * sample_rate)
+        part_end_sample = int(part_end_sec * sample_rate)
+        if part_end_sample <= part_start_sample:
+            continue
+
+        part_audio = audio_data[part_start_sample:part_end_sample]
+        if len(part_audio) == 0:
+            continue
+
+        part_duration = len(part_audio) / float(sample_rate)
+        part_map.append(
+            {
+                "packed_start": packed_cursor,
+                "packed_end": packed_cursor + part_duration,
+                "original_start": float(part_start_sec),
+                "original_end": float(part_end_sec),
+            }
+        )
+
+        chunk_arrays.append(part_audio)
+        packed_cursor += part_duration
+
+        if gap_audio is not None and index < len(parts) - 1:
+            chunk_arrays.append(gap_audio)
+            packed_cursor += len(gap_audio) / float(sample_rate)
+
+    if not chunk_arrays:
+        return np.array([], dtype=np.float32), []
+
+    return np.concatenate(chunk_arrays), part_map
+
+
+def map_packed_offset_to_original(part_map, packed_offset_sec):
+    if not part_map:
+        return packed_offset_sec
+
+    offset = max(0.0, float(packed_offset_sec))
+    last_original_end = part_map[-1]["original_end"]
+
+    for index, entry in enumerate(part_map):
+        packed_start = entry["packed_start"]
+        packed_end = entry["packed_end"]
+
+        if packed_start <= offset <= packed_end:
+            within_part = offset - packed_start
+            mapped = entry["original_start"] + within_part
+            return min(entry["original_end"], max(entry["original_start"], mapped))
+
+        if offset < packed_start:
+            if index == 0:
+                return entry["original_start"]
+            return part_map[index - 1]["original_end"]
+
+    return last_original_end
 
 
 def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_sec=0.0):
-    total_samples = len(audio_data)
     chunk_samples = int(CHUNK_SECONDS * sample_rate)
-    overlap_samples = int(CHUNK_OVERLAP_SECONDS * sample_rate)
-    step_samples = max(1, chunk_samples - overlap_samples)
 
     if chunk_samples <= 0:
         return []
 
     segments = []
+    audio_duration = len(audio_data) / float(sample_rate)
 
-    for chunk_start in range(0, total_samples, step_samples):
-        chunk_end = min(chunk_start + chunk_samples, total_samples)
-        chunk_audio = audio_data[chunk_start:chunk_end]
+    speech_windows = detect_speech_windows_with_auditok(audio_data, sample_rate)
+    vad_parts = build_vad_parts(speech_windows, audio_duration)
+    packed_audio, packed_part_map = build_packed_audio_from_parts(audio_data, sample_rate, vad_parts)
 
-        if len(chunk_audio) == 0:
+    if len(packed_audio) == 0:
+        return []
+
+    packed_total_samples = len(packed_audio)
+
+    for chunk_start_sample in range(0, packed_total_samples, chunk_samples):
+        chunk_end_sample = min(chunk_start_sample + chunk_samples, packed_total_samples)
+        packed_chunk_audio = packed_audio[chunk_start_sample:chunk_end_sample]
+        if len(packed_chunk_audio) == 0:
             continue
 
-        chunk_offset_sec = base_offset_sec + (chunk_start / sample_rate)
-        chunk_end_sec = base_offset_sec + (chunk_end / sample_rate)
-        is_first_chunk = chunk_start == 0
-        is_last_chunk = chunk_end >= total_samples
-        keep_from = chunk_offset_sec if is_first_chunk else chunk_offset_sec + (CHUNK_OVERLAP_SECONDS / 2.0)
-        keep_to = chunk_end_sec if is_last_chunk else chunk_end_sec - (CHUNK_OVERLAP_SECONDS / 2.0)
+        packed_chunk_offset_sec = chunk_start_sample / float(sample_rate)
+        packed_chunk_duration_sec = len(packed_chunk_audio) / float(sample_rate)
 
         result = model.transcribe(
-            chunk_audio,
+            packed_chunk_audio,
             language="cs",
             verbose=False,
             condition_on_previous_text=False,
             no_speech_threshold=0.25,
             temperature=0.0,
+            beam_size=5,
         )
 
         for segment in result.get("segments", []):
@@ -352,24 +528,29 @@ def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_
             if is_hallucination(text):
                 continue
 
-            absolute_start = float(segment["start"]) + chunk_offset_sec
-            absolute_end = float(segment["end"]) + chunk_offset_sec
-            segment_mid = (absolute_start + absolute_end) / 2.0
+            packed_start_local = max(0.0, min(float(segment["start"]), packed_chunk_duration_sec))
+            packed_end_local = max(0.0, min(float(segment["end"]), packed_chunk_duration_sec))
 
-            if segment_mid < keep_from or segment_mid > keep_to:
+            packed_start = packed_start_local + packed_chunk_offset_sec
+            packed_end = packed_end_local + packed_chunk_offset_sec
+
+            if packed_end <= packed_start:
                 continue
+
+            original_start = map_packed_offset_to_original(packed_part_map, packed_start)
+            original_end = map_packed_offset_to_original(packed_part_map, packed_end)
+
+            absolute_start = original_start + base_offset_sec
+            absolute_end = original_end + base_offset_sec
 
             segments.append(
                 {
                     "speaker": speaker_tag,
-                    "start": round(absolute_start, 3),
-                    "end": round(absolute_end, 3),
+                    "start": absolute_start,
+                    "end": absolute_end,
                     "text": text,
                 }
             )
-
-        if chunk_end >= total_samples:
-            break
 
     deduped = deduplicate_segments(segments, time_tolerance=1.5)
     merged_overlaps = merge_overlapping_segments(deduped)
@@ -383,7 +564,7 @@ def transcribe_channel(model, audio_data, sample_rate, speaker_tag, base_offset_
 
 
 def merge_and_deduplicate(left_segments, right_segments):
-    all_segments = sorted(left_segments + right_segments, key=lambda item: (item["start"], item["speaker"]))
+    all_segments = sorted(left_segments + right_segments, key=lambda item: (item["start"], item["end"]))
     merged = []
 
     for segment in all_segments:
@@ -420,8 +601,8 @@ def enrich_segment_schema(segments):
                 "id": f"asr_{index:05d}",
                 "speaker": speaker_value,
                 "speakers": [speaker_value],
-                "start": segment["start"],
-                "end": segment["end"],
+                "start": round(float(segment["start"]), 3),
+                "end": round(float(segment["end"]), 3),
                 "text": segment["text"],
                 "is_overlap": False,
             }
@@ -429,69 +610,98 @@ def enrich_segment_schema(segments):
     return enriched
 
 
-def run_stereo_asr():
-    left_audio_path = PROJECT_ROOT / "data" / "12008_001_L.wav"
-    right_audio_path = PROJECT_ROOT / "data" / "12008_001_R.wav"
+def resolve_individual_audio_path():
+    if len(sys.argv) != 2 or not sys.argv[1].strip():
+        print("Použití: python scripts/asr_individual_whisper.py <cesta_k_stereo_wav>")
+        sys.exit(1)
+
+    return Path(sys.argv[1].strip()).expanduser().resolve()
+
+
+def run_individual_asr():
+    run_started_utc = datetime.now(timezone.utc)
+    runtime_start = time.perf_counter()
+    stereo_audio_path = resolve_individual_audio_path()
 
     start_sec, end_sec = resolve_time_window(START_SECONDS, END_SECONDS)
     has_range = start_sec is not None or end_sec is not None
-    output_name = "stereo_results_range.json" if has_range else "stereo_results_full.json"
+    output_scope = "full" if start_sec is None and end_sec is None else "range"
+    output_name = f"{stereo_audio_path.stem}_{output_scope}_whisper.json"
     output_path = PROJECT_ROOT / "results" / output_name
 
-    if not os.path.exists(left_audio_path):
-        print(f"Chyba: Soubor {left_audio_path} nebyl nalezen!")
-        return
-    if not os.path.exists(right_audio_path):
-        print(f"Chyba: Soubor {right_audio_path} nebyl nalezen!")
+    if not os.path.exists(stereo_audio_path):
+        print(f"Chyba: Soubor {stereo_audio_path} nebyl nalezen!")
         return
 
     print(f"Načítám Whisper model ({MODEL_SIZE})...")
     model = whisper.load_model(MODEL_SIZE)
 
+    print("Načítám stereo audio a rozděluji kanály (L/R)...")
+    try:
+        left_audio, right_audio, sample_rate, base_offset_sec = load_stereo_audio_scipy(
+            str(stereo_audio_path),
+            start_sec,
+            end_sec,
+        )
+    except ValueError as error:
+        print(f"Chyba: {error}")
+        return
+
     print("Zpracovávám LEVÝ kanál (Speaker_L)...")
-    left_audio, left_sample_rate, left_offset_sec = load_audio_scipy(str(left_audio_path), start_sec, end_sec)
     if len(left_audio) == 0:
         print("Chyba: Zvolený časový rozsah neobsahuje žádná data v levém kanálu.")
         return
     left_segments = transcribe_channel(
         model,
         left_audio,
-        left_sample_rate,
+        sample_rate,
         "Speaker_L",
-        base_offset_sec=left_offset_sec,
+        base_offset_sec=base_offset_sec,
     )
 
     print("Zpracovávám PRAVÝ kanál (Speaker_R)...")
-    right_audio, right_sample_rate, right_offset_sec = load_audio_scipy(str(right_audio_path), start_sec, end_sec)
     if len(right_audio) == 0:
         print("Chyba: Zvolený časový rozsah neobsahuje žádná data v pravém kanálu.")
         return
     right_segments = transcribe_channel(
         model,
         right_audio,
-        right_sample_rate,
+        sample_rate,
         "Speaker_R",
-        base_offset_sec=right_offset_sec,
+        base_offset_sec=base_offset_sec,
     )
 
     print("Slučuji segmenty a odstraňuji duplicity mezi kanály...")
     all_segments = merge_and_deduplicate(left_segments, right_segments)
     all_segments = enrich_segment_schema(all_segments)
+    speaker_l_full_transcription = " ".join(segment["text"] for segment in left_segments)
+    speaker_r_full_transcription = " ".join(segment["text"] for segment in right_segments)
     full_transcription = " ".join(segment["text"] for segment in all_segments)
+    runtime_seconds = round(time.perf_counter() - runtime_start, 2)
+    run_finished_utc = datetime.now(timezone.utc)
 
     final_output = {
         "metadata": {
-            "mode": "STEREO_SPLIT",
+            "mode": "INDIVIDUAL_SPLIT",
             "start_seconds": start_sec,
             "end_seconds": end_sec,
             "has_custom_range": has_range,
             "model": MODEL_SIZE,
+            "backend": "whisper",
             "dedup_time_tolerance": DEDUP_TIME_TOLERANCE,
             "chunk_seconds": CHUNK_SECONDS,
             "chunk_overlap_seconds": CHUNK_OVERLAP_SECONDS,
             "adjacent_merge_gap_seconds": ADJACENT_MERGE_GAP_SECONDS,
+            "vad_min_dur": VAD_MIN_DUR,
+            "vad_max_silence": VAD_MAX_SILENCE,
+            "vad_energy_threshold": VAD_ENERGY_THRESHOLD,
+            "runtime_seconds": runtime_seconds,
+            "run_started_utc": run_started_utc.isoformat(),
+            "run_finished_utc": run_finished_utc.isoformat(),
         },
         "segments": all_segments,
+        "Speaker_L_full_transcription": speaker_l_full_transcription,
+        "speaker_R_full_transcription": speaker_r_full_transcription,
         "full_transcription": full_transcription,
     }
 
@@ -502,4 +712,4 @@ def run_stereo_asr():
 
 
 if __name__ == "__main__":
-    run_stereo_asr()
+    run_individual_asr()

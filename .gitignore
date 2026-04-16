@@ -34,3 +34,8 @@ Thumbs.db
 *.mp3
 *.mp4
 *.trs
+
+
+# Files
+FormalForEvaluation.txt
+WordChanges.txt
