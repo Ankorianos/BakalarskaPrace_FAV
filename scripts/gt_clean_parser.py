@@ -137,7 +137,7 @@ def parse_turn_segments(turn, speaker_map, start_index):
 
 
 def parse_ground_truth_segments(file_path):
-    with open(file_path, "r", encoding="windows-1250") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         xml_data = file.read()
 
     xml_data = re.sub(r"<!DOCTYPE.*?>", "", xml_data)
