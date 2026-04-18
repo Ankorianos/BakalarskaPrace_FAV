@@ -108,15 +108,23 @@ def load_word_changes_map():
     with open(WORD_CHANGES_PATH, "r", encoding="utf-8", errors="ignore") as file_handle:
         for source_line in file_handle:
             line = source_line.strip()
-            if not line:
+            if not line or line.startswith("#"):
                 continue
 
-            parts = re.split(r"\t+", line)
-            if len(parts) < 2:
-                continue
+            canonical = ""
+            variant = ""
 
-            canonical = parts[0].strip().lower()
-            variant = parts[1].strip().lower()
+            if "\t" in line:
+                parts = re.split(r"\t+", line)
+                if len(parts) >= 2:
+                    canonical = parts[0].strip().lower()
+                    variant = parts[1].strip().lower()
+            else:
+                parts = line.split()
+                if len(parts) == 2:
+                    canonical = parts[0].strip().lower()
+                    variant = parts[1].strip().lower()
+
             if canonical and variant:
                 mapping[variant] = canonical
 
@@ -770,7 +778,7 @@ def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, g
         print("Chyba: Nepodařilo se extrahovat text z GT nebo HYP souboru.")
         return None
 
-    apply_word_changes = gt_file_name == "ground_truth_eval.json"
+    apply_word_changes = gt_file_name in {"ground_truth_eval.json", "formal_ground_truth_eval.json"}
     word_changes_map = load_word_changes_map() if apply_word_changes else {}
     word_changes_count = len(word_changes_map)
 

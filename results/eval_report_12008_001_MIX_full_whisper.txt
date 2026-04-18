@@ -7,15 +7,15 @@ Evaluation source: full_transcript (full_12008_001_transcript)
 Range: start=None | end=None | chunk=360s | overlap=2.0s
 Runtime: 149.52s | Run started: 2026-04-15T09:07:24.312217+00:00 | Run finished: 2026-04-15T09:09:53.837189+00:00
 --------------------------------------------------------------------------------
-WER: 17.63 %
+WER: 17.03 %
 Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
 Word counts: REF=2824 | HYP=2665
-WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13878 | checked_sub_spans=270 | replaced_tokens=71
-WordChanges impact (WER): before=20.15 % | after=17.63 % | delta=-2.51 p.b.
-HITS: 2370 | SUB: 251 | INS: 44 | DEL: 203
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=271 | replaced_tokens=78
+WordChanges impact (WER): before=19.79 % | after=17.03 % | delta=-2.76 p.b.
+HITS: 2382 | SUB: 244 | INS: 39 | DEL: 198
 
 Kvalitativní ukázky (2-3):
-1. SUB (5x): 'mně' -> 'mě'
+1. SUB (2x): 'ádler' -> 'adler'
 2. DEL (21x): 'ano'
 3. INS (3x): '<num>'
 
@@ -28,10 +28,8 @@ REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten
 HYP: ...z jeho rodiči vezl a měli jsme zaměstnance jmenová se hartmann a ten byl nacista
 
 Top substitutions:
-5x | mně => mě
 2x | ádler => adler
 2x | chodily => chodili
-2x | jsi => si
 2x | zkoušku => koušku
 2x | jiřího => jiřionáměstí
 2x | táta => tata
@@ -48,6 +46,8 @@ Top substitutions:
 1x | pelhřimově => peleřimově
 1x | ledererová => léderová
 1x | ella => ela
+1x | pelhřimově => pelřimově
+1x | napros => naprosto
 
 Top deletions:
 21x | ano
@@ -57,6 +57,8 @@ Top deletions:
 3x | jako
 3x | a
 2x | v
+2x | mhm mhm
+2x | náměstí
 1x | ano a
 1x | můžu se
 1x | židovka
@@ -68,8 +70,6 @@ Top deletions:
 1x | tam ano
 1x | má na
 1x | zbohatlický poválečný
-1x | von
-1x | židovského náboženství věrouky
 
 Top insertions:
 3x | <num>
@@ -83,7 +83,6 @@ Top insertions:
 1x | společného takže nechodili do t třídy
 1x | hrabat
 1x | protože
-1x | všechno ne ne ne vůbec
 1x | už
 1x | jednoznačnou
 1x | kdy
@@ -92,6 +91,7 @@ Top insertions:
 1x | ku
 1x | toto byla tátová výchova
 1x | a
+1x | k
 
 ================================================================================
 ================================================================================
@@ -105,14 +105,15 @@ Evaluation source: full_transcript (fallback)
 Range: start=None | end=None | chunk=360s | overlap=2.0s
 Runtime: 149.52s | Run started: 2026-04-15T09:07:24.312217+00:00 | Run finished: 2026-04-15T09:09:53.837189+00:00
 --------------------------------------------------------------------------------
-WER: 34.00 %
+WER: 32.80 %
 Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
 Word counts: REF=2238 | HYP=2665
-WordChanges: enabled=False | applied_to=none | entries=0 | checked_sub_spans=0 | replaced_tokens=0
-HITS: 1955 | SUB: 232 | INS: 478 | DEL: 51
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=188 | replaced_tokens=27
+WordChanges impact (WER): before=34.00 % | after=32.80 % | delta=-1.21 p.b.
+HITS: 1982 | SUB: 205 | INS: 478 | DEL: 51
 
 Kvalitativní ukázky (2-3):
-1. SUB (6x): 'tedy' -> 'teda'
+1. SUB (3x): 'mně' -> 'mi'
 2. DEL (3x): 'jako'
 3. INS (2x): 'když'
 
@@ -125,17 +126,12 @@ REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a
 HYP: ...z jeho rodiči vezl a měli jsme zaměstnance jmenová se hartmann a ten byl nacista
 
 Top substitutions:
-6x | tedy => teda
-5x | mně => mě
 3x | mně => mi
-3x | ministr => minister
 2x | ádler => adler
-2x | také => taky
 2x | chodily => chodili
-2x | jsi => si
 2x | takto => takhle
 2x | zkoušku => koušku
-2x | agreární => agrární
+2x | táta => tata
 2x | táta => tato
 1x | fryesová janarenefryesova => frýzová janareneefriesova
 1x | janorlik => se
@@ -145,6 +141,11 @@ Top substitutions:
 1x | spravoval => zpravoval
 1x | švýcarský => švýcarských
 1x | zajímavý => zajímavé
+1x | modrooká blondýna => modroká blondína
+1x | pelhřimova => židovka
+1x | pelhřimově => peleřimově
+1x | ledererová => léderová
+1x | ella => ela
 
 Top deletions:
 3x | jako

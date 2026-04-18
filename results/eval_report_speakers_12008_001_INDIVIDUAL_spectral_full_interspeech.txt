@@ -1,0 +1,173 @@
+ASR Speaker Evaluation Report
+================================================================================
+Source JSON: .\results\12008_001_INDIVIDUAL_spectral_full_interspeech.json
+Reference (GT): results/ground_truth_speakers.json
+Recording ID: 12008_001
+Mode: INDIVIDUAL_SPLIT | Model: INTERSPEECH2023 | Backend: interspeech
+Runtime: 115.96s | Run started: 2026-04-18T21:46:30.772146+00:00 | Run finished: 2026-04-18T21:48:26.733470+00:00
+Evaluation source: speaker_full_transcriptions
+Speaker mapping by text length:
+- interviewer <= speaker_r_full_transcription
+- interviewee <= speaker_l_full_transcription
+Mapping confidence (weighted WER): length_based=10.52 % | swapped=161.12 % | winner=length_based | delta=150.60 p.b.
+--------------------------------------------------------------------------------
+WER (interviewer): 21.72 %
+WER (interviewee): 8.57 %
+WER (macro avg): 15.14 %
+WER (weighted by REF words): 10.52 %
+
+================================================================================
+
+Speaker section: interviewer
+--------------------------------------------------------------------------------
+GT role: interviewer | ASR source: speaker_r_full_transcription
+WER: 21.72 %
+Word counts: REF=419 | HYP=379
+WordChanges: enabled=True | entries=13881 | checked_sub_spans=34 | replaced_tokens=5
+WordChanges impact (WER): before=22.91 % | after=21.72 % | delta=-1.19 p.b.
+HITS: 335 | SUB: 37 | INS: 7 | DEL: 47
+
+Kvalitativní ukázky (2-3):
+1. SUB (2x): 'tý' -> 't'
+2. DEL (3x): 'ano'
+3. INS (1x): 'je'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...dálo ještě předtím on pak šel do do transportu nebo nešel nebo co bylo předtím
+HYP: ...před tím on pak šel do transportu nebo nešel nebo co bylo před tím a
+
+Top substitutions:
+2x | tý => t
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | ano => a
+1x | ano => o
+1x | náboženství mhm => že h
+1x | tý => ty
+1x | hm => d
+1x | chodili => nechodili
+1x | ano jo => ani na
+1x | protožes => protože
+1x | vůbec => to
+1x | všecko mhm => ne vše
+1x | v ten => vt historii
+1x | tušiti => i
+1x | jo => také
+1x | ses => se
+1x | prázdniny ano => prázdný aaaaaa
+1x | sis => z
+1x | tomus => tomu
+1x | nebo => a
+
+Top deletions:
+3x | ano
+2x | a
+1x | ano ano
+1x | můžu se
+1x | hm mhm mhm
+1x | mhm mhm
+1x | mhm
+1x | ano mhm mhm ano
+1x | nebo ty
+1x | vůbec
+1x | mhm no
+1x | starý
+1x | to
+1x | proto se na to taky
+1x | ano ano ano ano
+1x | hm
+1x | lidské vlastnosti to byly
+1x | je
+1x | v
+1x | sedum <num> osum <num>
+
+Top insertions:
+1x | je
+1x | tušit
+1x | si
+1x | a
+1x | před
+1x | před tím
+
+================================================================================
+
+Speaker section: interviewee
+--------------------------------------------------------------------------------
+GT role: interviewee | ASR source: speaker_l_full_transcription
+WER: 8.57 %
+Word counts: REF=2405 | HYP=2338
+WordChanges: enabled=True | entries=13881 | checked_sub_spans=188 | replaced_tokens=86
+WordChanges impact (WER): before=12.14 % | after=8.57 % | delta=-3.58 p.b.
+HITS: 2209 | SUB: 119 | INS: 10 | DEL: 77
+
+Kvalitativní ukázky (2-3):
+1. SUB (4x): 'kerý' -> 'který'
+2. DEL (6x): 'a'
+3. INS (1x): 'a'
+
+Začátek srovnání:
+REF: jmenuju se jan orlík janorlik narodil jsem se <num> září <num> v praze ano do...
+HYP: jmenuju se jan orlík janollik narodil jsem se <num> září <num> v praze ano do...
+
+Konec srovnání:
+REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartman a ten byl nacista
+
+Top substitutions:
+4x | kerý => který
+2x | chodily => chodili
+2x | tý => t
+1x | janorlik => janollik
+1x | ádler => adler
+1x | adlera => adleera
+1x | edmond ádler => edmund adler
+1x | život => života
+1x | brunst => brunt
+1x | ella => hela
+1x | napros => naprosto
+1x | mojí => moji
+1x | ádlerová => adlerová
+1x | ádler => hadler
+1x | róza kornfiererová => koren führerová
+1x | t => to
+1x | bejzek => bezek
+1x | anektóde => tode
+1x | anekdóte => aneka
+1x | má => mám
+
+Top deletions:
+6x | a
+4x | to
+3x | v
+2x | do
+1x | z
+1x | p
+1x | tam
+1x | o
+1x | jo
+1x | buďto
+1x | vlastnil
+1x | i
+1x | jelikož
+1x | my a jinak to bylo
+1x | mnou ve třídě ne ne tam byl j
+1x | nebo <num>
+1x | celý tý jo
+1x | nic společnýho
+1x | já
+1x | n
+
+Top insertions:
+1x | a
+1x | roza
+1x | anek
+1x | v
+1x | mapa
+1x | těch
+1x | no
+1x | to
+1x | pro
+1x | pecha

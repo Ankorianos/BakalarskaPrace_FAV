@@ -1,0 +1,600 @@
+{
+  "metadata": {
+    "mode": "INDIVIDUAL_SPLIT",
+    "start_seconds": null,
+    "end_seconds": null,
+    "has_custom_range": false,
+    "model": "INTERSPEECH2023",
+    "backend": "interspeech",
+    "dedup_time_tolerance": 1.0,
+    "chunk_seconds": 60,
+    "chunk_backshift_seconds": 1.0,
+    "boundary_max_overlap_words": 8,
+    "vad_min_dur": 0.25,
+    "vad_max_dur": 20,
+    "vad_max_silence": 1,
+    "vad_energy_threshold": 45,
+    "lm_enabled": true,
+    "lm_path": "/auto/plzen1/home/jpesek/INTERSPEECH2023/LM.arpa",
+    "runtime_seconds": 115.96,
+    "run_started_utc": "2026-04-18T21:46:30.772146+00:00",
+    "run_finished_utc": "2026-04-18T21:48:26.733470+00:00"
+  },
+  "segments": [
+    {
+      "id": "asr_00001",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 35.35,
+      "end": 91.45,
+      "text": "jmenuji se jana rené frýzová jé á en á er e en é é ef er í é es ó vé á březen třináctého devatenáct set devadesát šest natáčíme rozhovor s panem inženýrem janem orlíkem praha česká republika a kdybys byl tak laskav a řekl své jméno a hláskoval ho",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00002",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 91.6,
+      "end": 134.95,
+      "text": "jmenuji se jan orlík jé á en ó el el í ká narodil jsem se dvanáctého září devatenáct set devatenáct v praze ano do roku čtyřicet šest jsem se po tátovi jmenoval adler to se hláskuje á dé el é é er a potom ve snaze to počeštit jsem to změnil na překlad",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00003",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 102.8,
+      "end": 161.8,
+      "text": "a kdy jsi se narodil a měl si nějaké jiné jméno a kdybys teď se trošku zamyslel nad tím jak to bylo u vás doma i v tvém dětství jaká jste byli rodina tím bychom mohli začít kde jste žili",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00004",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 153.5,
+      "end": 211.6,
+      "text": "já jsem se narodil v bytě svých prarodičů z máminy strany italské ulici na královských vinohradech a brzo po narození jsem byl převezen do místa působení mého otce ten pochází od německých hranic ze šumavy jmenoval se edmund adler po celý život to byl můj vzor to byl prostě ten člověk který nejvíc ovlivnil můj života on v té době spravoval velkostatek který se jmenoval starý brunt což je velkostatek který leží na hlavní silnici vedoucí z klatov do bavor",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00005",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 212.35,
+      "end": 268.8,
+      "text": "byl to vzorný statek který dneska tak jako mnoho jiných objektů na šumavě prostě zmizel neexistuje tam táta prováděl meliorizace modernizoval to dovezl švýcarský chov no prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let byla to úplná samota to bylo velmi zajímavý moje maminka je modrooká blondýna z pelhřimova židovka její dědeček teda její tatínek byl mořic klein a měl obchod koloniálem v pelhřimově babička je z rokycan",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00006",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 222.05,
+      "end": 257.65,
+      "text": "ano mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk židovka",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00007",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 269.45,
+      "end": 328.65,
+      "text": "paní jmenovala se původně ledererová a jim se narodila ta dcera hela elinka a ta chodila do školy v pelhřimově a byla to naprosto česky orientovaná rodina která neuměla pořádně německy dědeček a babička a rozuměli německy ale neovládali to maminka když se jim dařilo dobře byla jako jediný dítě vyslána do švýcar do penzionátu a tam se naučila dobře francouzsky a dobře německy což mělo velký vliv na moji výchovu a zcela jinak to bylo otcovo strany otec pochází z vesničky jménem zhůří na šumavě to je nedaleko toho velkostatku",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00008",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 329.25,
+      "end": 379.75,
+      "text": "v blízkosti hartmanic což je starý soudní okres na šumavě kde byl židovský hřbitov mimochodem řečeno který němci úplně vyvrátili tam není nic ta rodina adlerová žila tím že měli malinký krámeček a v okolních vesnicích byli jenom němci a pracovali ve sklářských hutích nebo v lese dědeček byl jmenoval se salomon hadler byl to krásný statný pán a jeho manželka se jmenovala roza koren führerová a ty neuměli česky ani slovo",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00009",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 379.55,
+      "end": 421.35,
+      "text": "ano ano ano ano a",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00010",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 381.1,
+      "end": 430.85,
+      "text": "táta sice měl českou maturitu ale ta čeština byla taková typicky sudetská to znamená prakticky že místo se říká b místo d se říká to takže on třeba říkal bezek anebo anek tode místo aneka tak dál to je zvláštnost toho německého nářečí u stolu u nás po celé mé dětství jsem mluvil výhradně česky na mám na maminku a na evu svoji sestru a výhradně německy na tatínka takže to se neustále střídal a mě to nedělalo vůbec žádné potíže ovšem jednou po válce jsem byl pozván na",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00011",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 432.5,
+      "end": 479.8,
+      "text": "takovou překladatelskou přípravku kde jsem měl fungovat na nějaký konferenci jako překladatel protože bylo mně známo že mluvím plynně oběma jazyky a tam mě podrobili zkoušce a řekli tak jak se řekne německy předradlička což jsem nevěděl a jak se řekne záhumenek což jsem také nevěděl tak se se mnou hned rozloučili že ta moje němčina dokonalá není když mi bylo šest let tak jsem šel v železné rudě kam jsme se přestěhovali do české školy celá železná ruda kde měl dědeček",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00012",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 445.85,
+      "end": 504.3,
+      "text": "ano o",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00013",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 480.6,
+      "end": 535.7,
+      "text": "vy a továrnu na štětce a vše možného patřil k takový ty velmi bohatý nebo zbohatlický poválečný generaci měšťanský on to byl člověk bez jakéhokoliv formálního vzdělání ale velice příjemný sčetlý inteligentní a měl tu zvláštní vlastnost že v čemkoliv podnikal se mu to fantasticky dařilo zemřel asi v roce třicet devět v chudobinci židovském tady v praze protože o všechno přišli ale to ne zásluhou hitlera to také ale především tím že ta rodina nežila v souladu ale to je úplně jiná kapitola já se vrátím k tomu dětství",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00014",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 512.2,
+      "end": 546.0,
+      "text": "ano já bych se ještě ptala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu abys chodil do židovské školy",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00015",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 546.2,
+      "end": 599.65,
+      "text": "v nejbližší židovská komunita byla v nýrsku což je městečko asi dvacet kilometrů vzdálené od hranic od železné rudy tam byl rabín pan klauber já jsem se s ním setkal pouze jednou nebo dvakrát při marných pokusech vychovávat ty děti těch židovských rodin v železných rudě bylo jich strašně málo snad čtyři nebo tři a tak pan rabín klauber několikrát přijel z nýrska aby nás uvedl do věrouky nebo jak se to říká ale židovského náboženství ale tento pokus ztroskotal takže jsem",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00016",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 578.75,
+      "end": 634.2,
+      "text": "ano do židovského že h",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00017",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 600.3,
+      "end": 650.35,
+      "text": "se učil hebrejsky číst asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil rodina sama byla teda rodiče byla naprosto neortodoxní vůbec jako se žádný svátky ani zvyky nedodržovali avšak to vědomí židovské tam bylo naprosto jasné to byla zvláštní směsice skutečně těch tří kultur té české která byla z matčiny strany a která byla teda smím-li to tak říct šmrncnutá jejím francouzskou výchovou ve švýcar",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00018",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 651.65,
+      "end": 709.8,
+      "text": "to byl ten největší kulturní vliv na mojí myšlení od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy a tak dále ona byla člověk velice muzický a každý měsíc jela na několik dnů do prahy aby tady nasávala kulturu řekl bych dnešníma očima až nekulturně že chodila na mapa na maty ne i na večerní představení jenom aby kompenzovala tu pustinu kulturní těch šumavských lesů kde nebylo nic později rádio takže ona jezdila k mamince a k tatínkovi do té prahy a tady nabírala kupovala knihy a potom se vrátila a vypravovala mi o koncertech o přednáškách o divadle",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00019",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 673.8,
+      "end": 718.45,
+      "text": "ano ano ano ano",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00020",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 710.8,
+      "end": 752.45,
+      "text": "později také eve mojí sestře která se narodila v roce dvacet jedna to znamená o dva roky později než já tento vliv byl velice silný druhý velmi silný vliv byla byl ten pocit toho obklopení němci to bylo velmi komplikované protože na jedné straně bylo to otcovo rodiště bylo to místo kde táta nejdřív si najal malou pilu později vlastně",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00021",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 753.1,
+      "end": 811.8,
+      "text": "a nás děti od začátku ačkoliv sám neměl český pozadí nebo český jakou minulost tak bylo bez jakýchkoliv otázek že my budeme chodit do velmi velmi chudičké české jednotřídky kde bylo pět oddělení tam byly děti od šesti do třinácti let ti učitelé to byli virtózové pedagogičtí to to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé z rodin kde rodiče cítili že by alespoň některé dítě mělo jít do české školy a ne všechny do německé ta německá byla bohatá a výstavná",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00022",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 811.95,
+      "end": 871.85,
+      "text": "a to proto aby když byl třeba otec trafikant tak aby symbolicky alespoň jedno dítě chodil do české školy nebo byly to děti dřevorubců němcům ale jelikož pracovali v českých státních lesích a česká matice školská rozdávala na vánoce boty tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do český školy ale tyto děti nechodili pravidelně takže většinou v těch to jednotřídkách byly děti z pošty od finančních úředníků od četníků a ne byljedenebo dva lékaři němci jeden lékař židovský",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00023",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 819.95,
+      "end": 877.55,
+      "text": "takže tam byly i jiné židovské děti těch málo co tam bylo u vás sám jako v celý v celým tom ty rudě d",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00024",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 872.3,
+      "end": 930.45,
+      "text": "je ale byla židovská rodina jmenovali se hartmannovi jenom jejich dcera se zachránila já myslím v americe ty byli německy orientovaní ty neměli s námi a to rozdělení bylo naprosto jednoznačné to prostě některé rodiny židovské byli orientovaný vzhledem k své minulosti na ten německý živel na tu německou kulturní oblast a druzí tak jako moje maminka a tím i my naprosto jednoznačně takže když jsem vychodil tu obecnou školu tak nejbližší gymnázium bylo čtyřicet kilometrů daleko v tojá jsem tam měl nastoupit do primy udělal jsem zkoušku",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00025",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 887.45,
+      "end": 891.8,
+      "text": "takže nechodili do té třídy ani n",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00026",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 932.25,
+      "end": 991.85,
+      "text": "a když jsem měl odjet tak tatínek s maminkou přišli ke mně do k postýlce v posteli a řekli my bychom nechtěli aby si šel z domova už ve dvanácti letech co by si tomu říkal kdybychom si najali nebo obstarali vychovatelku která by tě připravovala na zkoušky a ty by si do gymnázia chodit jenom skládat zkoušky no já jsem nevěděl jestli to je dobře nebo špatně prostě se to takhle udělalo takže primu a sekundu mě učila paní pavla moravcová dobrý pedagog která takhle už připravila nějaký děti předem mnou bydlela u nás",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00027",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 947.5,
+      "end": 993.5,
+      "text": "a",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00028",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 992.4,
+      "end": 1049.2,
+      "text": "a každých půl roku jsme jeli společně s tou slečnou moravcovou a bydleli jsme v hotelu ona na mě byla mimořádně laskavá abych jo dobře skládal zkoušku a tam jsme všechny předměty musel složit zkoušku a to bylo prima sekunda skládal jsem je dobře klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice a byl jsem tam když vyhodili ze stejného systému hrabata schönborn kteří měli zámek v gdyni a kde prostě protekce nebyla oni byli hrdý na to jaký jsou výběru vše ne ne ne",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00029",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1041.5,
+      "end": 1083.6,
+      "text": "že by se k tobě chovali nějak protože byl židovský kluk to ne ne vše",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00030",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1049.3,
+      "end": 1105.5,
+      "text": "vůbec ne naopak pan profesor chládek na biologii jeden z nejlepších profesorů který jsem znal si tam zval jiný profesory aby si poslechli jak vypadá jí odpovědi dítěte který nechodilo do školy ale který se muselo připravovat sama takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi a babičce do prahy a chodil jsem do tercie na jiřího náměstí to byla katastrofa protože já jsem byl zvyklý se učit tak abych věcem rozuměl kdežto gymnázium v na jiřího náměstí stejně jako všechny jiný školy chtějí abych správně odpovídal ne abych rozuměl takže jsem začal",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00031",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1101.0,
+      "end": 1151.65,
+      "text": "já bych z toho hlediska historie to je to je který rok když přišel do té prahy co už se mění v té historii že jo o kterou nám jde třicet dva třicet tři takže to už je to období kdy v německu se dá tušit i fašismus a tak dále také ptám že nakonec i v pohraničních oblastech",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00032",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1105.6,
+      "end": 1164.15,
+      "text": "tady rupat v jednom předmětu za druhý z latiny a tak dále protože všichni jako odmítali můj přístup jako jak to teda vlastně je oni chtěli jednoznačnou papouškovanou odpověď třicet dva třicet tři ano to už začínal ten fašismu ale v pohraničních oblastech se to vyvíjelo velice zvolna teda na tom železnorudsku v železné rudě byla silná sociální demokracie táta byl také sociální demokrat",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00033",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1165.15,
+      "end": 1216.35,
+      "text": "a jak říkám on tam chodil do školy s těmi německými obyvateli on tam ze začátku to soužití bylo mně se to aspoň tak jevilo bezproblémové od toho roku třicet tři to prudce stoupal ten německý nacionalismus a agrese takže já jsem se s tím setkal poprvé tak někdy v roce třicet čtyři třicet pět se vracel a pamatuji se přesně jak to bylo kupříkladu ne jak to bylo taková okolo potoka vedla taková úplně úzká pěšina a já na to na té pěšině jel na kole",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00034",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1170.9,
+      "end": 1209.55,
+      "text": "ano když se vracel na prázdný",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00035",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1216.5,
+      "end": 1273.75,
+      "text": "najednou proti mně vystoupili dva nebo tři němečtí kluci chytli mě zařídítka tak jak jsem na nich seděl dali mi pár facek a strčili mě abych zase musel jet a já přijel domů strašně jsem se litoval řval vzteky a řekl jsem táto tohle se mi stalo a táta který byl pro mě vždycky ideálem statečného muže mě prostě dal pár facek až se z až se mi hlava zatřepala a řekla nechoď si stěžovat když ti někdo natloukl natlučale nechoď si stěžovat a vyhodil mě a já jsem v tom vzteku v ven a na můstku přes ten potok řezna",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00036",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1231.85,
+      "end": 1283.45,
+      "text": "a a a a a a",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00037",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1274.15,
+      "end": 1313.85,
+      "text": "jsem jednoho z těch kluků nachytal vrhnul jsem se na něho tak že jsme spadli do toho potoka no a od té doby mám tu filosofii že prostě je nesprávné uhýbat jo že musí člověk čelit tak ale takovéhle situaci byla řada ale toto mě zůstalo toto byla tátova výchova ne",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00038",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1291.75,
+      "end": 1337.4,
+      "text": "čelit a jak si z to klukovsky teda vlastně tehdy vysvětloval tu změnu že jo tomu rozuměl nebo táta ti to vysvětlil on to sám pochopil a",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00039",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1314.5,
+      "end": 1364.2,
+      "text": "byla doba kdy nikdo nikomu nic nemusel vysvětlovat já jsem nečetl ani májovky ani indiánky já jsem četl medka koptu jiráska vrbu bar takže já jsem se cítil opravdu až nacionálně česky ty legionáři pro mě něco znamenali ta tradice a tak dále a z toho to ta protiněmecká protirakouská zaměřenost byla jednoznačná já vím že jeden z nejnešťastnějších okamžiků mého mládí bylo když jsem zaslechl svého tátu říkat jednomu známému",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00040",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1364.85,
+      "end": 1423.95,
+      "text": "vlastně to bylo škoda rozbito rakousko-uhersko to se nemělo stát to byla pro mě taková rána jak někdo může chválit to rakousko-uhersko který tři sta let ničilo český národ jak někdo může popírat správnost legionářského nebo masarykovského snažení o vybudování českého státu to mně trvalo mnoho let než jsem pochopil co tím vlastně otec myslí no ta táta zcela přirozený pedagog on chápal všechny klukovský sny takže od malička jsem měl psa od malička jsem pracoval s koňmi táta",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00041",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1398.8,
+      "end": 1436.5,
+      "text": "ano a i když ten táta byl teda tvůj ideál ještě jsem se chtěla optat pro které vlastnosti nebo co myslíš že právě do tebe potom přešla o",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00042",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1424.4,
+      "end": 1484.15,
+      "text": "prostě trval na práci já jsem jako malý dítě musel už pracovat na pile i když jsem jenom srovnával prkýnka tak musel ale ne nutil já jsem od malička miloval koně táta mě opravdu naučil s těmi koni zacházet já jsem v šestnácti letech v klatovech se stal jízdní jsem vstoupil do jízdního sokola klatovy byla bašta agrárnická tam bydlel ministr machník ministr za agrární stranu ministr vojenství a měl stejně starého kluka honzu on byl v selské jízdě což byla pravičácká agrární organizace kdežto já jsem byl s jízdním sokole",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00043",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1478.75,
+      "end": 1536.8,
+      "text": "ano a to který rok to už ted",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00044",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1484.4,
+      "end": 1543.3,
+      "text": "který byl mírně liberálnější organizací ale jezdili jsme společně na vojenských koních já jsem po tátovi zdědil tu lásku ke koním to tam byl dragón za války sloužil u dragonů i později a takže jsem chodil jezdit do klatovských kasáren které měly bohatou jezdeckou tradicí no a jednou byly celostátní závody mimořádně obtížný a ještě ten den mimo to pršelo kdy se měli teda na zítřek konat ty závody a to je rok asi tak třicet šest kdy já jsem přišel domů a říkal jsem",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00045",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1538.2,
+      "end": 1539.55,
+      "text": "třicet šest",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00046",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1543.6,
+      "end": 1603.2,
+      "text": "zítra se jedou ty závody táto mě přidělil pan plukovník osmnáctiletého koně edisona já ho tady mám na fotografii a honzovi machníkovi přidělil čtyřletého polořebce nádherného já proti němu nemám šanci a táta řekl a kolik co to je za závod a já jsem říkal na rychlost a na body šestnáct skoků poslušnostních velmi náročný víš táto to je taková nespravedlnost že já zítra nenastoupí a táta řekl samozřejmě honzíčku nenastoupí ale ty přece závodíš pro to abys vyhrál ne z lásky ke sportu že jo ne z lásky ke koni nýbrž vyhrát to je tvoje heslo",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00047",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1603.55,
+      "end": 1655.4,
+      "text": "tak víš co jestli zítra nenastoupíš už nemusíš chodit domů ale to všechno ve velmi přátelském tónu tomu předcházely různé jiné pedagogické zásahy jako když mi byly tři roky tak jsem u stolu prohlásil já špenát nevím a tatínek říkal to je správný honzo nikdy si nenech vnucovat věci který nechceš lidi nemají právo deformovat to osobnost a vzal takhle tu mísu s tím špenátem překlopil mi na hlavu takže mi ten špenát tak na ramena a říká ale nesmíš se divit když svět bude reagovat takhle",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00048",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1608.65,
+      "end": 1661.45,
+      "text": "a jo",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00049",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1655.65,
+      "end": 1714.2,
+      "text": "tohle jsou samý věci který jsou takhle táta postupovala vždycky ale nikdy to ne zlé nebo dalo se to že to napětí v pohraničí neustále stoupalo",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00050",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1665.75,
+      "end": 1708.9,
+      "text": "já bych trošku já bych trošku se sunula k tomu co souvisí s tím židovstvím a změnami které se děly společensky to jest tvůj otec a rodina začali jistě nějakým způsobem pak už je rok třicet sedm třicet osm třicet devět pociťovat tlak který v pohraničí nastává a možná třeba i víc a dřív než v praze židé jak se to projevilo třeba na otci a nebo co se co se dálo ještě před tím on pak šel do transportu nebo nešel nebo co bylo před tím",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00051",
+      "speaker": "Speaker_L",
+      "speakers": [
+        "Speaker_L"
+      ],
+      "start": 1714.85,
+      "end": 1753.8,
+      "text": "táta měl české přátele kupříkladu a syn pana vrchního rady pecha na onemocněl obrnou a táta zjistil že v mnichově existuje nějaký vynikající německý lékař tak tam toho kluka s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartman a ten byl nacista",
+      "is_overlap": false
+    },
+    {
+      "id": "asr_00052",
+      "speaker": "Speaker_R",
+      "speakers": [
+        "Speaker_R"
+      ],
+      "start": 1734.6,
+      "end": 1740.25,
+      "text": "a",
+      "is_overlap": false
+    }
+  ],
+  "Speaker_L_full_transcription": "jmenuji se jan orlík jé á en ó el el í ká narodil jsem se dvanáctého září devatenáct set devatenáct v praze ano do roku čtyřicet šest jsem se po tátovi jmenoval adler to se hláskuje á dé el é é er a potom ve snaze to počeštit jsem to změnil na překlad já jsem se narodil v bytě svých prarodičů z máminy strany italské ulici na královských vinohradech a brzo po narození jsem byl převezen do místa působení mého otce ten pochází od německých hranic ze šumavy jmenoval se edmund adler po celý život to byl můj vzor to byl prostě ten člověk který nejvíc ovlivnil můj života on v té době spravoval velkostatek který se jmenoval starý brunt což je velkostatek který leží na hlavní silnici vedoucí z klatov do bavor byl to vzorný statek který dneska tak jako mnoho jiných objektů na šumavě prostě zmizel neexistuje tam táta prováděl meliorizace modernizoval to dovezl švýcarský chov no prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let byla to úplná samota to bylo velmi zajímavý moje maminka je modrooká blondýna z pelhřimova židovka její dědeček teda její tatínek byl mořic klein a měl obchod koloniálem v pelhřimově babička je z rokycan paní jmenovala se původně ledererová a jim se narodila ta dcera hela elinka a ta chodila do školy v pelhřimově a byla to naprosto česky orientovaná rodina která neuměla pořádně německy dědeček a babička a rozuměli německy ale neovládali to maminka když se jim dařilo dobře byla jako jediný dítě vyslána do švýcar do penzionátu a tam se naučila dobře francouzsky a dobře německy což mělo velký vliv na moji výchovu a zcela jinak to bylo otcovo strany otec pochází z vesničky jménem zhůří na šumavě to je nedaleko toho velkostatku v blízkosti hartmanic což je starý soudní okres na šumavě kde byl židovský hřbitov mimochodem řečeno který němci úplně vyvrátili tam není nic ta rodina adlerová žila tím že měli malinký krámeček a v okolních vesnicích byli jenom němci a pracovali ve sklářských hutích nebo v lese dědeček byl jmenoval se salomon hadler byl to krásný statný pán a jeho manželka se jmenovala roza koren führerová a ty neuměli česky ani slovo táta sice měl českou maturitu ale ta čeština byla taková typicky sudetská to znamená prakticky že místo se říká b místo d se říká to takže on třeba říkal bezek anebo anek tode místo aneka tak dál to je zvláštnost toho německého nářečí u stolu u nás po celé mé dětství jsem mluvil výhradně česky na mám na maminku a na evu svoji sestru a výhradně německy na tatínka takže to se neustále střídal a mě to nedělalo vůbec žádné potíže ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku kde jsem měl fungovat na nějaký konferenci jako překladatel protože bylo mně známo že mluvím plynně oběma jazyky a tam mě podrobili zkoušce a řekli tak jak se řekne německy předradlička což jsem nevěděl a jak se řekne záhumenek což jsem také nevěděl tak se se mnou hned rozloučili že ta moje němčina dokonalá není když mi bylo šest let tak jsem šel v železné rudě kam jsme se přestěhovali do české školy celá železná ruda kde měl dědeček vy a továrnu na štětce a vše možného patřil k takový ty velmi bohatý nebo zbohatlický poválečný generaci měšťanský on to byl člověk bez jakéhokoliv formálního vzdělání ale velice příjemný sčetlý inteligentní a měl tu zvláštní vlastnost že v čemkoliv podnikal se mu to fantasticky dařilo zemřel asi v roce třicet devět v chudobinci židovském tady v praze protože o všechno přišli ale to ne zásluhou hitlera to také ale především tím že ta rodina nežila v souladu ale to je úplně jiná kapitola já se vrátím k tomu dětství v nejbližší židovská komunita byla v nýrsku což je městečko asi dvacet kilometrů vzdálené od hranic od železné rudy tam byl rabín pan klauber já jsem se s ním setkal pouze jednou nebo dvakrát při marných pokusech vychovávat ty děti těch židovských rodin v železných rudě bylo jich strašně málo snad čtyři nebo tři a tak pan rabín klauber několikrát přijel z nýrska aby nás uvedl do věrouky nebo jak se to říká ale židovského náboženství ale tento pokus ztroskotal takže jsem se učil hebrejsky číst asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil rodina sama byla teda rodiče byla naprosto neortodoxní vůbec jako se žádný svátky ani zvyky nedodržovali avšak to vědomí židovské tam bylo naprosto jasné to byla zvláštní směsice skutečně těch tří kultur té české která byla z matčiny strany a která byla teda smím-li to tak říct šmrncnutá jejím francouzskou výchovou ve švýcar to byl ten největší kulturní vliv na mojí myšlení od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy a tak dále ona byla člověk velice muzický a každý měsíc jela na několik dnů do prahy aby tady nasávala kulturu řekl bych dnešníma očima až nekulturně že chodila na mapa na maty ne i na večerní představení jenom aby kompenzovala tu pustinu kulturní těch šumavských lesů kde nebylo nic později rádio takže ona jezdila k mamince a k tatínkovi do té prahy a tady nabírala kupovala knihy a potom se vrátila a vypravovala mi o koncertech o přednáškách o divadle později také eve mojí sestře která se narodila v roce dvacet jedna to znamená o dva roky později než já tento vliv byl velice silný druhý velmi silný vliv byla byl ten pocit toho obklopení němci to bylo velmi komplikované protože na jedné straně bylo to otcovo rodiště bylo to místo kde táta nejdřív si najal malou pilu později vlastně a nás děti od začátku ačkoliv sám neměl český pozadí nebo český jakou minulost tak bylo bez jakýchkoliv otázek že my budeme chodit do velmi velmi chudičké české jednotřídky kde bylo pět oddělení tam byly děti od šesti do třinácti let ti učitelé to byli virtózové pedagogičtí to to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé z rodin kde rodiče cítili že by alespoň některé dítě mělo jít do české školy a ne všechny do německé ta německá byla bohatá a výstavná a to proto aby když byl třeba otec trafikant tak aby symbolicky alespoň jedno dítě chodil do české školy nebo byly to děti dřevorubců němcům ale jelikož pracovali v českých státních lesích a česká matice školská rozdávala na vánoce boty tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do český školy ale tyto děti nechodili pravidelně takže většinou v těch to jednotřídkách byly děti z pošty od finančních úředníků od četníků a ne byljedenebo dva lékaři němci jeden lékař židovský je ale byla židovská rodina jmenovali se hartmannovi jenom jejich dcera se zachránila já myslím v americe ty byli německy orientovaní ty neměli s námi a to rozdělení bylo naprosto jednoznačné to prostě některé rodiny židovské byli orientovaný vzhledem k své minulosti na ten německý živel na tu německou kulturní oblast a druzí tak jako moje maminka a tím i my naprosto jednoznačně takže když jsem vychodil tu obecnou školu tak nejbližší gymnázium bylo čtyřicet kilometrů daleko v tojá jsem tam měl nastoupit do primy udělal jsem zkoušku a když jsem měl odjet tak tatínek s maminkou přišli ke mně do k postýlce v posteli a řekli my bychom nechtěli aby si šel z domova už ve dvanácti letech co by si tomu říkal kdybychom si najali nebo obstarali vychovatelku která by tě připravovala na zkoušky a ty by si do gymnázia chodit jenom skládat zkoušky no já jsem nevěděl jestli to je dobře nebo špatně prostě se to takhle udělalo takže primu a sekundu mě učila paní pavla moravcová dobrý pedagog která takhle už připravila nějaký děti předem mnou bydlela u nás a každých půl roku jsme jeli společně s tou slečnou moravcovou a bydleli jsme v hotelu ona na mě byla mimořádně laskavá abych jo dobře skládal zkoušku a tam jsme všechny předměty musel složit zkoušku a to bylo prima sekunda skládal jsem je dobře klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice a byl jsem tam když vyhodili ze stejného systému hrabata schönborn kteří měli zámek v gdyni a kde prostě protekce nebyla oni byli hrdý na to jaký jsou výběru vše ne ne ne vůbec ne naopak pan profesor chládek na biologii jeden z nejlepších profesorů který jsem znal si tam zval jiný profesory aby si poslechli jak vypadá jí odpovědi dítěte který nechodilo do školy ale který se muselo připravovat sama takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi a babičce do prahy a chodil jsem do tercie na jiřího náměstí to byla katastrofa protože já jsem byl zvyklý se učit tak abych věcem rozuměl kdežto gymnázium v na jiřího náměstí stejně jako všechny jiný školy chtějí abych správně odpovídal ne abych rozuměl takže jsem začal tady rupat v jednom předmětu za druhý z latiny a tak dále protože všichni jako odmítali můj přístup jako jak to teda vlastně je oni chtěli jednoznačnou papouškovanou odpověď třicet dva třicet tři ano to už začínal ten fašismu ale v pohraničních oblastech se to vyvíjelo velice zvolna teda na tom železnorudsku v železné rudě byla silná sociální demokracie táta byl také sociální demokrat a jak říkám on tam chodil do školy s těmi německými obyvateli on tam ze začátku to soužití bylo mně se to aspoň tak jevilo bezproblémové od toho roku třicet tři to prudce stoupal ten německý nacionalismus a agrese takže já jsem se s tím setkal poprvé tak někdy v roce třicet čtyři třicet pět se vracel a pamatuji se přesně jak to bylo kupříkladu ne jak to bylo taková okolo potoka vedla taková úplně úzká pěšina a já na to na té pěšině jel na kole najednou proti mně vystoupili dva nebo tři němečtí kluci chytli mě zařídítka tak jak jsem na nich seděl dali mi pár facek a strčili mě abych zase musel jet a já přijel domů strašně jsem se litoval řval vzteky a řekl jsem táto tohle se mi stalo a táta který byl pro mě vždycky ideálem statečného muže mě prostě dal pár facek až se z až se mi hlava zatřepala a řekla nechoď si stěžovat když ti někdo natloukl natlučale nechoď si stěžovat a vyhodil mě a já jsem v tom vzteku v ven a na můstku přes ten potok řezna jsem jednoho z těch kluků nachytal vrhnul jsem se na něho tak že jsme spadli do toho potoka no a od té doby mám tu filosofii že prostě je nesprávné uhýbat jo že musí člověk čelit tak ale takovéhle situaci byla řada ale toto mě zůstalo toto byla tátova výchova ne byla doba kdy nikdo nikomu nic nemusel vysvětlovat já jsem nečetl ani májovky ani indiánky já jsem četl medka koptu jiráska vrbu bar takže já jsem se cítil opravdu až nacionálně česky ty legionáři pro mě něco znamenali ta tradice a tak dále a z toho to ta protiněmecká protirakouská zaměřenost byla jednoznačná já vím že jeden z nejnešťastnějších okamžiků mého mládí bylo když jsem zaslechl svého tátu říkat jednomu známému vlastně to bylo škoda rozbito rakousko-uhersko to se nemělo stát to byla pro mě taková rána jak někdo může chválit to rakousko-uhersko který tři sta let ničilo český národ jak někdo může popírat správnost legionářského nebo masarykovského snažení o vybudování českého státu to mně trvalo mnoho let než jsem pochopil co tím vlastně otec myslí no ta táta zcela přirozený pedagog on chápal všechny klukovský sny takže od malička jsem měl psa od malička jsem pracoval s koňmi táta prostě trval na práci já jsem jako malý dítě musel už pracovat na pile i když jsem jenom srovnával prkýnka tak musel ale ne nutil já jsem od malička miloval koně táta mě opravdu naučil s těmi koni zacházet já jsem v šestnácti letech v klatovech se stal jízdní jsem vstoupil do jízdního sokola klatovy byla bašta agrárnická tam bydlel ministr machník ministr za agrární stranu ministr vojenství a měl stejně starého kluka honzu on byl v selské jízdě což byla pravičácká agrární organizace kdežto já jsem byl s jízdním sokole který byl mírně liberálnější organizací ale jezdili jsme společně na vojenských koních já jsem po tátovi zdědil tu lásku ke koním to tam byl dragón za války sloužil u dragonů i později a takže jsem chodil jezdit do klatovských kasáren které měly bohatou jezdeckou tradicí no a jednou byly celostátní závody mimořádně obtížný a ještě ten den mimo to pršelo kdy se měli teda na zítřek konat ty závody a to je rok asi tak třicet šest kdy já jsem přišel domů a říkal jsem zítra se jedou ty závody táto mě přidělil pan plukovník osmnáctiletého koně edisona já ho tady mám na fotografii a honzovi machníkovi přidělil čtyřletého polořebce nádherného já proti němu nemám šanci a táta řekl a kolik co to je za závod a já jsem říkal na rychlost a na body šestnáct skoků poslušnostních velmi náročný víš táto to je taková nespravedlnost že já zítra nenastoupí a táta řekl samozřejmě honzíčku nenastoupí ale ty přece závodíš pro to abys vyhrál ne z lásky ke sportu že jo ne z lásky ke koni nýbrž vyhrát to je tvoje heslo tak víš co jestli zítra nenastoupíš už nemusíš chodit domů ale to všechno ve velmi přátelském tónu tomu předcházely různé jiné pedagogické zásahy jako když mi byly tři roky tak jsem u stolu prohlásil já špenát nevím a tatínek říkal to je správný honzo nikdy si nenech vnucovat věci který nechceš lidi nemají právo deformovat to osobnost a vzal takhle tu mísu s tím špenátem překlopil mi na hlavu takže mi ten špenát tak na ramena a říká ale nesmíš se divit když svět bude reagovat takhle tohle jsou samý věci který jsou takhle táta postupovala vždycky ale nikdy to ne zlé nebo dalo se to že to napětí v pohraničí neustále stoupalo táta měl české přátele kupříkladu a syn pana vrchního rady pecha na onemocněl obrnou a táta zjistil že v mnichově existuje nějaký vynikající německý lékař tak tam toho kluka s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartman a ten byl nacista",
+  "speaker_R_full_transcription": "jmenuji se jana rené frýzová jé á en á er e en é é ef er í é es ó vé á březen třináctého devatenáct set devadesát šest natáčíme rozhovor s panem inženýrem janem orlíkem praha česká republika a kdybys byl tak laskav a řekl své jméno a hláskoval ho a kdy jsi se narodil a měl si nějaké jiné jméno a kdybys teď se trošku zamyslel nad tím jak to bylo u vás doma i v tvém dětství jaká jste byli rodina tím bychom mohli začít kde jste žili ano mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk židovka ano ano ano ano a ano o ano já bych se ještě ptala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu abys chodil do židovské školy ano do židovského že h ano ano ano ano takže tam byly i jiné židovské děti těch málo co tam bylo u vás sám jako v celý v celým tom ty rudě d takže nechodili do té třídy ani n a že by se k tobě chovali nějak protože byl židovský kluk to ne ne vše já bych z toho hlediska historie to je to je který rok když přišel do té prahy co už se mění v té historii že jo o kterou nám jde třicet dva třicet tři takže to už je to období kdy v německu se dá tušit i fašismus a tak dále také ptám že nakonec i v pohraničních oblastech ano když se vracel na prázdný a a a a a a čelit a jak si z to klukovsky teda vlastně tehdy vysvětloval tu změnu že jo tomu rozuměl nebo táta ti to vysvětlil on to sám pochopil a ano a i když ten táta byl teda tvůj ideál ještě jsem se chtěla optat pro které vlastnosti nebo co myslíš že právě do tebe potom přešla o ano a to který rok to už ted třicet šest a jo já bych trošku já bych trošku se sunula k tomu co souvisí s tím židovstvím a změnami které se děly společensky to jest tvůj otec a rodina začali jistě nějakým způsobem pak už je rok třicet sedm třicet osm třicet devět pociťovat tlak který v pohraničí nastává a možná třeba i víc a dřív než v praze židé jak se to projevilo třeba na otci a nebo co se co se dálo ještě před tím on pak šel do transportu nebo nešel nebo co bylo před tím a",
+  "full_transcription": "jmenuji se jana rené frýzová jé á en á er e en é é ef er í é es ó vé á březen třináctého devatenáct set devadesát šest natáčíme rozhovor s panem inženýrem janem orlíkem praha česká republika a kdybys byl tak laskav a řekl své jméno a hláskoval ho jmenuji se jan orlík jé á en ó el el í ká narodil jsem se dvanáctého září devatenáct set devatenáct v praze ano do roku čtyřicet šest jsem se po tátovi jmenoval adler to se hláskuje á dé el é é er a potom ve snaze to počeštit jsem to změnil na překlad a kdy jsi se narodil a měl si nějaké jiné jméno a kdybys teď se trošku zamyslel nad tím jak to bylo u vás doma i v tvém dětství jaká jste byli rodina tím bychom mohli začít kde jste žili já jsem se narodil v bytě svých prarodičů z máminy strany italské ulici na královských vinohradech a brzo po narození jsem byl převezen do místa působení mého otce ten pochází od německých hranic ze šumavy jmenoval se edmund adler po celý život to byl můj vzor to byl prostě ten člověk který nejvíc ovlivnil můj života on v té době spravoval velkostatek který se jmenoval starý brunt což je velkostatek který leží na hlavní silnici vedoucí z klatov do bavor byl to vzorný statek který dneska tak jako mnoho jiných objektů na šumavě prostě zmizel neexistuje tam táta prováděl meliorizace modernizoval to dovezl švýcarský chov no prostě byl to překrásně prosperující statek a tam jsem vyrůstal do šesti let byla to úplná samota to bylo velmi zajímavý moje maminka je modrooká blondýna z pelhřimova židovka její dědeček teda její tatínek byl mořic klein a měl obchod koloniálem v pelhřimově babička je z rokycan ano mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk židovka paní jmenovala se původně ledererová a jim se narodila ta dcera hela elinka a ta chodila do školy v pelhřimově a byla to naprosto česky orientovaná rodina která neuměla pořádně německy dědeček a babička a rozuměli německy ale neovládali to maminka když se jim dařilo dobře byla jako jediný dítě vyslána do švýcar do penzionátu a tam se naučila dobře francouzsky a dobře německy což mělo velký vliv na moji výchovu a zcela jinak to bylo otcovo strany otec pochází z vesničky jménem zhůří na šumavě to je nedaleko toho velkostatku v blízkosti hartmanic což je starý soudní okres na šumavě kde byl židovský hřbitov mimochodem řečeno který němci úplně vyvrátili tam není nic ta rodina adlerová žila tím že měli malinký krámeček a v okolních vesnicích byli jenom němci a pracovali ve sklářských hutích nebo v lese dědeček byl jmenoval se salomon hadler byl to krásný statný pán a jeho manželka se jmenovala roza koren führerová a ty neuměli česky ani slovo ano ano ano ano a táta sice měl českou maturitu ale ta čeština byla taková typicky sudetská to znamená prakticky že místo se říká b místo d se říká to takže on třeba říkal bezek anebo anek tode místo aneka tak dál to je zvláštnost toho německého nářečí u stolu u nás po celé mé dětství jsem mluvil výhradně česky na mám na maminku a na evu svoji sestru a výhradně německy na tatínka takže to se neustále střídal a mě to nedělalo vůbec žádné potíže ovšem jednou po válce jsem byl pozván na takovou překladatelskou přípravku kde jsem měl fungovat na nějaký konferenci jako překladatel protože bylo mně známo že mluvím plynně oběma jazyky a tam mě podrobili zkoušce a řekli tak jak se řekne německy předradlička což jsem nevěděl a jak se řekne záhumenek což jsem také nevěděl tak se se mnou hned rozloučili že ta moje němčina dokonalá není když mi bylo šest let tak jsem šel v železné rudě kam jsme se přestěhovali do české školy celá železná ruda kde měl dědeček ano o vy a továrnu na štětce a vše možného patřil k takový ty velmi bohatý nebo zbohatlický poválečný generaci měšťanský on to byl člověk bez jakéhokoliv formálního vzdělání ale velice příjemný sčetlý inteligentní a měl tu zvláštní vlastnost že v čemkoliv podnikal se mu to fantasticky dařilo zemřel asi v roce třicet devět v chudobinci židovském tady v praze protože o všechno přišli ale to ne zásluhou hitlera to také ale především tím že ta rodina nežila v souladu ale to je úplně jiná kapitola já se vrátím k tomu dětství ano já bych se ještě ptala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu abys chodil do židovské školy v nejbližší židovská komunita byla v nýrsku což je městečko asi dvacet kilometrů vzdálené od hranic od železné rudy tam byl rabín pan klauber já jsem se s ním setkal pouze jednou nebo dvakrát při marných pokusech vychovávat ty děti těch židovských rodin v železných rudě bylo jich strašně málo snad čtyři nebo tři a tak pan rabín klauber několikrát přijel z nýrska aby nás uvedl do věrouky nebo jak se to říká ale židovského náboženství ale tento pokus ztroskotal takže jsem ano do židovského že h se učil hebrejsky číst asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil rodina sama byla teda rodiče byla naprosto neortodoxní vůbec jako se žádný svátky ani zvyky nedodržovali avšak to vědomí židovské tam bylo naprosto jasné to byla zvláštní směsice skutečně těch tří kultur té české která byla z matčiny strany a která byla teda smím-li to tak říct šmrncnutá jejím francouzskou výchovou ve švýcar to byl ten největší kulturní vliv na mojí myšlení od hudby až po výtvarné umění a literaturu jí chodili francouzský knihy a tak dále ona byla člověk velice muzický a každý měsíc jela na několik dnů do prahy aby tady nasávala kulturu řekl bych dnešníma očima až nekulturně že chodila na mapa na maty ne i na večerní představení jenom aby kompenzovala tu pustinu kulturní těch šumavských lesů kde nebylo nic později rádio takže ona jezdila k mamince a k tatínkovi do té prahy a tady nabírala kupovala knihy a potom se vrátila a vypravovala mi o koncertech o přednáškách o divadle ano ano ano ano později také eve mojí sestře která se narodila v roce dvacet jedna to znamená o dva roky později než já tento vliv byl velice silný druhý velmi silný vliv byla byl ten pocit toho obklopení němci to bylo velmi komplikované protože na jedné straně bylo to otcovo rodiště bylo to místo kde táta nejdřív si najal malou pilu později vlastně a nás děti od začátku ačkoliv sám neměl český pozadí nebo český jakou minulost tak bylo bez jakýchkoliv otázek že my budeme chodit do velmi velmi chudičké české jednotřídky kde bylo pět oddělení tam byly děti od šesti do třinácti let ti učitelé to byli virtózové pedagogičtí to to je něco neuvěřitelného protože do těch českých menšinových škol v pohraničí chodili děti německé z rodin kde rodiče cítili že by alespoň některé dítě mělo jít do české školy a ne všechny do německé ta německá byla bohatá a výstavná a to proto aby když byl třeba otec trafikant tak aby symbolicky alespoň jedno dítě chodil do české školy nebo byly to děti dřevorubců němcům ale jelikož pracovali v českých státních lesích a česká matice školská rozdávala na vánoce boty tak ti němečtí dřevaři jedno ze svých osmnácti dětí poslali do český školy ale tyto děti nechodili pravidelně takže většinou v těch to jednotřídkách byly děti z pošty od finančních úředníků od četníků a ne byljedenebo dva lékaři němci jeden lékař židovský takže tam byly i jiné židovské děti těch málo co tam bylo u vás sám jako v celý v celým tom ty rudě d je ale byla židovská rodina jmenovali se hartmannovi jenom jejich dcera se zachránila já myslím v americe ty byli německy orientovaní ty neměli s námi a to rozdělení bylo naprosto jednoznačné to prostě některé rodiny židovské byli orientovaný vzhledem k své minulosti na ten německý živel na tu německou kulturní oblast a druzí tak jako moje maminka a tím i my naprosto jednoznačně takže když jsem vychodil tu obecnou školu tak nejbližší gymnázium bylo čtyřicet kilometrů daleko v tojá jsem tam měl nastoupit do primy udělal jsem zkoušku takže nechodili do té třídy ani n a když jsem měl odjet tak tatínek s maminkou přišli ke mně do k postýlce v posteli a řekli my bychom nechtěli aby si šel z domova už ve dvanácti letech co by si tomu říkal kdybychom si najali nebo obstarali vychovatelku která by tě připravovala na zkoušky a ty by si do gymnázia chodit jenom skládat zkoušky no já jsem nevěděl jestli to je dobře nebo špatně prostě se to takhle udělalo takže primu a sekundu mě učila paní pavla moravcová dobrý pedagog která takhle už připravila nějaký děti předem mnou bydlela u nás a a každých půl roku jsme jeli společně s tou slečnou moravcovou a bydleli jsme v hotelu ona na mě byla mimořádně laskavá abych jo dobře skládal zkoušku a tam jsme všechny předměty musel složit zkoušku a to bylo prima sekunda skládal jsem je dobře klatovský gymnázium bylo nejpřísnější gymnázium jezuitský v republice a byl jsem tam když vyhodili ze stejného systému hrabata schönborn kteří měli zámek v gdyni a kde prostě protekce nebyla oni byli hrdý na to jaký jsou výběru vše ne ne ne že by se k tobě chovali nějak protože byl židovský kluk to ne ne vše vůbec ne naopak pan profesor chládek na biologii jeden z nejlepších profesorů který jsem znal si tam zval jiný profesory aby si poslechli jak vypadá jí odpovědi dítěte který nechodilo do školy ale který se muselo připravovat sama takže ty zkoušky jsem skládal výborně a potom jsem přišel k dědečkovi a babičce do prahy a chodil jsem do tercie na jiřího náměstí to byla katastrofa protože já jsem byl zvyklý se učit tak abych věcem rozuměl kdežto gymnázium v na jiřího náměstí stejně jako všechny jiný školy chtějí abych správně odpovídal ne abych rozuměl takže jsem začal já bych z toho hlediska historie to je to je který rok když přišel do té prahy co už se mění v té historii že jo o kterou nám jde třicet dva třicet tři takže to už je to období kdy v německu se dá tušit i fašismus a tak dále také ptám že nakonec i v pohraničních oblastech tady rupat v jednom předmětu za druhý z latiny a tak dále protože všichni jako odmítali můj přístup jako jak to teda vlastně je oni chtěli jednoznačnou papouškovanou odpověď třicet dva třicet tři ano to už začínal ten fašismu ale v pohraničních oblastech se to vyvíjelo velice zvolna teda na tom železnorudsku v železné rudě byla silná sociální demokracie táta byl také sociální demokrat a jak říkám on tam chodil do školy s těmi německými obyvateli on tam ze začátku to soužití bylo mně se to aspoň tak jevilo bezproblémové od toho roku třicet tři to prudce stoupal ten německý nacionalismus a agrese takže já jsem se s tím setkal poprvé tak někdy v roce třicet čtyři třicet pět se vracel a pamatuji se přesně jak to bylo kupříkladu ne jak to bylo taková okolo potoka vedla taková úplně úzká pěšina a já na to na té pěšině jel na kole ano když se vracel na prázdný najednou proti mně vystoupili dva nebo tři němečtí kluci chytli mě zařídítka tak jak jsem na nich seděl dali mi pár facek a strčili mě abych zase musel jet a já přijel domů strašně jsem se litoval řval vzteky a řekl jsem táto tohle se mi stalo a táta který byl pro mě vždycky ideálem statečného muže mě prostě dal pár facek až se z až se mi hlava zatřepala a řekla nechoď si stěžovat když ti někdo natloukl natlučale nechoď si stěžovat a vyhodil mě a já jsem v tom vzteku v ven a na můstku přes ten potok řezna a a a a a a jsem jednoho z těch kluků nachytal vrhnul jsem se na něho tak že jsme spadli do toho potoka no a od té doby mám tu filosofii že prostě je nesprávné uhýbat jo že musí člověk čelit tak ale takovéhle situaci byla řada ale toto mě zůstalo toto byla tátova výchova ne čelit a jak si z to klukovsky teda vlastně tehdy vysvětloval tu změnu že jo tomu rozuměl nebo táta ti to vysvětlil on to sám pochopil a byla doba kdy nikdo nikomu nic nemusel vysvětlovat já jsem nečetl ani májovky ani indiánky já jsem četl medka koptu jiráska vrbu bar takže já jsem se cítil opravdu až nacionálně česky ty legionáři pro mě něco znamenali ta tradice a tak dále a z toho to ta protiněmecká protirakouská zaměřenost byla jednoznačná já vím že jeden z nejnešťastnějších okamžiků mého mládí bylo když jsem zaslechl svého tátu říkat jednomu známému vlastně to bylo škoda rozbito rakousko-uhersko to se nemělo stát to byla pro mě taková rána jak někdo může chválit to rakousko-uhersko který tři sta let ničilo český národ jak někdo může popírat správnost legionářského nebo masarykovského snažení o vybudování českého státu to mně trvalo mnoho let než jsem pochopil co tím vlastně otec myslí no ta táta zcela přirozený pedagog on chápal všechny klukovský sny takže od malička jsem měl psa od malička jsem pracoval s koňmi táta ano a i když ten táta byl teda tvůj ideál ještě jsem se chtěla optat pro které vlastnosti nebo co myslíš že právě do tebe potom přešla o prostě trval na práci já jsem jako malý dítě musel už pracovat na pile i když jsem jenom srovnával prkýnka tak musel ale ne nutil já jsem od malička miloval koně táta mě opravdu naučil s těmi koni zacházet já jsem v šestnácti letech v klatovech se stal jízdní jsem vstoupil do jízdního sokola klatovy byla bašta agrárnická tam bydlel ministr machník ministr za agrární stranu ministr vojenství a měl stejně starého kluka honzu on byl v selské jízdě což byla pravičácká agrární organizace kdežto já jsem byl s jízdním sokole ano a to který rok to už ted který byl mírně liberálnější organizací ale jezdili jsme společně na vojenských koních já jsem po tátovi zdědil tu lásku ke koním to tam byl dragón za války sloužil u dragonů i později a takže jsem chodil jezdit do klatovských kasáren které měly bohatou jezdeckou tradicí no a jednou byly celostátní závody mimořádně obtížný a ještě ten den mimo to pršelo kdy se měli teda na zítřek konat ty závody a to je rok asi tak třicet šest kdy já jsem přišel domů a říkal jsem třicet šest zítra se jedou ty závody táto mě přidělil pan plukovník osmnáctiletého koně edisona já ho tady mám na fotografii a honzovi machníkovi přidělil čtyřletého polořebce nádherného já proti němu nemám šanci a táta řekl a kolik co to je za závod a já jsem říkal na rychlost a na body šestnáct skoků poslušnostních velmi náročný víš táto to je taková nespravedlnost že já zítra nenastoupí a táta řekl samozřejmě honzíčku nenastoupí ale ty přece závodíš pro to abys vyhrál ne z lásky ke sportu že jo ne z lásky ke koni nýbrž vyhrát to je tvoje heslo tak víš co jestli zítra nenastoupíš už nemusíš chodit domů ale to všechno ve velmi přátelském tónu tomu předcházely různé jiné pedagogické zásahy jako když mi byly tři roky tak jsem u stolu prohlásil já špenát nevím a tatínek říkal to je správný honzo nikdy si nenech vnucovat věci který nechceš lidi nemají právo deformovat to osobnost a vzal takhle tu mísu s tím špenátem překlopil mi na hlavu takže mi ten špenát tak na ramena a říká ale nesmíš se divit když svět bude reagovat takhle a jo tohle jsou samý věci který jsou takhle táta postupovala vždycky ale nikdy to ne zlé nebo dalo se to že to napětí v pohraničí neustále stoupalo já bych trošku já bych trošku se sunula k tomu co souvisí s tím židovstvím a změnami které se děly společensky to jest tvůj otec a rodina začali jistě nějakým způsobem pak už je rok třicet sedm třicet osm třicet devět pociťovat tlak který v pohraničí nastává a možná třeba i víc a dřív než v praze židé jak se to projevilo třeba na otci a nebo co se co se dálo ještě před tím on pak šel do transportu nebo nešel nebo co bylo před tím táta měl české přátele kupříkladu a syn pana vrchního rady pecha na onemocněl obrnou a táta zjistil že v mnichově existuje nějaký vynikající německý lékař tak tam toho kluka s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartman a ten byl nacista a"
+}

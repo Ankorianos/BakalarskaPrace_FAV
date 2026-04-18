@@ -1,21 +1,23 @@
 ASR Evaluation Report | ground_truth_eval.json
 ================================================================================
-Source JSON: .\results\12008_001_R_full_whisper.json
+Source JSON: .\results\12008_001_r_full_whisper.json
 Reference (GT): results/ground_truth_eval.json
 Mode: MIX | Model: large | Backend: whisper
+Evaluation source: full_transcript (full_12008_001_transcript)
 Range: start=None | end=None | chunk=300s | overlap=2.0s
 Runtime: 273.79s | Run started: 2026-04-01T18:52:59.516780+00:00 | Run finished: 2026-04-01T18:57:33.310837+00:00
 --------------------------------------------------------------------------------
-WER (STRICT): 23.23 %
-WER (ROBUST): 21.03 %
+WER: 18.52 %
 Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
 Word counts: REF=2824 | HYP=2678
-HITS: 2290 | SUB: 328 | INS: 60 | DEL: 206
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=284 | replaced_tokens=75
+WordChanges impact (WER): before=21.18 % | after=18.52 % | delta=-2.66 p.b.
+HITS: 2354 | SUB: 271 | INS: 53 | DEL: 199
 
 Kvalitativní ukázky (2-3):
-1. SUB (4x): 'kterej' -> 'který'
-2. SUB (3x): 'tim' -> 'tím'
-3. SUB (3x): 'řiká' -> 'říká'
+1. SUB (2x): 'chodily' -> 'chodili'
+2. DEL (15x): 'ano'
+3. INS (3x): 'a'
 
 Začátek srovnání:
 REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
@@ -26,26 +28,26 @@ REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten
 HYP: ...z jeho rodičí vezl a měli jsme zaměstnance jmenovala se hartmann a ten byl nacista
 
 Top substitutions:
-4x | kterej => který
-3x | tim => tím
-3x | řiká => říká
-3x | mně => mě
-3x | jsi => si
-3x | řek => řekl
-3x | ministr => minister
-2x | židovskej => židovský
 2x | chodily => chodili
 2x | byly => byli
 2x | zkoušku => koušku
+2x | všecko => všechno
 2x | rakousko => rakouskou
-2x | vod => od
-2x | agreární => agrární
-2x | zejtra => zítra
-2x | který => které
 1x | fryesová janarenefryesova => frýzová janareneefriesova
 1x | ádler => adler
 1x | adler => adleela
 1x | počeštit => očištit
+1x | kdybys => se
+1x | byli => byla
+1x | italské => čitelské
+1x | edmond ádler => edmund adler
+1x | spravoval => zpravoval
+1x | bavor => bavar
+1x | švýcarský chov => do švýcarských
+1x | byla => vědět
+1x | zajímavý => zajímavé
+1x | modrooká blondýna => modroká blonídina
+1x | pelhřimova => peleřimová
 
 Top deletions:
 15x | ano
@@ -54,8 +56,9 @@ Top deletions:
 4x | a
 3x | v
 3x | jako
-2x | mhm mhm
+3x | mhm mhm
 2x | jo
+2x | náměstí
 2x | teda
 1x | ano a
 1x | se
@@ -63,19 +66,18 @@ Top deletions:
 1x | židovka
 1x | hm
 1x | otcovo
-1x | mimochodem řečeno
+1x | řečeno kerej
 1x | byl
 1x | prakticky
 1x | ano a tak dál
-1x | tam ano
 
 Top insertions:
 3x | a
-3x | že
 2x | z
 2x | <num>
 2x | jsi
 2x | k
+2x | že
 1x | kdybyste
 1x | těla
 1x | ta
@@ -84,34 +86,36 @@ Top insertions:
 1x | v
 1x | takže nechodili do t třídy
 1x | protože
-1x | to ne všechno
-1x | všechno ne ne vůbec
 1x | když
 1x | jednoznačnou papoučkovanou odpověď
 1x | kdy
 1x | to je
+1x | tušit
+1x | když jsem se tkal poprvé
 
 ================================================================================
 ================================================================================
 
 ASR Evaluation Report | formal_ground_truth_eval.json
 ================================================================================
-Source JSON: .\results\12008_001_R_full_whisper.json
+Source JSON: .\results\12008_001_r_full_whisper.json
 Reference (GT): results/formal_ground_truth_eval.json
 Mode: MIX | Model: large | Backend: whisper
+Evaluation source: full_transcript (fallback)
 Range: start=None | end=None | chunk=300s | overlap=2.0s
 Runtime: 273.79s | Run started: 2026-04-01T18:52:59.516780+00:00 | Run finished: 2026-04-01T18:57:33.310837+00:00
 --------------------------------------------------------------------------------
-WER (STRICT): 37.10 %
-WER (ROBUST): 36.37 %
+WER: 35.12 %
 Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
 Word counts: REF=2238 | HYP=2678
-HITS: 1922 | SUB: 258 | INS: 498 | DEL: 58
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=203 | replaced_tokens=28
+WordChanges impact (WER): before=36.37 % | after=35.12 % | delta=-1.25 p.b.
+HITS: 1950 | SUB: 230 | INS: 498 | DEL: 58
 
 Kvalitativní ukázky (2-3):
-1. SUB (5x): 'tedy' -> 'teda'
-2. SUB (5x): 'mně' -> 'mi'
-3. SUB (3x): 'mně' -> 'mě'
+1. SUB (5x): 'mně' -> 'mi'
+2. DEL (4x): 'a'
+3. INS (3x): 'že'
 
 Začátek srovnání:
 REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
@@ -122,12 +126,7 @@ REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a
 HYP: ...z jeho rodičí vezl a měli jsme zaměstnance jmenovala se hartmann a ten byl nacista
 
 Top substitutions:
-5x | tedy => teda
 5x | mně => mi
-3x | mně => mě
-3x | také => taky
-3x | jsi => si
-3x | ministr => minister
 2x | mé => mojí
 2x | kilometrů => km
 2x | chodily => chodili
@@ -135,13 +134,18 @@ Top substitutions:
 2x | takto => takhle
 2x | zkoušku => koušku
 2x | rakousko => rakouskou
-2x | agreární => agrární
 1x | fryesová janarenefryesova => frýzová janareneefriesova
 1x | janorlik => se
 1x | ádler => adler
 1x | adlera => adleela
 1x | počeštit => očištit
 1x | kdybys => se
+1x | byli => byla
+1x | italské => čitelské
+1x | edmond ádler => edmund adler
+1x | spravoval => zpravoval
+1x | bavor => bavar
+1x | švýcarský chov => do švýcarských
 
 Top deletions:
 4x | a
