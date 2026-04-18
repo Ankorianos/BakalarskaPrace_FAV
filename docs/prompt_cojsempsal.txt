@@ -1,9 +1,18 @@
-Mám stereo dialog signál - v jednom kanálu se objevuje mluva obou dvou, ve druhém je to stejný - chci z toho udělat 1 stereo signál, kde jsou od sebe oddělený jednotlivé signály - v jednom kanálu jeden, v druhém kanálu druhej. Kdyžtak se ptej, abys věděl víc. Je to stereo minutový záznam, v jednom kanálu je více slyšet jeden řečník, ale je tam v pozadí slyšet i druhý. a naopak. Ale jsou tam momenty, kdy mluví oba dva. A chci je od sebe oddělit. Chci prostě, aby v jednom kanálu byl slyšet jen jeden a nic jiného a naopak.
+Mám stereo dialog signál - v jednom kanálu se objevuje mluva obou dvou, ve druhém je to stejný - chci z toho 
+udělat 1 stereo signál, kde jsou od sebe oddělený jednotlivé signály - v jednom kanálu jeden, v druhém kanálu 
+druhej. Kdyžtak se ptej, abys věděl víc. Je to stereo minutový záznam, v jednom kanálu je více slyšet jeden řečník,
+ ale je tam v pozadí slyšet i druhý. a naopak. Ale jsou tam momenty, kdy mluví oba dva. A chci je od sebe oddělit. 
+ Chci prostě, aby v jednom kanálu byl slyšet jen jeden a nic jiného a naopak.
 
 
 
-Vesměs mám v češtině stereo signál, kde je jeden slyšet více než druhý, ale občas se překryjou. Kdyžtak se doptej, v jakém stavu mám ten signál. Chci to dělat v Pythonu a pomoci nějakého modelu, ale aby to bylo funkční. Kdyžtak mám k dispozici i MetaCentrum, ale chci to zkusit třebas nejdřív lokálně. Najdi mi nejlepší modely, které tohle řeší nebo prostě obecně přístupy.
+Vesměs mám v češtině stereo signál, kde je jeden slyšet více než druhý, ale občas se překryjou. Kdyžtak se doptej, 
+v jakém stavu mám ten signál. Chci to dělat v Pythonu a pomoci nějakého modelu, ale aby to bylo funkční. Kdyžtak 
+mám k dispozici i MetaCentrum, ale chci to zkusit třebas nejdřív lokálně. Najdi mi nejlepší modely, které tohle 
+řeší nebo prostě obecně přístupy.
 
 
 
-Začal bych nyní obecně pouze separací - tedy mám to stereo, chci zachovat stereo informaci a získat z toho oddělený zvuk. Řekni mi jak na to, přístupy, nemusí to být hned s modelem, celkově mi řekni, klidně zatím bez kodu, jak to lidi řeší.
+Začal bych nyní obecně pouze separací - tedy mám to stereo, chci zachovat stereo informaci a získat z toho oddělený 
+zvuk. Řekni mi jak na to, přístupy, nemusí to být hned s modelem, celkově mi řekni, klidně zatím bez kodu, jak to 
+lidi řeší.

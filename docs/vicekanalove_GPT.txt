@@ -14,6 +14,7 @@ Kroky:
 2. Separace hlasů
    - Moderní deep learning modely: Conv-TasNet, SepFormer, DPRNN
    - Alternativa: Beamforming (lineární mikrofonní pole)
+   - Algoritmy: FastICA, Independent Vector Analysis (IVA).
    - Python: asteroid, nussl, pyroomacoustics
 
 3. Rozpoznání řeči (ASR)

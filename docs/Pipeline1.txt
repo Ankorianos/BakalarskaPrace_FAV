@@ -94,7 +94,5 @@ Typická sekvence:
 
 git add .
 git commit -m "NAME"
-git push -u origin feature/mono_dia_speakerlevel
-merge do main
-volitelně smazat feature branch
+git push 
 
