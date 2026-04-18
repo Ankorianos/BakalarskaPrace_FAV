@@ -12,7 +12,7 @@ from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MODEL_DIR = (PROJECT_ROOT.parent / "INTERSPEECH2023").resolve()
 DEFAULT_LM_PATH = (DEFAULT_MODEL_DIR / "LM.arpa").resolve()
-DEFAULT_AUDIO_PATH = (PROJECT_ROOT / "data/12008_001_MIX.wav").resolve()
+DEFAULT_AUDIO_PATH = (PROJECT_ROOT / "Test_sentence.wav").resolve()
 
 REQUIRED_FILES = [
     "config.json",
