@@ -1,3 +1,4 @@
+import argparse
 import json
 import re
 import xml.etree.ElementTree as ET
@@ -294,13 +295,31 @@ def build_full_speakers_summary(segments, recording_id=None):
 
 
 if __name__ == "__main__":
-    project_root = Path(__file__).resolve().parents[1]
-    trs_file = project_root / "data" / "12008_001.trs"
+    parser = argparse.ArgumentParser(
+        description="Převede TRS do GT JSON souborů (segments + speakers)."
+    )
+    parser.add_argument(
+        "trs_file",
+        help="Cesta k TRS souboru (např. data/12008_001.trs)",
+    )
+    args = parser.parse_args()
 
-    eval_output = project_root / "results" / "ground_truth_eval.json"
-    speakers_output = project_root / "results" / "ground_truth_speakers.json"
+    project_root = Path(__file__).resolve().parents[1]
+    trs_file = Path(args.trs_file).expanduser()
+    if not trs_file.is_absolute():
+        trs_file = (project_root / trs_file).resolve()
+
+    if not trs_file.exists():
+        raise FileNotFoundError(f"TRS soubor nebyl nalezen: {trs_file}")
 
     recording_id = extract_recording_id_from_path(str(trs_file))
+    if recording_id == "unknown":
+        raise ValueError("Nepodařilo se získat recording ID z názvu TRS souboru.")
+
+    results_dir = project_root / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+    eval_output = results_dir / f"{recording_id}_gt_segments.json"
+    speakers_output = results_dir / f"{recording_id}_gt_speakers.json"
 
     source_segments = parse_ground_truth_segments(str(trs_file))
     eval_segments = build_eval_reference(source_segments, recording_id=recording_id)

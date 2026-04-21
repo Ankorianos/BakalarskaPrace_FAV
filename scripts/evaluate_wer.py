@@ -82,6 +82,18 @@ def diagnostics_output_path(hyp_file):
     return f"results/eval_report_{safe_stem}.txt"
 
 
+def resolve_text_gt_files(hyp_recording_id):
+    if not hyp_recording_id:
+        return []
+
+    candidates = [
+        f"results/{hyp_recording_id}_gt_segments.json",
+        "results/all_formal_gt_segments.json",
+    ]
+
+    return [path for path in candidates if os.path.exists(path)]
+
+
 def extract_recording_id_from_filename(path_like):
     stem = Path(path_like).stem
     match = re.match(r"^(\d+_\d+)", stem)
@@ -745,7 +757,7 @@ def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, g
 
     reference_full = ""
     full_reference_id = None
-    if full_mode and gt_file_name == "ground_truth_eval.json":
+    if full_mode and gt_file_name.endswith("_gt_segments.json"):
         reference_full, full_reference_id = extract_full_reference_text(gt_selected_data, recording_id=hyp_recording_id)
         if reference_full:
             print(f"INFO: Full-mode reference použita: {full_reference_id}")
@@ -778,7 +790,7 @@ def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, g
         print("Chyba: Nepodařilo se extrahovat text z GT nebo HYP souboru.")
         return None
 
-    apply_word_changes = gt_file_name in {"ground_truth_eval.json", "formal_ground_truth_eval.json"}
+    apply_word_changes = gt_file_name.endswith("_gt_segments.json")
     word_changes_map = load_word_changes_map() if apply_word_changes else {}
     word_changes_count = len(word_changes_map)
 
@@ -889,14 +901,13 @@ def evaluate(hyp_file):
     metadata = hyp_data.get("metadata", {}) if isinstance(hyp_data, dict) else {}
     diagnostics_path = diagnostics_output_path(hyp_file)
 
-    gt_files = [
-        "results/ground_truth_eval.json",
-        "results/formal_ground_truth_eval.json",
-    ]
-    existing_gt_files = [path for path in gt_files if os.path.exists(path)]
+    existing_gt_files = resolve_text_gt_files(hyp_recording_id)
     if not existing_gt_files:
         print("Chyba: Nebyl nalezen ani jeden GT eval soubor.")
-        print("Očekáváno: results/ground_truth_eval.json a results/formal_ground_truth_eval.json")
+        print(
+            "Očekáváno např.: results/<name_part>_gt_segments.json a/nebo "
+            "results/all_formal_gt_segments.json"
+        )
         return
 
     first_section = True

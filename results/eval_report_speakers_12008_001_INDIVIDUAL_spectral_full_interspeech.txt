@@ -1,7 +1,7 @@
-ASR Speaker Evaluation Report
+ASR Speaker Evaluation Report | 12008_001_gt_speakers.json
 ================================================================================
 Source JSON: .\results\12008_001_INDIVIDUAL_spectral_full_interspeech.json
-Reference (GT): results/ground_truth_speakers.json
+Reference (GT): results/12008_001_gt_speakers.json
 Recording ID: 12008_001
 Mode: INDIVIDUAL_SPLIT | Model: INTERSPEECH2023 | Backend: interspeech
 Runtime: 115.96s | Run started: 2026-04-18T21:46:30.772146+00:00 | Run finished: 2026-04-18T21:48:26.733470+00:00
@@ -171,3 +171,156 @@ Top insertions:
 1x | to
 1x | pro
 1x | pecha
+
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+
+ASR Speaker Evaluation Report | all_formal_gt_speakers.json
+================================================================================
+Source JSON: .\results\12008_001_INDIVIDUAL_spectral_full_interspeech.json
+Reference (GT): results/all_formal_gt_speakers.json
+Recording ID: 12008_001
+Mode: INDIVIDUAL_SPLIT | Model: INTERSPEECH2023 | Backend: interspeech
+Runtime: 115.96s | Run started: 2026-04-18T21:46:30.772146+00:00 | Run finished: 2026-04-18T21:48:26.733470+00:00
+Evaluation source: speaker_full_transcriptions
+Speaker mapping by text length:
+- interviewer <= speaker_r_full_transcription
+- interviewee <= speaker_l_full_transcription
+Mapping confidence (weighted WER): length_based=29.04 % | swapped=193.92 % | winner=length_based | delta=164.88 p.b.
+--------------------------------------------------------------------------------
+WER (interviewer): 252.29 %
+WER (interviewee): 17.61 %
+WER (macro avg): 134.95 %
+WER (weighted by REF words): 29.04 %
+
+================================================================================
+
+Speaker section: interviewer
+--------------------------------------------------------------------------------
+GT role: interviewer | ASR source: speaker_r_full_transcription
+WER: 252.29 %
+Word counts: REF=109 | HYP=379
+WordChanges: enabled=True | entries=13881 | checked_sub_spans=4 | replaced_tokens=2
+WordChanges impact (WER): before=254.13 % | after=252.29 % | delta=-1.83 p.b.
+HITS: 105 | SUB: 3 | INS: 271 | DEL: 1
+
+Kvalitativní ukázky (2-3):
+1. SUB (1x): 'fryesová janarenefryesova' -> 'frýzová janareneefriesova'
+2. DEL (1x): 'ano'
+3. INS (1x): 'kdy jsi se narodil a'
+
+Začátek srovnání:
+REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+
+Konec srovnání:
+REF: ...praze židé jak se to projevilo třeba na otci anebo co se co se dálo
+HYP: ...před tím on pak šel do transportu nebo nešel nebo co bylo před tím a
+
+Top substitutions:
+1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | anebo => nebo
+
+Top deletions:
+1x | ano
+
+Top insertions:
+1x | kdy jsi se narodil a
+1x | tím bychom mohli začít kde jste žili
+1x | mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk židovka
+1x | ano ano a ano o ano já bych
+1x | ještě ptala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu abys chodil do židovské školy ano do židovského že h ano ano ano ano takže tam byly i jiné židovské děti těch málo co tam bylo u vás sám jako v celý v celým tom ty rudě d takže nechodili do t třídy ani na že by se k tobě chovali nějak protože byl židovský kluk to ne ne vše já bych z toho hlediska historie to je to je který rok když přišel do t prahy co už se mění vt historii že jo o kterou nám jde <num> takže to už je to období kdy v německu se dá tušit i fašismus a tak dále také ptám že nakonec iv pohraničních oblastech ano když se vracel na prázdný aaaaaa čelit a jak si z to klukovsky teda vlastně tehdy vysvětloval tu změnu že jo tomu rozuměl nebo táta ti to vysvětlil on to sám pochopil a ano ai když ten táta byl teda tvůj ideál ještě jsem se chtěla optat pro které vlastnosti nebo co myslíš že právě do tebe potom přešla o ano a to který rok to už ted <num> a jo já bych trošku já bych trošku se sunula k tomu co souvisí s tím židovstvím a změnami které se
+1x | a
+1x | ještě před tím on pak šel do transportu nebo nešel nebo co bylo před tím a
+
+================================================================================
+
+Speaker section: interviewee
+--------------------------------------------------------------------------------
+GT role: interviewee | ASR source: speaker_l_full_transcription
+WER: 17.61 %
+Word counts: REF=2129 | HYP=2338
+WordChanges: enabled=True | entries=13881 | checked_sub_spans=124 | replaced_tokens=18
+WordChanges impact (WER): before=18.46 % | after=17.61 % | delta=-0.85 p.b.
+HITS: 1986 | SUB: 120 | INS: 232 | DEL: 23
+
+Kvalitativní ukázky (2-3):
+1. SUB (8x): 'mně' -> 'mi'
+2. DEL (5x): 'a'
+3. INS (3x): 'a'
+
+Začátek srovnání:
+REF: jmenuji se jan orlík janorlik narodil jsem se <num> září <num> v praze ano do...
+HYP: jmenuji se jan orlík janollik narodil jsem se <num> září <num> v praze ano do...
+
+Konec srovnání:
+REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
+HYP: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartman a ten byl nacista
+
+Top substitutions:
+8x | mně => mi
+2x | chodily => chodili
+2x | takto => takhle
+1x | janorlik => janollik
+1x | ádler => adler
+1x | adlera => adleera
+1x | edmond ádler => edmund adler
+1x | život => života
+1x | brunst => brunt
+1x | ella => hela
+1x | švýcarska => švýcar
+1x | mé => moji
+1x | ádlerová => adlerová
+1x | ádler => hadler
+1x | róza kornfiererová => koren führerová
+1x | t => to
+1x | bejzek => bezek
+1x | anektóde => tode
+1x | anekdóte => dál
+1x | střídalo => střídal
+
+Top deletions:
+5x | a
+1x | v
+1x | z
+1x | p
+1x | tam
+1x | o
+1x | jo
+1x | buďto
+1x | vlastnil
+1x | i
+1x | já
+1x | klatov
+1x | nýbrž
+1x | epizoda
+1x | řidítka
+1x | do
+1x | to
+1x | outout
+1x | jí
+
+Top insertions:
+3x | a
+2x | v
+1x | byla
+1x | úplná samota to
+1x | židovka
+1x | roza
+1x | anek
+1x | aneka tak
+1x | na mám na maminku a na evu svoji sestru a výhradně německy na tatínka
+1x | tak se se mnou hned rozloučili že ta moje němčina dokonalá není
+1x | se mu to fantasticky dařilo
+1x | věrouky nebo jak se to říká
+1x | asi <num> hodiny nebo <num> hodiny za život a samozřejmě že jsem se to nenaučil
+1x | to byla zvláštní směsice skutečně těch <num> kultur
+1x | aby tady nasávala kulturu
+1x | kde nebylo nic později rádio
+1x | o divadle
+1x | to znamená o <num> roky později než já
+1x | tam byly děti
+1x | alespoň <num> dítě chodil do české školy nebo

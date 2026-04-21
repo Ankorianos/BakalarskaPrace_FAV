@@ -1,7 +1,7 @@
-ASR Evaluation Report | ground_truth_eval.json
+ASR Evaluation Report | 12008_001_gt_segments.json
 ================================================================================
 Source JSON: .\results\12008_001_MIX_full_whisper.json
-Reference (GT): results/ground_truth_eval.json
+Reference (GT): results/12008_001_gt_segments.json
 Mode: MIX | Model: large | Backend: whisper
 Evaluation source: full_transcript (full_12008_001_transcript)
 Range: start=None | end=None | chunk=360s | overlap=2.0s
@@ -96,10 +96,10 @@ Top insertions:
 ================================================================================
 ================================================================================
 
-ASR Evaluation Report | formal_ground_truth_eval.json
+ASR Evaluation Report | all_formal_gt_segments.json
 ================================================================================
 Source JSON: .\results\12008_001_MIX_full_whisper.json
-Reference (GT): results/formal_ground_truth_eval.json
+Reference (GT): results/all_formal_gt_segments.json
 Mode: MIX | Model: large | Backend: whisper
 Evaluation source: full_transcript (fallback)
 Range: start=None | end=None | chunk=360s | overlap=2.0s

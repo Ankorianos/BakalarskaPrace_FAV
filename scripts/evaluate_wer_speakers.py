@@ -85,6 +85,28 @@ def diagnostics_output_path(hyp_file):
     return f"results/eval_report_speakers_{safe_stem}.txt"
 
 
+def resolve_speaker_gt_file(recording_id):
+    if not recording_id:
+        return None
+
+    path = f"results/{recording_id}_gt_speakers.json"
+    return path if os.path.exists(path) else None
+
+
+def resolve_speaker_gt_files(recording_id):
+    files = []
+
+    primary = resolve_speaker_gt_file(recording_id)
+    if primary:
+        files.append(primary)
+
+    formal_all = "results/all_formal_gt_speakers.json"
+    if os.path.exists(formal_all):
+        files.append(formal_all)
+
+    return files
+
+
 def load_word_changes_map():
     global WORD_CHANGES_CACHE
     if WORD_CHANGES_CACHE is not None:
@@ -535,6 +557,7 @@ def build_speaker_report_section(label, role, asr_key, pair_result, word_changes
 def write_report(
     path,
     hyp_file,
+    gt_file,
     metadata,
     recording_id,
     mapping,
@@ -542,12 +565,14 @@ def write_report(
     summary,
     mapping_confidence,
     word_changes_entries,
+    append=False,
+    section_title=None,
 ):
     lines = []
-    lines.append("ASR Speaker Evaluation Report")
+    lines.append(section_title or "ASR Speaker Evaluation Report")
     lines.append("=" * 80)
     lines.append(f"Source JSON: {hyp_file}")
-    lines.append("Reference (GT): results/ground_truth_speakers.json")
+    lines.append(f"Reference (GT): {gt_file}")
     lines.append(f"Recording ID: {recording_id or 'unknown'}")
     lines.append("Mode: {mode} | Model: {model} | Backend: {backend}".format(
         mode=metadata.get("mode", "unknown") if isinstance(metadata, dict) else "unknown",
@@ -606,7 +631,11 @@ def write_report(
         )
     )
 
-    with open(path, "w", encoding="utf-8") as file_handle:
+    mode = "a" if append else "w"
+    with open(path, mode, encoding="utf-8") as file_handle:
+        if append:
+            divider = ("=" * 80 + "\n") * 5
+            file_handle.write("\n" + divider + "\n")
         file_handle.write("\n".join(lines) + "\n")
 
 
@@ -615,80 +644,91 @@ def evaluate_speakers(hyp_file):
         print(f"Chyba: Soubor {hyp_file} nebyl nalezen!")
         return
 
-    gt_file = "results/ground_truth_speakers.json"
-    if not os.path.exists(gt_file):
-        print(f"Chyba: Referenční soubor nebyl nalezen: {gt_file}")
+    recording_id = extract_recording_id_from_filename(hyp_file)
+    gt_files = resolve_speaker_gt_files(recording_id)
+    if not gt_files:
+        print("Chyba: Referenční speaker GT soubor nebyl nalezen.")
+        print("Očekáváno: results/<name_part>_gt_speakers.json a/nebo results/all_formal_gt_speakers.json")
         return
 
     hyp_data = load_json(hyp_file)
-    gt_data = load_json(gt_file)
-
-    recording_id = extract_recording_id_from_filename(hyp_file)
-
-    asr_speaker_texts = collect_asr_full_texts(hyp_data)
-    gt_speaker_texts = load_gt_speaker_texts(gt_data, recording_id=recording_id)
-
-    mapping = assign_roles_by_length(asr_speaker_texts, gt_speaker_texts)
-    swapped = swapped_mapping(mapping)
-
-    word_changes_map = load_word_changes_map()
-    word_changes_entries = len(word_changes_map)
-
-    per_role_result, summary = evaluate_mapping(
-        asr_speaker_texts=asr_speaker_texts,
-        gt_speaker_texts=gt_speaker_texts,
-        mapping=mapping,
-        word_changes_map=word_changes_map,
-    )
-    _, swapped_summary = evaluate_mapping(
-        asr_speaker_texts=asr_speaker_texts,
-        gt_speaker_texts=gt_speaker_texts,
-        mapping=swapped,
-        word_changes_map=word_changes_map,
-    )
-
-    length_based_weighted = summary["weighted_wer"]
-    swapped_weighted = swapped_summary["weighted_wer"]
-    winner = "length_based" if length_based_weighted <= swapped_weighted else "swapped"
-    mapping_confidence = {
-        "length_based_weighted_wer": length_based_weighted,
-        "swapped_weighted_wer": swapped_weighted,
-        "winner": winner,
-        "delta_percentage_points": abs(length_based_weighted - swapped_weighted) * 100,
-    }
-
     report_path = diagnostics_output_path(hyp_file)
     metadata = hyp_data.get("metadata", {}) if isinstance(hyp_data, dict) else {}
 
-    write_report(
-        path=report_path,
-        hyp_file=hyp_file,
-        metadata=metadata,
-        recording_id=recording_id,
-        mapping=mapping,
-        per_role_result=per_role_result,
-        summary=summary,
-        mapping_confidence=mapping_confidence,
-        word_changes_entries=word_changes_entries,
-    )
+    asr_speaker_texts = collect_asr_full_texts(hyp_data)
+    word_changes_map = load_word_changes_map()
+    word_changes_entries = len(word_changes_map)
 
-    print("=" * 80)
-    print("SPEAKER EVALUATION")
-    print(f"Hypotéza: {hyp_file}")
-    print(f"Reference: {gt_file}")
-    print(f"Mapování: interviewer <= {mapping['interviewer']} | interviewee <= {mapping['interviewee']}")
-    print(f"WER interviewer: {summary['interviewer_wer'] * 100:.2f} %")
-    print(f"WER interviewee: {summary['interviewee_wer'] * 100:.2f} %")
-    print(
-        "Mapping confidence (weighted WER): length_based={lb:.2f} % | swapped={sw:.2f} % | winner={winner} | delta={delta:.2f} p.b.".format(
-            lb=mapping_confidence["length_based_weighted_wer"] * 100,
-            sw=mapping_confidence["swapped_weighted_wer"] * 100,
-            winner=mapping_confidence["winner"],
-            delta=mapping_confidence["delta_percentage_points"],
+    wrote_any = False
+    for gt_file in gt_files:
+        gt_data = load_json(gt_file)
+        gt_speaker_texts = load_gt_speaker_texts(gt_data, recording_id=recording_id)
+        if not gt_speaker_texts.get("interviewer") or not gt_speaker_texts.get("interviewee"):
+            print(f"Přeskakuji {gt_file}: chybí interviewer/interviewee text pro recording {recording_id}.")
+            continue
+
+        mapping = assign_roles_by_length(asr_speaker_texts, gt_speaker_texts)
+        swapped = swapped_mapping(mapping)
+
+        per_role_result, summary = evaluate_mapping(
+            asr_speaker_texts=asr_speaker_texts,
+            gt_speaker_texts=gt_speaker_texts,
+            mapping=mapping,
+            word_changes_map=word_changes_map,
         )
-    )
-    print(f"Report uložen do: {report_path}")
-    print("=" * 80)
+        _, swapped_summary = evaluate_mapping(
+            asr_speaker_texts=asr_speaker_texts,
+            gt_speaker_texts=gt_speaker_texts,
+            mapping=swapped,
+            word_changes_map=word_changes_map,
+        )
+
+        length_based_weighted = summary["weighted_wer"]
+        swapped_weighted = swapped_summary["weighted_wer"]
+        winner = "length_based" if length_based_weighted <= swapped_weighted else "swapped"
+        mapping_confidence = {
+            "length_based_weighted_wer": length_based_weighted,
+            "swapped_weighted_wer": swapped_weighted,
+            "winner": winner,
+            "delta_percentage_points": abs(length_based_weighted - swapped_weighted) * 100,
+        }
+
+        write_report(
+            path=report_path,
+            hyp_file=hyp_file,
+            gt_file=gt_file,
+            metadata=metadata,
+            recording_id=recording_id,
+            mapping=mapping,
+            per_role_result=per_role_result,
+            summary=summary,
+            mapping_confidence=mapping_confidence,
+            word_changes_entries=word_changes_entries,
+            append=wrote_any,
+            section_title=f"ASR Speaker Evaluation Report | {Path(gt_file).name}",
+        )
+        wrote_any = True
+
+        print("=" * 80)
+        print("SPEAKER EVALUATION")
+        print(f"Hypotéza: {hyp_file}")
+        print(f"Reference: {gt_file}")
+        print(f"Mapování: interviewer <= {mapping['interviewer']} | interviewee <= {mapping['interviewee']}")
+        print(f"WER interviewer: {summary['interviewer_wer'] * 100:.2f} %")
+        print(f"WER interviewee: {summary['interviewee_wer'] * 100:.2f} %")
+        print(
+            "Mapping confidence (weighted WER): length_based={lb:.2f} % | swapped={sw:.2f} % | winner={winner} | delta={delta:.2f} p.b.".format(
+                lb=mapping_confidence["length_based_weighted_wer"] * 100,
+                sw=mapping_confidence["swapped_weighted_wer"] * 100,
+                winner=mapping_confidence["winner"],
+                delta=mapping_confidence["delta_percentage_points"],
+            )
+        )
+        print(f"Report uložen do: {report_path}")
+        print("=" * 80)
+
+    if not wrote_any:
+        print("Chyba: Nepodařilo se sestavit speaker evaluaci pro žádný GT soubor.")
 
 
 if __name__ == "__main__":

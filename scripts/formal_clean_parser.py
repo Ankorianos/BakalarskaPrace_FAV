@@ -218,8 +218,8 @@ def main():
     project_root = Path(__file__).resolve().parents[1]
     input_file = project_root / "data" / "FormalForEvaluation.txt"
 
-    eval_output = project_root / "results" / "formal_ground_truth_eval.json"
-    speakers_output = project_root / "results" / "formal_ground_truth_speakers.json"
+    eval_output = project_root / "results" / "all_formal_gt_segments.json"
+    speakers_output = project_root / "results" / "all_formal_gt_speakers.json"
 
     if not input_file.exists():
         raise FileNotFoundError(f"Vstupní soubor nebyl nalezen: {input_file}")

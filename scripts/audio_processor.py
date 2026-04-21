@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 from scipy.io import wavfile
 import os
@@ -313,8 +314,21 @@ def process_audio(file_path):
     print(f"Signal report TXT  -> {report_txt}")
 
 if __name__ == "__main__":
-    audio_file = str(Path(__file__).resolve().parents[1] / "data" / "12008_001.wav")
-    if os.path.exists(audio_file):
-        process_audio(audio_file)
+    parser = argparse.ArgumentParser(
+        description="Rozdělí stereo WAV na L/R/MIX a provede základní preprocessing."
+    )
+    parser.add_argument(
+        "audio_file",
+        help="Cesta ke vstupnímu stereo WAV souboru (např. data/12008_001.wav)",
+    )
+    args = parser.parse_args()
+
+    project_root = Path(__file__).resolve().parents[1]
+    audio_path = Path(args.audio_file).expanduser()
+    if not audio_path.is_absolute():
+        audio_path = (project_root / audio_path).resolve()
+
+    if os.path.exists(audio_path):
+        process_audio(str(audio_path))
     else:
-        print(f"Soubor {audio_file} nebyl nalezen.")
+        print(f"Soubor {audio_path} nebyl nalezen.")
