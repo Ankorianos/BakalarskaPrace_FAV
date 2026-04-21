@@ -9,32 +9,33 @@ Evaluation source: speaker_full_transcriptions
 Speaker mapping by text length:
 - interviewer <= speaker_r_full_transcription
 - interviewee <= speaker_l_full_transcription
-Mapping confidence (weighted WER): length_based=10.52 % | swapped=161.12 % | winner=length_based | delta=150.60 p.b.
+Mapping confidence (weighted WER): length_based=10.37 % | swapped=160.69 % | winner=length_based | delta=150.32 p.b.
 --------------------------------------------------------------------------------
-WER (interviewer): 21.72 %
-WER (interviewee): 8.57 %
-WER (macro avg): 15.14 %
-WER (weighted by REF words): 10.52 %
+WER (interviewer): 20.84 %
+WER (interviewee): 8.52 %
+WER (macro avg): 14.68 %
+WER (weighted by REF words): 10.37 %
 
 ================================================================================
 
 Speaker section: interviewer
 --------------------------------------------------------------------------------
 GT role: interviewer | ASR source: speaker_r_full_transcription
-WER: 21.72 %
-Word counts: REF=419 | HYP=379
-WordChanges: enabled=True | entries=13881 | checked_sub_spans=34 | replaced_tokens=5
-WordChanges impact (WER): before=22.91 % | after=21.72 % | delta=-1.19 p.b.
-HITS: 335 | SUB: 37 | INS: 7 | DEL: 47
+WER: 20.84 %
+Word counts: REF=427 | HYP=392
+WordChanges: enabled=True | entries=13881 | checked_sub_spans=37 | replaced_tokens=7
+NumberChanges: enabled=False | entries=0 | checked_sub_spans=0 | replaced_tokens=0
+WordChanges impact (WER): before=22.48 % | after=20.84 % | delta=-1.64 p.b.
+HITS: 346 | SUB: 38 | INS: 8 | DEL: 43
 
 Kvalitativní ukázky (2-3):
 1. SUB (2x): 'tý' -> 't'
 2. DEL (3x): 'ano'
-3. INS (1x): 'je'
+3. INS (1x): 'devatenáct'
 
 Začátek srovnání:
-REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
-HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+REF: jmenuji se jana rené fryesová janarenefryesova březen třináctého devatenácet devadesát šest natáčíme rozhovor s panem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen třináctého devatenáct set devadesát šest natáčíme rozhovor s...
 
 Konec srovnání:
 REF: ...dálo ještě předtím on pak šel do do transportu nebo nešel nebo co bylo předtím
@@ -43,6 +44,7 @@ HYP: ...před tím on pak šel do transportu nebo nešel nebo co bylo před tím
 Top substitutions:
 2x | tý => t
 1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | devatenácet => set
 1x | ano => a
 1x | ano => o
 1x | náboženství mhm => že h
@@ -60,7 +62,6 @@ Top substitutions:
 1x | prázdniny ano => prázdný aaaaaa
 1x | sis => z
 1x | tomus => tomu
-1x | nebo => a
 
 Top deletions:
 3x | ano
@@ -82,9 +83,10 @@ Top deletions:
 1x | lidské vlastnosti to byly
 1x | je
 1x | v
-1x | sedum <num> osum <num>
+1x | do
 
 Top insertions:
+1x | devatenáct
 1x | je
 1x | tušit
 1x | si
@@ -97,20 +99,21 @@ Top insertions:
 Speaker section: interviewee
 --------------------------------------------------------------------------------
 GT role: interviewee | ASR source: speaker_l_full_transcription
-WER: 8.57 %
-Word counts: REF=2405 | HYP=2338
-WordChanges: enabled=True | entries=13881 | checked_sub_spans=188 | replaced_tokens=86
-WordChanges impact (WER): before=12.14 % | after=8.57 % | delta=-3.58 p.b.
-HITS: 2209 | SUB: 119 | INS: 10 | DEL: 77
+WER: 8.52 %
+Word counts: REF=2417 | HYP=2351
+WordChanges: enabled=True | entries=13881 | checked_sub_spans=189 | replaced_tokens=88
+NumberChanges: enabled=False | entries=0 | checked_sub_spans=0 | replaced_tokens=0
+WordChanges impact (WER): before=12.16 % | after=8.52 % | delta=-3.64 p.b.
+HITS: 2222 | SUB: 118 | INS: 11 | DEL: 77
 
 Kvalitativní ukázky (2-3):
 1. SUB (4x): 'kerý' -> 'který'
 2. DEL (6x): 'a'
-3. INS (1x): 'a'
+3. INS (1x): 'devatenáct'
 
 Začátek srovnání:
-REF: jmenuju se jan orlík janorlik narodil jsem se <num> září <num> v praze ano do...
-HYP: jmenuju se jan orlík janollik narodil jsem se <num> září <num> v praze ano do...
+REF: jmenuju se jan orlík janorlik narodil jsem se dvanáctého září devatenácet devatenáct v praze ano...
+HYP: jmenuju se jan orlík janollik narodil jsem se dvanáctého září devatenáct set devatenáct v praze...
 
 Konec srovnání:
 REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
@@ -121,6 +124,7 @@ Top substitutions:
 2x | chodily => chodili
 2x | tý => t
 1x | janorlik => janollik
+1x | devatenácet => set
 1x | ádler => adler
 1x | adlera => adleera
 1x | edmond ádler => edmund adler
@@ -136,7 +140,6 @@ Top substitutions:
 1x | bejzek => bezek
 1x | anektóde => tode
 1x | anekdóte => aneka
-1x | má => mám
 
 Top deletions:
 6x | a
@@ -153,14 +156,15 @@ Top deletions:
 1x | i
 1x | jelikož
 1x | my a jinak to bylo
-1x | mnou ve třídě ne ne tam byl j
-1x | nebo <num>
+1x | mnou ve třídě ne ne tam byl j jeden nebo
 1x | celý tý jo
 1x | nic společnýho
 1x | já
 1x | n
+1x | klatov
 
 Top insertions:
+1x | devatenáct
 1x | a
 1x | roza
 1x | anek
@@ -189,23 +193,24 @@ Evaluation source: speaker_full_transcriptions
 Speaker mapping by text length:
 - interviewer <= speaker_r_full_transcription
 - interviewee <= speaker_l_full_transcription
-Mapping confidence (weighted WER): length_based=29.04 % | swapped=193.92 % | winner=length_based | delta=164.88 p.b.
+Mapping confidence (weighted WER): length_based=29.34 % | swapped=193.25 % | winner=length_based | delta=163.91 p.b.
 --------------------------------------------------------------------------------
-WER (interviewer): 252.29 %
-WER (interviewee): 17.61 %
-WER (macro avg): 134.95 %
-WER (weighted by REF words): 29.04 %
+WER (interviewer): 236.44 %
+WER (interviewee): 17.89 %
+WER (macro avg): 127.17 %
+WER (weighted by REF words): 29.34 %
 
 ================================================================================
 
 Speaker section: interviewer
 --------------------------------------------------------------------------------
 GT role: interviewer | ASR source: speaker_r_full_transcription
-WER: 252.29 %
-Word counts: REF=109 | HYP=379
+WER: 236.44 %
+Word counts: REF=118 | HYP=392
 WordChanges: enabled=True | entries=13881 | checked_sub_spans=4 | replaced_tokens=2
-WordChanges impact (WER): before=254.13 % | after=252.29 % | delta=-1.83 p.b.
-HITS: 105 | SUB: 3 | INS: 271 | DEL: 1
+NumberChanges: enabled=False | entries=0 | checked_sub_spans=0 | replaced_tokens=0
+WordChanges impact (WER): before=238.14 % | after=236.44 % | delta=-1.69 p.b.
+HITS: 114 | SUB: 3 | INS: 275 | DEL: 1
 
 Kvalitativní ukázky (2-3):
 1. SUB (1x): 'fryesová janarenefryesova' -> 'frýzová janareneefriesova'
@@ -213,8 +218,8 @@ Kvalitativní ukázky (2-3):
 3. INS (1x): 'kdy jsi se narodil a'
 
 Začátek srovnání:
-REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
-HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+REF: jmenuji se jana rené fryesová janarenefryesova březen třináctého devatenáct set devadesát šest natáčíme rozhovor s...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen třináctého devatenáct set devadesát šest natáčíme rozhovor s...
 
 Konec srovnání:
 REF: ...praze židé jak se to projevilo třeba na otci anebo co se co se dálo
@@ -232,7 +237,7 @@ Top insertions:
 1x | tím bychom mohli začít kde jste žili
 1x | mluvili jste doma česky nebo německy jaký byl tvůj rodný jazyk židovka
 1x | ano ano a ano o ano já bych
-1x | ještě ptala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu abys chodil do židovské školy ano do židovského že h ano ano ano ano takže tam byly i jiné židovské děti těch málo co tam bylo u vás sám jako v celý v celým tom ty rudě d takže nechodili do t třídy ani na že by se k tobě chovali nějak protože byl židovský kluk to ne ne vše já bych z toho hlediska historie to je to je který rok když přišel do t prahy co už se mění vt historii že jo o kterou nám jde <num> takže to už je to období kdy v německu se dá tušit i fašismus a tak dále také ptám že nakonec iv pohraničních oblastech ano když se vracel na prázdný aaaaaa čelit a jak si z to klukovsky teda vlastně tehdy vysvětloval tu změnu že jo tomu rozuměl nebo táta ti to vysvětlil on to sám pochopil a ano ai když ten táta byl teda tvůj ideál ještě jsem se chtěla optat pro které vlastnosti nebo co myslíš že právě do tebe potom přešla o ano a to který rok to už ted <num> a jo já bych trošku já bych trošku se sunula k tomu co souvisí s tím židovstvím a změnami které se
+1x | ještě ptala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu abys chodil do židovské školy ano do židovského že h ano ano ano ano takže tam byly i jiné židovské děti těch málo co tam bylo u vás sám jako v celý v celým tom ty rudě d takže nechodili do t třídy ani na že by se k tobě chovali nějak protože byl židovský kluk to ne ne vše já bych z toho hlediska historie to je to je který rok když přišel do t prahy co už se mění vt historii že jo o kterou nám jde třicet dva třicet tři takže to už je to období kdy v německu se dá tušit i fašismus a tak dále také ptám že nakonec iv pohraničních oblastech ano když se vracel na prázdný aaaaaa čelit a jak si z to klukovsky teda vlastně tehdy vysvětloval tu změnu že jo tomu rozuměl nebo táta ti to vysvětlil on to sám pochopil a ano ai když ten táta byl teda tvůj ideál ještě jsem se chtěla optat pro které vlastnosti nebo co myslíš že právě do tebe potom přešla o ano a to který rok to už ted třicet šest a jo já bych trošku já bych trošku se sunula k tomu co souvisí s tím židovstvím a změnami které se
 1x | a
 1x | ještě před tím on pak šel do transportu nebo nešel nebo co bylo před tím a
 
@@ -241,11 +246,12 @@ Top insertions:
 Speaker section: interviewee
 --------------------------------------------------------------------------------
 GT role: interviewee | ASR source: speaker_l_full_transcription
-WER: 17.61 %
-Word counts: REF=2129 | HYP=2338
+WER: 17.89 %
+Word counts: REF=2135 | HYP=2351
 WordChanges: enabled=True | entries=13881 | checked_sub_spans=124 | replaced_tokens=18
-WordChanges impact (WER): before=18.46 % | after=17.61 % | delta=-0.85 p.b.
-HITS: 1986 | SUB: 120 | INS: 232 | DEL: 23
+NumberChanges: enabled=False | entries=0 | checked_sub_spans=0 | replaced_tokens=0
+WordChanges impact (WER): before=18.74 % | after=17.89 % | delta=-0.84 p.b.
+HITS: 1992 | SUB: 120 | INS: 239 | DEL: 23
 
 Kvalitativní ukázky (2-3):
 1. SUB (8x): 'mně' -> 'mi'
@@ -253,8 +259,8 @@ Kvalitativní ukázky (2-3):
 3. INS (3x): 'a'
 
 Začátek srovnání:
-REF: jmenuji se jan orlík janorlik narodil jsem se <num> září <num> v praze ano do...
-HYP: jmenuji se jan orlík janollik narodil jsem se <num> září <num> v praze ano do...
+REF: jmenuji se jan orlík janorlik narodil jsem se dvanáctého září devatenáct set devatenáct v praze...
+HYP: jmenuji se jan orlík janollik narodil jsem se dvanáctého září devatenáct set devatenáct v praze...
 
 Konec srovnání:
 REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
@@ -316,11 +322,11 @@ Top insertions:
 1x | tak se se mnou hned rozloučili že ta moje němčina dokonalá není
 1x | se mu to fantasticky dařilo
 1x | věrouky nebo jak se to říká
-1x | asi <num> hodiny nebo <num> hodiny za život a samozřejmě že jsem se to nenaučil
-1x | to byla zvláštní směsice skutečně těch <num> kultur
+1x | asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem se to nenaučil
+1x | to byla zvláštní směsice skutečně těch tří kultur
 1x | aby tady nasávala kulturu
 1x | kde nebylo nic později rádio
 1x | o divadle
-1x | to znamená o <num> roky později než já
+1x | to znamená o dva roky později než já
 1x | tam byly děti
-1x | alespoň <num> dítě chodil do české školy nebo
+1x | alespoň jedno dítě chodil do české školy nebo

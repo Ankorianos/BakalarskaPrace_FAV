@@ -7,20 +7,22 @@ Evaluation source: full_transcript (full_12008_001_transcript)
 Range: start=None | end=None | chunk=300s | overlap=2.0s
 Runtime: 162.27s | Run started: 2026-04-01T17:45:05.185226+00:00 | Run finished: 2026-04-01T17:47:47.452202+00:00
 --------------------------------------------------------------------------------
-WER: 17.21 %
-Offset compensation: use=False | ref_trim=6 | hyp_trim=0 | improvement=0.18 p.b.
-Word counts: REF=2824 | HYP=2659
-WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=255 | replaced_tokens=79
-WordChanges impact (WER): before=20.01 % | after=17.21 % | delta=-2.80 p.b.
-HITS: 2388 | SUB: 221 | INS: 50 | DEL: 215
+WER: 18.11 %
+Offset compensation: use=False | ref_trim=6 | hyp_trim=0 | improvement=0.17 p.b.
+Word counts: REF=2844 | HYP=2663
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=262 | replaced_tokens=80
+WordChanges impact (WER): before=20.92 % | after=18.11 % | delta=-2.81 p.b.
+NumberChanges: enabled=True | applied_to=hyp_substitutions | entries=231671 | checked_sub_spans=265 | replaced_tokens=3
+NumberChanges impact (WER): before=21.03 % | after=20.92 % | delta=-0.11 p.b.
+HITS: 2377 | SUB: 238 | INS: 48 | DEL: 229
 
 Kvalitativní ukázky (2-3):
 1. SUB (2x): 'ádler' -> 'adler'
 2. DEL (23x): 'ano'
-3. INS (4x): '<num>'
+3. INS (2x): 'a'
 
 Začátek srovnání:
-REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+REF: jmenuji se jana rené fryesová janarenefryesova březen třináctého devatenácet devadesát šest natáčíme rozhovor s panem...
 HYP: www hradeckralove org děkuji janem orlíkem praha česká republika a kdybys byl tak laskav a...
 
 Konec srovnání:
@@ -35,7 +37,10 @@ Top substitutions:
 2x | jiřího => jiřionáměstí
 2x | kdežto => to
 1x | jmenuji se jana rené => www hradeckralove org děkuji
+1x | dvanáctého => 12
+1x | devatenácet => 1919
 1x | nějaké jiné => nějaký jiný
+1x | čtyřicet => 1946
 1x | adler => adleera
 1x | byli => byla
 1x | edmond ádler => edmund adler
@@ -45,9 +50,6 @@ Top substitutions:
 1x | modrooká blondýna => modroká blondína
 1x | pelhřimova => peleřimova
 1x | pelhřimově => peleřimově
-1x | ella => ela
-1x | pelhřimově => pelřimově
-1x | napros => naprosto
 
 Top deletions:
 23x | ano
@@ -56,31 +58,30 @@ Top deletions:
 4x | mhm
 4x | v
 3x | jo
+2x | šest
 2x | byla
 2x | jako
 2x | mhm mhm
 2x | náměstí
-1x | fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem
+1x | fryesová janarenefryesova březen třináctého devatenácet devadesát šest natáčíme rozhovor s panem inženýrem
 1x | narodil
+1x | devatenáct
 1x | ano a
 1x | můžu se
 1x | židovka
 1x | hm
 1x | otcovo
 1x | řečeno kerej
-1x | byl
-1x | prakticky
 
 Top insertions:
-4x | <num>
 2x | a
 2x | z
 2x | když
-2x | jsi
 1x | do
 1x | vzala do školy když se
 1x | v
 1x | i
+1x | tří
 1x | jeho
 1x | společného
 1x | byly věci ne
@@ -92,6 +93,7 @@ Top insertions:
 1x | kdy
 1x | když jsem setkal poprvé
 1x | ku
+1x | toto byla tátova výchova
 
 ================================================================================
 ================================================================================
@@ -105,12 +107,14 @@ Evaluation source: full_transcript (fallback)
 Range: start=None | end=None | chunk=300s | overlap=2.0s
 Runtime: 162.27s | Run started: 2026-04-01T17:45:05.185226+00:00 | Run finished: 2026-04-01T17:47:47.452202+00:00
 --------------------------------------------------------------------------------
-WER: 32.26 %
+WER: 33.07 %
 Offset compensation: use=False | ref_trim=6 | hyp_trim=0 | improvement=0.18 p.b.
-Word counts: REF=2238 | HYP=2659
-WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=176 | replaced_tokens=31
-WordChanges impact (WER): before=33.65 % | after=32.26 % | delta=-1.39 p.b.
-HITS: 1998 | SUB: 179 | INS: 482 | DEL: 61
+Word counts: REF=2253 | HYP=2663
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=183 | replaced_tokens=31
+WordChanges impact (WER): before=34.44 % | after=33.07 % | delta=-1.38 p.b.
+NumberChanges: enabled=True | applied_to=hyp_substitutions | entries=231671 | checked_sub_spans=186 | replaced_tokens=4
+NumberChanges impact (WER): before=34.62 % | after=34.44 % | delta=-0.18 p.b.
+HITS: 1990 | SUB: 191 | INS: 482 | DEL: 72
 
 Kvalitativní ukázky (2-3):
 1. SUB (5x): 'mně' -> 'mi'
@@ -118,7 +122,7 @@ Kvalitativní ukázky (2-3):
 3. INS (2x): 'z'
 
 Začátek srovnání:
-REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+REF: jmenuji se jana rené fryesová janarenefryesova březen třináctého devatenáct set devadesát šest natáčíme rozhovor s...
 HYP: www hradeckralove org děkuji janem orlíkem praha česká republika a kdybys byl tak laskav a...
 
 Konec srovnání:
@@ -134,7 +138,10 @@ Top substitutions:
 2x | kdežto => to
 1x | jmenuji se jana rené => www hradeckralove org děkuji
 1x | janorlik => se
+1x | dvanáctého => 12
+1x | devatenáct => 1919
 1x | nějaké jiné => nějaký jiný
+1x | čtyřicet => 1946
 1x | adlera => adleera
 1x | byli => byla
 1x | edmond ádler => edmund adler
@@ -143,16 +150,15 @@ Top substitutions:
 1x | zajímavý => zajímavé
 1x | modrooká blondýna => modroká blondína
 1x | pelhřimova => židovka
-1x | pelhřimově => peleřimově
-1x | ella => ela
-1x | pelhřimově => pelřimově
 
 Top deletions:
 6x | a
 3x | ano
 3x | to
 2x | jako
-1x | fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem
+1x | fryesová janarenefryesova březen třináctého devatenáct set devadesát šest natáčíme rozhovor s panem inženýrem
+1x | set devatenáct
+1x | šest
 1x | otcovo
 1x | mimochodem řečeno
 1x | byl
@@ -161,20 +167,16 @@ Top deletions:
 1x | jo
 1x | nebo zbohatlické
 1x | on
+1x | devět
 1x | tedy
 1x | outout pardon na
 1x | byla
 1x | rodiště
-1x | český
-1x | i
-1x | židovské
 
 Top insertions:
 2x | z
 2x | když
 2x | že
-2x | <num>
-2x | je
 1x | janorlika kdy jsi
 1x | tím bychom mohli začít kde jste žili
 1x | do
@@ -187,6 +189,8 @@ Top insertions:
 1x | se mu to fantasticky dařilo
 1x | já bych se ještě utála tam byla někde okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu aby shodil do židovské
 1x | vierouky nebo jak se to říká
-1x | kubřeohebrejský číst asi <num> hodiny nebo <num> hodiny za život a samozřejmě že jsem
-1x | to byla zvláštní směsice skutečně těch <num> kultů
+1x | kubřeohebrejský číst asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem
+1x | to byla zvláštní směsice skutečně těch tří kultů
 1x | aby tady nasávala kulturu
+1x | v
+1x | kde nebylo nic později rádio

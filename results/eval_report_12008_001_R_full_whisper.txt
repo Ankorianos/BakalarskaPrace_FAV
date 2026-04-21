@@ -7,21 +7,23 @@ Evaluation source: full_transcript (full_12008_001_transcript)
 Range: start=None | end=None | chunk=300s | overlap=2.0s
 Runtime: 273.79s | Run started: 2026-04-01T18:52:59.516780+00:00 | Run finished: 2026-04-01T18:57:33.310837+00:00
 --------------------------------------------------------------------------------
-WER: 18.52 %
+WER: 19.41 %
 Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
-Word counts: REF=2824 | HYP=2678
-WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=284 | replaced_tokens=75
-WordChanges impact (WER): before=21.18 % | after=18.52 % | delta=-2.66 p.b.
-HITS: 2354 | SUB: 271 | INS: 53 | DEL: 199
+Word counts: REF=2844 | HYP=2683
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=294 | replaced_tokens=76
+WordChanges impact (WER): before=22.08 % | after=19.41 % | delta=-2.67 p.b.
+NumberChanges: enabled=True | applied_to=hyp_substitutions | entries=231671 | checked_sub_spans=296 | replaced_tokens=3
+NumberChanges impact (WER): before=22.19 % | after=22.08 % | delta=-0.11 p.b.
+HITS: 2341 | SUB: 293 | INS: 49 | DEL: 210
 
 Kvalitativní ukázky (2-3):
 1. SUB (2x): 'chodily' -> 'chodili'
-2. DEL (15x): 'ano'
+2. DEL (14x): 'ano'
 3. INS (3x): 'a'
 
 Začátek srovnání:
-REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
-HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+REF: jmenuji se jana rené fryesová janarenefryesova březen třináctého devatenácet devadesát šest natáčíme rozhovor s panem...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen 13 1996 natáčíme rozhovor s panem inženýrem janem...
 
 Konec srovnání:
 REF: ...s jeho rodiči vezl a měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
@@ -34,6 +36,10 @@ Top substitutions:
 2x | všecko => všechno
 2x | rakousko => rakouskou
 1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | třináctého devatenácet => 13 1996
+1x | dvanáctého => 12
+1x | devatenácet => 1919
+1x | čtyřicet => 1946
 1x | ádler => adler
 1x | adler => adleela
 1x | počeštit => očištit
@@ -44,22 +50,21 @@ Top substitutions:
 1x | spravoval => zpravoval
 1x | bavor => bavar
 1x | švýcarský chov => do švýcarských
-1x | byla => vědět
-1x | zajímavý => zajímavé
-1x | modrooká blondýna => modroká blonídina
-1x | pelhřimova => peleřimová
 
 Top deletions:
-15x | ano
+14x | ano
 7x | to
 4x | mhm
 4x | a
 3x | v
 3x | jako
 3x | mhm mhm
+2x | šest
 2x | jo
 2x | náměstí
 2x | teda
+1x | devadesát šest
+1x | devatenáct
 1x | ano a
 1x | se
 1x | to úplná samota
@@ -67,15 +72,10 @@ Top deletions:
 1x | hm
 1x | otcovo
 1x | řečeno kerej
-1x | byl
-1x | prakticky
-1x | ano a tak dál
 
 Top insertions:
 3x | a
 2x | z
-2x | <num>
-2x | jsi
 2x | k
 2x | že
 1x | kdybyste
@@ -89,9 +89,11 @@ Top insertions:
 1x | když
 1x | jednoznačnou papoučkovanou odpověď
 1x | kdy
-1x | to je
 1x | tušit
 1x | když jsem se tkal poprvé
+1x | toto byla tátová výchova
+1x | jsi
+1x | jeli jsme společně na vojenských koních
 
 ================================================================================
 ================================================================================
@@ -105,12 +107,14 @@ Evaluation source: full_transcript (fallback)
 Range: start=None | end=None | chunk=300s | overlap=2.0s
 Runtime: 273.79s | Run started: 2026-04-01T18:52:59.516780+00:00 | Run finished: 2026-04-01T18:57:33.310837+00:00
 --------------------------------------------------------------------------------
-WER: 35.12 %
+WER: 36.04 %
 Offset compensation: use=False | ref_trim=0 | hyp_trim=0 | improvement=0.00 p.b.
-Word counts: REF=2238 | HYP=2678
-WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=203 | replaced_tokens=28
-WordChanges impact (WER): before=36.37 % | after=35.12 % | delta=-1.25 p.b.
-HITS: 1950 | SUB: 230 | INS: 498 | DEL: 58
+Word counts: REF=2253 | HYP=2683
+WordChanges: enabled=True | applied_to=hyp_substitutions | entries=13881 | checked_sub_spans=212 | replaced_tokens=28
+WordChanges impact (WER): before=37.28 % | after=36.04 % | delta=-1.24 p.b.
+NumberChanges: enabled=True | applied_to=hyp_substitutions | entries=231671 | checked_sub_spans=214 | replaced_tokens=4
+NumberChanges impact (WER): before=37.46 % | after=37.28 % | delta=-0.18 p.b.
+HITS: 1940 | SUB: 244 | INS: 499 | DEL: 69
 
 Kvalitativní ukázky (2-3):
 1. SUB (5x): 'mně' -> 'mi'
@@ -118,8 +122,8 @@ Kvalitativní ukázky (2-3):
 3. INS (3x): 'že'
 
 Začátek srovnání:
-REF: jmenuji se jana rené fryesová janarenefryesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
-HYP: jmenuji se jana rené frýzová janareneefriesova březen <num> natáčíme rozhovor s panem inženýrem janem orlíkem...
+REF: jmenuji se jana rené fryesová janarenefryesova březen třináctého devatenáct set devadesát šest natáčíme rozhovor s...
+HYP: jmenuji se jana rené frýzová janareneefriesova březen 13 1996 natáčíme rozhovor s panem inženýrem janem...
 
 Konec srovnání:
 REF: ...kluka s jeho rodiči vezl měli jsme zaměstnance jmenoval se hartmann a ten byl nacista
@@ -135,23 +139,26 @@ Top substitutions:
 2x | zkoušku => koušku
 2x | rakousko => rakouskou
 1x | fryesová janarenefryesova => frýzová janareneefriesova
+1x | třináctého devatenáct => 13 1996
 1x | janorlik => se
+1x | dvanáctého => 12
+1x | devatenáct => 1919
+1x | čtyřicet => 1946
 1x | ádler => adler
 1x | adlera => adleela
 1x | počeštit => očištit
 1x | kdybys => se
 1x | byli => byla
 1x | italské => čitelské
-1x | edmond ádler => edmund adler
-1x | spravoval => zpravoval
-1x | bavor => bavar
-1x | švýcarský chov => do švýcarských
 
 Top deletions:
 4x | a
 3x | jako
 2x | ano
 2x | to
+1x | set devadesát šest
+1x | set devatenáct
+1x | šest
 1x | se
 1x | otcovo
 1x | mimochodem řečeno
@@ -161,13 +168,10 @@ Top deletions:
 1x | štětce
 1x | t
 1x | nebo zbohatlické
+1x | devět
 1x | outout pardon na
 1x | těch
 1x | byla
-1x | rodiště
-1x | vlastnil
-1x | českou
-1x | i německé
 
 Top insertions:
 3x | že
@@ -189,4 +193,4 @@ Top insertions:
 1x | já bych se ještě optala tam byla někde v okolí židovská škola nebo by to ani nenapadlo tu tvoji rodinu aby schodil do židovské školy
 1x | výrouky nebo jak se to říká
 1x | troskotal
-1x | kubřehohebrejský číst asi <num> hodiny nebo <num> hodiny za život a samozřejmě že jsem
+1x | kubřehohebrejský číst asi dvě hodiny nebo tři hodiny za život a samozřejmě že jsem

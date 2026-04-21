@@ -2,7 +2,6 @@ import json
 import os
 import re
 import sys
-import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -10,6 +9,8 @@ from jiwer import process_words
 
 WORD_CHANGES_PATH = Path("data/WordChanges.txt")
 WORD_CHANGES_CACHE = None
+NUMBER_CHANGES_PATH = Path("data/NumberChanges.txt")
+NUMBER_CHANGES_CACHE = None
 
 HALLUCINATIONS = [
     r"titulky vytvořil.*",
@@ -32,38 +33,8 @@ LETTER_NAME_MAP = {
     "ix": "x", "x": "x", "ý": "y", "y": "y", "zet": "z", "z": "z", "žet": "ž", "ž": "ž",
 }
 
-NUMBER_WORDS = {
-    "nula", "jeden", "jedna", "jedno", "dva", "dvě", "tri", "tři", "čtyři", "ctyri", "pet", "pět",
-    "šest", "sest", "sedm", "osm", "devět", "devet", "deset", "jedenáct", "jedenact", "dvanáct", "dvanact",
-    "třináct", "trinact", "čtrnáct", "ctrnact", "patnáct", "patnact", "šestnáct", "sestnact", "sedmnáct", "sedmnact",
-    "osmnáct", "osmnact", "devatenáct", "devatenact", "devatenácet", "dvacet", "třicet", "tricet", "čtyřicet",
-    "ctyricet", "padesát", "padesat", "šedesát", "sedesat", "sedmdesát", "sedmdesat", "osmdesát", "osmdesat",
-    "devadesát", "devadesat", "stě", "ste", "sto", "set", "tisíc", "tisic",
-}
-
-NUMBER_STEMS_ASCII = {
-    "nul", "jedn", "dva", "dv", "tri", "ctyr", "pet", "sest", "sedm", "osm", "devet",
-    "deset", "jedenact", "dvanact", "trinact", "ctrnact", "patnact", "sestnact", "sedmnact",
-    "osmnact", "devatenact", "devatenacet", "dvacet", "tricet", "ctyricet", "padesat", "sedesat",
-    "sedmdesat", "osmdesat", "devadesat", "sto", "ste", "set", "tisic",
-}
-
-NUMBER_SUFFIXES_ASCII = (
-    "eho", "emu", "em", "ym", "ych", "ymi", "y", "a", "u", "ou", "i", "o", "ho",
-    "teho", "ateho", "cateho", "nacteho",
-)
-
-
 def clean_text(text):
     return str(text or "").strip()
-
-
-def strip_diacritics(text):
-    normalized = unicodedata.normalize("NFKD", text)
-    return "".join(char for char in normalized if not unicodedata.combining(char))
-
-
-NUMBER_WORDS_ASCII = {strip_diacritics(word) for word in NUMBER_WORDS}
 
 
 def load_json(path):
@@ -107,6 +78,19 @@ def resolve_speaker_gt_files(recording_id):
     return files
 
 
+def is_whisper_backend(metadata):
+    if not isinstance(metadata, dict):
+        return False
+
+    backend_candidates = [
+        metadata.get("backend"),
+        metadata.get("model"),
+        metadata.get("asr_backend"),
+    ]
+    haystack = " ".join(str(item or "") for item in backend_candidates).lower()
+    return "whisper" in haystack
+
+
 def load_word_changes_map():
     global WORD_CHANGES_CACHE
     if WORD_CHANGES_CACHE is not None:
@@ -141,6 +125,43 @@ def load_word_changes_map():
                 mapping[variant] = canonical
 
     WORD_CHANGES_CACHE = mapping
+    return mapping
+
+
+def load_number_changes_map():
+    global NUMBER_CHANGES_CACHE
+    if NUMBER_CHANGES_CACHE is not None:
+        return NUMBER_CHANGES_CACHE
+
+    mapping = {}
+    if not NUMBER_CHANGES_PATH.exists():
+        NUMBER_CHANGES_CACHE = mapping
+        return mapping
+
+    with open(NUMBER_CHANGES_PATH, "r", encoding="utf-8", errors="ignore") as file_handle:
+        for source_line in file_handle:
+            line = source_line.strip()
+            if not line or line.startswith("#"):
+                continue
+
+            canonical = ""
+            variant = ""
+
+            if "\t" in line:
+                parts = re.split(r"\t+", line)
+                if len(parts) >= 2:
+                    canonical = parts[0].strip().lower()
+                    variant = parts[1].strip().lower()
+            else:
+                parts = line.split()
+                if len(parts) == 2:
+                    canonical = parts[0].strip().lower()
+                    variant = parts[1].strip().lower()
+
+            if canonical and variant:
+                mapping[variant] = canonical
+
+    NUMBER_CHANGES_CACHE = mapping
     return mapping
 
 
@@ -192,27 +213,6 @@ def apply_word_changes_from_substitutions(reference_text, hypothesis_text, mappi
     }
 
 
-def is_numeric_like_token(token):
-    if not token:
-        return False
-    if token.isdigit():
-        return True
-    if re.fullmatch(r"\d+[a-z]{0,3}", token):
-        return True
-
-    token_ascii = strip_diacritics(token)
-    if token_ascii in NUMBER_WORDS_ASCII:
-        return True
-
-    for suffix in NUMBER_SUFFIXES_ASCII:
-        if token_ascii.endswith(suffix):
-            stem = token_ascii[:-len(suffix)]
-            if len(stem) >= 3 and stem in NUMBER_STEMS_ASCII:
-                return True
-
-    return False
-
-
 def normalize_common(text):
     normalized = clean_text(text).lower()
     for pattern in HALLUCINATIONS:
@@ -246,20 +246,9 @@ def collapse_letter_spelling(tokens):
     return output
 
 
-def normalize_numbers_to_placeholder(tokens):
-    normalized = ["<num>" if is_numeric_like_token(token) else token for token in tokens]
-    compacted = []
-    for token in normalized:
-        if token == "<num>" and compacted and compacted[-1] == "<num>":
-            continue
-        compacted.append(token)
-    return compacted
-
-
 def normalize_text(text):
     tokens = normalize_common(text).split()
     tokens = collapse_letter_spelling(tokens)
-    tokens = normalize_numbers_to_placeholder(tokens)
     return " ".join(tokens).strip()
 
 
@@ -427,19 +416,19 @@ def compute_macro_and_weighted_wer(per_role_result):
     }
 
 
-def evaluate_mapping(asr_speaker_texts, gt_speaker_texts, mapping, word_changes_map):
+def evaluate_mapping(asr_speaker_texts, gt_speaker_texts, mapping, word_changes_map, number_changes_map):
     per_role_result = {}
     for role in ("interviewer", "interviewee"):
         asr_key = mapping[role]
         ref_text = gt_speaker_texts[role]
         hyp_text = asr_speaker_texts[asr_key]
-        per_role_result[role] = evaluate_pair(ref_text, hyp_text, word_changes_map)
+        per_role_result[role] = evaluate_pair(ref_text, hyp_text, word_changes_map, number_changes_map)
 
     summary = compute_macro_and_weighted_wer(per_role_result)
     return per_role_result, summary
 
 
-def evaluate_pair(reference_text, hypothesis_text, word_changes_map):
+def evaluate_pair(reference_text, hypothesis_text, word_changes_map, number_changes_map):
     norm_ref = normalize_text(reference_text)
     norm_hyp = normalize_text(hypothesis_text)
 
@@ -453,14 +442,34 @@ def evaluate_pair(reference_text, hypothesis_text, word_changes_map):
         "wer_after": None,
     }
 
-    if word_changes_map:
-        corrected_hyp, runtime_info = apply_word_changes_from_substitutions(norm_ref, norm_hyp, word_changes_map)
-        word_changes_runtime.update(runtime_info)
-        word_changes_runtime["wer_before"] = base_diagnostics["wer"]
+    number_changes_runtime = {
+        "substitute_spans_checked": 0,
+        "tokens_replaced": 0,
+        "wer_before": None,
+        "wer_after": None,
+    }
+
+    if number_changes_map:
+        corrected_hyp, runtime_info = apply_word_changes_from_substitutions(norm_ref, norm_hyp, number_changes_map)
+        number_changes_runtime.update(runtime_info)
+        number_changes_runtime["wer_before"] = final_diagnostics["wer"]
 
         if corrected_hyp and corrected_hyp != norm_hyp:
             corrected_diagnostics = build_error_diagnostics(norm_ref, corrected_hyp)
-            if corrected_diagnostics["wer"] <= base_diagnostics["wer"]:
+            if corrected_diagnostics["wer"] <= final_diagnostics["wer"]:
+                norm_hyp = corrected_hyp
+                final_diagnostics = corrected_diagnostics
+
+        number_changes_runtime["wer_after"] = final_diagnostics["wer"]
+
+    if word_changes_map:
+        corrected_hyp, runtime_info = apply_word_changes_from_substitutions(norm_ref, norm_hyp, word_changes_map)
+        word_changes_runtime.update(runtime_info)
+        word_changes_runtime["wer_before"] = final_diagnostics["wer"]
+
+        if corrected_hyp and corrected_hyp != norm_hyp:
+            corrected_diagnostics = build_error_diagnostics(norm_ref, corrected_hyp)
+            if corrected_diagnostics["wer"] <= final_diagnostics["wer"]:
                 norm_hyp = corrected_hyp
                 final_diagnostics = corrected_diagnostics
 
@@ -472,6 +481,7 @@ def evaluate_pair(reference_text, hypothesis_text, word_changes_map):
     return {
         "diagnostics": final_diagnostics,
         "word_changes_runtime": word_changes_runtime,
+        "number_changes_runtime": number_changes_runtime,
         "reference_word_count": len(ref_words),
         "hypothesis_word_count": len(hyp_words),
         "reference_head": " ".join(ref_words[:15]) + "...",
@@ -483,9 +493,10 @@ def evaluate_pair(reference_text, hypothesis_text, word_changes_map):
     }
 
 
-def build_speaker_report_section(label, role, asr_key, pair_result, word_changes_entries):
+def build_speaker_report_section(label, role, asr_key, pair_result, word_changes_entries, number_changes_entries):
     diag = pair_result["diagnostics"]
     runtime = pair_result["word_changes_runtime"]
+    number_runtime = pair_result["number_changes_runtime"]
 
     lines = []
     lines.append(f"{label}")
@@ -501,6 +512,26 @@ def build_speaker_report_section(label, role, asr_key, pair_result, word_changes
             replaced=runtime.get("tokens_replaced", 0),
         )
     )
+
+    lines.append(
+        "NumberChanges: enabled={enabled} | entries={entries} | checked_sub_spans={checked} | replaced_tokens={replaced}".format(
+            enabled=bool(number_changes_entries),
+            entries=number_changes_entries,
+            checked=number_runtime.get("substitute_spans_checked", 0),
+            replaced=number_runtime.get("tokens_replaced", 0),
+        )
+    )
+
+    number_before = number_runtime.get("wer_before")
+    number_after = number_runtime.get("wer_after")
+    if number_before is not None and number_after is not None:
+        lines.append(
+            "NumberChanges impact (WER): before={before:.2f} % | after={after:.2f} % | delta={delta:+.2f} p.b.".format(
+                before=number_before * 100,
+                after=number_after * 100,
+                delta=(number_after - number_before) * 100,
+            )
+        )
 
     before = runtime.get("wer_before")
     after = runtime.get("wer_after")
@@ -565,6 +596,7 @@ def write_report(
     summary,
     mapping_confidence,
     word_changes_entries,
+    number_changes_entries,
     append=False,
     section_title=None,
 ):
@@ -614,6 +646,7 @@ def write_report(
             asr_key=mapping["interviewer"],
             pair_result=per_role_result["interviewer"],
             word_changes_entries=word_changes_entries,
+            number_changes_entries=number_changes_entries,
         )
     )
 
@@ -628,6 +661,7 @@ def write_report(
             asr_key=mapping["interviewee"],
             pair_result=per_role_result["interviewee"],
             word_changes_entries=word_changes_entries,
+            number_changes_entries=number_changes_entries,
         )
     )
 
@@ -658,6 +692,8 @@ def evaluate_speakers(hyp_file):
     asr_speaker_texts = collect_asr_full_texts(hyp_data)
     word_changes_map = load_word_changes_map()
     word_changes_entries = len(word_changes_map)
+    number_changes_map = load_number_changes_map() if is_whisper_backend(metadata) else {}
+    number_changes_entries = len(number_changes_map)
 
     wrote_any = False
     for gt_file in gt_files:
@@ -675,12 +711,14 @@ def evaluate_speakers(hyp_file):
             gt_speaker_texts=gt_speaker_texts,
             mapping=mapping,
             word_changes_map=word_changes_map,
+            number_changes_map=number_changes_map,
         )
         _, swapped_summary = evaluate_mapping(
             asr_speaker_texts=asr_speaker_texts,
             gt_speaker_texts=gt_speaker_texts,
             mapping=swapped,
             word_changes_map=word_changes_map,
+            number_changes_map=number_changes_map,
         )
 
         length_based_weighted = summary["weighted_wer"]
@@ -704,6 +742,7 @@ def evaluate_speakers(hyp_file):
             summary=summary,
             mapping_confidence=mapping_confidence,
             word_changes_entries=word_changes_entries,
+            number_changes_entries=number_changes_entries,
             append=wrote_any,
             section_title=f"ASR Speaker Evaluation Report | {Path(gt_file).name}",
         )

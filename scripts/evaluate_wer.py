@@ -2,7 +2,6 @@ import json
 import os
 import re
 import sys
-import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -10,6 +9,8 @@ from jiwer import process_words
 
 WORD_CHANGES_PATH = Path("data/WordChanges.txt")
 WORD_CHANGES_CACHE = None
+NUMBER_CHANGES_PATH = Path("data/NumberChanges.txt")
+NUMBER_CHANGES_CACHE = None
 
 HALLUCINATIONS = [
     r"titulky vytvořil.*",
@@ -32,39 +33,10 @@ LETTER_NAME_MAP = {
     "ix": "x", "x": "x", "ý": "y", "y": "y", "zet": "z", "z": "z", "žet": "ž", "ž": "ž",
 }
 
-NUMBER_WORDS = {
-    "nula", "jeden", "jedna", "jedno", "dva", "dvě", "tri", "tři", "čtyři", "ctyri", "pet", "pět",
-    "šest", "sest", "sedm", "osm", "devět", "devet", "deset", "jedenáct", "jedenact", "dvanáct", "dvanact",
-    "třináct", "trinact", "čtrnáct", "ctrnact", "patnáct", "patnact", "šestnáct", "sestnact", "sedmnáct", "sedmnact",
-    "osmnáct", "osmnact", "devatenáct", "devatenact", "devatenácet", "dvacet", "třicet", "tricet", "čtyřicet",
-    "ctyricet", "padesát", "padesat", "šedesát", "sedesat", "sedmdesát", "sedmdesat", "osmdesát", "osmdesat",
-    "devadesát", "devadesat", "stě", "ste", "sto", "set", "tisíc", "tisic",
-}
-
-NUMBER_STEMS_ASCII = {
-    "nul", "jedn", "dva", "dv", "tri", "ctyr", "pet", "sest", "sedm", "osm", "devet",
-    "deset", "jedenact", "dvanact", "trinact", "ctrnact", "patnact", "sestnact", "sedmnact",
-    "osmnact", "devatenact", "devatenacet", "dvacet", "tricet", "ctyricet", "padesat", "sedesat",
-    "sedmdesat", "osmdesat", "devadesat", "sto", "ste", "set", "tisic",
-}
-
-NUMBER_SUFFIXES_ASCII = (
-    "eho", "emu", "em", "ym", "ych", "ymi", "y", "a", "u", "ou", "i", "o", "ho",
-    "teho", "ateho", "cateho", "nacteho",
-)
-
 MAX_WINDOW_OVERFLOW_SECONDS = 0.6
 OFFSET_MAX_TRIM_WORDS = 6
 OFFSET_MIN_IMPROVEMENT = 0.01
 OFFSET_PREFIX_WINDOW = 12
-
-
-def strip_diacritics(text):
-    normalized = unicodedata.normalize("NFKD", text)
-    return "".join(char for char in normalized if not unicodedata.combining(char))
-
-
-NUMBER_WORDS_ASCII = {strip_diacritics(word) for word in NUMBER_WORDS}
 
 
 def clean_text(text):
@@ -144,6 +116,56 @@ def load_word_changes_map():
     return mapping
 
 
+def load_number_changes_map():
+    global NUMBER_CHANGES_CACHE
+    if NUMBER_CHANGES_CACHE is not None:
+        return NUMBER_CHANGES_CACHE
+
+    mapping = {}
+    if not NUMBER_CHANGES_PATH.exists():
+        NUMBER_CHANGES_CACHE = mapping
+        return mapping
+
+    with open(NUMBER_CHANGES_PATH, "r", encoding="utf-8", errors="ignore") as file_handle:
+        for source_line in file_handle:
+            line = source_line.strip()
+            if not line or line.startswith("#"):
+                continue
+
+            canonical = ""
+            variant = ""
+
+            if "\t" in line:
+                parts = re.split(r"\t+", line)
+                if len(parts) >= 2:
+                    canonical = parts[0].strip().lower()
+                    variant = parts[1].strip().lower()
+            else:
+                parts = line.split()
+                if len(parts) == 2:
+                    canonical = parts[0].strip().lower()
+                    variant = parts[1].strip().lower()
+
+            if canonical and variant:
+                mapping[variant] = canonical
+
+    NUMBER_CHANGES_CACHE = mapping
+    return mapping
+
+
+def is_whisper_backend(metadata):
+    if not isinstance(metadata, dict):
+        return False
+
+    backend_candidates = [
+        metadata.get("backend"),
+        metadata.get("model"),
+        metadata.get("asr_backend"),
+    ]
+    haystack = " ".join(str(item or "") for item in backend_candidates).lower()
+    return "whisper" in haystack
+
+
 def canonicalize_word_change_token(token, mapping):
     normalized = clean_text(token).lower()
     return mapping.get(normalized, normalized)
@@ -192,28 +214,6 @@ def apply_word_changes_from_substitutions(reference_text, hypothesis_text, mappi
     }
 
 
-def is_numeric_like_token(token):
-    if not token:
-        return False
-    if token.isdigit():
-        return True
-    if re.fullmatch(r"\d+[a-z]{0,3}", token):
-        return True
-
-    token_ascii = strip_diacritics(token)
-    if token_ascii in NUMBER_WORDS_ASCII:
-        return True
-
-    for suffix in NUMBER_SUFFIXES_ASCII:
-        if not token_ascii.endswith(suffix):
-            continue
-        stem = token_ascii[:-len(suffix)]
-        if len(stem) >= 3 and stem in NUMBER_STEMS_ASCII:
-            return True
-
-    return False
-
-
 def normalize_common(text):
     normalized = clean_text(text).lower()
     for pattern in HALLUCINATIONS:
@@ -247,20 +247,9 @@ def collapse_letter_spelling(tokens):
     return output
 
 
-def normalize_numbers_to_placeholder(tokens):
-    normalized = ["<num>" if is_numeric_like_token(token) else token for token in tokens]
-    compacted = []
-    for token in normalized:
-        if token == "<num>" and compacted and compacted[-1] == "<num>":
-            continue
-        compacted.append(token)
-    return compacted
-
-
 def normalize_text(text):
     tokens = normalize_common(text).split()
     tokens = collapse_letter_spelling(tokens)
-    tokens = normalize_numbers_to_placeholder(tokens)
     return " ".join(tokens).strip()
 
 
@@ -404,6 +393,7 @@ def write_diagnostics_report(
     wer_comp_value=None,
     offset_info=None,
     word_changes_info=None,
+    number_changes_info=None,
     evaluation_mode=None,
     append=False,
 ):
@@ -469,6 +459,28 @@ def write_diagnostics_report(
         if wer_before is not None and wer_after is not None:
             lines.append(
                 "WordChanges impact (WER): before={before:.2f} % | after={after:.2f} % | delta={delta:+.2f} p.b.".format(
+                    before=wer_before * 100,
+                    after=wer_after * 100,
+                    delta=(wer_after - wer_before) * 100,
+                )
+            )
+
+    if isinstance(number_changes_info, dict):
+        runtime = number_changes_info.get("runtime") if isinstance(number_changes_info.get("runtime"), dict) else {}
+        lines.append(
+            "NumberChanges: enabled={enabled} | applied_to={applied_to} | entries={entries} | checked_sub_spans={checked} | replaced_tokens={replaced}".format(
+                enabled=number_changes_info.get("enabled", False),
+                applied_to=number_changes_info.get("applied_to", "none"),
+                entries=number_changes_info.get("entries", 0),
+                checked=runtime.get("substitute_spans_checked", 0),
+                replaced=runtime.get("tokens_replaced", 0),
+            )
+        )
+        wer_before = runtime.get("wer_before")
+        wer_after = runtime.get("wer_after")
+        if wer_before is not None and wer_after is not None:
+            lines.append(
+                "NumberChanges impact (WER): before={before:.2f} % | after={after:.2f} % | delta={delta:+.2f} p.b.".format(
                     before=wer_before * 100,
                     after=wer_after * 100,
                     delta=(wer_after - wer_before) * 100,
@@ -793,6 +805,9 @@ def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, g
     apply_word_changes = gt_file_name.endswith("_gt_segments.json")
     word_changes_map = load_word_changes_map() if apply_word_changes else {}
     word_changes_count = len(word_changes_map)
+    apply_number_changes = is_whisper_backend(metadata)
+    number_changes_map = load_number_changes_map() if apply_number_changes else {}
+    number_changes_count = len(number_changes_map)
 
     word_changes_runtime = {
         "substitute_spans_checked": 0,
@@ -807,20 +822,46 @@ def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, g
         "runtime": word_changes_runtime,
     }
 
+    number_changes_runtime = {
+        "substitute_spans_checked": 0,
+        "tokens_replaced": 0,
+        "wer_before": None,
+        "wer_after": None,
+    }
+    number_changes_info = {
+        "enabled": apply_number_changes and number_changes_count > 0,
+        "applied_to": "hyp_substitutions" if apply_number_changes else "none",
+        "entries": number_changes_count,
+        "runtime": number_changes_runtime,
+    }
+
     norm_ref = normalize_text(reference_full)
     norm_hyp = normalize_text(hypothesis_full)
 
     base_diagnostics = build_error_diagnostics(norm_ref, norm_hyp)
     final_diagnostics = base_diagnostics
 
-    if word_changes_info["enabled"]:
-        corrected_hyp, runtime_info = apply_word_changes_from_substitutions(norm_ref, norm_hyp, word_changes_map)
-        word_changes_runtime.update(runtime_info)
-        word_changes_runtime["wer_before"] = base_diagnostics["wer"]
+    if number_changes_info["enabled"]:
+        corrected_hyp, runtime_info = apply_word_changes_from_substitutions(norm_ref, norm_hyp, number_changes_map)
+        number_changes_runtime.update(runtime_info)
+        number_changes_runtime["wer_before"] = final_diagnostics["wer"]
 
         if corrected_hyp and corrected_hyp != norm_hyp:
             corrected_diagnostics = build_error_diagnostics(norm_ref, corrected_hyp)
-            if corrected_diagnostics["wer"] <= base_diagnostics["wer"]:
+            if corrected_diagnostics["wer"] <= final_diagnostics["wer"]:
+                norm_hyp = corrected_hyp
+                final_diagnostics = corrected_diagnostics
+
+        number_changes_runtime["wer_after"] = final_diagnostics["wer"]
+
+    if word_changes_info["enabled"]:
+        corrected_hyp, runtime_info = apply_word_changes_from_substitutions(norm_ref, norm_hyp, word_changes_map)
+        word_changes_runtime.update(runtime_info)
+        word_changes_runtime["wer_before"] = final_diagnostics["wer"]
+
+        if corrected_hyp and corrected_hyp != norm_hyp:
+            corrected_diagnostics = build_error_diagnostics(norm_ref, corrected_hyp)
+            if corrected_diagnostics["wer"] <= final_diagnostics["wer"]:
                 norm_hyp = corrected_hyp
                 final_diagnostics = corrected_diagnostics
 
@@ -887,6 +928,7 @@ def evaluate_against_single_gt(hyp_file, hyp_data, metadata, hyp_recording_id, g
         "reference_tail": "..." + " ".join(ref_words[-15:]),
         "hypothesis_tail": "..." + " ".join(hyp_words[-15:]),
         "word_changes_info": word_changes_info,
+        "number_changes_info": number_changes_info,
         "evaluation_mode": evaluation_mode,
     }
 
@@ -941,6 +983,7 @@ def evaluate(hyp_file):
             wer_comp_value=section_result["wer_comp"],
             offset_info=section_result["offset_info"],
             word_changes_info=section_result.get("word_changes_info"),
+            number_changes_info=section_result.get("number_changes_info"),
             append=not first_section,
         )
         first_section = False
